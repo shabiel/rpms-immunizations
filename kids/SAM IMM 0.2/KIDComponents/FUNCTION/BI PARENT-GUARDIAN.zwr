@@ -1,0 +1,6 @@
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,-1)="0^17"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,0)="BI PARENT/GUARDIAN"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,1)="S X=$$PARENT^BIUTL1($G(BIDFN),1)"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,2)="X"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,3)=0
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,9)="Returns name of Patient's Parent or Guardian as store in the Immunization Package (or just ""Parent/Guardian of"" if no data)."

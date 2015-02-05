@@ -1,0 +1,4 @@
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,-1)="0^1"
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,0)="BIZ EDIT PATIENTS^Edit Immunization Patients^"
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,1,0)="^^1^1^2990402^^^^"
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,1,1,0)="Allows holder to edit a Patient's Immunization History."

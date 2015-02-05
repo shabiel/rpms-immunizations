@@ -1,0 +1,6 @@
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,-1)="0^12"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,0)="BI MAILING ADD-ZIP"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,1)="S X=$S($G(BIDFN):$$ZIP^BIUTL1(BIDFN),1:"""")"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,2)="X"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,3)=0
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,9)="Returns patient's address zipcode."

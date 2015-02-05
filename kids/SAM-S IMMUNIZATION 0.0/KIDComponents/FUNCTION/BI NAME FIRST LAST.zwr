@@ -1,0 +1,6 @@
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,-1)="0^13"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,0)="BI NAME FIRST LAST"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,1)="S X=$S($G(BIDFN):$$NAME^BIUTL1(BIDFN,1),1:"""")"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,2)="X"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,3)=0
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,9)="Returns full name in the form First Name Last Name."

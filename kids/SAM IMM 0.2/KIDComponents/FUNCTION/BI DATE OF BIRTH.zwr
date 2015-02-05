@@ -1,0 +1,6 @@
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,-1)="0^3"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,0)="BI DATE OF BIRTH"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,1)="S X=$S($G(BIDFN):$$DOBF^BIUTL1(BIDFN),1:"""")"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,2)="X"
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,3)=0
+^XTMP("K2VC","EXPORT","KRN",.5,IEN,9)="Returns the Patient's Date of Birth"
