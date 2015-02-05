@@ -1,0 +1,293 @@
+7a8
+> ^XTMP("K2VC","EXPORT","FIA",9999999.41,0,"VR")="1.0^PX"
+9c10
+< ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,0)="IMMUNIZATION LOT^9999999.41I"
+---
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,0)="IMMUNIZATION LOT^9999999.41"
+11,12c12,19
+< ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",0)="^^1^1^2971104^^"
+< ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",1,0)="Changes to this data dictionary should be coordinated thru the IHS DBA."
+---
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%",0)="^1.005^^"
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",0)="^1.001^6^6^3140529^^^"
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",1,0)="This file contains the Immunization Manufacturers' LOT NUMBERS for the"
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",2,0)="immunizations/vaccines administered in the VA.  The LOT NUMBERs themselves"
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",3,0)="may not be unique, but the combination of LOT NUMBER and MANUFACTURER"
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",4,0)="must form a unique entry.  This file also relies on a nightly background"
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",5,0)="task that checks the entries' EXPIRATION DATE field.  If the date is equal"
+> ^XTMP("K2VC","EXPORT","^DIC",9999999.41,9999999.41,"%D",6,0)="to that day's date, or has passed, that entry's STATUS is set to EXPIRED."
+14c21
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0)="FIELD^^.16^16"
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0)="FIELD^^.18^17"
+16,21c23,25
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"DT")=3080821
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"ID",.02)="W ""   "",$S($D(^AUTTIMAN(+$P(^(0),U,2),0))#2:$P(^(0),U,1),1:""""),@(""$E(""_DIC_""Y,0),0)"")"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"ID",.04)="W ""  "",$P($G(^AUTTIMM(+$P(^AUTTIML(Y,0),U,4),0)),U,2)"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"ID",.05)="W ""  "",$P($G(^AUTTIMM(+$P(^AUTTIML(Y,0),U,5),0)),U,2)"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"ID",.06)="W ""  "",$P($G(^AUTTIMM(+$P(^AUTTIML(Y,0),U,6),0)),U,2)"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"ID",.07)="W ""  "",$P($G(^AUTTIMM(+$P(^AUTTIML(Y,0),U,7),0)),U,2)"
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"DT")=3140610
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"ID",.02)="S %I=Y,Y=$S('$D(^(0)):"""",$D(^AUTTIMAN(+$P(^(0),U,2),0))#2:$P(^(0),U,1),1:""""),C=$P(^DD(9999999.04,.01,0),U,2) D Y^DIQ:Y]"""" W ""   "",Y,@(""$E(""_DIC_""%I,0),0)"") S Y=%I K %I"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"ID",.12)="W ""   "",+$P(^(0),U,12),"" DOSES UNUSED"""
+26,31c30,31
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",90451.25,.05)=""
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",90459.2323,.05)=""
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",9000010.11,.05)=""
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",9001003.7,999913)=""
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",9002084.118,.05)=""
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",9002084.95,.04)=""
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",500062.14,.04)=""
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"PT",9000010.11,1207)=""
+33,34c33,34
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,0,"VRPK")="AUT"
+39,49c39,73
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,0)="LOT NUMBER^RFX^^0;1^K:$L(X)>25!($L(X)<3)!'(X'?1P.E) X S X=$$UPPER^BIUTL5($G(X))"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,3)="ANSWER MUST BE 3-25 CHARACTERS IN LENGTH"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,"DEL",.01,0)="I 1"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,"DT")=3110711
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,0)="LOT NUMBER^RF^^0;1^K:$L(X)>25!($L(X)<3)!'(X'?1P.E) X"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,.1)="Lot Number"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,3)="Answer must be 3-25 characters in length."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,21,0)="^.001^1^1^3140515^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,21,1,0)="This is the lot number of a manufacturer's immunization/vaccine product."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,23,0)="^.001^4^4^3140515^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,23,1,0)="A manufacturer's lot number for an immunization, 3-25 characters."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,23,2,0)="In the Department of Veterans Affairs version of this file, more than"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,23,3,0)="one entry may have the same LOT NUMBER, but entries must have a unique"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,23,4,0)="combination of LOT NUMBER and MANUFACTURER."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.01,"DT")=3140505
+---
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,0)="MANUFACTURER^R*P9999999.04'^AUTTIMAN(^0;2^S DIC(""S"")=""I $P(^AUTTIMAN(Y,0),U,3)"" D ^DIC K DIC S DIC=DIE,X=+Y K:Y<0 X"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,12)="Manufacturer must be Active."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,12.1)="S DIC(""S"")=""I $P(^AUTTIMAN(Y,0),U,3)"""
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,"DT")=3031202
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,0)="MANUFACTURER^R*P9999999.04'^AUTTIMAN(^0;2^S DIC(""S"")=""I '$P(^AUTTIMAN(Y,0),U,3)"" D ^DIC K DIC S DIC=DIE,X=+Y K:Y<0 X"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,.1)="Manufacturer"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,3)="Select the manufacturer of this lot number."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,12)="You can only select a manufacturer with a STATUS of ACTIVE."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,12.1)="S DIC(""S"")=""I '$P(^AUTTIMAN(Y,0),U,3)"""
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,21,0)="^.001^2^2^3140515^^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,21,1,0)="This is the manufacturer using this lot number.  You will only be able to"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,21,2,0)="select manufacturers with a STATUS of ACTIVE."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,23,0)="^.001^3^3^3140515^^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,23,1,0)="This field is a pointer to the IMM MANFACTURER file (9999999.04)."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,23,2,0)="The field is screened so that only manufacturers with status of active"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,23,3,0)="can be seen in the lookup."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.02,"DT")=3140515
+---
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,0)="STATUS^RS^0:ACTIVE;1:INACTIVE;^0;3^Q"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,3)="Enter ACTIVE if this Lot Number should be available when recording the Lot Number for Immunizations.  Enter INACTIVE if it should no longer be available."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,"DT")=2990129
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,0)="STATUS^S^2:EXPIRED;1:INACTIVE;0:ACTIVE;^0;3^Q"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,.1)="Status"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,3)="Enter '1' or 'INACTIVE' to designate this lot as inactive."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,21,0)="^.001^3^3^3140515^^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,21,1,0)="This is the status of this lot number, used to determine if this lot is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,21,2,0)="usable.  As long this field is blank or has a value of '0', it will be"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,21,3,0)="seen as ACTIVE.  If a '1' is entered, it will be seen as INACTIVE."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,23,0)="^.001^2^2^3140515^^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,23,1,0)="This field is seen as ACTIVE as long it is blank or a '0', which may"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,23,2,0)="be the opposite of what you are used to seeing."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.03,"DT")=3140515
+---
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,0)="VACCINE^R*P9999999.14'^AUTTIMM(^0;4^S DIC(""S"")=""I '$P(^(0),U,7)"" D ^DIC K DIC S DIC=DIE,X=+Y K:Y<0 X"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,1,1,"DT")=2990129
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,3)="Select a vaccine for which this is a valid Lot#."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,12)="Pointed to vaccine must be active."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,"DT")=3040126
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,0)="VACCINE^*P9999999.14'^AUTTIMM(^0;4^S DIC(""S"")=""I '$P(^(0),U,7)"" D ^DIC K DIC S DIC=DIE,X=+Y K:Y<0 X"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,.1)="Vaccine"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,1,1,3)="This cross reference is used for lookups."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,1,1,"%D",0)="^^2^2^3140527^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,1,1,"%D",1,0)="This cross reference allows lot numbers to be seelcted by their"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,1,1,"%D",2,0)="associated IMMUNIZATION (VACCINE)."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,1,1,"DT")=3140527
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,3)="Enter a vaccine that uses this lot number and manufacturer."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,12)="Vaccine must be active."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,21,0)="^.001^2^2^3140625^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,21,1,0)="This is a VACCINE that is labeled with this lot number and produced by"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,21,2,0)="lot's manufacturer.  The vaccine must designated as active."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.04,"DT")=3140527
+60,62c91,96
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,1,0)="^.1^^0"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,3)="Select a vaccine for which this is a valid Lot#.  If there are multiple vaccines that pertain to this Lot# (a combination), enter them under Vaccine #1, Vaccine #2, Vaccine #3, etc."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,"DT")=3051121
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,3)="Enter a vaccine that has this lot number and manufacturer."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.05,"DT")=3140513
+64,66c98,104
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,1,0)="^.1^^0"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,3)="Select a vaccine for which this is a valid Lot#.  If there are multiple vaccines that pertain to this Lot# (a combination), enter them under Vaccine #1, Vaccine #2, Vaccine #3, etc."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,"DT")=3051121
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,.1)="Vaccine #3"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,3)="Enter a vaccine that has this lot number and manufacturer."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.06,"DT")=3140610
+68,70c106,111
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,1,0)="^.1^^0"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,3)="Select a vaccine for which this is a valid Lot#.  If there are multiple vaccines that pertain to this Lot# (a combination), enter them under Vaccine #1, Vaccine #2, Vaccine #3, etc."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,"DT")=3051121
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,3)="Enter a vaccine that has this lot number and manufacturer."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.07,"DT")=3140610
+72,74c113,118
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,1,0)="^.1^^0"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,3)="Select a vaccine for which this is a valid Lot#.  If there are multiple vaccines that pertain to this Lot# (a combination), enter them under Vaccine #1, Vaccine #2, Vaccine #3, etc."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,"DT")=3051121
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,3)="Enter vaccine that has this lot number and manufacturer."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.08,"DT")=3140610
+---
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,1,1,"DT")=3070506
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,3)="Enter the expiration date for this Lot Number."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,"DT")=3070506
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,.1)="Expiration Date"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,1,1,"%D",0)="^.101^2^2^3140513^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,1,1,"%D",1,0)="Used by a task set to run nightly to change the status of lot numbers"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,1,1,"%D",2,0)="that have expired."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,1,1,"DT")=3140507
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,3)="Enter the expiration date for this lot number."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,21,0)="^.001^2^2^3140515^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,21,1,0)="This is the date that the immunization represented by this lot number is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,21,2,0)="due to expire, as determined by the manufacturer."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,23,0)="^.001^4^4^3140515^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,23,1,0)="This field is used to determine if the immunization represented by this"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,23,2,0)="lot number has expired.  This field is checked nightly by a background"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,23,3,0)="task.  If the EXPIRATION DATE is equal to that day's date (or in the past),"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,23,4,0)="the STATUS field is set to ""EXPIRED""."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.09,"DT")=3140507
+---
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,0)="STARTING COUNT^NJ5,0^^0;11^K:+X'=X!(X>99999)!(X<1)!(X?.E1"".""1.N) X"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,3)="Enter the Starting Amount (number of doses) for this Lot."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,"DT")=3080820
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,0)="STARTING COUNT^NJ5,0^^0;11^K:+X'=X!(X>99999)!(X<1)!(X?.E1"".""1N.N) X"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,.1)="Starting Count"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,0)="^.1"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,0)="^^TRIGGER^9999999.41^.12"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,1)="K DIV S DIV=X,D0=DA,DIV(0)=D0 S Y(0)=X S Y(1)=$S($D(^AUTTIML(D0,0)):^(0),1:"""") S X=$P(Y(1),U,12)="""" I X S X=DIV S Y(1)=$S($D(^AUTTIML(D0,0)):^(0),1:"""") S X=$P(Y(1),U,12),X=X S DIU=X K Y S X=DIV S X=DIV X ^DD(9999999.41,.11,1,1,1.4)"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,1.4)="S DIH=$G(^AUTTIML(DIV(0),0)),DIV=X S $P(^(0),U,12)=DIV,DIH=9999999.41,DIG=.12 D ^DICR"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,2)="Q"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"%D",0)="^^2^2^3140507^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"%D",1,0)="When the STARTING COUNT is entered, DOSES UNUSED is checked.  If DOSES"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"%D",2,0)="UNUSED is NULL, then it is set to the STARTING COUNT."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"CREATE CONDITION")="DOSES UNUSED="""""
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"CREATE VALUE")="STARTING COUNT"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"DELETE VALUE")="NO EFFECT"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"FIELD")="DOSES UNUSED"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,1,1,"NOREINDEX")=1
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,3)="Enter the initial number of doses for this lot."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,21,0)="^.001^1^1^3140515^^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,21,1,0)="This is the starting number of doses for this lot, from 1 to 99,999."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,23,0)="^.001^3^3^3140515^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,23,1,0)="This is the initial number of doses for this lot, which should be a"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,23,2,0)="number from 1 to 99999.  If the DOSES UNUSED field is empty, it is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,23,3,0)="automatically set to the number entered here, via a trigger."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.11,"DT")=3140513
+---
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,0)="DOSES UNUSED^NJ7,0^^0;12^K:+X'=X!(X>1000000)!(X<0)!(X?.E1"".""1.N) X"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,3)="Enter the number of doses of this Lot that are remaining (unused)."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,"DT")=3080820
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,0)="DOSES UNUSED^NJ5,0X^^0;12^K:$S(+X'=X:1,X>99999:1,X<0:1,X?.E1"".""1N.N:1,$P(^AUTTIML(DA,0),""^"",11)="""":0,1:X>$P(^(0),""^"",11)) X"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,3)="Enter the number of doses remaining from this lot."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,5,1,0)="9999999.41^.11^1"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,21,0)="^.001^2^2^3140507^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,21,1,0)="This is the number of remaining doses available for this lot.  The number"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,21,2,0)="cannot be greater than the original number of doses for this lot."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,23,0)="^^3^3^3140507^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,23,1,0)="This is the number doses for this lot that have not yet been used.  The"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,23,2,0)="number entered is checked against the number entered for the STARTING COUNT"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,23,3,0)="field and cannot be greater."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.12,"DT")=3140507
+90,99c174,197
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,3)="Enter the source of this Lot."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,"DT")=3070108
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,3)="Enter the source of this lot."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.13,"DT")=3140507
+---
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,0)="HEALTH CARE FACILITY^*P9999999.06'^AUTTLOC(^0;14^S DIC(""S"")=""I $D(^APCCCTRL(Y,0))"" D ^DIC K DIC S DIC=$G(DIE),X=+Y K:Y<0 X"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,3)="Select the Health Care Facility where this Lot will be stored and used."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,12)="This must be a Facility that users log onto when using this system."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,12.1)="S DIC(""S"")=""I $D(^APCCCTRL(Y,0))"""
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,"DT")=3080129
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,0)="HEALTH CARE FACILITY^P9999999.06'^AUTTLOC(^0;14^Q"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,3)="Select the Health Care Facility (location) where this lot will be stored and used."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.14,"DT")=3140507
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,0)="LOW SUPPLY ALERT^NJ4,0^^0;15^K:+X'=X!(X>9999)!(X<0)!(X?.E1"".""1N.N) X"
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,3)="Enter number of doses reamining that will trigger a Low Suppy Alert for this Lot.  Type a number between 0 and 9999 (no decimal digits)."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,"DT")=3080630
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,0)="LOW SUPPLY ALERT^NJ5,0X^^0;15^K:$S(+X'=X:1,X>99998:1,X<0:1,X?.E1"".""1N.N:1,1:X>$P(^(0),U,11)) X"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,.1)="Low Supply Alert"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,3)="Enter the number of doses remaining that will trigger a Low Supply Alert for this lot, between 0 and 99,998."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,21,0)="^.001^3^3^3140515^^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,21,1,0)="This is a number that is used to determine if a Low Supply alert should be"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,21,2,0)="issued.  The number must be between 0 and 99,998 and cannot be greater"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,21,3,0)="than the STARTING COUNT."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,23,0)="^.001^2^2^3140515^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,23,1,0)="A number field between 0 and 99998.  Input Transform also checks that the"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,23,2,0)="entry is not greater than the number in the STARTING COUNT field."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.15,"DT")=3140513
+101,102c199,204
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,3)="Enter the official lot number to be used for export to other registries.  Answer must be 3-12 characters in length."
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,"DT")=3080821
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,3)="Enter the official lot number to be used for export to other registries, 3 to 12 characters in length."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.16,"DT")=3140507
+103a206
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,.1)="NDC Code"
+105c208,220
+< ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,"DT")=3110626
+---
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,21,0)="^.001^1^1^3140521^^^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,21,1,0)="This is the NDC Code for this lot."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,23,0)="^^3^3^3140625^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,23,1,0)="This field is not used by the Department of Veterans Affairs.  It is"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,23,2,0)="included for backward compatibility with the Indian Health Service version"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,23,3,0)="of the file."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.17,"DT")=3140508
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.18,0)="NDC CODE (VA)^P50.67'^PSNDF(50.67,^0;18^Q"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.18,.1)="NDC Code"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.18,3)="Select the NDC Code for this lot."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.18,21,0)="^^1^1^3140520^"
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.18,21,1,0)="This is the NDC/UPN code for this lot."
+> ^XTMP("K2VC","EXPORT","^DD",9999999.41,9999999.41,.18,"DT")=3140521
+109,111c224,226
+< ^XTMP("K2VC","EXPORT","SEC","^DIC",9999999.41,9999999.41,0,"LAYGO")="#"
+< ^XTMP("K2VC","EXPORT","SEC","^DIC",9999999.41,9999999.41,0,"RD")=""
+< ^XTMP("K2VC","EXPORT","SEC","^DIC",9999999.41,9999999.41,0,"WR")="#"
+---
+> ^XTMP("K2VC","EXPORT","SEC","^DIC",9999999.41,9999999.41,0,"LAYGO")="@"
+> ^XTMP("K2VC","EXPORT","SEC","^DIC",9999999.41,9999999.41,0,"RD")="@"
+> ^XTMP("K2VC","EXPORT","SEC","^DIC",9999999.41,9999999.41,0,"WR")="@"
