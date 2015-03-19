@@ -185,4 +185,15 @@ something IHS couldn't do due to the fact that they do not maintain these files.
                                                                           >  .18,0)="NDC CODE (VA)^P50.67'^PSNDF(50.67,^0;18^Q"
 ```
 
+# Overall pattern of differences
+Overall, the VA version of the fields are much better documented. Reference
+files are locked down to be updated by MFS (see above). For reference files,
+the IHS programmer keeps the reference data in routines and separate files so
+that it can be recreated at will using the Restandardize Tables option in RPMS.
 
+With the exceptions noted above dealing with the active/inactive field in
+various files, the VA has tried to be backwards compatible with RPMS to the
+extent possible given their needs to repurpose the files for their use.
+
+Due to the great improvements in the file structures created by the VA, it is
+incumbent on IHS to take back the changes as they are very useful.
