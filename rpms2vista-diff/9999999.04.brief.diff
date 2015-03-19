@@ -1,0 +1,12 @@
+.01,0)="NAME^RF^^0;1^K:$L(X)>30!($L(X)<3)!'(X'?1P.E)!(X'?.ANP)  |  .01,0)="NAME^RF^^0;1^K:$L(X)>75!($L(X)<3)!'(X'?1P.E) X"
+.02,0)="MVX CODE^F^^0;2^K:$L(X)>3!($L(X)<2) X"                  |  .02,0)="MVX CODE^RF^^0;2^K:$L(X)>3!($L(X)<2) X"
+.03,0)="ACTIVE^S^0:INACTIVE;1:ACTIVE;^0;3^Q"                    |  .03,0)="STATUS^S^1:INACTIVE;0:ACTIVE;^0;3^Q"
+.04,0)="FULL NAME^F^^0;4^K:$L(X)>150!($L(X)<3) X"               |  .04,0)="FULL NAME^F^^0;4^K:$L(X)>110!($L(X)<3) X"
+.05,0)="SYNONYM #1^F^^0;5^K:$L(X)>50!($L(X)<3) X"                  .05,0)="SYNONYM #1^F^^0;5^K:$L(X)>50!($L(X)<3) X"
+                                                                >  99.97,0)="REPLACED BY VHA STANDARD TERM^P9999999.04'I^AUTTIMAN(
+                                                                >  99.98,0)="MASTER ENTRY FOR VUID^RSI^1:YES;0:NO;^VUID;2^Q"
+                                                                >  99.99,0)="VUID^RFXI^^VUID;1^S X=+X K:$L(X)>20!($L(X)<1)!'(X?1.2
+                                                                >  99.991,0)="EFFECTIVE DATE/TIME^9999999.0499DA^^TERMSTATUS;0"
+                                                                >  201,0)="CDC NOTES^F^^2;1^K:$L(X)>245!($L(X)<1) X"
+                                                                >  1101,0)="VACCINE^9999999.0411A^^11;0"
+                                                                >  8801,0)="MNEMONIC^F^^88;1^K:X[""""""""!($A(X)=45) X I $D(X) K:$

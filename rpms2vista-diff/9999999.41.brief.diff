@@ -1,0 +1,17 @@
+.01,0)="LOT NUMBER^RFX^^0;1^K:$L(X)>25!($L(X)<3)!'(X'?1P.E) X S X=$$UPPER |  .01,0)="LOT NUMBER^RF^^0;1^K:$L(X)>25!($L(X)<3)!'(X'?1P.E) X"
+.02,0)="MANUFACTURER^R*P9999999.04'^AUTTIMAN(^0;2^S DIC(""S"")=""I $P(^AU |  .02,0)="MANUFACTURER^R*P9999999.04'^AUTTIMAN(^0;2^S DIC(""S"")=""I '$P(^A
+.03,0)="STATUS^RS^0:ACTIVE;1:INACTIVE;^0;3^Q"                             |  .03,0)="STATUS^S^2:EXPIRED;1:INACTIVE;0:ACTIVE;^0;3^Q"
+.04,0)="VACCINE^R*P9999999.14'^AUTTIMM(^0;4^S DIC(""S"")=""I '$P(^(0),U,7 |  .04,0)="VACCINE^*P9999999.14'^AUTTIMM(^0;4^S DIC(""S"")=""I '$P(^(0),U,7)
+.05,0)="VACCINE #2^P9999999.14'^AUTTIMM(^0;5^Q"                              .05,0)="VACCINE #2^P9999999.14'^AUTTIMM(^0;5^Q"
+.06,0)="VACCINE #3^P9999999.14'^AUTTIMM(^0;6^Q"                              .06,0)="VACCINE #3^P9999999.14'^AUTTIMM(^0;6^Q"
+.07,0)="VACCINE #4^P9999999.14'^AUTTIMM(^0;7^Q"                              .07,0)="VACCINE #4^P9999999.14'^AUTTIMM(^0;7^Q"
+.08,0)="VACCINE #5^P9999999.14'^AUTTIMM(^0;8^Q"                              .08,0)="VACCINE #5^P9999999.14'^AUTTIMM(^0;8^Q"
+.09,0)="EXPIRATION DATE^D^^0;9^S %DT=""EX"" D ^%DT S X=Y K:Y<1 X"            .09,0)="EXPIRATION DATE^D^^0;9^S %DT=""EX"" D ^%DT S X=Y K:Y<1 X"
+.11,0)="STARTING COUNT^NJ5,0^^0;11^K:+X'=X!(X>99999)!(X<1)!(X?.E1"".""1.N |  .11,0)="STARTING COUNT^NJ5,0^^0;11^K:+X'=X!(X>99999)!(X<1)!(X?.E1"".""1N.
+.12,0)="DOSES UNUSED^NJ7,0^^0;12^K:+X'=X!(X>1000000)!(X<0)!(X?.E1"".""1.N |  .12,0)="DOSES UNUSED^NJ5,0X^^0;12^K:$S(+X'=X:1,X>99999:1,X<0:1,X?.E1"".""
+.13,0)="VACCINE SOURCE^S^v:VFC;n:NON-VFC;o:Other State;i:IHS/Tribal;^0;13    .13,0)="VACCINE SOURCE^S^v:VFC;n:NON-VFC;o:Other State;i:IHS/Tribal;^0;13
+.14,0)="HEALTH CARE FACILITY^*P9999999.06'^AUTTLOC(^0;14^S DIC(""S"")=""I |  .14,0)="HEALTH CARE FACILITY^P9999999.06'^AUTTLOC(^0;14^Q"
+.15,0)="LOW SUPPLY ALERT^NJ4,0^^0;15^K:+X'=X!(X>9999)!(X<0)!(X?.E1"".""1N |  .15,0)="LOW SUPPLY ALERT^NJ5,0X^^0;15^K:$S(+X'=X:1,X>99998:1,X<0:1,X?.E1"
+.16,0)="LOT NUMBER FOR EXPORT^F^^0;16^K:$L(X)>12!($L(X)<3) X"                .16,0)="LOT NUMBER FOR EXPORT^F^^0;16^K:$L(X)>12!($L(X)<3) X"
+.17,0)="NDC CODE^P9002084.95'^BINDC(^0;17^Q"                                 .17,0)="NDC CODE^P9002084.95'^BINDC(^0;17^Q"
+                                                                          >  .18,0)="NDC CODE (VA)^P50.67'^PSNDF(50.67,^0;18^Q"
