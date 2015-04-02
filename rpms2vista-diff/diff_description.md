@@ -17,7 +17,7 @@ they are described below:
 | ------------- | ------------- |------------- | ------------- | --------------- | ------------- |
 | 9000010.11    | V Immunization | No          | No            |                 |     Yes       |
 | 9999999.04    | Immunization Manufacturer | No | Yes         | Yes             |     Yes       |
-| 9999999.14    | Immuniaztion  | No           | Yes            | Yes             |     Yes       |
+| 9999999.14    | Immuniaztion  | No           | Yes           | Yes             |     Yes       |
 | 9999999.41    | Immunization Lot | No        | No            |                 |     Yes       |
 | 920.1         | Immunization Information Source | No | Yes   |                 |     No        |
 | 920.2         | Immunization Administration Route | No | Yes |                 |     No        |
