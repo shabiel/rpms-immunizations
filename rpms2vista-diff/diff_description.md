@@ -17,7 +17,7 @@ they are described below:
 | ------------- | ------------- |------------- | ------------- | --------------- | ------------- |
 | 9000010.11    | V Immunization | No          | No            |                 |     Yes       |
 | 9999999.04    | Immunization Manufacturer | No | Yes         | Yes             |     Yes       |
-| 9999999.14    | Immuniaztion  | No           | No            | Yes             |     Yes       |
+| 9999999.14    | Immuniaztion  | No           | Yes            | Yes             |     Yes       |
 | 9999999.41    | Immunization Lot | No        | No            |                 |     Yes       |
 | 920.1         | Immunization Information Source | No | Yes   |                 |     No        |
 | 920.2         | Immunization Administration Route | No | Yes |                 |     No        |
@@ -190,6 +190,12 @@ Overall, the VA version of the fields are much better documented. Reference
 files are locked down to be updated by MFS (see above). For reference files,
 the IHS programmer keeps the reference data in routines and separate files so
 that it can be recreated at will using the Restandardize Tables option in RPMS.
+
+As far as the actual data contents go, in files Immuniaztion (#9999999.14) and
+Immunization Manufacturer (#9999999.04) have conceptually the same contents
+but very different data order, different data names, and especially
+Immunization has decently different contents as a difference set of fields are
+populated.
 
 With the exceptions noted above dealing with the active/inactive field in
 various files, the VA has tried to be backwards compatible with RPMS to the
