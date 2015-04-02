@@ -1,0 +1,514 @@
+FORM LISTING - BI FORM-IMM VISIT ADD/EDIT (#365)
+FILE: PATIENT (#9000001)                          MAR 31, 2015  11:11    PAGE 1
+-------------------------------------------------------------------------------
+
+         PRIMARY FILE: 9000001                   READ ACCESS: @
+         DATE CREATED: JAN 01, 1998@15:22       WRITE ACCESS: @
+       DATE LAST USED: FEB 02, 2015@18:50            CREATOR: 
+
+Page    Page
+Number  Properties
+------  ----------
+1       Page 1
+
+        PAGE COORDINATE:        1,1
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-IMM VISIT HEADER (#1223)
+
+               TYPE OF BLOCK:          DISPLAY
+               BLOCK COORDINATE:       1,1
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               .5     FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="Imm v"_$$VER^BILOGO()
+                      CAPTION COORDINATE:    2,2
+
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="* * *  "_$S('$G(BI("K")):"ADD
+                                             ",1:"EDIT")_" AN IMMUNIZATION VISI
+                                             T  * * *"
+                      CAPTION COORDINATE:    2,21
+
+               2      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y=IOINORM_" Patient: "_IORVON_$$
+                                             NAME^BIUTL1(BIDFN)_IOINORM
+                      CAPTION COORDINATE:    4,1
+
+               3      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="DOB: "_IORVON_$$DOBF^BIUTL1(B
+                                             IDFN)_IOINORM
+                      CAPTION COORDINATE:    4,44
+
+               4      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="  Chart#: "_IORVON_$$HRCN^BIU
+                                             TL1(BIDFN)_" at "_$E($$INSTTX^BIUT
+                                             L6($G(DUZ(2))),1,17)_IOINORM
+                      CAPTION COORDINATE:    5,1
+
+               5      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y=$$ACTIVE^BIUTL1(BIDFN)_"     "
+                                             _$$SEXW^BIUTL1(BIDFN)
+                      CAPTION COORDINATE:    5,49
+
+               6      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               __________________________________
+                                             __________________________________
+                                             ____________
+                      CAPTION COORDINATE:    6,1
+
+        2      BI BLK-IMM VISIT ADD/EDIT (#1224)
+
+               TYPE OF BLOCK:          EDIT
+               BLOCK COORDINATE:       7,1
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+               PRE ACTION:             D LOADVIS^BIUTL7("I")
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Date
+                      READ TYPE:             DATE
+                      QUALIFIERS:            ::PTEX
+                      HELP:
+                        Enter the date of this Immunization Visit.  You may
+                        also add the Time of Visit following an "@", for
+                        example, 1/1/99@0900.  
+                      CAPTION COORDINATE:    2,6
+                      DATA COORDINATE:       2,12
+                      DATA LENGTH:           22
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Enter the date on wh
+                                             ich this immunization was given.")
+                      POST ACTION:           S BI("E")=X D OLDDATE^BIUTL4(X)
+                      POST ACTION ON CHANGE: S BIDEFDT=X
+                      DATA VALIDATION:       I $P(Y,".")>DT S DDSERROR="" D HLP
+                                             ^DDSUTL(" * Date may not be in the
+                                              future.")
+
+               2      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Vaccine
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9999999.14:QEM
+                      HELP:
+                        Select the vaccine for this Immunization Visit.  
+                      SCREEN:                D VACSCR^BIUTL4
+                      CAPTION COORDINATE:    4,3
+                      DATA COORDINATE:       4,12
+                      DATA LENGTH:           30
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Select the vaccine f
+                                             or this Immunization Visit.")
+                      POST ACTION:           D VACSEL^BIUTL4(X)
+                      POST ACTION ON CHANGE: D VACCHG^BIUTL4(X)
+
+               2.5    FIELD TYPE:            FORM ONLY
+                      READ TYPE:             FREE TEXT
+                      DATA COORDINATE:       5,12
+                      DATA LENGTH:           12
+                      DISABLE EDITING:       YES
+
+               3      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Lot#
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9999999.41:QEM
+                      HELP:
+                        Select the Lot Number for the vaccine used on this
+                        Immunization Visit.  
+                      SCREEN:                D LOTSCR^BIUTL4
+                      CAPTION COORDINATE:    4,50
+                      DATA COORDINATE:       4,56
+                      DATA LENGTH:           20
+                      BRANCHING LOGIC:       D LOTWARN^BIUTL7($G(BI("D")),$G(BI
+                                             ("E")),$G(BI("F")))
+                      PRE ACTION:            D HLP^DDSUTL("Select the Lot Numbe
+                                             r for the vaccine used in this imm
+                                             unization. Enter the first charact
+                                             er to see a list.")
+                      POST ACTION:           S BI("D")=X D LOTHELP^BIUTL4(X) D 
+                                             LOTDAT^BIUTL7(BI("D"))
+                      POST ACTION ON CHANGE: D LOTSEL^BIUTL4(X)
+
+               3.4    FIELD TYPE:            FORM ONLY
+                      READ TYPE:             FREE TEXT
+                      DATA COORDINATE:       6,56
+                      DATA LENGTH:           20
+                      DISABLE EDITING:       YES
+
+               3.5    FIELD TYPE:            FORM ONLY
+                      READ TYPE:             FREE TEXT
+                      DATA COORDINATE:       5,56
+                      DATA LENGTH:           22
+                      DISABLE EDITING:       YES
+
+               3.8    FIELD TYPE:            FORM ONLY
+                      CAPTION:               NDC Code
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9002084.95:QEM
+                      HELP:
+                        Select the NDC Code for this immunization.  
+                      SCREEN:                D NDCSCR^BIUTL4
+                      CAPTION COORDINATE:    6,2
+                      DATA COORDINATE:       6,12
+                      DATA LENGTH:           13
+                      PRE ACTION:            D HLP^DDSUTL("Select the NDC Code 
+                                             for this immunization. Enter the f
+                                             irst digit to see a list of availa
+                                             ble choices.")
+                      POST ACTION:           S BI("H")=X
+
+               4      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Inj Site
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            LTI:Left Thigh IM;LTS:Left Thigh S
+                                             Q;RTI:Right Thigh IM;RTS:Right Thi
+                                             gh SQ;BTI:Both Thighs IM;LDI:Left 
+                                             Deltoid IM;LAS:Left Arm SQ;RDI:Rig
+                                             ht Deltoid IM;RAS:Right Arm SQ;O:O
+                                             ral;IN:Intranasal;LID:Left Arm Int
+                                             radermal;RID:Right Arm Intradermal
+                      HELP:
+                        Select the location of the patient's body where the
+                        needle was inserted.  
+                      CAPTION COORDINATE:    7,2
+                      DATA COORDINATE:       7,12
+                      DATA LENGTH:           21
+                      PRE ACTION:            D HLP^DDSUTL("Select the Injection
+                                              Site for this immunization.")
+                      POST ACTION:           S BI("T")=X
+
+               5      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Vol
+                      READ TYPE:             FREE TEXT
+                      QUALIFIERS:            0:4
+                      HELP:
+                        Enter the volume in mililiters of vaccine fluid that
+                        was injected into the patient's body.  This is
+                        generally .5ml.  However, 0.25ml of influenza is
+                        usually given to infants 6-35 months, and 1.0ml of Hep
+                        B is usually given to adults.  
+                      INPUT TRANSFORM:       I (+X'>0)!(X>5) K X
+                      CAPTION COORDINATE:    7,36
+                      DATA COORDINATE:       7,41
+                      DATA LENGTH:           4
+                      PRE ACTION:            D HLP^DDSUTL("Enter the Volume in 
+                                             mls of vaccine fluid injected.")
+                      POST ACTION ON CHANGE: S BI("W")=+X D PUT^DDSVALF(5,,,$$L
+                                             EADZ^BIUTL5(X),"E")
+
+               5.5    FIELD TYPE:            FORM ONLY
+                      CAPTION:               ml
+                      READ TYPE:             FREE TEXT
+                      CAPTION COORDINATE:    7,46
+                      DATA COORDINATE:       7,48
+                      DATA LENGTH:           1
+                      SUPPRESS COLON:        YES
+                      DISABLE EDITING:       YES
+
+               6      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Location Type
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            I:IHS;O:Other
+                      HELP:
+                        Enter "I" if this visit occurred at an Indian Health
+                        Location found in the Location File.  Enter "O" if it
+                        occurred at some Other location not listed in the
+                        Location File.  
+                      CAPTION COORDINATE:    8,2
+                      DATA COORDINATE:       8,17
+                      DATA LENGTH:           5
+                      DEFAULT:               IHS
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Enter ""I"" if this 
+                                             visit occurred at an Indian Health
+                                              Location found in the Location fi
+                                             le.  Enter ""O"" if it occurred at
+                                              some Other location not listed in
+                                              the Location File.")
+                      POST ACTION:           D LOCBR^BIUTL4
+
+               7      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Location
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            4:QEM
+                      HELP:
+                        Select a Location.  If the Location you wish to select
+                        is not in the Location File, go to the Location Type
+                        field on this screen and select "OTHER", then return
+                        to this field and enter the location you wish.  
+                      SCREEN:                S DIR("S")="I $D(^AUTTLOC(Y,0)) I 
+                                             '$P(^(0),U,21)"
+                      CAPTION COORDINATE:    8,26
+                      DATA COORDINATE:       8,36
+                      DATA LENGTH:           40
+                      PRE ACTION:            D HLP^DDSUTL("Select a Location.  
+                                             If the Location you wish to select
+                                              is not in the Location File, go t
+                                             o the Location Type field on this 
+                                             screen and select ""OTHER"", then 
+                                             return to this field and enter the
+                                              location you wish.")
+                      POST ACTION:           S BI("F")=X
+
+               8      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Location
+                      READ TYPE:             FREE TEXT
+                      QUALIFIERS:            2:100
+                      HELP:
+                        Enter the name of the non-IHS location for this visit
+                        (between 2 and 30 characters).  
+                      INPUT TRANSFORM:       I $L(X)>50 S Y=$E(X,1,50) S BITOLO
+                                             NG=1
+                      CAPTION COORDINATE:    8,26
+                      DATA COORDINATE:       8,36
+                      DATA LENGTH:           42
+                      DISABLE EDITING:       YES
+                      BRANCHING LOGIC:       I $G(BITOLONG) S DDSSTACK="BI PAGE
+                                             -LOCATION NAME TOO LONG"
+                      PRE ACTION:            D HLP^DDSUTL("Enter the name of th
+                                             e non-IHS location for this visit 
+                                             (between 2 and 50 characters).")
+                      POST ACTION:           S BI("G")=X
+
+               9      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Provider
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            200:QEM
+                      HELP:
+                        Select the person who actually administered the
+                        immunization (gave the injection).  This person must
+                        be listed as a Provider in the RPMS Person File (must
+                        have the Provider Key).  
+                      SCREEN:                S DIR("S")="I $D(^XUSEC(""PROVIDER
+                                             "",+Y))"
+                      CAPTION COORDINATE:    9,2
+                      DATA COORDINATE:       9,12
+                      DATA LENGTH:           28
+                      PRE ACTION:            D HLP^DDSUTL("Select the provider 
+                                             who actually administered the immu
+                                             nization (gave the injection).")
+                      POST ACTION:           S BI("R")=X
+
+               10     FIELD TYPE:            FORM ONLY
+                      CAPTION:               VIS Date
+                      READ TYPE:             DATE
+                      HELP:
+                        Enter the Release/Revision date of the Vaccine
+                        Information Statement (VIS)--if given--at this visit. 
+                        NOTE: This is NOT the date of visit; this is the date
+                        the VIS was released or published.  (Enter @ to
+                        delete.) 
+                      CAPTION COORDINATE:    10,2
+                      DATA COORDINATE:       10,12
+                      DATA LENGTH:           11
+                      PRE ACTION:            D HLP^DDSUTL("Enter the publicatio
+                                             n date of the Vaccine Information 
+                                             Statement (VIS), if one was given 
+                                             to the patient.")
+                      POST ACTION:           S BI("Q")=X
+
+               10.5   FIELD TYPE:            FORM ONLY
+                      CAPTION:               Vac Elig
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9002084.83:QEM
+                      SCREEN:                S DIR("S")="I $P(^BIELIG(Y,0),U,3)
+                                             '=1"
+                      CAPTION COORDINATE:    11,2
+                      DATA COORDINATE:       11,12
+                      DATA LENGTH:           27
+                      PRE ACTION:            D HLP^DDSUTL("Select Vaccine Eligi
+                                             bility for this patient on the dat
+                                             e of this visit.")
+                      POST ACTION:           S BI("P")=X D ELIGLAB^BIUTL8(X)
+
+               10.6   FIELD TYPE:            FORM ONLY
+                      READ TYPE:             FREE TEXT
+                      DATA COORDINATE:       11,12
+                      DATA LENGTH:           27
+                      DISABLE EDITING:       YES
+
+               11     FIELD TYPE:            FORM ONLY
+                      CAPTION:               Category
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            A:Ambulatory;E:Historical Event;I:
+                                             Inpatient
+                      HELP:
+                        Select the PCC Category for this visit.  
+                      CAPTION COORDINATE:    2,46
+                      DATA COORDINATE:       2,56
+                      DATA LENGTH:           16
+                      DEFAULT:               A
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Select the PCC Categ
+                                             ory for this visit (Ambulatory, Hi
+                                             storical, or Inpatient).")
+                      POST ACTION:           S BI("I")=X D NOPROV^BIUTL7(X)
+                      POST ACTION ON CHANGE: D HISTORY^BIUTL4(X)
+
+               13     FIELD TYPE:            FORM ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    I $G(BI("K")) S Y="Reaction"
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9002084.8:QEM
+                      HELP:
+                        Select the reaction the patient had to this
+                        Immunization Visit.  
+                      SCREEN:                S DIR("S")="I $P(^(0),U,3)"
+                      CAPTION COORDINATE:    10,46
+                      DATA COORDINATE:       10,56
+                      DATA LENGTH:           24
+                      DISABLE EDITING:       YES
+                      PRE ACTION:            D HLP^DDSUTL("If the patient had a
+                                              reaction to this immunization, se
+                                             lect the type of reaction.")
+                      POST ACTION:           S BI("O")=X
+
+               14     FIELD TYPE:            FORM ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    I $G(BI("K")) S Y="Dose Override"
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            0:;1:INVALID-BAD STORAGE;2:INVALID
+                                             -DEFECTIVE;3:INVALID-EXPIRED;4:INV
+                                             ALID-ADMIN ERROR;9:FORCE VALID
+                      CAPTION COORDINATE:    11,41
+                      DATA COORDINATE:       11,56
+                      DATA LENGTH:           19
+                      DISABLE EDITING:       YES
+                      PRE ACTION:            D HLP^DDSUTL("Normally leave blank
+                                             .  Select an INVALID reason or FOR
+                                             CE VALID as necessary.")
+                      POST ACTION:           S BI("S")=X
+
+               15     FIELD TYPE:            FORM ONLY
+                      READ TYPE:             FREE TEXT
+                      DATA COORDINATE:       3,56
+                      DATA LENGTH:           21
+                      DISABLE EDITING:       YES
+
+2       BI PAGE-LOT EXPIRED
+
+        PAGE COORDINATE:        13,12
+        IS THIS A POP UP PAGE?: YES
+        LOWER RIGHT COORDINATE: 17,67
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-IMM VISIT LOT EXPIRED (#1231)
+
+               TYPE OF BLOCK:          DISPLAY
+               BLOCK COORDINATE:       2,2
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               WARNING! THIS LOT EXPIRED BEFORE T
+                                             HE VISIT DATE!
+                      CAPTION COORDINATE:    2,4
+
+3       BI PAGE-LOW SUPPLY ALERT
+
+        PAGE COORDINATE:        13,18
+        IS THIS A POP UP PAGE?: YES
+        LOWER RIGHT COORDINATE: 17,63
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-LOT LOW SUPPLY (#1232)
+
+               TYPE OF BLOCK:          DISPLAY
+               BLOCK COORDINATE:       2,2
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               ALERT! THE SUPPLY OF THIS LOT IS L
+                                             OW!
+                      CAPTION COORDINATE:    2,4
+
+4       BI PAGE-EXPIRED AND LOW
+
+        PAGE COORDINATE:        13,6
+        IS THIS A POP UP PAGE?: YES
+        LOWER RIGHT COORDINATE: 17,75
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-EXPIRED AND LOW (#1233)
+
+               TYPE OF BLOCK:          DISPLAY
+               BLOCK COORDINATE:       2,2
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               WARNING! THIS LOT EXPIRED BEFORE T
+                                             HE VISIT, AND SUPPLY IS LOW!
+                      CAPTION COORDINATE:    2,4
+
+5       BI PAGE-LOCATION NAME TOO LONG
+
+        PAGE COORDINATE:        12,6
+        IS THIS A POP UP PAGE?: YES
+        LOWER RIGHT COORDINATE: 16,73
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-OUTSIDE LOC TOO LONG (#1234)
+
+               TYPE OF BLOCK:          DISPLAY
+               BLOCK COORDINATE:       2,4
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               Your Other Loccation Name will be 
+                                             shortened to 50 characters.
+                      CAPTION COORDINATE:    2,2
+
+
