@@ -1,0 +1,35 @@
+LM: BI SITE PARAMETERS EDIT
+
+Protocols for BI MENU SITE PARAMETERS
+itemName: BI BLANK                                itemAction: 
+
+Protocols for BI MENU SITE PARAMS HIDDEN
+
+itemName: BI SITE CASE MANAGER                    itemAction: D CMGR^BISITE2
+itemName: BI SITE OTHER LOCATION                  itemAction: D OTHER^BISITE2
+itemName: BI SITE DUE LETTER                      itemAction: D DUELET^BISITE2
+itemName: BI SITE REPORT HEADER                   itemAction: D REPHDR^BISITE2
+itemName: BI SITE HFS PATH                        itemAction: D HFSPATH^BISITE2
+itemName: BI SITE MIN DAYS LAST LET               itemAction: D MINDAYS^BISITE2
+itemName: BI SITE FORC RULES                      itemAction: D RULES^BISITE2
+itemName: BI SITE FORC MIN VS RECOMM              itemAction: D MINAGE^BISITE2
+itemName: BI SITE LOT# REQ'D                      itemAction: D LOTREQ^BISITE3
+itemName: BI SITE PNEUMO/FLU PARAMETERS           itemAction: D PNUFLU^BISITE3
+itemName: BI SITE FORECAST ENABLE                 itemAction: D FORECAS^BISITE3
+itemName: BI SITE CHART# DASHES                   itemAction: D DASHES^BISITE3
+itemName: BI SITE OFFICIAL PT RECORD              itemAction: D OFFREC^BISITE3
+itemName: BI SITE DEFAULT PROVIDER                itemAction: D DEFPRV^BISITE3
+itemName: BI SITE IP TCH FORECASTER               itemAction: D IPTCH^BISITE3
+itemName: BI SITE GPRA COMS                       itemAction: D GPRA^BISITE4
+itemName: BI SITE INPATIENT CHECK ENABLE          itemAction: D INPTCHK^BISITE4
+itemName: BI SITE RISK CHECK ENABLE               itemAction: D RISKP^BISITE4
+itemName: BI SITE CPT VISITS IMPORT               itemAction: D IMPCPT^BISITE4
+itemName: BI UP ONE LINE                          itemAction: D UP^VALM40
+itemName: BI DOWN A LINE                          itemAction: D DOWN^VALM40
+itemName: BI PRINT LIST                           itemAction: D PRTL^VALM1
+itemName: BI NEXT SCREEN                          itemAction: D NEXT^VALM4
+itemName: BI PREVIOUS SCREEN                      itemAction: D PREV^VALM4
+itemName: BI LAST SCREEN                          itemAction: D LAST^VALM4
+itemName: BI FIRST SCREEN                         itemAction: D FIRST^VALM4
+itemName: BI SITE VISIT SELECTION MENU            itemAction: D VISMNU^BISITE4
+itemName: BI QUIT                                 itemAction: Q
