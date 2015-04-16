@@ -11,14 +11,16 @@ BIUTL5 ;IHS/CMI/MWR - UTIL: MENU TITLS, DATE FORMAT; MAY 10, 2010
  ;
  ;----------
 SETVARS ;EP
+ ; ZEXCEPT: IOF
  ;---> Set standard variables.
- D ^XBKVAR
+ I $T(^XBKVAR)]"" D ^XBKVAR
  S:'$D(IOF) IOF="#"
  Q
  ;
  ;
  ;----------
 MENUT(TITLE) ;EP
+ ; ZEXCEPT:ITTAB,IOF
  ;---> Display menu title from BI Menu options.
  ;---> REQUIRED VARIABLES: TITLE=TEXT TO BE CENTERED AND DISPLAYED.
  ;--->                     DUZ(2)=CURRENT LOCATION TO BE DISPLAYED.
@@ -39,6 +41,7 @@ MENUT(TITLE) ;EP
  ;
  ;----------
 TITLE(BITL,BIONE) ;EP
+ ; ZEXCEPT: IOF
  ;---> Clear screen and display BITL (Immunization_version# prepended).
  ;---> Parameters:
  ;     1 - BITL  (req) Text to be centered and displayed.
@@ -274,6 +277,7 @@ COPYLET ;EP
  ;---> COPY TEXT OF GENERIC SAMPLE LETTER TO ONE OR MORE BI PURPOSES.
  ;---> EDIT NEXT LINE TO INCLUDE IENS OF BI PURPOSES TO BE CHANGED.
  ;F DA=15,16,18,19 D
+ N DA,N
  S DA=0
  F  S DA=$O(^BINOTP(DA)) Q:'DA  D
  .K ^BINOTP(DA,1)
