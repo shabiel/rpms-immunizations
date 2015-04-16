@@ -76,13 +76,13 @@ RUN(BIHX,BIDUZ2,BIRPT,BIDATA,BIERR) ;EP
  ;U "|TCP|4" R BIRESULT:1
  ;C "|TCP|4"
  ;
- ; NB: From the Cache documentation regarding "S". In stream mode, Caché does 
- ; not attempt to preserve TCP message boundaries in the data stream. On 
- ; sending, if the data does not fit in the message buffer, Caché flushes the 
+ ; NB: From the Cache documentation regarding "S". In stream mode, Cach? does
+ ; not attempt to preserve TCP message boundaries in the data stream. On
+ ; sending, if the data does not fit in the message buffer, Cach? flushes the
  ; buffer before placing the data in it.
  ;
  ; In of CONT^%ZISTCP, "S" mode is set with send/rec buffers of 512 bytes
- ; 
+ ;
  N POP
  D CALL^%ZISTCP(BIIP,6708,3)
  I $G(POP) S $EC=",U-TCH-TCP-CXN-FAIL,"  ; Invoke the error trap
