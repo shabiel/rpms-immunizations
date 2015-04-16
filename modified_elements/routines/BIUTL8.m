@@ -20,7 +20,7 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
  ;---> Example: D PATLKUP^BIUTL8(.BIDFN)
  ;              D PATLKUP^BIUTL8(.BIDFN,"ADD") - May ADD Patient to IMM
  ;
- N DFN,DIC,X,Y
+ N DFN,DIC,X,Y,DTOUT,DUOUT
  S (BIDFN,BIPOP)=0 D SETVARS^BIUTL5
  S:$G(DUZ2)]"" DUZ(2)=DUZ2
  S DIC="^AUPNPAT(",DIC(0)="AEMQ"
@@ -48,7 +48,7 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
  .W !!?3,$$NAME^BIUTL1(BIDFN)
  .W " is being added to the Immunization Database",!,"for the first time."
  .W !!?3,"Should this patient be added as Active or Inactive?"
- .N DIR
+ .N DIR,DIRUT,DTOUT,DUOUT
  .S DIR("?")="     Enter A for Active or I for Inactive."
  .S DIR(0)="SM^A:Active;I:Inactive"
  .S DIR("A")="   Enter A (Active) or I (Inactive)"
@@ -86,6 +86,7 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
  ;
  ;----------
 VFCSET ;EP
+ ; ZEXCEPT: BI shared variable
  ;---> Load Vaccine Eligibility.  Called by LOADVIS^BIUTL7.
  ;---> If Patient Ben Type is 01 (Am Indian/AK Native), set VFC default=4.
  Q:$G(BI("P"))]""
@@ -173,6 +174,7 @@ DUPTEST(BIERR,BIDATA,BIOIEN) ;EP
  ;
  ;----------
 PRTLST(BITNOD) ;EP
+ ; ZEXCEPT: IOF,IOSL,IOST
  ;---> Print Listman list instead of displaying it.
  ;---> Parameters:
  ;     1 - BITNOD (req) Node in ^TMP global where list is stored.
@@ -210,6 +212,7 @@ PRTLST(BITNOD) ;EP
  ;
  ;----------
 PHEADER(BIPAGE) ;EP
+ ; ZEXCEPT: VALMHDR Listman
  ;---> Print header for PRTLST above.
  ;---> Parameters:
  ;     1 - BIPAGE (req) Last page# printed.
@@ -259,8 +262,8 @@ KILLALL(BIGLOBS) ;EP
  ;     1 - BIGLOBS  (opt) If BIGLOBS=1 kill temp globals too.
  ;
  ;---> XB call to kill local variables.
- D EN^XBVK("BI")
- D EN^XBVK("DI")
+ D:$T(^XBVK)]"" EN^XBVK("BI")
+ D:$T(^XBVK)]"" EN^XBVK("DI")
  ;
  ;---> FILEMAN KILLS.
  D DKILLS^BIFMAN
