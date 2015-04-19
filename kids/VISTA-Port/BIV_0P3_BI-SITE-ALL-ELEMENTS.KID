@@ -1,0 +1,3728 @@
+KIDS Distribution saved on Apr 16, 2015@12:00:22
+LKAJSDF
+**KIDS**:BIV 0.3^
+
+**INSTALL NAME**
+BIV 0.3
+"BLD",4542,0)
+BIV 0.3^IMMUNIZATIONS VISTA PORT^0^3150416^y
+"BLD",4542,4,0)
+^9.64PA^^
+"BLD",4542,6.3)
+1
+"BLD",4542,"KRN",0)
+^9.67PA^9002226^21
+"BLD",4542,"KRN",.4,0)
+.4
+"BLD",4542,"KRN",.401,0)
+.401
+"BLD",4542,"KRN",.402,0)
+.402
+"BLD",4542,"KRN",.403,0)
+.403
+"BLD",4542,"KRN",.5,0)
+.5
+"BLD",4542,"KRN",.84,0)
+.84
+"BLD",4542,"KRN",3.6,0)
+3.6
+"BLD",4542,"KRN",3.8,0)
+3.8
+"BLD",4542,"KRN",9.2,0)
+9.2
+"BLD",4542,"KRN",9.8,0)
+9.8
+"BLD",4542,"KRN",9.8,"NM",0)
+^9.68A^5^5
+"BLD",4542,"KRN",9.8,"NM",1,0)
+BISITE^^0^B10999594
+"BLD",4542,"KRN",9.8,"NM",2,0)
+BISITE1^^0^B40268173
+"BLD",4542,"KRN",9.8,"NM",3,0)
+BISITE2^^0^B159793227
+"BLD",4542,"KRN",9.8,"NM",4,0)
+BISITE3^^0^B167523197
+"BLD",4542,"KRN",9.8,"NM",5,0)
+BISITE4^^0^B108347190
+"BLD",4542,"KRN",9.8,"NM","B","BISITE",1)
+
+"BLD",4542,"KRN",9.8,"NM","B","BISITE1",2)
+
+"BLD",4542,"KRN",9.8,"NM","B","BISITE2",3)
+
+"BLD",4542,"KRN",9.8,"NM","B","BISITE3",4)
+
+"BLD",4542,"KRN",9.8,"NM","B","BISITE4",5)
+
+"BLD",4542,"KRN",19,0)
+19
+"BLD",4542,"KRN",19.1,0)
+19.1
+"BLD",4542,"KRN",101,0)
+101
+"BLD",4542,"KRN",101,"NM",0)
+^9.68A^32^32
+"BLD",4542,"KRN",101,"NM",1,0)
+BI MENU SITE PARAMETERS^^0
+"BLD",4542,"KRN",101,"NM",2,0)
+BI MENU SITE PARAMS HIDDEN^^0
+"BLD",4542,"KRN",101,"NM",3,0)
+BI SITE CASE MANAGER^^0
+"BLD",4542,"KRN",101,"NM",4,0)
+BI SITE CHART# DASHES^^0
+"BLD",4542,"KRN",101,"NM",5,0)
+BI SITE CPT VISITS IMPORT^^0
+"BLD",4542,"KRN",101,"NM",6,0)
+BI SITE DEFAULT PROVIDER^^0
+"BLD",4542,"KRN",101,"NM",7,0)
+BI SITE DUE LETTER^^0
+"BLD",4542,"KRN",101,"NM",8,0)
+BI SITE FORC MIN VS RECOMM^^0
+"BLD",4542,"KRN",101,"NM",9,0)
+BI SITE FORC RULES^^0
+"BLD",4542,"KRN",101,"NM",10,0)
+BI SITE FORECAST ENABLE^^0
+"BLD",4542,"KRN",101,"NM",11,0)
+BI SITE GPRA COMS^^0
+"BLD",4542,"KRN",101,"NM",12,0)
+BI SITE HFS PATH^^0
+"BLD",4542,"KRN",101,"NM",13,0)
+BI SITE IMMSERVE DIRECTORY^^0
+"BLD",4542,"KRN",101,"NM",14,0)
+BI SITE INPATIENT CHECK ENABLE^^0
+"BLD",4542,"KRN",101,"NM",15,0)
+BI SITE IP TCH FORECASTER^^0
+"BLD",4542,"KRN",101,"NM",16,0)
+BI SITE LOT# REQ'D^^0
+"BLD",4542,"KRN",101,"NM",17,0)
+BI SITE MIN DAYS LAST LET^^0
+"BLD",4542,"KRN",101,"NM",18,0)
+BI SITE OFFICIAL PT RECORD^^0
+"BLD",4542,"KRN",101,"NM",19,0)
+BI SITE OTHER LOCATION^^0
+"BLD",4542,"KRN",101,"NM",20,0)
+BI SITE PNEUMO AGE^^0
+"BLD",4542,"KRN",101,"NM",21,0)
+BI SITE PNEUMO/FLU PARAMETERS^^0
+"BLD",4542,"KRN",101,"NM",22,0)
+BI SITE REPORT HEADER^^0
+"BLD",4542,"KRN",101,"NM",23,0)
+BI SITE RISK CHECK ENABLE^^0
+"BLD",4542,"KRN",101,"NM",24,0)
+BI SITE VISIT SELECTION MENU^^0
+"BLD",4542,"KRN",101,"NM",25,0)
+BI UP ONE LINE^^0
+"BLD",4542,"KRN",101,"NM",26,0)
+BI DOWN A LINE^^0
+"BLD",4542,"KRN",101,"NM",27,0)
+BI PRINT LIST^^0
+"BLD",4542,"KRN",101,"NM",28,0)
+BI NEXT SCREEN^^0
+"BLD",4542,"KRN",101,"NM",29,0)
+BI PREVIOUS SCREEN^^0
+"BLD",4542,"KRN",101,"NM",30,0)
+BI LAST SCREEN^^0
+"BLD",4542,"KRN",101,"NM",31,0)
+BI FIRST SCREEN^^0
+"BLD",4542,"KRN",101,"NM",32,0)
+BI QUIT^^0
+"BLD",4542,"KRN",101,"NM","B","BI DOWN A LINE",26)
+
+"BLD",4542,"KRN",101,"NM","B","BI FIRST SCREEN",31)
+
+"BLD",4542,"KRN",101,"NM","B","BI LAST SCREEN",30)
+
+"BLD",4542,"KRN",101,"NM","B","BI MENU SITE PARAMETERS",1)
+
+"BLD",4542,"KRN",101,"NM","B","BI MENU SITE PARAMS HIDDEN",2)
+
+"BLD",4542,"KRN",101,"NM","B","BI NEXT SCREEN",28)
+
+"BLD",4542,"KRN",101,"NM","B","BI PREVIOUS SCREEN",29)
+
+"BLD",4542,"KRN",101,"NM","B","BI PRINT LIST",27)
+
+"BLD",4542,"KRN",101,"NM","B","BI QUIT",32)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE CASE MANAGER",3)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE CHART# DASHES",4)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE CPT VISITS IMPORT",5)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE DEFAULT PROVIDER",6)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE DUE LETTER",7)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE FORC MIN VS RECOMM",8)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE FORC RULES",9)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE FORECAST ENABLE",10)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE GPRA COMS",11)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE HFS PATH",12)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE IMMSERVE DIRECTORY",13)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE INPATIENT CHECK ENABLE",14)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE IP TCH FORECASTER",15)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE LOT# REQ'D",16)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE MIN DAYS LAST LET",17)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE OFFICIAL PT RECORD",18)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE OTHER LOCATION",19)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE PNEUMO AGE",20)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE PNEUMO/FLU PARAMETERS",21)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE REPORT HEADER",22)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE RISK CHECK ENABLE",23)
+
+"BLD",4542,"KRN",101,"NM","B","BI SITE VISIT SELECTION MENU",24)
+
+"BLD",4542,"KRN",101,"NM","B","BI UP ONE LINE",25)
+
+"BLD",4542,"KRN",409.61,0)
+409.61
+"BLD",4542,"KRN",409.61,"NM",0)
+^9.68A^1^1
+"BLD",4542,"KRN",409.61,"NM",1,0)
+BI SITE PARAMETERS EDIT^^0
+"BLD",4542,"KRN",409.61,"NM","B","BI SITE PARAMETERS EDIT",1)
+
+"BLD",4542,"KRN",771,0)
+771
+"BLD",4542,"KRN",779.2,0)
+779.2
+"BLD",4542,"KRN",870,0)
+870
+"BLD",4542,"KRN",8989.51,0)
+8989.51
+"BLD",4542,"KRN",8989.52,0)
+8989.52
+"BLD",4542,"KRN",8994,0)
+8994
+"BLD",4542,"KRN",9002226,0)
+9002226
+"BLD",4542,"KRN","B",.4,.4)
+
+"BLD",4542,"KRN","B",.401,.401)
+
+"BLD",4542,"KRN","B",.402,.402)
+
+"BLD",4542,"KRN","B",.403,.403)
+
+"BLD",4542,"KRN","B",.5,.5)
+
+"BLD",4542,"KRN","B",.84,.84)
+
+"BLD",4542,"KRN","B",3.6,3.6)
+
+"BLD",4542,"KRN","B",3.8,3.8)
+
+"BLD",4542,"KRN","B",9.2,9.2)
+
+"BLD",4542,"KRN","B",9.8,9.8)
+
+"BLD",4542,"KRN","B",19,19)
+
+"BLD",4542,"KRN","B",19.1,19.1)
+
+"BLD",4542,"KRN","B",101,101)
+
+"BLD",4542,"KRN","B",409.61,409.61)
+
+"BLD",4542,"KRN","B",771,771)
+
+"BLD",4542,"KRN","B",779.2,779.2)
+
+"BLD",4542,"KRN","B",870,870)
+
+"BLD",4542,"KRN","B",8989.51,8989.51)
+
+"BLD",4542,"KRN","B",8989.52,8989.52)
+
+"BLD",4542,"KRN","B",8994,8994)
+
+"BLD",4542,"KRN","B",9002226,9002226)
+
+"KRN",101,5304,-1)
+0^32
+"KRN",101,5304,0)
+BI QUIT^Quit^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5304,20)
+Q
+"KRN",101,5304,99)
+63526,11158
+"KRN",101,5317,-1)
+0^1
+"KRN",101,5317,0)
+BI MENU SITE PARAMETERS^Edit Site Parameters^^M^^^^^^^^IMMUNIZATION
+"KRN",101,5317,4)
+25^3
+"KRN",101,5317,10,0)
+^101.01PA^1^1
+"KRN",101,5317,26)
+D SHOW^VALM
+"KRN",101,5317,28)
+Select Action: 
+"KRN",101,5317,29)
+Quit
+"KRN",101,5317,99)
+63644,52895
+"KRN",101,5318,-1)
+0^3
+"KRN",101,5318,0)
+BI SITE CASE MANAGER^Edit Default Case Mgr^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5318,20)
+D CMGR^BISITE2
+"KRN",101,5318,99)
+63526,11158
+"KRN",101,5319,-1)
+0^19
+"KRN",101,5319,0)
+BI SITE OTHER LOCATION^Select Other Location^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5319,20)
+D OTHER^BISITE2
+"KRN",101,5319,99)
+63526,11158
+"KRN",101,5320,-1)
+0^7
+"KRN",101,5320,0)
+BI SITE DUE LETTER^Select Due Letter^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5320,20)
+D DUELET^BISITE2
+"KRN",101,5320,99)
+63526,11158
+"KRN",101,5321,-1)
+0^22
+"KRN",101,5321,0)
+BI SITE REPORT HEADER^Edit Report Header^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5321,10,0)
+^101.01PA
+"KRN",101,5321,20)
+D REPHDR^BISITE2
+"KRN",101,5321,99)
+63526,11158
+"KRN",101,5322,-1)
+0^12
+"KRN",101,5322,0)
+BI SITE HFS PATH^Edit HFS Path^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5322,20)
+D HFSPATH^BISITE2
+"KRN",101,5322,99)
+63526,11158
+"KRN",101,5323,-1)
+0^17
+"KRN",101,5323,0)
+BI SITE MIN DAYS LAST LET^Edit Minimum Days^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5323,20)
+D MINDAYS^BISITE2
+"KRN",101,5323,99)
+63526,11158
+"KRN",101,5324,-1)
+0^2
+"KRN",101,5324,0)
+BI MENU SITE PARAMS HIDDEN^Edit Site Params Hidden^^M^^^^^^^^IMMUNIZATION
+"KRN",101,5324,10,0)
+^101.01PA^33^33
+"KRN",101,5324,10,1,0)
+5318^1^1^
+"KRN",101,5324,10,1,"^")
+BI SITE CASE MANAGER
+"KRN",101,5324,10,2,0)
+5319^2^2^
+"KRN",101,5324,10,2,"^")
+BI SITE OTHER LOCATION
+"KRN",101,5324,10,3,0)
+5320^3^3^
+"KRN",101,5324,10,3,"^")
+BI SITE DUE LETTER
+"KRN",101,5324,10,4,0)
+5321^5^5^
+"KRN",101,5324,10,4,"^")
+BI SITE REPORT HEADER
+"KRN",101,5324,10,5,0)
+5322^6^6^
+"KRN",101,5324,10,5,"^")
+BI SITE HFS PATH
+"KRN",101,5324,10,6,0)
+5323^7^7^
+"KRN",101,5324,10,6,"^")
+BI SITE MIN DAYS LAST LET
+"KRN",101,5324,10,8,0)
+5333^9^9^
+"KRN",101,5324,10,8,"^")
+BI SITE FORC RULES
+"KRN",101,5324,10,9,0)
+5332^8^8^
+"KRN",101,5324,10,9,"^")
+BI SITE FORC MIN VS RECOMM
+"KRN",101,5324,10,10,0)
+5338^10^10^
+"KRN",101,5324,10,10,"^")
+BI SITE LOT# REQ'D
+"KRN",101,5324,10,11,0)
+5493^11^11^
+"KRN",101,5324,10,11,"^")
+BI SITE PNEUMO/FLU PARAMETERS
+"KRN",101,5324,10,12,0)
+5343^12^12^
+"KRN",101,5324,10,12,"^")
+BI SITE FORECAST ENABLE
+"KRN",101,5324,10,14,0)
+5357^13^13^
+"KRN",101,5324,10,14,"^")
+BI SITE CHART# DASHES
+"KRN",101,5324,10,15,0)
+5361^4^4^
+"KRN",101,5324,10,15,"^")
+BI SITE OFFICIAL PT RECORD
+"KRN",101,5324,10,16,0)
+5375^14^14^
+"KRN",101,5324,10,16,"^")
+BI SITE DEFAULT PROVIDER
+"KRN",101,5324,10,17,0)
+6344^15^15^
+"KRN",101,5324,10,17,"^")
+BI SITE IP TCH FORECASTER
+"KRN",101,5324,10,18,0)
+5399^16^16^
+"KRN",101,5324,10,18,"^")
+BI SITE GPRA COMS
+"KRN",101,5324,10,19,0)
+5410^17^17^
+"KRN",101,5324,10,19,"^")
+BI SITE INPATIENT CHECK ENABLE
+"KRN",101,5324,10,23,0)
+5411^18^18^
+"KRN",101,5324,10,23,"^")
+BI SITE RISK CHECK ENABLE
+"KRN",101,5324,10,24,0)
+5412^19^19^
+"KRN",101,5324,10,24,"^")
+BI SITE CPT VISITS IMPORT
+"KRN",101,5324,10,25,0)
+5406^UP^21^
+"KRN",101,5324,10,25,"^")
+BI UP ONE LINE
+"KRN",101,5324,10,26,0)
+5407^DN^22^
+"KRN",101,5324,10,26,"^")
+BI DOWN A LINE
+"KRN",101,5324,10,27,0)
+5397^PL^23^
+"KRN",101,5324,10,27,"^")
+BI PRINT LIST
+"KRN",101,5324,10,28,0)
+5413^+^^
+"KRN",101,5324,10,28,"^")
+BI NEXT SCREEN
+"KRN",101,5324,10,29,0)
+5414^-^^
+"KRN",101,5324,10,29,"^")
+BI PREVIOUS SCREEN
+"KRN",101,5324,10,30,0)
+5415^LS^^
+"KRN",101,5324,10,30,"^")
+BI LAST SCREEN
+"KRN",101,5324,10,31,0)
+5416^FS^^
+"KRN",101,5324,10,31,"^")
+BI FIRST SCREEN
+"KRN",101,5324,10,32,0)
+5498^20^20^
+"KRN",101,5324,10,32,"^")
+BI SITE VISIT SELECTION MENU
+"KRN",101,5324,10,33,0)
+5304^Q^^
+"KRN",101,5324,10,33,"^")
+BI QUIT
+"KRN",101,5324,99)
+63644,57690
+"KRN",101,5332,-1)
+0^8
+"KRN",101,5332,0)
+BI SITE FORC MIN VS RECOMM^Forecast Min vs Recommended^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5332,20)
+D MINAGE^BISITE2
+"KRN",101,5332,99)
+63526,11159
+"KRN",101,5333,-1)
+0^9
+"KRN",101,5333,0)
+BI SITE FORC RULES^Forecasting Rules^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5333,20)
+D RULES^BISITE2
+"KRN",101,5333,99)
+63526,11159
+"KRN",101,5338,-1)
+0^16
+"KRN",101,5338,0)
+BI SITE LOT# REQ'D^Edit Lot# Required^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5338,20)
+D LOTREQ^BISITE3
+"KRN",101,5338,99)
+63526,11159
+"KRN",101,5339,-1)
+0^20
+"KRN",101,5339,0)
+BI SITE PNEUMO AGE^Appropriate Age for Pneumo^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5339,20)
+D PNEUMO^BISITE3
+"KRN",101,5339,99)
+61696,38934
+"KRN",101,5343,-1)
+0^10
+"KRN",101,5343,0)
+BI SITE FORECAST ENABLE^Enable Forecasting^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5343,20)
+D FORECAS^BISITE3
+"KRN",101,5343,99)
+63526,11159
+"KRN",101,5357,-1)
+0^4
+"KRN",101,5357,0)
+BI SITE CHART# DASHES^Chart# with dashes^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5357,20)
+D DASHES^BISITE3
+"KRN",101,5357,99)
+63526,11159
+"KRN",101,5361,-1)
+0^18
+"KRN",101,5361,0)
+BI SITE OFFICIAL PT RECORD^Select Official Imm Record^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5361,20)
+D OFFREC^BISITE3
+"KRN",101,5361,99)
+63526,11159
+"KRN",101,5375,-1)
+0^6
+"KRN",101,5375,0)
+BI SITE DEFAULT PROVIDER^Default Provider^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5375,20)
+D DEFPRV^BISITE3
+"KRN",101,5375,99)
+63526,11159
+"KRN",101,5376,-1)
+0^13
+"KRN",101,5376,0)
+BI SITE IMMSERVE DIRECTORY^ImmServe Directory^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5376,20)
+D IMMSVDIR^BISITE3
+"KRN",101,5376,99)
+62430,31031
+"KRN",101,5397,-1)
+0^27
+"KRN",101,5397,0)
+BI PRINT LIST^Print List^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5397,20)
+D PRTL^VALM1
+"KRN",101,5397,99)
+63526,11159
+"KRN",101,5399,-1)
+0^11
+"KRN",101,5399,0)
+BI SITE GPRA COMS^GPRA Communities^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5399,20)
+D GPRA^BISITE4
+"KRN",101,5399,99)
+63526,11159
+"KRN",101,5406,-1)
+0^25
+"KRN",101,5406,0)
+BI UP ONE LINE^Up a Line^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5406,1,0)
+^101.06^1^1^3050715^^
+"KRN",101,5406,1,1,0)
+Move up a line
+"KRN",101,5406,20)
+D UP^VALM40
+"KRN",101,5406,99)
+63526,11159
+"KRN",101,5407,-1)
+0^26
+"KRN",101,5407,0)
+BI DOWN A LINE^Down a Line^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5407,1,0)
+^^2^2^2911027^
+"KRN",101,5407,1,1,0)
+Move down a line.
+"KRN",101,5407,1,2,0)
+
+"KRN",101,5407,20)
+D DOWN^VALM40
+"KRN",101,5407,99)
+63526,11159
+"KRN",101,5410,-1)
+0^14
+"KRN",101,5410,0)
+BI SITE INPATIENT CHECK ENABLE^Inpatient Visit Chk^^A^^^^^^^^
+"KRN",101,5410,20)
+D INPTCHK^BISITE4
+"KRN",101,5410,99)
+63526,11159
+"KRN",101,5411,-1)
+0^23
+"KRN",101,5411,0)
+BI SITE RISK CHECK ENABLE^Risk Enabled Check^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5411,20)
+D RISKP^BISITE4
+"KRN",101,5411,99)
+63526,11159
+"KRN",101,5412,-1)
+0^5
+"KRN",101,5412,0)
+BI SITE CPT VISITS IMPORT^Import CPT-coded Visits^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5412,20)
+D IMPCPT^BISITE4
+"KRN",101,5412,99)
+63526,11159
+"KRN",101,5413,-1)
+0^28
+"KRN",101,5413,0)
+BI NEXT SCREEN^Next Screen^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5413,2,0)
+^101.02A^1^1
+"KRN",101,5413,2,1,0)
+NX
+"KRN",101,5413,2,"B","NX",1)
+
+"KRN",101,5413,20)
+D NEXT^VALM4
+"KRN",101,5413,99)
+63526,11159
+"KRN",101,5414,-1)
+0^29
+"KRN",101,5414,0)
+BI PREVIOUS SCREEN^Previous Screen^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5414,2,0)
+^101.02A^2^2
+"KRN",101,5414,2,1,0)
+PR
+"KRN",101,5414,2,2,0)
+BK
+"KRN",101,5414,2,"B","BK",2)
+
+"KRN",101,5414,2,"B","PR",1)
+
+"KRN",101,5414,20)
+D PREV^VALM4
+"KRN",101,5414,99)
+63526,11159
+"KRN",101,5415,-1)
+0^30
+"KRN",101,5415,0)
+BI LAST SCREEN^Last Screen^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5415,20)
+D LAST^VALM4
+"KRN",101,5415,99)
+63526,11159
+"KRN",101,5416,-1)
+0^31
+"KRN",101,5416,0)
+BI FIRST SCREEN^First Screen^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5416,20)
+D FIRST^VALM4
+"KRN",101,5416,99)
+63526,11159
+"KRN",101,5493,-1)
+0^21
+"KRN",101,5493,0)
+BI SITE PNEUMO/FLU PARAMETERS^Pneumo & Flu Parameters^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5493,20)
+D PNUFLU^BISITE3
+"KRN",101,5493,99)
+63526,11159
+"KRN",101,5498,-1)
+0^24
+"KRN",101,5498,0)
+BI SITE VISIT SELECTION MENU^Visit Selection Menu^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5498,20)
+D VISMNU^BISITE4
+"KRN",101,5498,99)
+63526,11159
+"KRN",101,6344,-1)
+0^15
+"KRN",101,6344,0)
+BI SITE IP TCH FORECASTER^IP for TCH Forecaster^^A^^^^^^^^IMMUNIZATION
+"KRN",101,6344,20)
+D IPTCH^BISITE3
+"KRN",101,6344,99)
+63526,11159
+"KRN",409.61,1026,-1)
+0^1
+"KRN",409.61,1026,0)
+BI SITE PARAMETERS EDIT^2^^80^5^21^1^1^^BI MENU SITE PARAMETERS^BI SITE PARAMETERS EDIT^1^^1
+"KRN",409.61,1026,1)
+^BI MENU SITE PARAMS HIDDEN
+"KRN",409.61,1026,"ARRAY")
+ ^TMP("BISITE",$J)
+"KRN",409.61,1026,"FNL")
+D EXIT^BISITE
+"KRN",409.61,1026,"HDR")
+D HDR^BISITE
+"KRN",409.61,1026,"HLP")
+D HELP^BISITE
+"KRN",409.61,1026,"INIT")
+D INIT^BISITE
+"MBREQ")
+0
+"ORD",15,101)
+101;15;;;PRO^XPDTA;PROF1^XPDIA;PROE1^XPDIA;PROF2^XPDIA;;PRODEL^XPDIA
+"ORD",15,101,0)
+PROTOCOL
+"ORD",17,409.61)
+409.61;17;1;;;;;;;LMDEL^XPDIA1
+"ORD",17,409.61,0)
+LIST TEMPLATE
+"PKG",426,-1)
+1^1
+"PKG",426,0)
+IMMUNIZATIONS VISTA PORT^BIV^VISTA Port of RPMS Immunizations
+"PKG",426,22,0)
+^9.49I^1^1
+"PKG",426,22,1,0)
+0.3^3150416
+"PKG",426,"VERSION")
+0.3
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+5
+"RTN","BISITE")
+0^1^B10999594
+"RTN","BISITE",1,0)
+BISITE ;IHS/CMI/MWR - EDIT SITE PARAMETERS; MAY 10, 2010
+"RTN","BISITE",2,0)
+ ;;8.5;IMMUNIZATION;;SEP 01,2011;Build 1
+"RTN","BISITE",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISITE",4,0)
+ ;;  EDIT SITE PARAMETERS VIA LISTMAN.
+"RTN","BISITE",5,0)
+ ;
+"RTN","BISITE",6,0)
+ ;
+"RTN","BISITE",7,0)
+ ;----------
+"RTN","BISITE",8,0)
+START ;EP
+"RTN","BISITE",9,0)
+ ;---> Lookup and edit a Site.
+"RTN","BISITE",10,0)
+ D SETVARS^BIUTL5
+"RTN","BISITE",11,0)
+ N A,B
+"RTN","BISITE",12,0)
+ D TITLE^BIUTL5("EDIT SITE PARAMETERS") W !
+"RTN","BISITE",13,0)
+ S BIPRMPT="   Select SITE/FACILITY: ",BIDFLT=""
+"RTN","BISITE",14,0)
+ S:$D(DUZ(2)) BIDFLT=$$INSTTX^BIUTL6(DUZ(2))
+"RTN","BISITE",15,0)
+ D DIC^BIFMAN(9002084.02,"QEMAL",.Y,BIPRMPT,BIDFLT)
+"RTN","BISITE",16,0)
+ Q:Y<0
+"RTN","BISITE",17,0)
+ K BIPRMPT,BIDFLT
+"RTN","BISITE",18,0)
+ S BISITE=+Y
+"RTN","BISITE",19,0)
+ L +^BISITE(BISITE):2 I '$T D LOCKED^BIUTL3 Q
+"RTN","BISITE",20,0)
+ D EN(BISITE)
+"RTN","BISITE",21,0)
+ L -^BISITE(BISITE) L -^BISITE(BISITE)
+"RTN","BISITE",22,0)
+ Q
+"RTN","BISITE",23,0)
+ ;
+"RTN","BISITE",24,0)
+ ;
+"RTN","BISITE",25,0)
+ ;----------
+"RTN","BISITE",26,0)
+EN(BISITE) ;EP
+"RTN","BISITE",27,0)
+ ;---> Main entry point for BI SITE PARAMETERS EDIT.
+"RTN","BISITE",28,0)
+ ;---> If BISITE not supplied, set Error Code and quit.
+"RTN","BISITE",29,0)
+ I '$G(BISITE) D ERRCD^BIUTL2(109,,1) Q
+"RTN","BISITE",30,0)
+ I '$D(^BISITE(BISITE,0)) D ERRCD^BIUTL2(110,,1) Q
+"RTN","BISITE",31,0)
+ D EN^VALM("BI SITE PARAMETERS EDIT")
+"RTN","BISITE",32,0)
+ Q
+"RTN","BISITE",33,0)
+ ;
+"RTN","BISITE",34,0)
+ ;
+"RTN","BISITE",35,0)
+ ;----------
+"RTN","BISITE",36,0)
+HDR ;EP
+"RTN","BISITE",37,0)
+ ;---> Header code
+"RTN","BISITE",38,0)
+ N X S X="     Edit Site Parameters for: "
+"RTN","BISITE",39,0)
+ S X=X_IOINHI_$$INSTTX^BIUTL6(BISITE)_IOINORM
+"RTN","BISITE",40,0)
+ S VALMHDR(1)=""
+"RTN","BISITE",41,0)
+ S VALMHDR(2)=X
+"RTN","BISITE",42,0)
+ ;
+"RTN","BISITE",43,0)
+ Q
+"RTN","BISITE",44,0)
+ ;
+"RTN","BISITE",45,0)
+ ;
+"RTN","BISITE",46,0)
+ ;----------
+"RTN","BISITE",47,0)
+INIT ;EP
+"RTN","BISITE",48,0)
+ ;---> Initialize variables and list array.
+"RTN","BISITE",49,0)
+ D INIT^BISITE1
+"RTN","BISITE",50,0)
+ Q
+"RTN","BISITE",51,0)
+ ;
+"RTN","BISITE",52,0)
+ ;
+"RTN","BISITE",53,0)
+ ;----------
+"RTN","BISITE",54,0)
+RESET ;EP
+"RTN","BISITE",55,0)
+ ;---> Update partition for return to Listmanager.
+"RTN","BISITE",56,0)
+ I $D(VALMQUIT) S VALMBCK="Q" Q
+"RTN","BISITE",57,0)
+ D TERM^VALM0 S VALMBCK="R"
+"RTN","BISITE",58,0)
+ S VALMSG="Scroll down to view more Parameters."
+"RTN","BISITE",59,0)
+ D INIT,HDR Q
+"RTN","BISITE",60,0)
+ ;
+"RTN","BISITE",61,0)
+ ;
+"RTN","BISITE",62,0)
+ ;----------
+"RTN","BISITE",63,0)
+HELP ;EP
+"RTN","BISITE",64,0)
+ ;---> Help code.
+"RTN","BISITE",65,0)
+ N BIX S BIX=X
+"RTN","BISITE",66,0)
+ D FULL^VALM1
+"RTN","BISITE",67,0)
+ D TITLE^BIUTL5("SITE PARAMETER SCREEN - HELP")
+"RTN","BISITE",68,0)
+ D TEXT1
+"RTN","BISITE",69,0)
+ D DIRZ^BIUTL3("","     Press ENTER/RETURN to continue")
+"RTN","BISITE",70,0)
+ S VALMSG="Scroll down to view more Parameters."
+"RTN","BISITE",71,0)
+ D:BIX'="??" RE^VALM4
+"RTN","BISITE",72,0)
+ Q
+"RTN","BISITE",73,0)
+ ;
+"RTN","BISITE",74,0)
+ ;
+"RTN","BISITE",75,0)
+ ;----------
+"RTN","BISITE",76,0)
+TEXT1 ;EP
+"RTN","BISITE",77,0)
+ ;;This is the screen for editing Site Parameters.
+"RTN","BISITE",78,0)
+ ;;
+"RTN","BISITE",79,0)
+ ;;To edit a parameter, enter its left column number.  Helpful
+"RTN","BISITE",80,0)
+ ;;information is presented with each parameter when it is selected.
+"RTN","BISITE",81,0)
+ ;;
+"RTN","BISITE",82,0)
+ ;;The Site that these parameters applies to is displayed at the top
+"RTN","BISITE",83,0)
+ ;;of the screen.  This Site is determined when you log on to RPMS.
+"RTN","BISITE",84,0)
+ ;;If you are running more than one Site on the same computer and
+"RTN","BISITE",85,0)
+ ;;wish to edit parameters for another site, you must log off and
+"RTN","BISITE",86,0)
+ ;;log back on under the Site you wish to edit.
+"RTN","BISITE",87,0)
+ ;;
+"RTN","BISITE",88,0)
+ D PRINTX("TEXT1")
+"RTN","BISITE",89,0)
+ Q
+"RTN","BISITE",90,0)
+ ;
+"RTN","BISITE",91,0)
+ ;
+"RTN","BISITE",92,0)
+ ;----------
+"RTN","BISITE",93,0)
+PRINTX(BILINL,BITAB) ;EP
+"RTN","BISITE",94,0)
+ Q:$G(BILINL)=""
+"RTN","BISITE",95,0)
+ N I,T,X S T="" S:'$D(BITAB) BITAB=5 F I=1:1:BITAB S T=T_" "
+"RTN","BISITE",96,0)
+ F I=1:1 S X=$T(@BILINL+I) Q:X'[";;"  W !,T,$P(X,";;",2)
+"RTN","BISITE",97,0)
+ Q
+"RTN","BISITE",98,0)
+ ;
+"RTN","BISITE",99,0)
+ ;
+"RTN","BISITE",100,0)
+ ;----------
+"RTN","BISITE",101,0)
+EXIT ;EP
+"RTN","BISITE",102,0)
+ ;---> EOJ cleanup.
+"RTN","BISITE",103,0)
+ D KILLALL^BIUTL8(1)
+"RTN","BISITE",104,0)
+ K ^TMP("BISITE",$J)
+"RTN","BISITE",105,0)
+ D CLEAR^VALM1
+"RTN","BISITE",106,0)
+ D FULL^VALM1
+"RTN","BISITE",107,0)
+ Q
+"RTN","BISITE1")
+0^2^B40268173
+"RTN","BISITE1",1,0)
+BISITE1 ;IHS/CMI/MWR - EDIT SITE PARAMETERS; MAY 10, 2010
+"RTN","BISITE1",2,0)
+ ;;8.5;IMMUNIZATION;**9**;OCT 01,2014;Build 1
+"RTN","BISITE1",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISITE1",4,0)
+ ;;  INIT FOR EDIT SITE PARAMETERS.
+"RTN","BISITE1",5,0)
+ ;   PATCH 2: Fix display of default Low Supply Alert.  INIT+72
+"RTN","BISITE1",6,0)
+ ;            Provide call to retrieve Site's Low Alert default.  LOTSDEF
+"RTN","BISITE1",7,0)
+ ;;  PATCH 8: Changes to accommodate new TCH Forecaster   INIT+55,+66,+92,+132
+"RTN","BISITE1",8,0)
+ ;;  PATCH 9: Return the IP Address used for the TCH Forecaster.  INIT+139
+"RTN","BISITE1",9,0)
+ ;;           Update display of selected High Risk parameters.  INIT+165
+"RTN","BISITE1",10,0)
+ ;
+"RTN","BISITE1",11,0)
+ ;
+"RTN","BISITE1",12,0)
+ ;----------
+"RTN","BISITE1",13,0)
+INIT ;EP
+"RTN","BISITE1",14,0)
+ ;---> Initialize variables and list array.
+"RTN","BISITE1",15,0)
+ ;---> If BISITE not supplied, set Error Code and quit.
+"RTN","BISITE1",16,0)
+ I '$G(BISITE) D ERRCD^BIUTL2(109,,1) S VALMQUIT="" Q
+"RTN","BISITE1",17,0)
+ I '$D(^BISITE(BISITE,0)) D ERRCD^BIUTL2(110,,1) S VALMQUIT="" Q
+"RTN","BISITE1",18,0)
+ ;
+"RTN","BISITE1",19,0)
+ K ^TMP("BISITE",$J)
+"RTN","BISITE1",20,0)
+ S VALM("TITLE")=$$LMVER^BILOGO
+"RTN","BISITE1",21,0)
+ S VALMSG="Select a left column number to change an item."
+"RTN","BISITE1",22,0)
+ N BILINE,X,Y S BILINE=0
+"RTN","BISITE1",23,0)
+ ;
+"RTN","BISITE1",24,0)
+ ;---> Default Case Manager.
+"RTN","BISITE1",25,0)
+ D WRITE(.BILINE)
+"RTN","BISITE1",26,0)
+ S X="   1) Default Case Manager.........: "_$$CMGRDEF^BIUTL2(BISITE,1)
+"RTN","BISITE1",27,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",28,0)
+ K X
+"RTN","BISITE1",29,0)
+ ;
+"RTN","BISITE1",30,0)
+ ;---> Other Location.
+"RTN","BISITE1",31,0)
+ N BIOTH S BIOTH=$$OTHERLOC^BIUTL6(BISITE),X=""
+"RTN","BISITE1",32,0)
+ D:BIOTH
+"RTN","BISITE1",33,0)
+ .S X=$P(^AUTTLOC(BIOTH,0),U,4)
+"RTN","BISITE1",34,0)
+ .I $G(X) S:$D(^AUTTAREA(X,0)) X=$P(^(0),U)
+"RTN","BISITE1",35,0)
+ .S X=$$INSTTX^BIUTL6(BIOTH)_"   "_X
+"RTN","BISITE1",36,0)
+ S X=$E("   2) Other Location...............: "_X,1,79)
+"RTN","BISITE1",37,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",38,0)
+ K X
+"RTN","BISITE1",39,0)
+ ;
+"RTN","BISITE1",40,0)
+ ;---> Standard Immunizations Due Letter.
+"RTN","BISITE1",41,0)
+ S X="   3) Standard Imm Due Letter .....: "_$$DEFLET^BIUTL2(BISITE,1)
+"RTN","BISITE1",42,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",43,0)
+ K X
+"RTN","BISITE1",44,0)
+ ;
+"RTN","BISITE1",45,0)
+ ;---> Official Immunization Record.
+"RTN","BISITE1",46,0)
+ S X="   4) Official Imm Record Letter...: "_$$DEFLET^BIUTL2(BISITE,1,1)
+"RTN","BISITE1",47,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",48,0)
+ K X
+"RTN","BISITE1",49,0)
+ ;
+"RTN","BISITE1",50,0)
+ ;---> Facility Record/Report Header.
+"RTN","BISITE1",51,0)
+ S X="   5) Facility Report Header.......: "_$$REPHDR^BIUTL6(BISITE)
+"RTN","BISITE1",52,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",53,0)
+ K X
+"RTN","BISITE1",54,0)
+ ;
+"RTN","BISITE1",55,0)
+ ;---> Host File Server Path.
+"RTN","BISITE1",56,0)
+ S X="   6) Host File Server Path........: "_$$HFSPATH^BIUTL8(BISITE)
+"RTN","BISITE1",57,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",58,0)
+ K X
+"RTN","BISITE1",59,0)
+ ;
+"RTN","BISITE1",60,0)
+ ;---> Minimum Days Last Letter.
+"RTN","BISITE1",61,0)
+ S X=$$MINDAYS^BIUTL2(BISITE)_" day" S:+X'=1 X=X_"s"
+"RTN","BISITE1",62,0)
+ S X="   7) Minimum Days Last Letter.....: "_X
+"RTN","BISITE1",63,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",64,0)
+ K X
+"RTN","BISITE1",65,0)
+ ;
+"RTN","BISITE1",66,0)
+ ;---> Forecast Minimum Age vs Recommended Age.
+"RTN","BISITE1",67,0)
+ S X=$$MINAGE^BIUTL2(BISITE)
+"RTN","BISITE1",68,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE1",69,0)
+ ;---> Change parameter prompt to just Min vs Rec.
+"RTN","BISITE1",70,0)
+ S X=$S(X=1:"Minimum Acceptable Age",1:"Recommended Age")
+"RTN","BISITE1",71,0)
+ ;**********
+"RTN","BISITE1",72,0)
+ S X="   8) Minimum vs Recommended Age...: "_X
+"RTN","BISITE1",73,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",74,0)
+ K X
+"RTN","BISITE1",75,0)
+ ;
+"RTN","BISITE1",76,0)
+ ;---> ImmServe Forecasting Option.
+"RTN","BISITE1",77,0)
+ D
+"RTN","BISITE1",78,0)
+ .N G,H,Y,Z S Z=$G(^BISITE(BISITE,0))
+"RTN","BISITE1",79,0)
+ .;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE1",80,0)
+ .;---> Change parameter prompt to just Grace Period.
+"RTN","BISITE1",81,0)
+ .;S Y=$P(Z,U,8),G=$P(Z,U,21),H=$P(Z,U,24)
+"RTN","BISITE1",82,0)
+ .;S X="#"_Y_", "_$S(G:"WITH",1:"NO")_" 4-Day Grace"
+"RTN","BISITE1",83,0)
+ .;S X=X_", HPV through "_$S(H=2:26,1:18)
+"RTN","BISITE1",84,0)
+ .S Y=$P($G(^BISITE(BISITE,0)),U,21)
+"RTN","BISITE1",85,0)
+ .S X="4-Day Grace Period "_$S(Y=1:"",1:"NOT ")_"Used"
+"RTN","BISITE1",86,0)
+ S X="   9) 4-Day Grace Period option....: "_X
+"RTN","BISITE1",87,0)
+ ;**********
+"RTN","BISITE1",88,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",89,0)
+ K X
+"RTN","BISITE1",90,0)
+ ;
+"RTN","BISITE1",91,0)
+ ;---> Lot Numbers required.
+"RTN","BISITE1",92,0)
+ S X=$S($$LOTREQ^BIUTL2(BISITE):"Required",1:"NOT Required")
+"RTN","BISITE1",93,0)
+ ;
+"RTN","BISITE1",94,0)
+ ;********** PATCH 2, v8.5, MAY 15,2012, IHS/CMI/MWR
+"RTN","BISITE1",95,0)
+ ;---> Fix display of default Low Supply Alert.
+"RTN","BISITE1",96,0)
+ ;S X=X_", Default Low Supply Alert="_$$LOTLOW^BIUTL2(BISITE)
+"RTN","BISITE1",97,0)
+ S X=X_", Default Low Supply Alert="_$$LOTSDEF(BISITE)
+"RTN","BISITE1",98,0)
+ ;**********
+"RTN","BISITE1",99,0)
+ ;
+"RTN","BISITE1",100,0)
+ S X="  10) Lot Number Options...........: "_X
+"RTN","BISITE1",101,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",102,0)
+ K X
+"RTN","BISITE1",103,0)
+ ;
+"RTN","BISITE1",104,0)
+ ;---> Pneumo, Flu, Zostervax Site Parameters. v8.5
+"RTN","BISITE1",105,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE1",106,0)
+ ;---> Change parameter prompt to just Pneumo.
+"RTN","BISITE1",107,0)
+ D
+"RTN","BISITE1",108,0)
+ .N Y,Z
+"RTN","BISITE1",109,0)
+ .S Y=$$PNMAGE^BIPATUP2(BISITE)
+"RTN","BISITE1",110,0)
+ .;S Y=$P(X,U),Z=$P(X,U,2)
+"RTN","BISITE1",111,0)
+ .;S X=Y_" years old, "_$S(Z:"every 6 years.",1:"one time only.")
+"RTN","BISITE1",112,0)
+ .S X="Begin Pneumo at "_Y_" years"
+"RTN","BISITE1",113,0)
+ .;S Y=$$FLUALL^BIPATUP2(BISITE)
+"RTN","BISITE1",114,0)
+ .;S X=X_$S(Y:"All ages",1:"6m-18y,50y+")
+"RTN","BISITE1",115,0)
+ .;S X=X_"  Zoster: "
+"RTN","BISITE1",116,0)
+ .;S Y=$$ZOSTER^BIPATUP2(BISITE)
+"RTN","BISITE1",117,0)
+ .;S X=X_$S(Y:"Yes",1:"No")
+"RTN","BISITE1",118,0)
+ ;S X="  11) Pneumo, Flu, Zoster Options..: "_X
+"RTN","BISITE1",119,0)
+ S X="  11) Pneumo routine age to begin..: "_X
+"RTN","BISITE1",120,0)
+ ;**********
+"RTN","BISITE1",121,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",122,0)
+ K X
+"RTN","BISITE1",123,0)
+ ;
+"RTN","BISITE1",124,0)
+ ;---> Forecasting enabled.
+"RTN","BISITE1",125,0)
+ S X=$S($$FORECAS^BIUTL2(BISITE):"Enabled",1:"Disabled")
+"RTN","BISITE1",126,0)
+ S X="  12) Forecasting (Imms Due).......: "_X
+"RTN","BISITE1",127,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",128,0)
+ K X
+"RTN","BISITE1",129,0)
+ ;
+"RTN","BISITE1",130,0)
+ ;---> Include dashes in Chart# display.
+"RTN","BISITE1",131,0)
+ D
+"RTN","BISITE1",132,0)
+ .I $$DASH^BIUTL1(BISITE) S X="Dashes Included (12-34-56)" Q
+"RTN","BISITE1",133,0)
+ .S X="No Dashes (123456)"
+"RTN","BISITE1",134,0)
+ S X="  13) Chart# with dashes...........: "_X
+"RTN","BISITE1",135,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",136,0)
+ K X
+"RTN","BISITE1",137,0)
+ ;
+"RTN","BISITE1",138,0)
+ ;---> User as Default Provider.
+"RTN","BISITE1",139,0)
+ S X=$S($$DEFPROV^BIUTL6(BISITE):"Yes",1:"No")
+"RTN","BISITE1",140,0)
+ S X="  14) User as Default Provider.....: "_X
+"RTN","BISITE1",141,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",142,0)
+ K X
+"RTN","BISITE1",143,0)
+ ;
+"RTN","BISITE1",144,0)
+ ;---> ImmServe Directory.
+"RTN","BISITE1",145,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE1",146,0)
+ ;---> Leave parameter place keeper on menu, but disable.
+"RTN","BISITE1",147,0)
+ ;S X=$$IMMSVDIR^BIUTL8(BISITE)
+"RTN","BISITE1",148,0)
+ ;S:($L(X)>39) X=$E(X,1,39)_"..."
+"RTN","BISITE1",149,0)
+ ;S X="  15) ImmServe Directory...........: "_X
+"RTN","BISITE1",150,0)
+ ;**********
+"RTN","BISITE1",151,0)
+ ;
+"RTN","BISITE1",152,0)
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+"RTN","BISITE1",153,0)
+ ;---> IP Address for TCH Forecaster.
+"RTN","BISITE1",154,0)
+ S X=$$IPTCH^BIUTL8(BISITE)
+"RTN","BISITE1",155,0)
+ S X="  15) IP Address for TCH Forecaster: "_X
+"RTN","BISITE1",156,0)
+ ;**********
+"RTN","BISITE1",157,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",158,0)
+ K X
+"RTN","BISITE1",159,0)
+ ;
+"RTN","BISITE1",160,0)
+ ;---> GPRA Communities.
+"RTN","BISITE1",161,0)
+ D
+"RTN","BISITE1",162,0)
+ .N BIGPRA D GETGPRA^BISITE4(.BIGPRA,BISITE)
+"RTN","BISITE1",163,0)
+ .I '$O(BIGPRA(0)) S X="No" Q
+"RTN","BISITE1",164,0)
+ .N N S (N,X)=0 F  S N=$O(BIGPRA(N)) Q:'N  S X=X+1
+"RTN","BISITE1",165,0)
+ S X=X_" Communities selected for GPRA."
+"RTN","BISITE1",166,0)
+ S X="  16) GPRA Communities.............: "_X
+"RTN","BISITE1",167,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",168,0)
+ K X
+"RTN","BISITE1",169,0)
+ ;
+"RTN","BISITE1",170,0)
+ ;---> Inpatient Check enabled.
+"RTN","BISITE1",171,0)
+ S X=$S($$INPTCHK^BIUTL2(BISITE):"Enabled",1:"Disabled")
+"RTN","BISITE1",172,0)
+ S X="  17) Inpatient Visit Check........: "_X
+"RTN","BISITE1",173,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",174,0)
+ K X
+"RTN","BISITE1",175,0)
+ ;
+"RTN","BISITE1",176,0)
+ ;
+"RTN","BISITE1",177,0)
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+"RTN","BISITE1",178,0)
+ ;---> Update display of selected High Risk parameters.
+"RTN","BISITE1",179,0)
+ ;---> Risk Check enabled.
+"RTN","BISITE1",180,0)
+ N Z S Z=$$RISKP^BIUTL2(BISITE)
+"RTN","BISITE1",181,0)
+ D
+"RTN","BISITE1",182,0)
+ .I 'Z S X="Disabled" Q
+"RTN","BISITE1",183,0)
+ .I Z=1 S X="Enabled: Hep B Only" Q
+"RTN","BISITE1",184,0)
+ .I Z=2 S X="Enabled: Pneumo Only" Q
+"RTN","BISITE1",185,0)
+ .I Z=12 S X="Enabled: Hep B and Pneumo" Q
+"RTN","BISITE1",186,0)
+ .I Z=23 S X="Enabled: Pneumo Only (+Smoking)" Q
+"RTN","BISITE1",187,0)
+ .I Z=123 S X="Enabled: Hep B and Pneumo (+Smoking)" Q
+"RTN","BISITE1",188,0)
+ .S X="ERROR: Unable to determine."
+"RTN","BISITE1",189,0)
+ ;**********
+"RTN","BISITE1",190,0)
+ ;
+"RTN","BISITE1",191,0)
+ S X="  18) High Risk Factor Check.......: "_X
+"RTN","BISITE1",192,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",193,0)
+ K X,Z
+"RTN","BISITE1",194,0)
+ ;
+"RTN","BISITE1",195,0)
+ ;---> CPT-coded Visits enabled.
+"RTN","BISITE1",196,0)
+ S X=$S($$IMPCPT^BIUTL2(BISITE):"Enabled",1:"Disabled")
+"RTN","BISITE1",197,0)
+ S X="  19) Import CPT-coded Visits......: "_X
+"RTN","BISITE1",198,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",199,0)
+ K X
+"RTN","BISITE1",200,0)
+ ;
+"RTN","BISITE1",201,0)
+ ;---> Visit Selection Menu enabled.
+"RTN","BISITE1",202,0)
+ D
+"RTN","BISITE1",203,0)
+ .I $$VISMNU^BIUTL2(BISITE) S X="Enabled (Display Visit Selection Menu)" Q
+"RTN","BISITE1",204,0)
+ .S X="Disabled (Link Visits automatically)"
+"RTN","BISITE1",205,0)
+ S X="  20) Visit Selection Menu.........: "_X
+"RTN","BISITE1",206,0)
+ D WRITE(.BILINE,X)
+"RTN","BISITE1",207,0)
+ K X
+"RTN","BISITE1",208,0)
+ ;
+"RTN","BISITE1",209,0)
+ S VALMSG="Scroll down to view more Parameters."
+"RTN","BISITE1",210,0)
+ S VALMCNT=BILINE
+"RTN","BISITE1",211,0)
+ Q
+"RTN","BISITE1",212,0)
+ ;
+"RTN","BISITE1",213,0)
+ ;
+"RTN","BISITE1",214,0)
+ ;----------
+"RTN","BISITE1",215,0)
+WRITE(BILINE,BIVAL,BIBLNK) ;EP
+"RTN","BISITE1",216,0)
+ ;---> Write lines to ^TMP (see documentation in ^BIW).
+"RTN","BISITE1",217,0)
+ ;---> Parameters:
+"RTN","BISITE1",218,0)
+ ;     1 - BILINE (ret) Last line# written.
+"RTN","BISITE1",219,0)
+ ;     2 - BIVAL  (opt) Value/text of line (Null=blank line).
+"RTN","BISITE1",220,0)
+ ;
+"RTN","BISITE1",221,0)
+ Q:'$D(BILINE)
+"RTN","BISITE1",222,0)
+ D WL^BIW(.BILINE,"BISITE",$G(BIVAL),$G(BIBLNK))
+"RTN","BISITE1",223,0)
+ Q
+"RTN","BISITE1",224,0)
+ ;
+"RTN","BISITE1",225,0)
+ ;
+"RTN","BISITE1",226,0)
+ ;********** PATCH 2, v8.5, MAY 15,2012, IHS/CMI/MWR
+"RTN","BISITE1",227,0)
+ ;----------
+"RTN","BISITE1",228,0)
+LOTSDEF(BIDUZ2) ;EP
+"RTN","BISITE1",229,0)
+ ;---> Return Site's Default Low Alert for Lot Numbers.
+"RTN","BISITE1",230,0)
+ ;---> Parameters:
+"RTN","BISITE1",231,0)
+ ;     1 - BIDUZ2 (req) User's DUZ(2)
+"RTN","BISITE1",232,0)
+ ;
+"RTN","BISITE1",233,0)
+ Q:'$D(^BISITE(+$G(BIDUZ2),0)) 50
+"RTN","BISITE1",234,0)
+ Q:($P($G(^BISITE(+$G(BIDUZ2),0)),U,25)="") 50
+"RTN","BISITE1",235,0)
+ Q $P($G(^BISITE(+$G(BIDUZ2),0)),U,25)
+"RTN","BISITE1",236,0)
+ ;**********
+"RTN","BISITE2")
+0^3^B159793227
+"RTN","BISITE2",1,0)
+BISITE2 ;IHS/CMI/MWR - EDIT SITE PARAMETERS; MAY 10, 2010
+"RTN","BISITE2",2,0)
+ ;;8.5;IMMUNIZATION;**8**;MAR 15,2014;Build 1
+"RTN","BISITE2",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISITE2",4,0)
+ ;;  EDIT SITE PARAMETERS.
+"RTN","BISITE2",5,0)
+ ;;  PATCH 1: Update text to relect DTap change in Option 1,
+"RTN","BISITE2",6,0)
+ ;;           and allow for Option 11.  RULES+9 and TEXT-4.
+"RTN","BISITE2",7,0)
+ ;;  PATCH 2: Update prompts and help text for HPV.  RULES+41, TEXT9+15
+"RTN","BISITE2",8,0)
+ ;;  PATCH 5: Update help text for HPV.  TEXT8+8
+"RTN","BISITE2",9,0)
+ ;;  PATCH 8: Changes to accommodate new TCH Forecaster   MINAGE+12, RULES+6
+"RTN","BISITE2",10,0)
+ ;
+"RTN","BISITE2",11,0)
+ ;
+"RTN","BISITE2",12,0)
+ ;----------
+"RTN","BISITE2",13,0)
+CMGR ;EP
+"RTN","BISITE2",14,0)
+ ;---> Select Default Case Manager.
+"RTN","BISITE2",15,0)
+ ;---> Called by Protocol BI SITE CASE MANAGER.
+"RTN","BISITE2",16,0)
+ ;
+"RTN","BISITE2",17,0)
+ Q:$$BISITE
+"RTN","BISITE2",18,0)
+ D FULL^VALM1,TITLE^BIUTL5("DEFAULT CASE MANAGER"),TEXT1
+"RTN","BISITE2",19,0)
+ D DIE^BIFMAN(9002084.02,".02",BISITE)
+"RTN","BISITE2",20,0)
+ D RESET^BISITE
+"RTN","BISITE2",21,0)
+ Q
+"RTN","BISITE2",22,0)
+ ;
+"RTN","BISITE2",23,0)
+ ;
+"RTN","BISITE2",24,0)
+ ;----------
+"RTN","BISITE2",25,0)
+TEXT1 ;EP
+"RTN","BISITE2",26,0)
+ ;;The Default Case Manager is the Case Manager who will be
+"RTN","BISITE2",27,0)
+ ;;presented automatically at all Case Manager prompts, such as
+"RTN","BISITE2",28,0)
+ ;;when you are adding a new patient.
+"RTN","BISITE2",29,0)
+ ;;
+"RTN","BISITE2",30,0)
+ ;;
+"RTN","BISITE2",31,0)
+ D PRINTX("TEXT1")
+"RTN","BISITE2",32,0)
+ Q
+"RTN","BISITE2",33,0)
+ ;
+"RTN","BISITE2",34,0)
+ ;
+"RTN","BISITE2",35,0)
+ ;----------
+"RTN","BISITE2",36,0)
+OTHER ;EP
+"RTN","BISITE2",37,0)
+ ;---> Select Other Location.
+"RTN","BISITE2",38,0)
+ ;---> Called by Protocol BI SITE OTHER LOCATION.
+"RTN","BISITE2",39,0)
+ ;
+"RTN","BISITE2",40,0)
+ Q:$$BISITE
+"RTN","BISITE2",41,0)
+ D FULL^VALM1,TITLE^BIUTL5("OTHER LOCATION"),TEXT2
+"RTN","BISITE2",42,0)
+ D DIE^BIFMAN(9002084.02,".03",BISITE)
+"RTN","BISITE2",43,0)
+ D RESET^BISITE
+"RTN","BISITE2",44,0)
+ Q
+"RTN","BISITE2",45,0)
+ ;
+"RTN","BISITE2",46,0)
+ ;
+"RTN","BISITE2",47,0)
+ ;----------
+"RTN","BISITE2",48,0)
+TEXT2 ;EP
+"RTN","BISITE2",49,0)
+ ;;The Other Location is an entry in the IHS LOCATION file
+"RTN","BISITE2",50,0)
+ ;;that will serve as the Location for a PCC Visit when the
+"RTN","BISITE2",51,0)
+ ;;actual location is not in the LOCATION File.
+"RTN","BISITE2",52,0)
+ ;;
+"RTN","BISITE2",53,0)
+ ;;
+"RTN","BISITE2",54,0)
+ D PRINTX("TEXT2")
+"RTN","BISITE2",55,0)
+ Q
+"RTN","BISITE2",56,0)
+ ;
+"RTN","BISITE2",57,0)
+ ;
+"RTN","BISITE2",58,0)
+ ;----------
+"RTN","BISITE2",59,0)
+DUELET ;EP
+"RTN","BISITE2",60,0)
+ ;---> Select Immunizations Due Letter.
+"RTN","BISITE2",61,0)
+ ;---> Called by Protocol BI SITE DUE LETTER.
+"RTN","BISITE2",62,0)
+ ;
+"RTN","BISITE2",63,0)
+ Q:$$BISITE
+"RTN","BISITE2",64,0)
+ D FULL^VALM1,TITLE^BIUTL5("IMMUNIZATIONS DUE LETTER"),TEXT3
+"RTN","BISITE2",65,0)
+ D DIE^BIFMAN(9002084.02,".04",BISITE)
+"RTN","BISITE2",66,0)
+ D RESET^BISITE
+"RTN","BISITE2",67,0)
+ Q
+"RTN","BISITE2",68,0)
+ ;
+"RTN","BISITE2",69,0)
+ ;
+"RTN","BISITE2",70,0)
+ ;----------
+"RTN","BISITE2",71,0)
+TEXT3 ;EP
+"RTN","BISITE2",72,0)
+ ;;The Immunizations Due Letter is the form letter that is sent to
+"RTN","BISITE2",73,0)
+ ;;patients or their parents, listing their Immunization History and
+"RTN","BISITE2",74,0)
+ ;;informing them of which immunizations are due next.  It may also
+"RTN","BISITE2",75,0)
+ ;;contain information about where and when to receive the next
+"RTN","BISITE2",76,0)
+ ;;immunizations.
+"RTN","BISITE2",77,0)
+ ;;
+"RTN","BISITE2",78,0)
+ ;;The letter selected here will be presented as the default letter
+"RTN","BISITE2",79,0)
+ ;;to use when printing Due Letters.
+"RTN","BISITE2",80,0)
+ ;;
+"RTN","BISITE2",81,0)
+ ;;In order to select the letter for this Site Parameter, it must
+"RTN","BISITE2",82,0)
+ ;;already have been created.  To create the Standard Due Letter,
+"RTN","BISITE2",83,0)
+ ;;select LET under the Manager Menu (MGR-->LET).  Create a new letter
+"RTN","BISITE2",84,0)
+ ;;named "Standard Due Letter," and then return to this site parameter
+"RTN","BISITE2",85,0)
+ ;;to choose it.
+"RTN","BISITE2",86,0)
+ ;;
+"RTN","BISITE2",87,0)
+ D PRINTX("TEXT3")
+"RTN","BISITE2",88,0)
+ Q
+"RTN","BISITE2",89,0)
+ ;
+"RTN","BISITE2",90,0)
+ ;
+"RTN","BISITE2",91,0)
+ ;----------
+"RTN","BISITE2",92,0)
+REPHDR ;EP
+"RTN","BISITE2",93,0)
+ ;---> Edit Report Header.
+"RTN","BISITE2",94,0)
+ ;---> Called by Protocol BI SITE REPORT HEADER
+"RTN","BISITE2",95,0)
+ ;
+"RTN","BISITE2",96,0)
+ Q:$$BISITE
+"RTN","BISITE2",97,0)
+ D FULL^VALM1,TITLE^BIUTL5("REPORT & SCREEN HEADER"),TEXT4
+"RTN","BISITE2",98,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE2",99,0)
+ S DIR(0)="FOA",DIR("A")="     Enter the Report/Screen Header: "
+"RTN","BISITE2",100,0)
+ S DIR("B")=$$REPHDR^BIUTL6(BISITE)
+"RTN","BISITE2",101,0)
+ S DIR("?")="     Enter the site name as you would like it to appear"
+"RTN","BISITE2",102,0)
+ D ^DIR
+"RTN","BISITE2",103,0)
+ S:Y="" Y="@"
+"RTN","BISITE2",104,0)
+ ;
+"RTN","BISITE2",105,0)
+ ;---> CodeChange for v7.1 - IHS/CMI/MWR 12/01/2000:
+"RTN","BISITE2",106,0)
+ ;---> Next line missing negation.
+"RTN","BISITE2",107,0)
+ ;D:$D(DUOUT) DIE^BIFMAN(9002084.02,".06///"_Y,BISITE)
+"RTN","BISITE2",108,0)
+ D:'$D(DUOUT) DIE^BIFMAN(9002084.02,".06///"_Y,BISITE)
+"RTN","BISITE2",109,0)
+ ;
+"RTN","BISITE2",110,0)
+ D RESET^BISITE
+"RTN","BISITE2",111,0)
+ Q
+"RTN","BISITE2",112,0)
+ ;
+"RTN","BISITE2",113,0)
+ ;
+"RTN","BISITE2",114,0)
+ ;----------
+"RTN","BISITE2",115,0)
+TEXT4 ;EP
+"RTN","BISITE2",116,0)
+ ;;The Report/Screen Header is the name of your site or institution
+"RTN","BISITE2",117,0)
+ ;;as you would like it to appear at the top of various reports and
+"RTN","BISITE2",118,0)
+ ;;screens throughout this software.
+"RTN","BISITE2",119,0)
+ ;;
+"RTN","BISITE2",120,0)
+ ;;(This may be the same as the Site Name that appears on some
+"RTN","BISITE2",121,0)
+ ;;of screens, however, that name is often an abbreviated
+"RTN","BISITE2",122,0)
+ ;;form of the actual site name.)
+"RTN","BISITE2",123,0)
+ ;;
+"RTN","BISITE2",124,0)
+ ;;Please enter the name of your facility as you would like it
+"RTN","BISITE2",125,0)
+ ;;to appear at the top of reports and screens in this software.
+"RTN","BISITE2",126,0)
+ ;;
+"RTN","BISITE2",127,0)
+ D PRINTX("TEXT4")
+"RTN","BISITE2",128,0)
+ Q
+"RTN","BISITE2",129,0)
+ ;
+"RTN","BISITE2",130,0)
+ ;
+"RTN","BISITE2",131,0)
+ ;----------
+"RTN","BISITE2",132,0)
+HFSPATH ;EP
+"RTN","BISITE2",133,0)
+ ;---> Edit Host File Server path.
+"RTN","BISITE2",134,0)
+ ;---> Called by Protocol BI SITE HFS PATH
+"RTN","BISITE2",135,0)
+ ;
+"RTN","BISITE2",136,0)
+ Q:$$BISITE  N BIPOP S BIPOP=0
+"RTN","BISITE2",137,0)
+ F  D  Q:$G(BIPOP)
+"RTN","BISITE2",138,0)
+ .D FULL^VALM1,TITLE^BIUTL5("HOST FILE SERVER PATH"),TEXT5
+"RTN","BISITE2",139,0)
+ .N BIFLD,BIERR,BIDFLT,BIZ,DIR,DIRUT,X,Y S BIZ=0
+"RTN","BISITE2",140,0)
+ .;
+"RTN","BISITE2",141,0)
+ .S DIR(0)="FOA^1:30",DIR("A")="     Please enter the Host File Path: "
+"RTN","BISITE2",142,0)
+ .S DIR("B")=$$HFSPATH^BIUTL8(BISITE)
+"RTN","BISITE2",143,0)
+ .S DIR("?")="     Enter the full path name of the Host File directory"
+"RTN","BISITE2",144,0)
+ .D ^DIR
+"RTN","BISITE2",145,0)
+ .I $D(DIRUT) S BIPOP=1 Q
+"RTN","BISITE2",146,0)
+ .D:Y'="@" CHKSLASH(.Y,.BIZ,.BIPOP)
+"RTN","BISITE2",147,0)
+ .Q:(BIZ=1!($G(BIPOP)))
+"RTN","BISITE2",148,0)
+ .;D DIE^BIFMAN(9002084.02,".14////"_Y,BISITE) S BIPOP=1
+"RTN","BISITE2",149,0)
+ .S BIFLD(.14)=Y D FDIE^BIFMAN(9002084.02,+BISITE,.BIFLD,.BIERR) S BIPOP=1
+"RTN","BISITE2",150,0)
+ ;
+"RTN","BISITE2",151,0)
+ D RESET^BISITE
+"RTN","BISITE2",152,0)
+ Q
+"RTN","BISITE2",153,0)
+ ;
+"RTN","BISITE2",154,0)
+ ;
+"RTN","BISITE2",155,0)
+ ;----------
+"RTN","BISITE2",156,0)
+CHKSLASH(Y,Z,BIPOP) ;EP
+"RTN","BISITE2",157,0)
+ ;---> Make sure there is a final slash in the path name.
+"RTN","BISITE2",158,0)
+ ;---> Parameters:
+"RTN","BISITE2",159,0)
+ ;     1 - Y  (req) File Path submitted for verification.
+"RTN","BISITE2",160,0)
+ ;     2 - Z  (ret) Z=1 if path contains both "/" and "\" or other error.
+"RTN","BISITE2",161,0)
+ ;     3 - BIPOP (ret) =1 if user ^-out.
+"RTN","BISITE2",162,0)
+ ;
+"RTN","BISITE2",163,0)
+ I Y["/"&(Y["\") D  S Z=1 Q
+"RTN","BISITE2",164,0)
+ .W !!?5,"Path may not contain both ""/"" and ""\""."
+"RTN","BISITE2",165,0)
+ .D DIRZ^BIUTL3()
+"RTN","BISITE2",166,0)
+ ;---> Get rid of any quotes.
+"RTN","BISITE2",167,0)
+ S Y=$TR(Y,"""","")
+"RTN","BISITE2",168,0)
+ ;
+"RTN","BISITE2",169,0)
+ D
+"RTN","BISITE2",170,0)
+ .N X S X=$$VERSION^%ZOSV(1)
+"RTN","BISITE2",171,0)
+ .;
+"RTN","BISITE2",172,0)
+ .;---> Ensure Windows path contains drive & root path.
+"RTN","BISITE2",173,0)
+ .I (X["Windows")&(Y'[":\") D  S Z=1  Q
+"RTN","BISITE2",174,0)
+ ..W !!?5,"Path must contain a drive specification (e.g., C:\path...)."
+"RTN","BISITE2",175,0)
+ ..D DIRZ^BIUTL3(.BIPOP)
+"RTN","BISITE2",176,0)
+ .;
+"RTN","BISITE2",177,0)
+ .;---> Ensure path terminates with appropriate slash.
+"RTN","BISITE2",178,0)
+ .I (X["Windows")!(Y["\") D  Q
+"RTN","BISITE2",179,0)
+ ..I $E(Y,$L(Y))'="\" S Y=Y_"\" Q
+"RTN","BISITE2",180,0)
+ .;
+"RTN","BISITE2",181,0)
+ .I (X["Linux")!(X["UNIX")!(Y["/") D  Q
+"RTN","BISITE2",182,0)
+ ..I $E(Y,$L(Y))'="/" S Y=Y_"/" Q
+"RTN","BISITE2",183,0)
+ Q
+"RTN","BISITE2",184,0)
+ ;
+"RTN","BISITE2",185,0)
+ ;
+"RTN","BISITE2",186,0)
+ ;----------
+"RTN","BISITE2",187,0)
+TEXT5 ;EP
+"RTN","BISITE2",188,0)
+ ;;The Host File Server Path is the directory on the Host File Server
+"RTN","BISITE2",189,0)
+ ;;where files to be imported and exported are stored.
+"RTN","BISITE2",190,0)
+ ;;
+"RTN","BISITE2",191,0)
+ ;;Include ALL necessary slashes in the path name (everything except
+"RTN","BISITE2",192,0)
+ ;;the filename itself).
+"RTN","BISITE2",193,0)
+ ;;
+"RTN","BISITE2",194,0)
+ ;;Examples would be: C:\TEMP\ (on a Windows PC)
+"RTN","BISITE2",195,0)
+ ;;               or  /usr/local/ (in unix/AIX)
+"RTN","BISITE2",196,0)
+ ;;
+"RTN","BISITE2",197,0)
+ ;;
+"RTN","BISITE2",198,0)
+ D PRINTX("TEXT5")
+"RTN","BISITE2",199,0)
+ Q
+"RTN","BISITE2",200,0)
+ ;
+"RTN","BISITE2",201,0)
+ ;
+"RTN","BISITE2",202,0)
+ ;----------
+"RTN","BISITE2",203,0)
+MINDAYS ;EP
+"RTN","BISITE2",204,0)
+ ;---> Edit the default Minimum Number of days since last letter sent.
+"RTN","BISITE2",205,0)
+ ;---> Called by Protocol BI SITE MIN DAYS LAST LET.
+"RTN","BISITE2",206,0)
+ ;
+"RTN","BISITE2",207,0)
+ Q:$$BISITE
+"RTN","BISITE2",208,0)
+ D FULL^VALM1,TITLE^BIUTL5("EDIT MINIMUM DAYS LAST LETTER"),TEXT6
+"RTN","BISITE2",209,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE2",210,0)
+ S DIR(0)="NOA^0:9999:0"
+"RTN","BISITE2",211,0)
+ S DIR("A")="     Number of days: "
+"RTN","BISITE2",212,0)
+ S DIR("B")=$$MINDAYS^BIUTL2(BISITE)
+"RTN","BISITE2",213,0)
+ D ^DIR
+"RTN","BISITE2",214,0)
+ D:'$D(DUOUT) DIE^BIFMAN(9002084.02,".05///"_+Y,BISITE)
+"RTN","BISITE2",215,0)
+ D RESET^BISITE
+"RTN","BISITE2",216,0)
+ Q
+"RTN","BISITE2",217,0)
+ ;
+"RTN","BISITE2",218,0)
+ ;
+"RTN","BISITE2",219,0)
+ ;----------
+"RTN","BISITE2",220,0)
+TEXT6 ;EP
+"RTN","BISITE2",221,0)
+ ;;The Minimum Days Last Letter is the least number of days that must
+"RTN","BISITE2",222,0)
+ ;;pass--after a letter is sent to a patient--before the software
+"RTN","BISITE2",223,0)
+ ;;will automatically send another letter to that same patient.
+"RTN","BISITE2",224,0)
+ ;;(This pertains only to the printing of letters.)
+"RTN","BISITE2",225,0)
+ ;;
+"RTN","BISITE2",226,0)
+ ;;For example, if a patient received a letter 2 weeks ago and
+"RTN","BISITE2",227,0)
+ ;;the Minimum Days Last Letter is 60, then the software will not
+"RTN","BISITE2",228,0)
+ ;;generate a letter for that patient today, even if the patient
+"RTN","BISITE2",229,0)
+ ;;is due for immunizations.
+"RTN","BISITE2",230,0)
+ ;;
+"RTN","BISITE2",231,0)
+ ;;This Site Parameter sets only the DEFAULT Minimum Days Last Letter--
+"RTN","BISITE2",232,0)
+ ;;the Case Manager always has the option to change it when printing
+"RTN","BISITE2",233,0)
+ ;;Due Letters.
+"RTN","BISITE2",234,0)
+ ;;
+"RTN","BISITE2",235,0)
+ ;;Please enter the default Minimum number Days since Last Letter.
+"RTN","BISITE2",236,0)
+ ;;
+"RTN","BISITE2",237,0)
+ D PRINTX("TEXT6")
+"RTN","BISITE2",238,0)
+ Q
+"RTN","BISITE2",239,0)
+ ;
+"RTN","BISITE2",240,0)
+ ;
+"RTN","BISITE2",241,0)
+ ;----------
+"RTN","BISITE2",242,0)
+MINAGE ;EP
+"RTN","BISITE2",243,0)
+ ;---> Edit the parameter directing the ImmServe Forecast to return
+"RTN","BISITE2",244,0)
+ ;---> Immunization Due dates for either the Minimum Acceptable Age
+"RTN","BISITE2",245,0)
+ ;---> or the Recommended Age.
+"RTN","BISITE2",246,0)
+ ;---> Called by Protocol BI SITE FORC MIN VS RECOMM
+"RTN","BISITE2",247,0)
+ ;
+"RTN","BISITE2",248,0)
+ Q:$$BISITE
+"RTN","BISITE2",249,0)
+ D FULL^VALM1,TITLE^BIUTL5("SELECT MINIMUM VS RECOMMENDED AGE"),TEXT7
+"RTN","BISITE2",250,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE2",251,0)
+ S DIR(0)="SOA^M:Minimum;R:Recommended"
+"RTN","BISITE2",252,0)
+ S DIR("A")="     Please select either MINIMUM or RECOMMENDED: "
+"RTN","BISITE2",253,0)
+ ;
+"RTN","BISITE2",254,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE2",255,0)
+ ;---> Change parameter prompt to default recommended.
+"RTN","BISITE2",256,0)
+ S DIR("B")=$S($$MINAGE^BIUTL2(BISITE)=1:"Minimum",1:"Recommended")
+"RTN","BISITE2",257,0)
+ ;**********
+"RTN","BISITE2",258,0)
+ D ^DIR
+"RTN","BISITE2",259,0)
+ S:Y="M" Y="A"
+"RTN","BISITE2",260,0)
+ D:'$D(DIRUT) DIE^BIFMAN(9002084.02,".07///"_Y,BISITE)
+"RTN","BISITE2",261,0)
+ D RESET^BISITE
+"RTN","BISITE2",262,0)
+ Q
+"RTN","BISITE2",263,0)
+ ;
+"RTN","BISITE2",264,0)
+ ;
+"RTN","BISITE2",265,0)
+ ;----------
+"RTN","BISITE2",266,0)
+TEXT7 ;EP
+"RTN","BISITE2",267,0)
+ ;;
+"RTN","BISITE2",268,0)
+ ;;The Minimum vs Recommended Age parameter allows you to direct the
+"RTN","BISITE2",269,0)
+ ;;Forecasting program to forecast Immunizations due at either the
+"RTN","BISITE2",270,0)
+ ;;Minimum Acceptable Patient Age or at the Recommended Age.
+"RTN","BISITE2",271,0)
+ ;;
+"RTN","BISITE2",272,0)
+ D PRINTX("TEXT7")
+"RTN","BISITE2",273,0)
+ Q
+"RTN","BISITE2",274,0)
+ ;
+"RTN","BISITE2",275,0)
+ ;
+"RTN","BISITE2",276,0)
+ ;----------
+"RTN","BISITE2",277,0)
+RULES ;EP
+"RTN","BISITE2",278,0)
+ ;---> Edit the parameter directing which version of Forecasting
+"RTN","BISITE2",279,0)
+ ;---> Rules should be used by ImmServe.
+"RTN","BISITE2",280,0)
+ ;---> Called by Protocol BI SITE FORC RULES
+"RTN","BISITE2",281,0)
+ ;
+"RTN","BISITE2",282,0)
+ Q:$$BISITE
+"RTN","BISITE2",283,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE2",284,0)
+ ;---> Change parameter prompt to just Grace Period.
+"RTN","BISITE2",285,0)
+ ;D FULL^VALM1,TITLE^BIUTL5("SELECT FORECASTING OPTIONS",1),TEXT8
+"RTN","BISITE2",286,0)
+ N BIDFLT,BIPOP,DIR,DIRUT,X,Y
+"RTN","BISITE2",287,0)
+ ;
+"RTN","BISITE2",288,0)
+ ;---> For a new set of Immserve Rules, change here below and $$VALIDRUL^BIUTL2.
+"RTN","BISITE2",289,0)
+ ;S DIR(0)="NOA^1,2,3,4,5,6,7,11"
+"RTN","BISITE2",290,0)
+ ;S DIR("?")="     Enter a number from the left column to choose one of the Options."
+"RTN","BISITE2",291,0)
+ ;S DIR("A")="     Select Forecasting Option: "
+"RTN","BISITE2",292,0)
+ ;S Y=$P($G(^BISITE(BISITE,0)),U,8)
+"RTN","BISITE2",293,0)
+ ;S:'Y Y=1 S DIR("B")=+Y
+"RTN","BISITE2",294,0)
+ ;D ^DIR
+"RTN","BISITE2",295,0)
+ ;---> For a new set of Immserve Rules, change here below and $$VALIDRUL^BIUTL2.
+"RTN","BISITE2",296,0)
+ ;I (Y>7)&(Y<11) D  G RULES
+"RTN","BISITE2",297,0)
+ ;.W !!?8,Y," is not a valid Option.  Please choose again."
+"RTN","BISITE2",298,0)
+ ;.D DIRZ^BIUTL3(.BIPOP)
+"RTN","BISITE2",299,0)
+ ;
+"RTN","BISITE2",300,0)
+ ;D:'$D(DIRUT) DIE^BIFMAN(9002084.02,".08///"_+Y,BISITE,.BIPOP)
+"RTN","BISITE2",301,0)
+ ;I $G(DIRUT) D RESET^BISITE Q
+"RTN","BISITE2",302,0)
+ ;
+"RTN","BISITE2",303,0)
+ ;---> Grace Period question.
+"RTN","BISITE2",304,0)
+ ;D TITLE^BIUTL5("SELECT FORECASTING RULES"),TEXT9
+"RTN","BISITE2",305,0)
+ D FULL^VALM1,TITLE^BIUTL5("4-DAY GRACE PERIOD OPTION",1),TEXT9
+"RTN","BISITE2",306,0)
+ N BIDFLT,BIHELP,BIHELP1,BIPRMPT,X,Y
+"RTN","BISITE2",307,0)
+ S BIPRMPT="     Do you wish to implement a 4-Day Grace Period"
+"RTN","BISITE2",308,0)
+ S BIHELP1="        Enter Yes to allow a 4-day grace period."
+"RTN","BISITE2",309,0)
+ S BIHELP="        Enter No to disallow any grace period."
+"RTN","BISITE2",310,0)
+ S BIDFLT=$P($G(^BISITE(BISITE,0)),U,21)
+"RTN","BISITE2",311,0)
+ S BIDFLT=$S(BIDFLT:"YES",1:"NO")
+"RTN","BISITE2",312,0)
+ W !
+"RTN","BISITE2",313,0)
+ D DIR^BIFMAN("YO",.Y,,BIPRMPT,BIDFLT,BIHELP,BIHELP1)
+"RTN","BISITE2",314,0)
+ I $G(Y)="^" D RESET^BISITE Q
+"RTN","BISITE2",315,0)
+ D DIE^BIFMAN(9002084.02,".21///"_Y,BISITE)
+"RTN","BISITE2",316,0)
+ ;
+"RTN","BISITE2",317,0)
+ ;---> HPV Age question.
+"RTN","BISITE2",318,0)
+ ;D TITLE^BIUTL5("SELECT FORECASTING RULES"),TEXT10
+"RTN","BISITE2",319,0)
+ ;N BIDFLT,BIHELP,BIPRMPT,X,Y
+"RTN","BISITE2",320,0)
+ ;
+"RTN","BISITE2",321,0)
+ ;********** PATCH 2, v8.5, MAY 15,2012, IHS/CMI/MWR
+"RTN","BISITE2",322,0)
+ ;---> Update prompts and help text for HPV.
+"RTN","BISITE2",323,0)
+ ;S BIPRMPT="     Select 1 (18 yrs) or 2 for (26f/21m yrs): "
+"RTN","BISITE2",324,0)
+ ;S BIHELP="        Enter 1 to stop HPV at 18 yrs old; or 2 to stop"
+"RTN","BISITE2",325,0)
+ ;S BIHELP=BIHELP_" at 26f/21m yrs."
+"RTN","BISITE2",326,0)
+ ;**********
+"RTN","BISITE2",327,0)
+ ;
+"RTN","BISITE2",328,0)
+ ;S BIDFLT=+$P($G(^BISITE(BISITE,0)),U,24)  S:'BIDFLT BIDFLT=1
+"RTN","BISITE2",329,0)
+ ;D DIR^BIFMAN("SAB^1:18;2:26",.Y,,BIPRMPT,BIDFLT,BIHELP)
+"RTN","BISITE2",330,0)
+ ;I $G(Y)="^" D RESET^BISITE Q
+"RTN","BISITE2",331,0)
+ ;D DIE^BIFMAN(9002084.02,".24///"_Y,BISITE)
+"RTN","BISITE2",332,0)
+ ;**********
+"RTN","BISITE2",333,0)
+ ;
+"RTN","BISITE2",334,0)
+ D RESET^BISITE
+"RTN","BISITE2",335,0)
+ Q
+"RTN","BISITE2",336,0)
+ ;
+"RTN","BISITE2",337,0)
+ ;
+"RTN","BISITE2",338,0)
+ ;********** PATCH 5, v8.5, JUL 01,2013, IHS/CMI/MWR
+"RTN","BISITE2",339,0)
+ ;---> Update HPV text below.
+"RTN","BISITE2",340,0)
+ ;**********
+"RTN","BISITE2",341,0)
+ ;----------
+"RTN","BISITE2",342,0)
+TEXT8 ;EP
+"RTN","BISITE2",343,0)
+ ;;Versions 1, 3, 5, 6, 7 and 11 forecast the first vaccines series at 6 wks;
+"RTN","BISITE2",344,0)
+ ;;the others beginning at 2 mths.  All versions forecast Rotavirus at
+"RTN","BISITE2",345,0)
+ ;;2 (6 wks), 4, and 6 mths, and Influenza between Aug 15 and March 14
+"RTN","BISITE2",346,0)
+ ;;for infants 6 months-18 years (or all ages).  Options 3,4 & 6 forecast
+"RTN","BISITE2",347,0)
+ ;;Hep A starting at 12 months, while options 1,2,5 and 11 forecast Hep A
+"RTN","BISITE2",348,0)
+ ;;at 15 months.  Option 11 does not forecast Hep A or Hep B in persons
+"RTN","BISITE2",349,0)
+ ;;over 18 years, regardless of prior doses. All options forecast Tdap, MCV4,
+"RTN","BISITE2",350,0)
+ ;;and HPV for adolescents per ACIP recommendations.
+"RTN","BISITE2",351,0)
+ ;;
+"RTN","BISITE2",352,0)
+ ;;   Option       6 Mths         12 Mths                     15 Mths
+"RTN","BISITE2",353,0)
+ ;;   ------       ------  -----------------------------      ----------
+"RTN","BISITE2",354,0)
+ ;;    1) ......   IPV     Hib, MMR, Pn, Var ...........      DTaP, HepA
+"RTN","BISITE2",355,0)
+ ;;    2) ......   ....    Hib, IPV, MMR, Pn, Var ......      DTaP, HepA
+"RTN","BISITE2",356,0)
+ ;;    3) ......   IPV     DTaP, Hib, MMR, Pn, Var, HepA
+"RTN","BISITE2",357,0)
+ ;;    4) ......   ....    DTaP, Hib, IPV, MMR, Pn, Var, HepA
+"RTN","BISITE2",358,0)
+ ;;    5) ......   IPV     Hib, MMR, Var ...............      DTaP, Pn, HepA
+"RTN","BISITE2",359,0)
+ ;;    6) ......   IPV     Hib, MMR, Var, HepA..........      DTaP, Pn
+"RTN","BISITE2",360,0)
+ ;;    7) Comvax   IPV     DTaP, HepB, Hib, MMR, Pn, Var      Hep A
+"RTN","BISITE2",361,0)
+ ;;   11) ......   IPV     Hib, MMR, Pn, Var ...........      DTaP, HepA
+"RTN","BISITE2",362,0)
+ ;;
+"RTN","BISITE2",363,0)
+ D PRINTX("TEXT8",3)
+"RTN","BISITE2",364,0)
+ Q
+"RTN","BISITE2",365,0)
+ ;
+"RTN","BISITE2",366,0)
+ ;
+"RTN","BISITE2",367,0)
+ ;----------
+"RTN","BISITE2",368,0)
+TEXT9 ;EP
+"RTN","BISITE2",369,0)
+ ;;The ACIP recommends that vaccine doses administered 4 days or less
+"RTN","BISITE2",370,0)
+ ;;before the minimum interval or age be counted as valid.  (Not all
+"RTN","BISITE2",371,0)
+ ;;states accept this "4-Day Grace Period.")
+"RTN","BISITE2",372,0)
+ ;;
+"RTN","BISITE2",373,0)
+ ;;Below, choose "Yes" if you would like to screen using the 4-Day Grace
+"RTN","BISITE2",374,0)
+ ;;Period.  Choose "No" to adhere strictly to the recommended intervals.
+"RTN","BISITE2",375,0)
+ ;;
+"RTN","BISITE2",376,0)
+ ;;Note: The 4-Day Grace Period will not affect vaccine forecasting, only
+"RTN","BISITE2",377,0)
+ ;;screening for the validity of the dose administered.
+"RTN","BISITE2",378,0)
+ ;;
+"RTN","BISITE2",379,0)
+ D PRINTX("TEXT9")
+"RTN","BISITE2",380,0)
+ Q
+"RTN","BISITE2",381,0)
+ ;
+"RTN","BISITE2",382,0)
+ ;
+"RTN","BISITE2",383,0)
+ ;********** PATCH 2, v8.5, MAY 15,2012, IHS/CMI/MWR
+"RTN","BISITE2",384,0)
+ ;---> Update prompts and help text for HPV.
+"RTN","BISITE2",385,0)
+ ;
+"RTN","BISITE2",386,0)
+ ;----------
+"RTN","BISITE2",387,0)
+TEXT10 ;EP
+"RTN","BISITE2",388,0)
+ ;;The ACIP recommends HPV for females 11-12 years with catch up for
+"RTN","BISITE2",389,0)
+ ;;13-26 years for females and 13-21 years for males.  But HPV is provided
+"RTN","BISITE2",390,0)
+ ;;by the Vaccine for Children's Program only for 9-18 year olds.
+"RTN","BISITE2",391,0)
+ ;;
+"RTN","BISITE2",392,0)
+ ;;Please select whether HPV should forecast for all patients from age 11
+"RTN","BISITE2",393,0)
+ ;;through 18 years, or only through age 26 for females and age 21 for males.
+"RTN","BISITE2",394,0)
+ ;;
+"RTN","BISITE2",395,0)
+ ;**********
+"RTN","BISITE2",396,0)
+ D PRINTX("TEXT10")
+"RTN","BISITE2",397,0)
+ Q
+"RTN","BISITE2",398,0)
+ ;
+"RTN","BISITE2",399,0)
+ ;
+"RTN","BISITE2",400,0)
+ ;----------
+"RTN","BISITE2",401,0)
+PRINTX(BILINL,BITAB) ;EP
+"RTN","BISITE2",402,0)
+ Q:$G(BILINL)=""
+"RTN","BISITE2",403,0)
+ N I,T,X S T="" S:'$D(BITAB) BITAB=5 F I=1:1:BITAB S T=T_" "
+"RTN","BISITE2",404,0)
+ F I=1:1 S X=$T(@BILINL+I) Q:X'[";;"  W !,T,$P(X,";;",2)
+"RTN","BISITE2",405,0)
+ Q
+"RTN","BISITE2",406,0)
+ ;
+"RTN","BISITE2",407,0)
+ ;
+"RTN","BISITE2",408,0)
+ ;----------
+"RTN","BISITE2",409,0)
+BISITE() ;EP
+"RTN","BISITE2",410,0)
+ ;---> Check for local variable BISITE.
+"RTN","BISITE2",411,0)
+ ;---> Variables:
+"RTN","BISITE2",412,0)
+ ;     1 - BISITE (req) Site IEN in BI SITE PARAMETER File.
+"RTN","BISITE2",413,0)
+ ;
+"RTN","BISITE2",414,0)
+ I '$G(BISITE) D ERRCD^BIUTL2(111,,1),RESET^BISITE Q 1
+"RTN","BISITE2",415,0)
+ I '$D(^BISITE(BISITE,0)) D ERRCD^BIUTL2(110,,1),RESET^BISITE Q 1
+"RTN","BISITE2",416,0)
+ Q 0
+"RTN","BISITE3")
+0^4^B167523197
+"RTN","BISITE3",1,0)
+BISITE3 ;IHS/CMI/MWR - EDIT SITE PARAMETERS; MAY 10, 2010
+"RTN","BISITE3",2,0)
+ ;;8.5;IMMUNIZATION;**9**;OCT 01,2014;Build 1
+"RTN","BISITE3",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISITE3",4,0)
+ ;;  EDIT SITE PARAMETERS.
+"RTN","BISITE3",5,0)
+ ;   PATCH 2: Fix SET of default Low Supply Alert.  LOTREQ+21
+"RTN","BISITE3",6,0)
+ ;;  PATCH 8: Change to limit Pneumo prompt to 65 yrs.  PNUFLU+10
+"RTN","BISITE3",7,0)
+ ;;  PATCH 9: Add ability to edit IP address for TCH Forecaster.  IPTCH
+"RTN","BISITE3",8,0)
+ ;
+"RTN","BISITE3",9,0)
+ ;
+"RTN","BISITE3",10,0)
+ ;----------
+"RTN","BISITE3",11,0)
+FORECAS ;EP
+"RTN","BISITE3",12,0)
+ ;---> Edit the parameter that determines whether the ImmServe
+"RTN","BISITE3",13,0)
+ ;---> Forecasting utility is called ("enabled") or not.
+"RTN","BISITE3",14,0)
+ ;---> Called by Protocol BI SITE FORECAST ENABLE.
+"RTN","BISITE3",15,0)
+ ;
+"RTN","BISITE3",16,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE3",17,0)
+ D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE FORECASTING"),TEXT1
+"RTN","BISITE3",18,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE3",19,0)
+ S DIR(0)="SOA^E:Enable;D:Disable"
+"RTN","BISITE3",20,0)
+ S DIR("A")="     Please select either Enable or Disable: "
+"RTN","BISITE3",21,0)
+ S DIR("B")=$S($$FORECAS^BIUTL2(BISITE):"Enable",1:"Disable")
+"RTN","BISITE3",22,0)
+ D ^DIR
+"RTN","BISITE3",23,0)
+ D:'$D(DIRUT)
+"RTN","BISITE3",24,0)
+ .N BIFLD,BIERR S BIFLD(.11)=Y
+"RTN","BISITE3",25,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE3",26,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",27,0)
+ D RESET^BISITE
+"RTN","BISITE3",28,0)
+ Q
+"RTN","BISITE3",29,0)
+ ;
+"RTN","BISITE3",30,0)
+ ;
+"RTN","BISITE3",31,0)
+ ;----------
+"RTN","BISITE3",32,0)
+TEXT1 ;EP
+"RTN","BISITE3",33,0)
+ ;;
+"RTN","BISITE3",34,0)
+ ;;If the ImmServe Forecasting Utility is properly installed and
+"RTN","BISITE3",35,0)
+ ;;Immunizations Due should be forecast when viewing and editing
+"RTN","BISITE3",36,0)
+ ;;patient histories, printing Due Lists, etc., choose "Enable" below.
+"RTN","BISITE3",37,0)
+ ;;If the ImmServe Utility is not installed, choose "Disable" below.
+"RTN","BISITE3",38,0)
+ ;;
+"RTN","BISITE3",39,0)
+ ;;NOTE: If at any point in the software an <XCALL> error occurs,
+"RTN","BISITE3",40,0)
+ ;;      this is due to the ImmServe Utility being called without
+"RTN","BISITE3",41,0)
+ ;;      it being installed.  In this case, either the ImmServe
+"RTN","BISITE3",42,0)
+ ;;      Utility should be installed (see Installation Notes in
+"RTN","BISITE3",43,0)
+ ;;      the Technical Manual), or this parameter should be Disabled.
+"RTN","BISITE3",44,0)
+ ;;
+"RTN","BISITE3",45,0)
+ D PRINTX("TEXT1")
+"RTN","BISITE3",46,0)
+ Q
+"RTN","BISITE3",47,0)
+ ;
+"RTN","BISITE3",48,0)
+ ;
+"RTN","BISITE3",49,0)
+ ;----------
+"RTN","BISITE3",50,0)
+DASHES ;EP
+"RTN","BISITE3",51,0)
+ ;---> Edit the parameter that determines whether Chart#s should
+"RTN","BISITE3",52,0)
+ ;---> be displayed with dashes inserted or not.
+"RTN","BISITE3",53,0)
+ ;---> Called by Protocol BI SITE CHART# DASHES.
+"RTN","BISITE3",54,0)
+ ;
+"RTN","BISITE3",55,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE3",56,0)
+ D FULL^VALM1,TITLE^BIUTL5("DISPLAY CHART# WITH DASHES"),TEXT2
+"RTN","BISITE3",57,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE3",58,0)
+ S DIR(0)="SOA^0:No Dashes;1:Dashes Included"
+"RTN","BISITE3",59,0)
+ S DIR("A")="     Please select No Dashes or Dashes Included: "
+"RTN","BISITE3",60,0)
+ S DIR("B")=$S($$DASH^BIUTL1(BISITE):"Dashes Included",1:"No Dashes")
+"RTN","BISITE3",61,0)
+ D ^DIR
+"RTN","BISITE3",62,0)
+ D:'$D(DIRUT)
+"RTN","BISITE3",63,0)
+ .N BIFLD,BIERR S BIFLD(.12)=Y
+"RTN","BISITE3",64,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR)
+"RTN","BISITE3",65,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",66,0)
+ D RESET^BISITE
+"RTN","BISITE3",67,0)
+ Q
+"RTN","BISITE3",68,0)
+ ;
+"RTN","BISITE3",69,0)
+ ;
+"RTN","BISITE3",70,0)
+ ;----------
+"RTN","BISITE3",71,0)
+TEXT2 ;EP
+"RTN","BISITE3",72,0)
+ ;;You may select whether Chart#'s (Health Record Numbers) are
+"RTN","BISITE3",73,0)
+ ;;displayed throughout the Immunization package with dashes or not.
+"RTN","BISITE3",74,0)
+ ;;
+"RTN","BISITE3",75,0)
+ ;;Chart# displayed without dashes..:  12345
+"RTN","BISITE3",76,0)
+ ;;Same Chart# displayed with dashes:  01-23-45
+"RTN","BISITE3",77,0)
+ ;;
+"RTN","BISITE3",78,0)
+ ;;
+"RTN","BISITE3",79,0)
+ D PRINTX("TEXT2")
+"RTN","BISITE3",80,0)
+ Q
+"RTN","BISITE3",81,0)
+ ;
+"RTN","BISITE3",82,0)
+ ;
+"RTN","BISITE3",83,0)
+ ;----------
+"RTN","BISITE3",84,0)
+OFFREC ;EP
+"RTN","BISITE3",85,0)
+ ;---> Select the Letter that will serve as the Official Immunization
+"RTN","BISITE3",86,0)
+ ;---> Record.
+"RTN","BISITE3",87,0)
+ ;---> Called by Protocol BI SITE OFFICIAL PT RECORD.
+"RTN","BISITE3",88,0)
+ ;
+"RTN","BISITE3",89,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE3",90,0)
+ D FULL^VALM1,TITLE^BIUTL5("OFFICIAL IMMUNIZATION RECORD"),TEXT3
+"RTN","BISITE3",91,0)
+ D DIE^BIFMAN(9002084.02,".13",BISITE)
+"RTN","BISITE3",92,0)
+ D RESET^BISITE
+"RTN","BISITE3",93,0)
+ Q
+"RTN","BISITE3",94,0)
+ ;
+"RTN","BISITE3",95,0)
+ ;
+"RTN","BISITE3",96,0)
+ ;----------
+"RTN","BISITE3",97,0)
+TEXT3 ;EP
+"RTN","BISITE3",98,0)
+ ;;The Official Immunization Record is the letter that presents all of
+"RTN","BISITE3",99,0)
+ ;;a patient's Immunization information and is generally used to send
+"RTN","BISITE3",100,0)
+ ;;to schools, parents, other clinics, etc.
+"RTN","BISITE3",101,0)
+ ;;
+"RTN","BISITE3",102,0)
+ ;;The letter selected here will be used as the patient's Official
+"RTN","BISITE3",103,0)
+ ;;Immunization Record whenever users select that action.
+"RTN","BISITE3",104,0)
+ ;;
+"RTN","BISITE3",105,0)
+ ;;In order to select the letter for this Site Parameter, it must
+"RTN","BISITE3",106,0)
+ ;;already have been created.  To create the Official Immunization
+"RTN","BISITE3",107,0)
+ ;;Record letter, select LET under the Manager Menu (MGR-->LET).
+"RTN","BISITE3",108,0)
+ ;;Create a new letter named "Official Immunization Record," and then
+"RTN","BISITE3",109,0)
+ ;;return to this site parameter to choose it.
+"RTN","BISITE3",110,0)
+ ;;
+"RTN","BISITE3",111,0)
+ D PRINTX("TEXT3")
+"RTN","BISITE3",112,0)
+ Q
+"RTN","BISITE3",113,0)
+ ;
+"RTN","BISITE3",114,0)
+ ;
+"RTN","BISITE3",115,0)
+ ;----------
+"RTN","BISITE3",116,0)
+PNUFLU ;EP
+"RTN","BISITE3",117,0)
+ ;---> Edit Pneumo, Flu, and Zoster site parameters.  v8.5
+"RTN","BISITE3",118,0)
+ ;
+"RTN","BISITE3",119,0)
+ ;---> Edit the age at which adults should be forecast to receive
+"RTN","BISITE3",120,0)
+ ;---> pneumococcal vaccines.
+"RTN","BISITE3",121,0)
+ ;---> Called by Protocol BI SITE PNEUMO AGE.
+"RTN","BISITE3",122,0)
+ ;
+"RTN","BISITE3",123,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE3",124,0)
+ D FULL^VALM1,TITLE^BIUTL5("EDIT AGE APPROPRIATE FOR PNEUMO"),TEXT4
+"RTN","BISITE3",125,0)
+ N BIDFLT,BIPOP,DIR,DIRUT,Y
+"RTN","BISITE3",126,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE3",127,0)
+ ;---> Only allow age range up to 65.
+"RTN","BISITE3",128,0)
+ ;S DIR(0)="NOA^1:9999:0"
+"RTN","BISITE3",129,0)
+ S DIR(0)="NOA^1:65:0"
+"RTN","BISITE3",130,0)
+ S DIR("A")="     Adult Age for Pneumo: "
+"RTN","BISITE3",131,0)
+ S DIR("B")=$P($$PNMAGE^BIPATUP2(BISITE),U)
+"RTN","BISITE3",132,0)
+ ;S DIR("?")="       Enter a number between 1 and 99 years of age."
+"RTN","BISITE3",133,0)
+ S DIR("?")="       Enter a number between 1 and 65 years of age."
+"RTN","BISITE3",134,0)
+ D ^DIR
+"RTN","BISITE3",135,0)
+ I $D(DIRUT) D RESET^BISITE Q
+"RTN","BISITE3",136,0)
+ ;
+"RTN","BISITE3",137,0)
+ N BIFLD,BIERR S BIFLD(.1)=+Y
+"RTN","BISITE3",138,0)
+ D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR)
+"RTN","BISITE3",139,0)
+ I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3(),RESET^BISITE Q
+"RTN","BISITE3",140,0)
+ ;
+"RTN","BISITE3",141,0)
+ ;---> Flu Forecast for ALL question.
+"RTN","BISITE3",142,0)
+ ;D TITLE^BIUTL5("SELECT FLU FORECASTING AGES"),TEXT11
+"RTN","BISITE3",143,0)
+ ;N BIDFLT,BIHELP,BIHELP1,BIPRMPT,X,Y
+"RTN","BISITE3",144,0)
+ ;S BIPRMPT="     Forecast Flu vaccination for ALL patients"
+"RTN","BISITE3",145,0)
+ ;S BIHELP1="        Enter Yes to forecast Flu for ALL patients."
+"RTN","BISITE3",146,0)
+ ;S BIHELP="        Enter No to limit Flu forecasting (6m-18y, 50y+)."
+"RTN","BISITE3",147,0)
+ ;S BIDFLT=$S($$FLUALL^BIPATUP2(BISITE):"YES",1:"NO")
+"RTN","BISITE3",148,0)
+ ;W !
+"RTN","BISITE3",149,0)
+ ;D DIR^BIFMAN("YO",.Y,,BIPRMPT,BIDFLT,BIHELP,BIHELP1)
+"RTN","BISITE3",150,0)
+ ;I $G(Y)="^" D RESET^BISITE Q
+"RTN","BISITE3",151,0)
+ ;D DIE^BIFMAN(9002084.02,".27///"_Y,BISITE)
+"RTN","BISITE3",152,0)
+ ;
+"RTN","BISITE3",153,0)
+ ;---> Zoster Vaccine Forecast question.
+"RTN","BISITE3",154,0)
+ ;D TITLE^BIUTL5("SELECT FORECASTING FOR ZOSTER VACCINE"),TEXT12
+"RTN","BISITE3",155,0)
+ ;N BIDFLT,BIHELP,BIHELP1,BIPRMPT,X,Y
+"RTN","BISITE3",156,0)
+ ;S BIPRMPT="     Forecast Zoster vaccine for ALL patients over age 60"
+"RTN","BISITE3",157,0)
+ ;S BIHELP1="        Enter Yes to forecast Zoster vaccine for ALL patients over age 60."
+"RTN","BISITE3",158,0)
+ ;S BIHELP="        Enter No to disable Zoster vaccine forecasting."
+"RTN","BISITE3",159,0)
+ ;S BIDFLT=$S($$ZOSTER^BIPATUP2(BISITE):"YES",1:"NO")
+"RTN","BISITE3",160,0)
+ ;W !
+"RTN","BISITE3",161,0)
+ ;D DIR^BIFMAN("YO",.Y,,BIPRMPT,BIDFLT,BIHELP,BIHELP1)
+"RTN","BISITE3",162,0)
+ ;I $G(Y)="^" D RESET^BISITE Q
+"RTN","BISITE3",163,0)
+ ;D DIE^BIFMAN(9002084.02,".29///"_Y,BISITE)
+"RTN","BISITE3",164,0)
+ ;**********
+"RTN","BISITE3",165,0)
+ ;
+"RTN","BISITE3",166,0)
+ D RESET^BISITE
+"RTN","BISITE3",167,0)
+ Q
+"RTN","BISITE3",168,0)
+ ;
+"RTN","BISITE3",169,0)
+ ;---> q6-year parameter no longer used.  Feb 2010.
+"RTN","BISITE3",170,0)
+ ;W !!?5,"For people "_+Y_" years of age and older, should Pneumo-PS"
+"RTN","BISITE3",171,0)
+ ;W !?5,"be routinely forecast every 6 years after the age of "_+Y_", "
+"RTN","BISITE3",172,0)
+ ;W !?5,"or should it be a one-time immunization?"
+"RTN","BISITE3",173,0)
+ ;S BIDFLT=$P($G(^BISITE(BISITE,0)),U,22)
+"RTN","BISITE3",174,0)
+ ;S BIDFLT=$S(BIDFLT:"YES",1:"NO")
+"RTN","BISITE3",175,0)
+ ;W !
+"RTN","BISITE3",176,0)
+ ;D DIR^BIFMAN("YO",.Y,.BIPOP,"     Forecast every 6 years",BIDFLT)
+"RTN","BISITE3",177,0)
+ ;D:'$G(BIPOP)
+"RTN","BISITE3",178,0)
+ ;.N BIFLD,BIERR S BIFLD(.22)=+Y
+"RTN","BISITE3",179,0)
+ ;.D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR)
+"RTN","BISITE3",180,0)
+ ;.I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",181,0)
+ ;D RESET^BISITE
+"RTN","BISITE3",182,0)
+ Q
+"RTN","BISITE3",183,0)
+ ;
+"RTN","BISITE3",184,0)
+ ;
+"RTN","BISITE3",185,0)
+ ;----------
+"RTN","BISITE3",186,0)
+TEXT4 ;EP
+"RTN","BISITE3",187,0)
+ ;;Enter the adult age at which you wish pneumococcal immunizations
+"RTN","BISITE3",188,0)
+ ;;to be routinely forecast (prescribed).  Typically this is set to
+"RTN","BISITE3",189,0)
+ ;;65 years of age.
+"RTN","BISITE3",190,0)
+ ;;
+"RTN","BISITE3",191,0)
+ D PRINTX("TEXT4")
+"RTN","BISITE3",192,0)
+ Q
+"RTN","BISITE3",193,0)
+ ;
+"RTN","BISITE3",194,0)
+ ;
+"RTN","BISITE3",195,0)
+ ;----------
+"RTN","BISITE3",196,0)
+TEXT11 ;EP
+"RTN","BISITE3",197,0)
+ ;;Influenza vaccine is recommend for ALL ages.
+"RTN","BISITE3",198,0)
+ ;;You can, however, choose to limit influenza vaccine forecasting to
+"RTN","BISITE3",199,0)
+ ;;patients ages 6 months to 18 years and to those 50 years and older.
+"RTN","BISITE3",200,0)
+ ;;
+"RTN","BISITE3",201,0)
+ ;;Do you wish to forecast Flu vaccination for ALL patients (over 6 months)?
+"RTN","BISITE3",202,0)
+ ;;
+"RTN","BISITE3",203,0)
+ D PRINTX("TEXT11")
+"RTN","BISITE3",204,0)
+ Q
+"RTN","BISITE3",205,0)
+ ;
+"RTN","BISITE3",206,0)
+ ;
+"RTN","BISITE3",207,0)
+ ;----------
+"RTN","BISITE3",208,0)
+TEXT12 ;EP
+"RTN","BISITE3",209,0)
+ ;;A single dose of Zoster vaccine vaccination is recommended for ALL
+"RTN","BISITE3",210,0)
+ ;;patients over 60 years of age.
+"RTN","BISITE3",211,0)
+ ;;
+"RTN","BISITE3",212,0)
+ ;;Do you wish to forecast Zoster vaccine for ALL patients over age 60?
+"RTN","BISITE3",213,0)
+ ;;
+"RTN","BISITE3",214,0)
+ D PRINTX("TEXT12")
+"RTN","BISITE3",215,0)
+ Q
+"RTN","BISITE3",216,0)
+ ;
+"RTN","BISITE3",217,0)
+ ;
+"RTN","BISITE3",218,0)
+ ;----------
+"RTN","BISITE3",219,0)
+DEFPRV ;EP
+"RTN","BISITE3",220,0)
+ ;---> Edit the parameter that determines whether the User
+"RTN","BISITE3",221,0)
+ ;---> should appear as the Default Provider.
+"RTN","BISITE3",222,0)
+ ;---> Called by Protocol BI SITE DEFAULT PROVIDER.
+"RTN","BISITE3",223,0)
+ ;
+"RTN","BISITE3",224,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE3",225,0)
+ D FULL^VALM1,TITLE^BIUTL5("USER AS DEFAULT PROVIDER"),TEXT5
+"RTN","BISITE3",226,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE3",227,0)
+ S DIR(0)="SOA^0:No;1:Yes"
+"RTN","BISITE3",228,0)
+ S DIR("A")="     Should the User appear as the Default Provider: "
+"RTN","BISITE3",229,0)
+ S DIR("B")=$S($$DEFPROV^BIUTL6(BISITE):"Yes",1:"No")
+"RTN","BISITE3",230,0)
+ D ^DIR
+"RTN","BISITE3",231,0)
+ D:'$D(DIRUT)
+"RTN","BISITE3",232,0)
+ .N BIFLD,BIERR S BIFLD(.16)=Y
+"RTN","BISITE3",233,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE3",234,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",235,0)
+ D RESET^BISITE
+"RTN","BISITE3",236,0)
+ Q
+"RTN","BISITE3",237,0)
+ ;
+"RTN","BISITE3",238,0)
+ ;
+"RTN","BISITE3",239,0)
+ ;----------
+"RTN","BISITE3",240,0)
+TEXT5 ;EP
+"RTN","BISITE3",241,0)
+ ;;When new Immunizations or new Skin Tests are being added,
+"RTN","BISITE3",242,0)
+ ;;it is possible to have the User appear as the Default Provider.
+"RTN","BISITE3",243,0)
+ ;;In other words, when the screen for a new Visit first comes up,
+"RTN","BISITE3",244,0)
+ ;;the Provider field is already filled in with the User's name.
+"RTN","BISITE3",245,0)
+ ;;(The User is the person logged on and entering the data.)
+"RTN","BISITE3",246,0)
+ ;;
+"RTN","BISITE3",247,0)
+ ;;This will ONLY occur if the User is a Provider (has been given
+"RTN","BISITE3",248,0)
+ ;;the Provider Key).  This will NOT occur on edits of pre-existing
+"RTN","BISITE3",249,0)
+ ;;Visits, whether they have a Provider or not.
+"RTN","BISITE3",250,0)
+ ;;
+"RTN","BISITE3",251,0)
+ D PRINTX("TEXT5")
+"RTN","BISITE3",252,0)
+ Q
+"RTN","BISITE3",253,0)
+ ;
+"RTN","BISITE3",254,0)
+ ;
+"RTN","BISITE3",255,0)
+ ;----------
+"RTN","BISITE3",256,0)
+IMMSVDIR ;EP
+"RTN","BISITE3",257,0)
+ ;---> Edit the parameter indicating the Immserve Directory.
+"RTN","BISITE3",258,0)
+ ;
+"RTN","BISITE3",259,0)
+ K BIDFLT,DIR,DIRUT,X,Y
+"RTN","BISITE3",260,0)
+ ;
+"RTN","BISITE3",261,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE3",262,0)
+ ;---> The Immserve Directory is no longer relevant.
+"RTN","BISITE3",263,0)
+ D TITLE^BIUTL5("INDICATE IMMSERVE DIRECTORY")
+"RTN","BISITE3",264,0)
+ W !!?20,"This parameter is no longer in use.",!!
+"RTN","BISITE3",265,0)
+ D DIRZ^BIUTL3()
+"RTN","BISITE3",266,0)
+ D RESET^BISITE
+"RTN","BISITE3",267,0)
+ Q
+"RTN","BISITE3",268,0)
+ ;**********
+"RTN","BISITE3",269,0)
+ ;
+"RTN","BISITE3",270,0)
+ D TITLE^BIUTL5("INDICATE IMMSERVE DIRECTORY"),TEXT7
+"RTN","BISITE3",271,0)
+ S DIR(0)="FOA^3:70"
+"RTN","BISITE3",272,0)
+ S DIR("A")="     "
+"RTN","BISITE3",273,0)
+ S DIR("B")=$$IMMSVDIR^BIUTL8(BISITE)
+"RTN","BISITE3",274,0)
+ S X="       Enter the path for ImmServe files.  Simply enter the directory"
+"RTN","BISITE3",275,0)
+ S DIR("?",1)=X
+"RTN","BISITE3",276,0)
+ S X="       name with its path.  Terminate the path with a slash."
+"RTN","BISITE3",277,0)
+ S DIR("?")=X K X
+"RTN","BISITE3",278,0)
+ D ^DIR
+"RTN","BISITE3",279,0)
+ S:Y="" Y="@"
+"RTN","BISITE3",280,0)
+ S Z=0
+"RTN","BISITE3",281,0)
+ D CHKSLASH^BISITE2(.Y,.Z)
+"RTN","BISITE3",282,0)
+ G:Z IMMSVDIR
+"RTN","BISITE3",283,0)
+ D:'$D(DIRUT)
+"RTN","BISITE3",284,0)
+ .N BIFLD,BIERR S BIFLD(.18)=Y
+"RTN","BISITE3",285,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR)
+"RTN","BISITE3",286,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",287,0)
+ D RESET^BISITE
+"RTN","BISITE3",288,0)
+ Q
+"RTN","BISITE3",289,0)
+ ;
+"RTN","BISITE3",290,0)
+ ;
+"RTN","BISITE3",291,0)
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+"RTN","BISITE3",292,0)
+ ;---> Add ability to edit IP address for TCH Forecaster.
+"RTN","BISITE3",293,0)
+IPTCH ;EP
+"RTN","BISITE3",294,0)
+ D TITLE^BIUTL5("INDICATE IP ADDRESS FOR TCH FORECASTER"),TEXT13
+"RTN","BISITE3",295,0)
+ N DIR,DIRUT,X
+"RTN","BISITE3",296,0)
+ S DIR(0)="FOA^7:25",DIR("A")="     "
+"RTN","BISITE3",297,0)
+ D
+"RTN","BISITE3",298,0)
+ .N Y S Y=$$IPTCH^BIUTL8(BISITE)
+"RTN","BISITE3",299,0)
+ .I Y]"" S DIR("B")=Y Q
+"RTN","BISITE3",300,0)
+ .S DIR("B")="127.0.0.1"
+"RTN","BISITE3",301,0)
+ S DIR("?")="       Enter the IP address of the machine hosting the TCH Forecaster."
+"RTN","BISITE3",302,0)
+ D ^DIR
+"RTN","BISITE3",303,0)
+ ;W  R ZZZ
+"RTN","BISITE3",304,0)
+ I X="^" D RESET^BISITE Q
+"RTN","BISITE3",305,0)
+ S:X="@" Y="127.0.0.1" K DIRUT
+"RTN","BISITE3",306,0)
+ D:'$D(DIRUT)
+"RTN","BISITE3",307,0)
+ .N BIFLD,BIERR S BIFLD(.30)=Y
+"RTN","BISITE3",308,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR)
+"RTN","BISITE3",309,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",310,0)
+ D RESET^BISITE
+"RTN","BISITE3",311,0)
+ Q
+"RTN","BISITE3",312,0)
+ ;
+"RTN","BISITE3",313,0)
+ ;----------
+"RTN","BISITE3",314,0)
+TEXT13 ;EP
+"RTN","BISITE3",315,0)
+ ;;Enter the IP Address of the server hosting the TCH Forecaster.
+"RTN","BISITE3",316,0)
+ ;;A typical installation has the forecaster running on the same
+"RTN","BISITE3",317,0)
+ ;;machine as Ensemble, EHR and RPMS.  In that case the address
+"RTN","BISITE3",318,0)
+ ;;would be 127.0.0.1 (which is the default).
+"RTN","BISITE3",319,0)
+ ;;
+"RTN","BISITE3",320,0)
+ ;;However, if your network is configured correctly, RPMS can access the
+"RTN","BISITE3",321,0)
+ ;;TCH Forecaster hosted on another machine at a different IP address.
+"RTN","BISITE3",322,0)
+ ;;
+"RTN","BISITE3",323,0)
+ ;;Enter a different IP address for the TCH Forecaster below, if you wish
+"RTN","BISITE3",324,0)
+ ;;to change it:
+"RTN","BISITE3",325,0)
+ ;;
+"RTN","BISITE3",326,0)
+ D PRINTX("TEXT13")
+"RTN","BISITE3",327,0)
+ Q
+"RTN","BISITE3",328,0)
+ ;**********
+"RTN","BISITE3",329,0)
+ ;
+"RTN","BISITE3",330,0)
+ ;----------
+"RTN","BISITE3",331,0)
+TEXT7 ;EP
+"RTN","BISITE3",332,0)
+ ;;
+"RTN","BISITE3",333,0)
+ ;;Enter or edit, if necessary, the full path of the directory in which
+"RTN","BISITE3",334,0)
+ ;;the ImmServe Files will be stored.  (Path length may not be more than
+"RTN","BISITE3",335,0)
+ ;;70 characters long.)
+"RTN","BISITE3",336,0)
+ ;;
+"RTN","BISITE3",337,0)
+ ;;For Immunization v8.1 the settings should be:
+"RTN","BISITE3",338,0)
+ ;;
+"RTN","BISITE3",339,0)
+ ;;   AIX:    /usr/local/immserve84/
+"RTN","BISITE3",340,0)
+ ;;   NT/XP:  C:\Program Files\Immserve84\
+"RTN","BISITE3",341,0)
+ ;;
+"RTN","BISITE3",342,0)
+ ;;
+"RTN","BISITE3",343,0)
+ ;;Enter or edit the Immserve Directory Path below:
+"RTN","BISITE3",344,0)
+ ;;
+"RTN","BISITE3",345,0)
+ D PRINTX("TEXT7")
+"RTN","BISITE3",346,0)
+ Q
+"RTN","BISITE3",347,0)
+ ;
+"RTN","BISITE3",348,0)
+ ;
+"RTN","BISITE3",349,0)
+ ;----------
+"RTN","BISITE3",350,0)
+LOTREQ ;EP
+"RTN","BISITE3",351,0)
+ ;---> Edit the parameter for whether Lot Numbers should be required.
+"RTN","BISITE3",352,0)
+ ;---> Called by Protocol BI SITE LOT# REQ'D.
+"RTN","BISITE3",353,0)
+ ;
+"RTN","BISITE3",354,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE3",355,0)
+ D FULL^VALM1,TITLE^BIUTL5("LOT NUMBER REQUIRED"),TEXT9
+"RTN","BISITE3",356,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE3",357,0)
+ S DIR(0)="SOA^Y:YES;N:NO"
+"RTN","BISITE3",358,0)
+ S DIR("A")="     Please select either Yes or No: "
+"RTN","BISITE3",359,0)
+ S DIR("B")=$S($$LOTREQ^BIUTL2(BISITE):"Yes",1:"No")
+"RTN","BISITE3",360,0)
+ D ^DIR
+"RTN","BISITE3",361,0)
+ D:'$D(DIRUT)
+"RTN","BISITE3",362,0)
+ .N BIFLD,BIERR S BIFLD(.09)=Y
+"RTN","BISITE3",363,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE3",364,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",365,0)
+ ;
+"RTN","BISITE3",366,0)
+ D FULL^VALM1,TITLE^BIUTL5("LOT NUMBER LOW SUPPLY ALERT"),TEXT10
+"RTN","BISITE3",367,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE3",368,0)
+ S DIR(0)="NOA^0:9999"
+"RTN","BISITE3",369,0)
+ S DIR("A")="     Please enter a Low Supply Alert number: "
+"RTN","BISITE3",370,0)
+ ;
+"RTN","BISITE3",371,0)
+ ;********** PATCH 2, v8.5, MAY 15,2012, IHS/CMI/MWR
+"RTN","BISITE3",372,0)
+ ;---> Fix SET of default Low Supply Alert.
+"RTN","BISITE3",373,0)
+ ;S DIR("B")=$$LOTLOW^BIUTL2(BISITE)
+"RTN","BISITE3",374,0)
+ S DIR("B")=$$LOTSDEF^BISITE1(BISITE)
+"RTN","BISITE3",375,0)
+ ;**********
+"RTN","BISITE3",376,0)
+ ;
+"RTN","BISITE3",377,0)
+ D ^DIR
+"RTN","BISITE3",378,0)
+ D:'$D(DIRUT)
+"RTN","BISITE3",379,0)
+ .N BIFLD,BIERR S BIFLD(.25)=Y
+"RTN","BISITE3",380,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE3",381,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE3",382,0)
+ D RESET^BISITE
+"RTN","BISITE3",383,0)
+ Q
+"RTN","BISITE3",384,0)
+ ;
+"RTN","BISITE3",385,0)
+ ;
+"RTN","BISITE3",386,0)
+ ;----------
+"RTN","BISITE3",387,0)
+TEXT9 ;EP
+"RTN","BISITE3",388,0)
+ ;;
+"RTN","BISITE3",389,0)
+ ;;If Lot Numbers should be required when entering Immunization visits,
+"RTN","BISITE3",390,0)
+ ;;enter YES for this parameter.  If Lot Numbers should be optional,
+"RTN","BISITE3",391,0)
+ ;;enter NO.
+"RTN","BISITE3",392,0)
+ ;;
+"RTN","BISITE3",393,0)
+ ;;Note: Lot Numbers will NOT be required for Immunizations with a
+"RTN","BISITE3",394,0)
+ ;;      Category of "Historical Event", even if this site parameter
+"RTN","BISITE3",395,0)
+ ;;      is to YES.
+"RTN","BISITE3",396,0)
+ ;;
+"RTN","BISITE3",397,0)
+ ;;
+"RTN","BISITE3",398,0)
+ D PRINTX("TEXT9")
+"RTN","BISITE3",399,0)
+ Q
+"RTN","BISITE3",400,0)
+ ;
+"RTN","BISITE3",401,0)
+ ;
+"RTN","BISITE3",402,0)
+ ;----------  vvv83
+"RTN","BISITE3",403,0)
+TEXT10 ;EP
+"RTN","BISITE3",404,0)
+ ;;
+"RTN","BISITE3",405,0)
+ ;;When the number of remaining doses of a given Lot falls below
+"RTN","BISITE3",406,0)
+ ;;its Low Supply Alert (set by the manager when editing Lot Numbers),
+"RTN","BISITE3",407,0)
+ ;;a "Low Supply Alert" will pop up on the screen as a user is
+"RTN","BISITE3",408,0)
+ ;;adding or editing an immunization with that particular Lot Number.
+"RTN","BISITE3",409,0)
+ ;;
+"RTN","BISITE3",410,0)
+ ;;The number entered here, under the Site Parameters, is the Low
+"RTN","BISITE3",411,0)
+ ;;Supply Alert DEFAULT.  In the absence of a specific Low Supply Alert
+"RTN","BISITE3",412,0)
+ ;;for a given Lot Number, this Default will be used.
+"RTN","BISITE3",413,0)
+ ;;
+"RTN","BISITE3",414,0)
+ ;;NOTE: No alert will occur if a "Starting Amount" has not been entered
+"RTN","BISITE3",415,0)
+ ;;for the particular Lot Number in the EDIT LOT NUMBER TABLE.
+"RTN","BISITE3",416,0)
+ ;;
+"RTN","BISITE3",417,0)
+ ;;
+"RTN","BISITE3",418,0)
+ D PRINTX("TEXT10")
+"RTN","BISITE3",419,0)
+ Q
+"RTN","BISITE3",420,0)
+ ;
+"RTN","BISITE3",421,0)
+ ;
+"RTN","BISITE3",422,0)
+ ;----------
+"RTN","BISITE3",423,0)
+PRINTX(BILINL,BITAB) ;EP
+"RTN","BISITE3",424,0)
+ Q:$G(BILINL)=""
+"RTN","BISITE3",425,0)
+ N I,T,X S T="" S:'$D(BITAB) BITAB=5 F I=1:1:BITAB S T=T_" "
+"RTN","BISITE3",426,0)
+ F I=1:1 S X=$T(@BILINL+I) Q:X'[";;"  W !,T,$P(X,";;",2)
+"RTN","BISITE3",427,0)
+ Q
+"RTN","BISITE4")
+0^5^B108347190
+"RTN","BISITE4",1,0)
+BISITE4 ;IHS/CMI/MWR - SELECT GPRA COMMUNITIES.; MAY 10, 2010
+"RTN","BISITE4",2,0)
+ ;;8.5;IMMUNIZATION;**9**;OCT 01,2014;Build 1
+"RTN","BISITE4",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISITE4",4,0)
+ ;;  SELECT COMMUNITIES TO BE INCLUDED IN GPRA GROUPS AND REPORTS.
+"RTN","BISITE4",5,0)
+ ;;  PATCH 8: Update Help Text to exclude influenza.  TEXT2+3
+"RTN","BISITE4",6,0)
+ ;;  PATCH 9: Update options to include Hep B. TEXT1+24
+"RTN","BISITE4",7,0)
+ ;
+"RTN","BISITE4",8,0)
+ ;
+"RTN","BISITE4",9,0)
+ ;----------
+"RTN","BISITE4",10,0)
+GPRA ;EP
+"RTN","BISITE4",11,0)
+ ;---> Select Communities for GPRA.
+"RTN","BISITE4",12,0)
+ ;---> Called by Protocol BI SITE GPRA COMS.
+"RTN","BISITE4",13,0)
+ ;
+"RTN","BISITE4",14,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE4",15,0)
+ N BIITEM S BIITEM="Community"
+"RTN","BISITE4",16,0)
+ N BITITEM S BITITEM="GPRA Community"
+"RTN","BISITE4",17,0)
+ N BICOL S BICOL="    #  Community                  State"
+"RTN","BISITE4",18,0)
+ N BIID S BIID="3;I $G(X) S:$D(^DIC(5,X,0)) X=$P(^(0),U);32"
+"RTN","BISITE4",19,0)
+ N BIGPRA,BIGPRAD,BIPOP
+"RTN","BISITE4",20,0)
+ ;
+"RTN","BISITE4",21,0)
+ ;---> Use previous GPRA List for this site as default.
+"RTN","BISITE4",22,0)
+ D GETGPRA(.BIGPRAD,DUZ(2))
+"RTN","BISITE4",23,0)
+ D SEL^BISELECT(9999999.05,"BIGPRA",BIITEM,,,,BIID,BICOL,.BIPOP,1,,.BIGPRAD,BITITEM)
+"RTN","BISITE4",24,0)
+ ;
+"RTN","BISITE4",25,0)
+ ;---> Now replace the previous list for this site with the newly selected list.
+"RTN","BISITE4",26,0)
+ D
+"RTN","BISITE4",27,0)
+ .Q:$G(BIPOP)
+"RTN","BISITE4",28,0)
+ .;---> If user tried to select ALL Communities for GPRA, don't change.
+"RTN","BISITE4",29,0)
+ .I $D(BIGPRA("ALL")) D  Q
+"RTN","BISITE4",30,0)
+ ..W !!,"                    * GPRA Communities *"
+"RTN","BISITE4",31,0)
+ ..W !!!,"   You may not select ""ALL"" for your set of GPRA Communities."
+"RTN","BISITE4",32,0)
+ ..D DIRZ^BIUTL3()
+"RTN","BISITE4",33,0)
+ .;
+"RTN","BISITE4",34,0)
+ .N BIK S BIK="^BISITE("_DUZ(2)_",2)" K @BIK
+"RTN","BISITE4",35,0)
+ .S ^BISITE(DUZ(2),2,0)="^9002084.04PA"
+"RTN","BISITE4",36,0)
+ .N N S N=0
+"RTN","BISITE4",37,0)
+ .F  S N=$O(BIGPRA(N)) Q:'N  D
+"RTN","BISITE4",38,0)
+ ..S ^BISITE(DUZ(2),2,N,0)=N,^BISITE(DUZ(2),2,"B",N,N)=""
+"RTN","BISITE4",39,0)
+ ..N X S X=$P($G(^BISITE(DUZ(2),2,0)),U,4)+1
+"RTN","BISITE4",40,0)
+ ..S ^BISITE(DUZ(2),2,0)="^9002084.04PA^"_N_U_X
+"RTN","BISITE4",41,0)
+ ;
+"RTN","BISITE4",42,0)
+ D RESET^BISITE
+"RTN","BISITE4",43,0)
+ Q
+"RTN","BISITE4",44,0)
+ ;
+"RTN","BISITE4",45,0)
+ ;
+"RTN","BISITE4",46,0)
+ ;----------
+"RTN","BISITE4",47,0)
+GETGPRA(BIGPRA,BIDUZ,BIERR) ;PEP - Return GPRA Communities Array.
+"RTN","BISITE4",48,0)
+ ;---> Retrieve GPRA Communities Array of IEN's for this DUZ(2).
+"RTN","BISITE4",49,0)
+ ;---> Parameters:
+"RTN","BISITE4",50,0)
+ ;     1 - BIGPRA (ret) Array of GPRA IEN's in the COMMUNITY file - ^AUTTCOM(.
+"RTN","BISITE4",51,0)
+ ;     2 - BIDUZ  (req) Site IEN or DUZ(2).
+"RTN","BISITE4",52,0)
+ ;     3 - BIERR  (ret) Error text, if any.
+"RTN","BISITE4",53,0)
+ ;
+"RTN","BISITE4",54,0)
+ I '$G(BIDUZ) S BIDUZ=$G(DUZ(2))
+"RTN","BISITE4",55,0)
+ I '$G(BIDUZ) D ERRCD^BIUTL2(109,.BIERR) Q
+"RTN","BISITE4",56,0)
+ I '$O(^BISITE(DUZ(2),2,0)) D ERRCD^BIUTL2(110,.BIERR) Q
+"RTN","BISITE4",57,0)
+ N N S N=0
+"RTN","BISITE4",58,0)
+ F  S N=$O(^BISITE(DUZ(2),2,N)) Q:'N  S BIGPRA(N)=""
+"RTN","BISITE4",59,0)
+ Q
+"RTN","BISITE4",60,0)
+ ;
+"RTN","BISITE4",61,0)
+ ;
+"RTN","BISITE4",62,0)
+ ;----------
+"RTN","BISITE4",63,0)
+INPTCHK ;EP
+"RTN","BISITE4",64,0)
+ ;---> Edit the parameter that determines whether Inpatient Status
+"RTN","BISITE4",65,0)
+ ;---> is checked (and changed, if necessary) when storing Visits.
+"RTN","BISITE4",66,0)
+ ;---> Called by Protocol BI SITE INPATIENT CHECK ENABLE.
+"RTN","BISITE4",67,0)
+ ;
+"RTN","BISITE4",68,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE4",69,0)
+ D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE INPATIENT VISIT CHECK"),TEXT1
+"RTN","BISITE4",70,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE4",71,0)
+ S DIR(0)="SOA^E:Enable;D:Disable"
+"RTN","BISITE4",72,0)
+ S DIR("A")="     Please select either Enable or Disable: "
+"RTN","BISITE4",73,0)
+ S DIR("B")=$S($$INPTCHK^BIUTL2(BISITE):"Enable",1:"Disable")
+"RTN","BISITE4",74,0)
+ D ^DIR
+"RTN","BISITE4",75,0)
+ D:'$D(DIRUT)
+"RTN","BISITE4",76,0)
+ .N BIFLD,BIERR S BIFLD(.23)=Y
+"RTN","BISITE4",77,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE4",78,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE4",79,0)
+ D RESET^BISITE
+"RTN","BISITE4",80,0)
+ Q
+"RTN","BISITE4",81,0)
+ ;
+"RTN","BISITE4",82,0)
+ ;
+"RTN","BISITE4",83,0)
+ ;----------
+"RTN","BISITE4",84,0)
+TEXT1 ;EP
+"RTN","BISITE4",85,0)
+ ;;When an Immunization Visit or Skin Test Visit is stored, the default
+"RTN","BISITE4",86,0)
+ ;;Category of Visit is "Ambulatory" (Outpatient).
+"RTN","BISITE4",87,0)
+ ;;However, if the RPMS PIMS (Patient Information Management System) or
+"RTN","BISITE4",88,0)
+ ;;various Billing applications are in use, the patient may have the
+"RTN","BISITE4",89,0)
+ ;;Status of "Inpatient" at the time of the visit.
+"RTN","BISITE4",90,0)
+ ;;
+"RTN","BISITE4",91,0)
+ ;;In order to avoid conflicts that might arise from Inpatient and
+"RTN","BISITE4",92,0)
+ ;;Ambulatory Visits being listed for the same day, this software
+"RTN","BISITE4",93,0)
+ ;;can check the Inpatient Status of the patient at the time of the
+"RTN","BISITE4",94,0)
+ ;;immunization or skin test.  If the patient is listed as an Inpatient
+"RTN","BISITE4",95,0)
+ ;;at the time of the immunization, the software can automatically
+"RTN","BISITE4",96,0)
+ ;;change the Category from Ambulatory to Inpatient for the immunization.
+"RTN","BISITE4",97,0)
+ ;;
+"RTN","BISITE4",98,0)
+ ;;This feature is turned on by setting "Inpatient Visit Check" to ENABLE.
+"RTN","BISITE4",99,0)
+ ;;If the "Inpatient Visit Check" feature is causing problems, however,
+"RTN","BISITE4",100,0)
+ ;;(such as conflicts with third-party Billing software), then set the
+"RTN","BISITE4",101,0)
+ ;;parameter to DISABLE and no Inpatient check will occur.
+"RTN","BISITE4",102,0)
+ ;;
+"RTN","BISITE4",103,0)
+ D PRINTX("TEXT1")
+"RTN","BISITE4",104,0)
+ Q
+"RTN","BISITE4",105,0)
+ ;
+"RTN","BISITE4",106,0)
+ ;
+"RTN","BISITE4",107,0)
+ ;
+"RTN","BISITE4",108,0)
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+"RTN","BISITE4",109,0)
+ ;---> Update options to include Hep B.
+"RTN","BISITE4",110,0)
+ ;----------
+"RTN","BISITE4",111,0)
+RISKP ;EP
+"RTN","BISITE4",112,0)
+ ;---> Edit the parameter that determines whether the Risk Status
+"RTN","BISITE4",113,0)
+ ;---> for patients with regard to Flu and Pneumo should be checked
+"RTN","BISITE4",114,0)
+ ;---> (in the Visit files) when forecasting those vaccines.
+"RTN","BISITE4",115,0)
+ ;---> Called by Protocol BI SITE INPATIENT CHECK ENABLE.
+"RTN","BISITE4",116,0)
+ ;
+"RTN","BISITE4",117,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE4",118,0)
+ D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE RISK FACTOR CHECKS"),TEXT2
+"RTN","BISITE4",119,0)
+ N BIERR,BIDFLT,BIDFLT1,BISEL,DIR,DIRUT,Y
+"RTN","BISITE4",120,0)
+ S BIDFLT=$$RISKP^BIUTL2(BISITE)
+"RTN","BISITE4",121,0)
+ S DIR(0)="SO^0:None;1:Hep B only;2:Pneumo only;3:Both"
+"RTN","BISITE4",122,0)
+ S DIR("A")="     High Risk option"
+"RTN","BISITE4",123,0)
+ D
+"RTN","BISITE4",124,0)
+ .I BIDFLT=1 S BIDFLT1="Hep B only" Q
+"RTN","BISITE4",125,0)
+ .I (BIDFLT=2)!(BIDFLT=23) S BIDFLT1="Pneumo only" Q
+"RTN","BISITE4",126,0)
+ .I (BIDFLT=12)!(BIDFLT=123) S BIDFLT1="Both" Q
+"RTN","BISITE4",127,0)
+ .S BIDFLT1="None"
+"RTN","BISITE4",128,0)
+ S DIR("B")=BIDFLT1
+"RTN","BISITE4",129,0)
+ D ^DIR
+"RTN","BISITE4",130,0)
+ I $D(DIRUT) D RESET^BISITE Q
+"RTN","BISITE4",131,0)
+ ;---> Save user selection.
+"RTN","BISITE4",132,0)
+ S BISEL=Y S:Y=3 BISEL=12
+"RTN","BISITE4",133,0)
+ ;
+"RTN","BISITE4",134,0)
+ N BISMOK S BISMOK=0
+"RTN","BISITE4",135,0)
+ D:(BISEL[2)
+"RTN","BISITE4",136,0)
+ .D FULL^VALM1,TITLE^BIUTL5("INCLUDE SMOKING AS A PNEUMO RISK FACTOR"),TEXT21
+"RTN","BISITE4",137,0)
+ .W !!,"     Do you wish to include a history of SMOKING in the criteria for"
+"RTN","BISITE4",138,0)
+ .W !,"     the High Risk Pneumo group?",!
+"RTN","BISITE4",139,0)
+ .S DIR("?",1)="     Enter YES to include SMOKING as a Pneumo High Risk Factor, "
+"RTN","BISITE4",140,0)
+ .S DIR("?")="     enter NO to disregard it as a High Risk Factor."
+"RTN","BISITE4",141,0)
+ .S DIR(0)="Y",DIR("A")="     Enter Yes or No"
+"RTN","BISITE4",142,0)
+ .S DIR("B")=$S(BIDFLT[3:"YES",1:"NO")
+"RTN","BISITE4",143,0)
+ .D ^DIR
+"RTN","BISITE4",144,0)
+ .I Y S BISMOK=1
+"RTN","BISITE4",145,0)
+ ;
+"RTN","BISITE4",146,0)
+ Q:$D(DIRUT)
+"RTN","BISITE4",147,0)
+ D
+"RTN","BISITE4",148,0)
+ .I BISEL<2 Q
+"RTN","BISITE4",149,0)
+ .I (BISEL=2)&(BISMOK=0) Q
+"RTN","BISITE4",150,0)
+ .I (BISEL=2)&(BISMOK=1) S BISEL=23 Q
+"RTN","BISITE4",151,0)
+ .I (BISEL=12)&(BISMOK=0) Q
+"RTN","BISITE4",152,0)
+ .I (BISEL=12)&(BISMOK=1) S BISEL=123 Q
+"RTN","BISITE4",153,0)
+ ;
+"RTN","BISITE4",154,0)
+ N BIFLD,BIERR S BIFLD(.19)=BISEL
+"RTN","BISITE4",155,0)
+ D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE4",156,0)
+ I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE4",157,0)
+ ;
+"RTN","BISITE4",158,0)
+ D RESET^BISITE
+"RTN","BISITE4",159,0)
+ Q
+"RTN","BISITE4",160,0)
+ ;**********
+"RTN","BISITE4",161,0)
+ ;
+"RTN","BISITE4",162,0)
+ ;
+"RTN","BISITE4",163,0)
+ ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
+"RTN","BISITE4",164,0)
+ ;---> Update Help TEXT2 to no longer include influenza.
+"RTN","BISITE4",165,0)
+ ;
+"RTN","BISITE4",166,0)
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+"RTN","BISITE4",167,0)
+ ;---> Update Help TEXT2 to include Hep B.
+"RTN","BISITE4",168,0)
+ ;----------
+"RTN","BISITE4",169,0)
+TEXT2 ;EP
+"RTN","BISITE4",170,0)
+ ;;When forecasting immunizations for a patient, this program is able
+"RTN","BISITE4",171,0)
+ ;;to look at the patient's medical history of visits and attempt to
+"RTN","BISITE4",172,0)
+ ;;determine if the patient has an increased risk for pneumococcal disease
+"RTN","BISITE4",173,0)
+ ;;and/or Hepatitis B due to Diabetes.  If the patient fits the High Risk
+"RTN","BISITE4",174,0)
+ ;;criteria, the program will forecast the patient as due for those
+"RTN","BISITE4",175,0)
+ ;;immunizations.
+"RTN","BISITE4",176,0)
+ ;;
+"RTN","BISITE4",177,0)
+ ;;This parameter allows you to select which, if any, High Risk forecasting
+"RTN","BISITE4",178,0)
+ ;;should be enabled on your system.
+"RTN","BISITE4",179,0)
+ D PRINTX("TEXT2")
+"RTN","BISITE4",180,0)
+ Q
+"RTN","BISITE4",181,0)
+ ;**********
+"RTN","BISITE4",182,0)
+ ;
+"RTN","BISITE4",183,0)
+ ;
+"RTN","BISITE4",184,0)
+ ;----------
+"RTN","BISITE4",185,0)
+TEXT21 ;EP
+"RTN","BISITE4",186,0)
+ ;;You have the option to include smoking in the High Risk factors for
+"RTN","BISITE4",187,0)
+ ;;Pneumococcal disease.  Specifically, the Health Factors looked for will
+"RTN","BISITE4",188,0)
+ ;;be either "Current Smoker" or "Current Smoker and Smokeless" within
+"RTN","BISITE4",189,0)
+ ;;the last two years.
+"RTN","BISITE4",190,0)
+ ;;
+"RTN","BISITE4",191,0)
+ D PRINTX("TEXT21")
+"RTN","BISITE4",192,0)
+ Q
+"RTN","BISITE4",193,0)
+ ;
+"RTN","BISITE4",194,0)
+ ;
+"RTN","BISITE4",195,0)
+ ;----------
+"RTN","BISITE4",196,0)
+IMPCPT ;EP
+"RTN","BISITE4",197,0)
+ ;---> Edit the parameter that determines whether the CPT-coded Visits
+"RTN","BISITE4",198,0)
+ ;---> should be imported into the V Immunization File if they have
+"RTN","BISITE4",199,0)
+ ;---> not already been entered.
+"RTN","BISITE4",200,0)
+ ;---> Called by Protocol BI SITE CPT VISITS IMPORT.
+"RTN","BISITE4",201,0)
+ ;
+"RTN","BISITE4",202,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE4",203,0)
+ D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE IMPORT OF CPT-CODED VISITS"),TEXT3
+"RTN","BISITE4",204,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE4",205,0)
+ S DIR(0)="SOA^E:Enable;D:Disable"
+"RTN","BISITE4",206,0)
+ S DIR("A")="     Please select either Enable or Disable: "
+"RTN","BISITE4",207,0)
+ S DIR("B")=$S($$IMPCPT^BIUTL2(BISITE):"Enable",1:"Disable")
+"RTN","BISITE4",208,0)
+ D ^DIR
+"RTN","BISITE4",209,0)
+ D:'$D(DIRUT)
+"RTN","BISITE4",210,0)
+ .N BIFLD,BIERR S BIFLD(.2)=$G(Y)
+"RTN","BISITE4",211,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE4",212,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE4",213,0)
+ D RESET^BISITE
+"RTN","BISITE4",214,0)
+ Q
+"RTN","BISITE4",215,0)
+ ;
+"RTN","BISITE4",216,0)
+ ;
+"RTN","BISITE4",217,0)
+ ;----------
+"RTN","BISITE4",218,0)
+TEXT3 ;EP
+"RTN","BISITE4",219,0)
+ ;;In RPMS it is possible for some immunizations to be entered by
+"RTN","BISITE4",220,0)
+ ;;CPT Code into the CPT Visit File, rather than into the true
+"RTN","BISITE4",221,0)
+ ;;Immunization Visit File.  These "CPT-coded immunizations"
+"RTN","BISITE4",222,0)
+ ;;do NOT appear on the patient's Immunization Profile, nor are
+"RTN","BISITE4",223,0)
+ ;;they always included in the Immunization Package Reports.
+"RTN","BISITE4",224,0)
+ ;;
+"RTN","BISITE4",225,0)
+ ;;When the "Import CPT-coded Visits" site parameter is enabled,
+"RTN","BISITE4",226,0)
+ ;;those immunizations that are entered only as CPT Visits will be
+"RTN","BISITE4",227,0)
+ ;;checked and automatically entered into the proper Immunization
+"RTN","BISITE4",228,0)
+ ;;Visits File if they do not already exist there.
+"RTN","BISITE4",229,0)
+ ;;
+"RTN","BISITE4",230,0)
+ ;;If this parameter is disabled, the program will make no attempt
+"RTN","BISITE4",231,0)
+ ;;to bring CPT-coded Visits into the Immunization files.
+"RTN","BISITE4",232,0)
+ ;;
+"RTN","BISITE4",233,0)
+ D PRINTX("TEXT3")
+"RTN","BISITE4",234,0)
+ Q
+"RTN","BISITE4",235,0)
+ ;
+"RTN","BISITE4",236,0)
+ ;
+"RTN","BISITE4",237,0)
+ ;----------
+"RTN","BISITE4",238,0)
+VISMNU ;EP
+"RTN","BISITE4",239,0)
+ ;---> Edit the parameter that determines whether the Risk Status
+"RTN","BISITE4",240,0)
+ ;---> for patients with regard to Flu and Pneumo should be checked
+"RTN","BISITE4",241,0)
+ ;---> (in the Visit files) when forecasting those vaccines.
+"RTN","BISITE4",242,0)
+ ;---> Called by Protocol BI SITE INPATIENT CHECK ENABLE.
+"RTN","BISITE4",243,0)
+ ;
+"RTN","BISITE4",244,0)
+ Q:$$BISITE^BISITE2
+"RTN","BISITE4",245,0)
+ D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE VISIT SELECTION MENU"),TEXT4
+"RTN","BISITE4",246,0)
+ N BIDFLT,DIR,DIRUT,Y
+"RTN","BISITE4",247,0)
+ S DIR(0)="SOA^E:Enable;D:Disable"
+"RTN","BISITE4",248,0)
+ S DIR("A")="     Please select either Enable or Disable: "
+"RTN","BISITE4",249,0)
+ S DIR("B")=$S($$VISMNU^BIUTL2(BISITE):"Enable",1:"Disable")
+"RTN","BISITE4",250,0)
+ D ^DIR
+"RTN","BISITE4",251,0)
+ D:'$D(DIRUT)
+"RTN","BISITE4",252,0)
+ .N BIFLD,BIERR S BIFLD(.28)=$G(Y)
+"RTN","BISITE4",253,0)
+ .D FDIE^BIFMAN(9002084.02,BISITE,.BIFLD,.BIERR,1)
+"RTN","BISITE4",254,0)
+ .I BIERR]"" W !!?3,BIERR D DIRZ^BIUTL3()
+"RTN","BISITE4",255,0)
+ D RESET^BISITE
+"RTN","BISITE4",256,0)
+ Q
+"RTN","BISITE4",257,0)
+ ;
+"RTN","BISITE4",258,0)
+ ;
+"RTN","BISITE4",259,0)
+ ;----------
+"RTN","BISITE4",260,0)
+TEXT4 ;EP
+"RTN","BISITE4",261,0)
+ ;;When adding or editing immunizations, this program will either
+"RTN","BISITE4",262,0)
+ ;;create a NEW Visit or link the immunization to an EXISTING Visit.
+"RTN","BISITE4",263,0)
+ ;;This process can be occur automatically, or it can be controlled
+"RTN","BISITE4",264,0)
+ ;;by the user at the time the immunization is being entered.
+"RTN","BISITE4",265,0)
+ ;;
+"RTN","BISITE4",266,0)
+ ;;If the Visit Selection Menu is DISABLED, the program will look for
+"RTN","BISITE4",267,0)
+ ;;similar Visits for the patient on that day and attempt to link with
+"RTN","BISITE4",268,0)
+ ;;one if enough information matches.  If no such Visits exist, a new
+"RTN","BISITE4",269,0)
+ ;;Visit will be created automatically.  (This can sometimes lead to
+"RTN","BISITE4",270,0)
+ ;;Visits that are incorrectly linked and must be corrected manually.)
+"RTN","BISITE4",271,0)
+ ;;
+"RTN","BISITE4",272,0)
+ ;;If the Visit Selection Menu is ENABLED, the program will look for
+"RTN","BISITE4",273,0)
+ ;;similar Visits--and if any exist--a Visit Selection Menu will pop up.
+"RTN","BISITE4",274,0)
+ ;;The Visit Selection Menu will allow the user to either create a new
+"RTN","BISITE4",275,0)
+ ;;Visit or select from existing Visits for that day.  (If there are no
+"RTN","BISITE4",276,0)
+ ;;existing Visits, a new Visit will be created automatically.)
+"RTN","BISITE4",277,0)
+ ;;
+"RTN","BISITE4",278,0)
+ D PRINTX("TEXT4")
+"RTN","BISITE4",279,0)
+ Q
+"RTN","BISITE4",280,0)
+ ;
+"RTN","BISITE4",281,0)
+ ;
+"RTN","BISITE4",282,0)
+ ;----------
+"RTN","BISITE4",283,0)
+PRINTX(BILINL,BITAB) ;EP
+"RTN","BISITE4",284,0)
+ Q:$G(BILINL)=""
+"RTN","BISITE4",285,0)
+ N I,T,X S T="" S:'$D(BITAB) BITAB=5 F I=1:1:BITAB S T=T_" "
+"RTN","BISITE4",286,0)
+ F I=1:1 S X=$T(@BILINL+I) Q:X'[";;"  W !,T,$P(X,";;",2)
+"RTN","BISITE4",287,0)
+ Q
+"VER")
+8.0^22.0
+**END**
+**END**
