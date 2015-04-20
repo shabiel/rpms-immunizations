@@ -1,11 +1,14 @@
 BIUTL8 ;IHS/CMI/MWR - UTIL: PATLKUP, PRTLST, ZGBL; MAY 10, 2010
- ;;8.5;IMMUNIZATION;**8**;MAR 15,2014;Build 2
+ ;;8.5;IMMUNIZATION;**9**;OCT 01,2014
  ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
  ;;  UTILITY: PATIENT LOOKUP, DUPTEST, PRINT LIST, K/ZGBL, KILLALL.
  ;;           HFSPATH, IMMSVDIR.
  ;;  PATCH 2: Correct 19yrs and older logic.  VFCSET+7
  ;;  PATCH 3: Display Elig Code Local Text.  ELIGLAB+0
  ;;  PATCH 8: Problem Dose changes to accommodate new forecaster.  PDSS+11
+ ;;  PATCH 9: Fix so that TAB key will not skip Eligibility.  ELIGLAB+10
+ ;;           Return the IP Address used for the TCH Forecaster.  IPTCH
+ ;;           Add default of V01 (Ineligible) for patients 19 and over.  VFCSET+14
  ;
  ;
  ;----------
@@ -20,7 +23,7 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
  ;---> Example: D PATLKUP^BIUTL8(.BIDFN)
  ;              D PATLKUP^BIUTL8(.BIDFN,"ADD") - May ADD Patient to IMM
  ;
- N DFN,DIC,X,Y,DTOUT,DUOUT
+ N DFN,DIC,X,Y
  S (BIDFN,BIPOP)=0 D SETVARS^BIUTL5
  S:$G(DUZ2)]"" DUZ(2)=DUZ2
  S DIC="^AUPNPAT(",DIC(0)="AEMQ"
@@ -48,7 +51,7 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
  .W !!?3,$$NAME^BIUTL1(BIDFN)
  .W " is being added to the Immunization Database",!,"for the first time."
  .W !!?3,"Should this patient be added as Active or Inactive?"
- .N DIR,DIRUT,DTOUT,DUOUT
+ .N DIR
  .S DIR("?")="     Enter A for Active or I for Inactive."
  .S DIR(0)="SM^A:Active;I:Inactive"
  .S DIR("A")="   Enter A (Active) or I (Inactive)"
@@ -86,9 +89,9 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
  ;
  ;----------
 VFCSET ;EP
- ; ZEXCEPT: BI shared variable
  ;---> Load Vaccine Eligibility.  Called by LOADVIS^BIUTL7.
  ;---> If Patient Ben Type is 01 (Am Indian/AK Native), set VFC default=4.
+ ;
  Q:$G(BI("P"))]""
  Q:'$G(BIDFN)
  Q:$$BENTYP^BIUTL11(BIDFN,2)'="01"
@@ -98,15 +101,17 @@ VFCSET ;EP
  N BIDATE,X,Y S X=$P($G(BI("E"))," ")
  D ^%DT S BIDATE=Y
  Q:'BIDATE
- ;N BIDOB S BIDOB=$$DOB^BIUTL1(BIDFN)
- ;Q:'BIDOB
- ;Q:((BIDOB+190000)'<BIDATE)
- ;--> Quit if patient was 19yrs or greater on this date.
- Q:($$AGE^BIUTL1(BIDFN,1,BIDATE)>18)
- ;**********
+ ;
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+ ;---> Add default of V01 (Ineligible) for patients 19 and over.
+ ;
+ ;--> If patient was less than 19yrs set default=V01 and quit.
+ ;Q:($$AGE^BIUTL1(BIDFN,1,BIDATE)>18)
+ I ($$AGE^BIUTL1(BIDFN,1,BIDATE)<19) S BI("P")=4 Q
+ ;---> Otherwise patient is adult, set default="V01".
+ S BI("P")=1
  ;
  ;********** 9/2012: CHANGE HERE TO MAKE DEFAULT CONDITIONAL UPON ACTIVE STATUS.
- S BI("P")=4
  Q
  ;
  ;
@@ -122,7 +127,11 @@ ELIGLAB(X) ;EP
  Q:'$G(X)
  N Y S Y=$G(^BIELIG(+X,0))
  Q:(Y="")
- D PUT^DDSVALF(10.6,,,$P(Y,U)_" - "_$P(Y,U,4))
+ ;
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+ ;---> Fix so that TAB key will not skip Eligibility.
+ ;D PUT^DDSVALF(10.6,,,$P(Y,U)_" - "_$P(Y,U,4))
+ D PUT^DDSVALF(10.6,,," - "_$P(Y,U,4))
  Q
  ;**********
  ;
@@ -174,7 +183,6 @@ DUPTEST(BIERR,BIDATA,BIOIEN) ;EP
  ;
  ;----------
 PRTLST(BITNOD) ;EP
- ; ZEXCEPT: IOF,IOSL,IOST
  ;---> Print Listman list instead of displaying it.
  ;---> Parameters:
  ;     1 - BITNOD (req) Node in ^TMP global where list is stored.
@@ -212,7 +220,6 @@ PRTLST(BITNOD) ;EP
  ;
  ;----------
 PHEADER(BIPAGE) ;EP
- ; ZEXCEPT: VALMHDR Listman
  ;---> Print header for PRTLST above.
  ;---> Parameters:
  ;     1 - BIPAGE (req) Last page# printed.
@@ -262,8 +269,8 @@ KILLALL(BIGLOBS) ;EP
  ;     1 - BIGLOBS  (opt) If BIGLOBS=1 kill temp globals too.
  ;
  ;---> XB call to kill local variables.
- D:$T(^XBVK)]"" EN^XBVK("BI")
- D:$T(^XBVK)]"" EN^XBVK("DI")
+ D EN^XBVK("BI")
+ D EN^XBVK("DI")
  ;
  ;---> FILEMAN KILLS.
  D DKILLS^BIFMAN
@@ -298,6 +305,22 @@ HFSPATH(DUZ2) ;EP
  Q $P($G(^BISITE(+DUZ2,0)),"^",14)
  ;
  ;
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+ ;---> IP Address for TCH Forecaster.
+ ;----------
+IPTCH(DUZ2) ;EP
+ ;---> Return the IP Address used for the TCH Forecaster
+ ;---> in the BI SITE PARAMETERS File.
+ ;---> Parameters:
+ ;     1 - DUZ2  (opt) User's DUZ(2), otherwise IEN of Site in
+ ;                     RPMS SITE PARAMETERS File.
+ ;
+ S:'$G(DUZ2) DUZ2=$P($G(^AUTTSITE(1,0)),"^")
+ N BIIP S BIIP=$P($G(^BISITE(+DUZ2,0)),"^",30)
+ S:'BIIP BIIP="127.0.0.1"
+ Q BIIP
+ ;**********
+ ;
  ;----------
 IMMSVDIR(DUZ2) ;EP
  ;---> Return the MSM Home Directory as set in the
@@ -328,10 +351,10 @@ PDSS(BIVIEN,BICOMP,BIPDSS) ;EP
  N I,X,Y,Z S X=0
  ;
  ;---> Ignore component CVX for now.
- ;S Y=BIVIEN_"%"_BICOMP
- ;F I=1:1 S Z=$P(BIPDSS,U,I) Q:Z=""  I Y=Z S X=1 Q
+ S Y=BIVIEN_"%"_BICOMP
+ F I=1:1 S Z=$P(BIPDSS,U,I) Q:Z=""  I Y=Z S X=1 Q
  ;---> Just check for V Imm IEN.
- F I=1:1 S Z=$P(BIPDSS,U,I) Q:Z=""  I BIVIEN=Z S X=1 Q
+ ;F I=1:1 S Z=$P(BIPDSS,U,I) Q:Z=""  I BIVIEN=Z S X=1 Q
  ;**********
  ;
  Q X
