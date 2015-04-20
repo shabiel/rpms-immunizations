@@ -23,7 +23,7 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
  ;---> Example: D PATLKUP^BIUTL8(.BIDFN)
  ;              D PATLKUP^BIUTL8(.BIDFN,"ADD") - May ADD Patient to IMM
  ;
- N DFN,DIC,X,Y
+ N DFN,DIC,X,Y,DIRUT,DTOUT,DUOUT
  S (BIDFN,BIPOP)=0 D SETVARS^BIUTL5
  S:$G(DUZ2)]"" DUZ(2)=DUZ2
  S DIC="^AUPNPAT(",DIC(0)="AEMQ"
@@ -91,6 +91,7 @@ PATLKUP(BIDFN,BIADD,DUZ2,BIPOP) ;EP
 VFCSET ;EP
  ;---> Load Vaccine Eligibility.  Called by LOADVIS^BIUTL7.
  ;---> If Patient Ben Type is 01 (Am Indian/AK Native), set VFC default=4.
+ ;ZEXCEPT: BI,BIDFN
  ;
  Q:$G(BI("P"))]""
  Q:'$G(BIDFN)
@@ -190,6 +191,8 @@ PRTLST(BITNOD) ;EP
  ;---> Variables:
  ;     1 - VALMHDR (req) Array containing header code.
  ;
+ ; ZEXCEPT:IOF,IOSL,IOST
+ ;
  N BICRT S BICRT=$S(($E(IOST)="C")!(IOST["BROWSER"):1,1:0)
  N BIPAGE,BIPOP S BIPAGE=0,BIPOP=0
  N BI31 S BI31=$C(31)_$C(31)
@@ -223,6 +226,7 @@ PHEADER(BIPAGE) ;EP
  ;---> Print header for PRTLST above.
  ;---> Parameters:
  ;     1 - BIPAGE (req) Last page# printed.
+ ; ZEXCEPT:VALMHDR
  ;
  S:'$G(BIPAGE) BIPAGE=0 S BIPAGE=BIPAGE+1
  N N S N=0
@@ -268,9 +272,13 @@ KILLALL(BIGLOBS) ;EP
  ;---> Parameters:
  ;     1 - BIGLOBS  (opt) If BIGLOBS=1 kill temp globals too.
  ;
- ;---> XB call to kill local variables.
- D EN^XBVK("BI")
- D EN^XBVK("DI")
+ ;---> XB call to kill local variables on RPMS
+ I $T(^XBVK)]"" D
+ . D EN^XBVK("BI")
+ . D EN^XBVK("DI")
+ E  D  ; works in GT.M and Cache for VISTA (NB: This is a standards extension to MUMPS.)
+ . S X="BI" F  S X=$O(@X) Q:$E(X,1,2)'="BI"  K @X
+ . S X="DI" F  S X=$O(@X) Q:$E(X,1,2)'="BI"  K @X
  ;
  ;---> FILEMAN KILLS.
  D DKILLS^BIFMAN
