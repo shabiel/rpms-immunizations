@@ -14,6 +14,7 @@ CMGR ;EP
  ;---> Select Default Case Manager.
  ;---> Called by Protocol BI SITE CASE MANAGER.
  ;#
+ ; ZEXCEPT:BISITE
  Q:$$BISITE
  D FULL^VALM1,TITLE^BIUTL5("DEFAULT CASE MANAGER"),TEXT1
  D DIE^BIFMAN(9002084.02,".02",BISITE)
@@ -36,29 +37,41 @@ TEXT1 ;EP
 OTHER ;EP
  ;---> Select Other Location.
  ;---> Called by Protocol BI SITE OTHER LOCATION.
+ ; ZEXCEPT:BISITE
  ;
  Q:$$BISITE
- D FULL^VALM1,TITLE^BIUTL5("OTHER LOCATION"),TEXT2
- D DIE^BIFMAN(9002084.02,".03",BISITE)
+ D FULL^VALM1,TITLE^BIUTL5("OTHER LOCATION")
+ I $$RPMS^BIUTL9() D TEXT2RPM,DIE^BIFMAN(9002084.02,".03",BISITE)
+ E  D TEXT2VIS,DIE^BIFMAN(9002084.02,"920000.03",BISITE)
  D RESET^BISITE
  Q
  ;
  ;
  ;----------
-TEXT2 ;EP
+TEXT2RPM ;EP
  ;;The Other Location is an entry in the IHS LOCATION file
  ;;that will serve as the Location for a PCC Visit when the
  ;;actual location is not in the LOCATION File.
  ;;
  ;;
- D PRINTX("TEXT2")
+ D PRINTX("TEXT2RPM")
  Q
  ;
  ;
  ;----------
+TEXT2VIS ;EP
+ ;;The Other Location is a free text field that will be used
+ ;;as the default other location when entering an external
+ ;;immunization
+ ;;
+ ;;
+ D PRINTX("TEXT2VIS")
+ Q
+ ;----------
 DUELET ;EP
  ;---> Select Immunizations Due Letter.
  ;---> Called by Protocol BI SITE DUE LETTER.
+ ; ZEXCEPT:BISITE
  ;
  Q:$$BISITE
  D FULL^VALM1,TITLE^BIUTL5("IMMUNIZATIONS DUE LETTER"),TEXT3
@@ -92,6 +105,7 @@ TEXT3 ;EP
 REPHDR ;EP
  ;---> Edit Report Header.
  ;---> Called by Protocol BI SITE REPORT HEADER
+ ; ZEXCEPT:BISITE
  ;
  Q:$$BISITE
  D FULL^VALM1,TITLE^BIUTL5("REPORT & SCREEN HEADER"),TEXT4
@@ -132,6 +146,7 @@ TEXT4 ;EP
 HFSPATH ;EP
  ;---> Edit Host File Server path.
  ;---> Called by Protocol BI SITE HFS PATH
+ ; ZEXCEPT:BISITE
  ;
  Q:$$BISITE  N BIPOP S BIPOP=0
  F  D  Q:$G(BIPOP)
@@ -203,6 +218,7 @@ TEXT5 ;EP
 MINDAYS ;EP
  ;---> Edit the default Minimum Number of days since last letter sent.
  ;---> Called by Protocol BI SITE MIN DAYS LAST LET.
+ ; ZEXCEPT:BISITE
  ;
  Q:$$BISITE
  D FULL^VALM1,TITLE^BIUTL5("EDIT MINIMUM DAYS LAST LETTER"),TEXT6
@@ -244,6 +260,7 @@ MINAGE ;EP
  ;---> Immunization Due dates for either the Minimum Acceptable Age
  ;---> or the Recommended Age.
  ;---> Called by Protocol BI SITE FORC MIN VS RECOMM
+ ; ZEXCEPT:BISITE
  ;
  Q:$$BISITE
  D FULL^VALM1,TITLE^BIUTL5("SELECT MINIMUM VS RECOMMENDED AGE"),TEXT7
@@ -278,6 +295,7 @@ RULES ;EP
  ;---> Edit the parameter directing which version of Forecasting
  ;---> Rules should be used by ImmServe.
  ;---> Called by Protocol BI SITE FORC RULES
+ ; ZEXCEPT:BISITE
  ;
  Q:$$BISITE
  ;********** PATCH 8, v8.5, MAR 15,2014, IHS/CMI/MWR
@@ -407,6 +425,7 @@ PRINTX(BILINL,BITAB) ;EP
  ;
  ;----------
 BISITE() ;EP
+ ; ZEXCEPT:BISITE
  ;---> Check for local variable BISITE.
  ;---> Variables:
  ;     1 - BISITE (req) Site IEN in BI SITE PARAMETER File.
