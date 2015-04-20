@@ -1,0 +1,71 @@
+Other location notes:
+
+1. GET in OTHERLOC^BIUTL6	
+2. SET In OTHER^BISITE2
+3. Printed on BISITE form in INIT+18^BISITE1
+
+Stored in 9002084.02,.03
+
+For VISTA,
+create new "mirror" field: 920000.03
+
+STANDARD DATA DICTIONARY #9002084.02 -- BI SITE PARAMETER FILE   
+                                                   APR 19,2015@18:27:18  PAGE 1
+STORED IN ^BISITE(  (1 ENTRY)   SITE: PLA.ISC-WASH.DOMAIN.EXT   UCI: VAH,ROU (VE
+RSION 0.2)   
+
+DATA          NAME                  GLOBAL        DATA
+ELEMENT       TITLE                 LOCATION      TYPE
+-------------------------------------------------------------------------------
+
+9002084.02,.03OTHER LOCATION         0;3 POINTER TO LOCATION FILE (#9999999.06)
+
+              LAST EDITED:      SEP 29, 1997 
+              HELP-PROMPT:      Select the Location that will serve as OTHER 
+                                when the Location of a Visit is not in the 
+                                Location File.  
+
+
+      FILES POINTED TO                      FIELDS
+
+LOCATION (#9999999.06)            OTHER LOCATION (#.03)
+
+STANDARD DATA DICTIONARY #9000010 -- VISIT FILE    APR 19,2015@18:29:34  PAGE 1
+STORED IN ^AUPNVSIT(  (1 ENTRY)   SITE: PLA.ISC-WASH.DOMAIN.EXT   UCI: VAH,ROU (
+VERSION 2.0)   
+
+DATA          NAME                  GLOBAL        DATA
+ELEMENT       TITLE                 LOCATION      TYPE
+-------------------------------------------------------------------------------
+
+9000010,2101  OUTSIDE LOCATION       21;1 FREE TEXT
+
+              INPUT TRANSFORM:  K:$L(X)>50!($L(X)<2) X
+              LAST EDITED:      JUN 03, 1992 
+              HELP-PROMPT:      Answer must be 2-50 characters in length. 
+              DESCRIPTION:
+                                Free text location of service.  
+
+
+
+VISTA:
+
+                                STANDARD DATA DICTIONARY #9002084.02 -- BI SITE PARAMETER FILE   
+                                                   APR 19,2015@18:33:53  PAGE 1
+STORED IN ^BISITE(  (1 ENTRY)   SITE: PLA.ISC-WASH.DOMAIN.EXT   UCI: VAH,ROU (VE
+RSION 0.2)   
+
+DATA          NAME                  GLOBAL        DATA
+ELEMENT       TITLE                 LOCATION      TYPE
+-------------------------------------------------------------------------------
+
+9002084.02,920000.03VISTA OTHER LOCATION 920000;1 FREE TEXT
+
+              INPUT TRANSFORM:  K:$L(X)>50!($L(X)<2) X
+              LAST EDITED:      APR 19, 2015 
+              HELP-PROMPT:      Answer must be 2-50 characters in length. 
+              DESCRIPTION:      Enter the default location for patients who are
+                                not getting the immunization in your hospital
+                                or clinic.  
+                                
+ 
