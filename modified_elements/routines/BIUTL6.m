@@ -19,7 +19,7 @@ USERPOP(BIDFN,BIEDATE) ;EP - Return 1 if Patient is in User Population as of BIE
  I '$D(^AUPNPAT(BIDFN,0)) Q 0      ;invalid patient
  I '$D(^AUPNVSIT("AC",BIDFN)) Q 0  ;patient has no visits
  ;
- NEW A,B,E,G,X,BIBDATE
+ NEW A,B,E,G,X,BIBDATE,UP,V
  S BIBDATE=$$FMADD^XLFDT(BIEDATE,-1096)  ;get beginning date for search, 3 yrs ago (1096 days)
  K ^TMP($J,"ALL VISITS")
  S A="^TMP($J,""ALL VISITS"","
@@ -51,7 +51,7 @@ ACTCLIN(BIDFN,BIEDATE) ;EP - Return 1 if Patient is Active Clinical User as of B
  I '$D(^AUPNPAT(BIDFN,0)) Q 0      ;invalid patient
  I '$D(^AUPNVSIT("AC",BIDFN)) Q 0  ;patient has no visits
  ;
- NEW A,B,E,G,X,BIBDATE,AC,S,F,BIGPRAYR
+ NEW A,B,E,G,X,BIBDATE,AC,S,F,BIGPRAYR,V
  S BIBDATE=$$FMADD^XLFDT(BIEDATE,-1096)  ;get begin date for search, 3 yrs ago (1096 days)
  K ^TMP($J,"ALL VISITS")
  ;
@@ -170,6 +170,7 @@ SKRESLT(X) ;EP
 HOSPLC() ;EP
  ;---> RETURN TEXT OF HOSPITAL LOCATION NAME.
  ;---> REQUIRED VARIABLE: X=IEN IN HOSPITAL LOCATION FILE #44.
+ ; ZEXCEPT: X
  Q:'$D(X) ""
  Q:'X "UNKNOWN"
  Q:'$D(^SC(X,0)) "UNKNOWN POINTER"
@@ -181,6 +182,7 @@ INSTIT() ;EP
  ;---> RETURN IEN OF INSTITUTION (FACILITY) FILE 4, FOR THIS HOSPITAL
  ;---> LOCATION ENTRY IN HOSPITAL LOCATION FILE 44.
  ;---> ALSO CONCATENATE "`" TO THE FRONT OF IEN FOR USE IN DR STRINGS.
+ ; ZEXCEPT: X
  Q:'$D(X) ""
  Q:X="" ""
  Q:'$D(^SC(X,0)) ""
@@ -258,15 +260,24 @@ OTHERLOC(BIDUZ2,Z) ;PEP - Return IEN of the "OTHER" Location.
  ;     1 - BIDUZ2 (req) IEN of "OTHER" in LOCATION File.
  ;     2 - Z      (opt) If Z=1 return text of "OTHER" Location.
  ;
- N X S:'$G(Z) Z=0
+ S:'$G(Z) Z=0
  Q:'$G(BIDUZ2) $S(Z:"OTHER NOT DEFINED",1:"")
  Q:'$D(^BISITE(BIDUZ2,0)) $S(Z:"SITE PARAMETERS NOT SET.",1:"")
+ I $$RPMS^BIUTL9() Q $$RPMSOTH(BIDUZ2,Z)
+ E  Q $$VISTAOTH(BIDUZ2)
+ ;
+ ;
+ ;----------
+RPMSOTH(BIDUZ2,Z) ; [Called only from OTHERLOC] Return IEN or text for Other Location for RPMS
+ N X
  S X=$P(^BISITE(BIDUZ2,0),U,3)
  Q:'X $S(Z:"OTHER not set in BI SITE PARAMETERS.",1:"")
  Q:'$D(^DIC(4,X,0)) $S(Z:"UNKNOWN FACILITY",1:"")
  Q:'Z X
  Q $$INSTTX(X)
  ;
+VISTAOTH(BIDUZ2) ; [Called only from OTHERLOC]  Retrun text for Other Location in VISTA
+ Q $$GET1^DIQ(9002084.02,BIDUZ2,"VISTA OTHER LOCATION")
  ;
  ;----------
 DEFPROV(BIDUZ2) ;EP
@@ -372,7 +383,7 @@ LOTTX(X,Y) ;EP
  ;---> Return Lot Number text.
  Q:'$G(Y) $P(^AUTTIML(X,0),U)
  I Y=1 Q $P(^AUTTIML(X,0),U,4)
- I Y=2 Q $$VNAME^BIUTL2(Z)
+ I Y=2 Q $$VNAME^BIUTL2(Z)  ; TODO(VEN/SMH): What the HELL is Z??? This looks like a bug.
  I Y=3 Q $P(^AUTTIML(X,0),U,17)
  Q ""
  ;
