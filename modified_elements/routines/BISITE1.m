@@ -31,12 +31,12 @@ INIT ;EP
  ;
  ;---> Other Location.
  N BIOTH S BIOTH=$$OTHERLOC^BIUTL6(BISITE),X=""
- D:$$RPMS^BIUTL9()
+ I $$RPMS^BIUTL9() D
  . D:BIOTH
  .. S X=$P(^AUTTLOC(BIOTH,0),U,4)
  .. I $G(X) S:$D(^AUTTAREA(X,0)) X=$P(^(0),U)
  .. S X=$$INSTTX^BIUTL6(BIOTH)_"   "_X
- E  ; Phantom Else for documentation only. $$OTHERLOC^BIUTL6 will return the 
+ E  S X=BIOTH ; Phantom Else for documentation only. $$OTHERLOC^BIUTL6 will return the 
     ; free text location name in field 920000.03
  S X=$E("   2) Other Location...............: "_X,1,79)
  D WRITE(.BILINE,X)
