@@ -60,3 +60,4 @@ RPMS() ; [Public $$] Are we running on RPMS??
  ; run RPMS as agency of "Other". Let's hope at least that somebody gets the
  ; right idea and runs RPMS rather than VISTA in ambulatory settings.
  if $data(^AUTTSITE(0)) quit 1
+ quit 0
