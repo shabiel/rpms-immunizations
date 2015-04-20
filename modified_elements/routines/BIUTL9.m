@@ -4,6 +4,7 @@ BIUTL9 ;IHS/CMI/MWR - UTIL: OVERFLOW CODE FROM OTHER BIUTL RTNS; MAY 10, 2010
  ;;  OVERFLOW CODE FROM OTHER BIUTL RTNS.
  ;;  PATCH 9: All EP's below are moved from BIUTL7 for space (<15000k).  REASCHK+0
  ;
+ ; VEN/SMH - Use this routine to add my own VISTA Porting Utility Routines ***
  ;
  ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
  ;---> All EP's below are moved from BIUTL7 for space (<15000k).
@@ -51,3 +52,11 @@ CREASCHK ;EP
  .S DDSBR=1
  Q
  ;**********
+ ;
+RPMS() ; [Public $$] Are we running on RPMS??
+ ; Try to do a heuristic determination
+ ; Just fiddling with this for now since I don't know the best way yet
+ ; I don't want to do this with DUZ("AG") (Agency) since many people may
+ ; run RPMS as agency of "Other". Let's hope at least that somebody gets the
+ ; right idea and runs RPMS rather than VISTA in ambulatory settings.
+ if $data(^AUTTSITE(0)) quit 1
