@@ -1,0 +1,6 @@
+^DD(9002084.02,920000.01,0)="VISTA OTHER LOCATION^F^^920000;1^K:$L(X)>50!($L(X)<2) X"
+^DD(9002084.02,920000.01,3)="Answer must be 2-50 characters in length."
+^DD(9002084.02,920000.01,21,0)="^^2^2^3150419^"
+^DD(9002084.02,920000.01,21,1,0)="Enter the default location for patients who are not getting the "
+^DD(9002084.02,920000.01,21,2,0)="immunization in your hospital or clinic."
+^DD(9002084.02,920000.01,"DT")=3150419
