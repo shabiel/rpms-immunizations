@@ -1,0 +1,7 @@
+^DD(9002084.02,920000.02,0)="COMMUNITY LOCATION TYPE^S^Z:ZIP CODE;P:POSTAL CODE;^920000;2^Q"
+^DD(9002084.02,920000.02,3)="Select an entry"
+^DD(9002084.02,920000.02,21,0)="^^3^3^3150504^"
+^DD(9002084.02,920000.02,21,1,0)="This field is used when statistics are requested on the patients. It will "
+^DD(9002084.02,920000.02,21,2,0)="decide how to treat the data stored in COMMUNITY:COMMUNITY CODE: Is it a "
+^DD(9002084.02,920000.02,21,3,0)="zip code or a postal code?"
+^DD(9002084.02,920000.02,"DT")=3150504
