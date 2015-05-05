@@ -7,11 +7,14 @@ BISITE4 ;IHS/CMI/MWR - SELECT GPRA COMMUNITIES.; MAY 10, 2010
  ;
  ;
  ;----------
-GPRA ;EP
- ;---> Select Communities for GPRA.
+GPRA ;EP Select Communities for GPRA.
  ;---> Called by Protocol BI SITE GPRA COMS.
  ;
  Q:$$BISITE^BISITE2
+ ;
+ ;---> Do VISTA stuff and quit if we are on VISTA
+ I '$$RPMS^BIUTL9() D COMMS QUIT
+ ;
  N BIITEM S BIITEM="Community"
  N BITITEM S BITITEM="GPRA Community"
  N BICOL S BICOL="    #  Community                  State"
@@ -42,8 +45,45 @@ GPRA ;EP
  D RESET^BISITE
  Q
  ;
+COMMS ; EP - Ask user to add/edit communities for statistics
+ ;---> Called by Protocol BI SITE GPRA COMS.
+ ; I am so so sad sad that I can't use Mike's way way too cool picker
+ ;
+ ; ZEXCEPT: BISITE
+ ;
+ D FULL^VALM1,TITLE^BIUTL5("SELECT COMMUNITIES FOR STATISTICS")
+ D TXTCOMMS  ; intro
+ ;
+ ; We edit fields: 
+ ; --> 920000.02: COMMUNITY LOCATION TYPE (ZIP or Postal?)
+ ; -->    920001: COMMUNITY (Multiple)
+ ;
+ N DIE,DA,DR,X,Y,DIDEL,DTOUT
+ S DIE="^BISITE(",DA=BISITE,DR="920000.02;920001" D ^DIE
+ ;
+ ;----> Go back
+ D RESET^BISITE
+ ;
+ QUIT
+ ;
+ ;
+TXTCOMMS ; [Internal] - Intro text to COMMS
+ ;;The following questions ask you about the communities you want to use
+ ;;for collection of statistics in various reports in the Immunization
+ ;;Package (e.g. who is immunized and who isn't).
+ ;;
+ ;;You will be prompted for a regular field (Use ZIP code or Postal Codes),
+ ;;then you can populate the ZIPs/Codes that you want to collect data from
+ ;;in the multiple. It's up to you to make sure that you are using the 
+ ;;correct type (ZIP or Postal Code) and whether the data you populate is 
+ ;;correct. The data will only be evaluated as a free text field match on 
+ ;;indexes in the patient file.
+ ;;
+ D PRINTX("TXTCOMMS")
+ QUIT
  ;
  ;----------
+ ;
 GETGPRA(BIGPRA,BIDUZ2,BIERR) ;PEP - Return GPRA Communities Array (RPMS).
  ;---> Retrieve GPRA Communities Array of IEN's for this DUZ(2).
  ;---> Parameters:
@@ -53,7 +93,8 @@ GETGPRA(BIGPRA,BIDUZ2,BIERR) ;PEP - Return GPRA Communities Array (RPMS).
  ;
  I '$G(BIDUZ2) S BIDUZ2=$G(DUZ(2))
  I '$G(BIDUZ2) D ERRCD^BIUTL2(109,.BIERR) Q
- ; I '$O(^BISITE(BIDUZ2,2,0)) D ERRCD^BIUTL2(110,.BIERR) Q  ; Absence of data is NOT A BUG.
+ ; Absence of data is NOT A BUG.
+ ; I '$O(^BISITE(BIDUZ2,2,0)) D ERRCD^BIUTL2(110,.BIERR) Q  
  N N S N=0
  F  S N=$O(^BISITE(BIDUZ2,2,N)) Q:'N  S BIGPRA(N)=""
  Q
@@ -69,7 +110,9 @@ GETCOMMS(COMMS,DUZ2,BIERR) ; PEP - Return Stats Communities (VISTA only)
  N N S N=0
  F  S N=$O(^BISITE(DUZ2,920001,N)) Q:'N  S COMMS(N)=""
  Q
+ ;
  ;----------
+ ;
 INPTCHK ;EP
  ;---> Edit the parameter that determines whether Inpatient Status
  ;---> is checked (and changed, if necessary) when storing Visits.
