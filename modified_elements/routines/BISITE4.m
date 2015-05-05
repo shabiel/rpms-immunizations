@@ -44,7 +44,7 @@ GPRA ;EP
  ;
  ;
  ;----------
-GETGPRA(BIGPRA,BIDUZ2,BIERR) ;PEP - Return GPRA Communities Array.
+GETGPRA(BIGPRA,BIDUZ2,BIERR) ;PEP - Return GPRA Communities Array (RPMS).
  ;---> Retrieve GPRA Communities Array of IEN's for this DUZ(2).
  ;---> Parameters:
  ;     1 - BIGPRA (ret) Array of GPRA IEN's in the COMMUNITY file - ^AUTTCOM(.
@@ -53,17 +53,29 @@ GETGPRA(BIGPRA,BIDUZ2,BIERR) ;PEP - Return GPRA Communities Array.
  ;
  I '$G(BIDUZ2) S BIDUZ2=$G(DUZ(2))
  I '$G(BIDUZ2) D ERRCD^BIUTL2(109,.BIERR) Q
- I '$O(^BISITE(BIDUZ2,2,0)) D ERRCD^BIUTL2(110,.BIERR) Q
+ ; I '$O(^BISITE(BIDUZ2,2,0)) D ERRCD^BIUTL2(110,.BIERR) Q  ; Absence of data is NOT A BUG.
  N N S N=0
  F  S N=$O(^BISITE(BIDUZ2,2,N)) Q:'N  S BIGPRA(N)=""
  Q
  ;
+GETCOMMS(COMMS,DUZ2,BIERR) ; PEP - Return Stats Communities (VISTA only)
+ ;---> Retrieve GPRA Communities Array of IEN's for this DUZ(2).
+ ;---> Parameters:
+ ;     1 - COMMS (ret) Array of GPRA IEN's in the COMMUNITY file - ^AUTTCOM(.
+ ;     2 - DUZ2  (req) Site IEN or DUZ(2).
+ ;     3 - BIERR  (ret) Error text, if any.
+ I '$G(DUZ2) S DUZ2=$G(DUZ(2))
+ I '$G(DUZ2) D ERRCD^BIUTL2(109,.BIERR) Q
+ N N S N=0
+ F  S N=$O(^BISITE(DUZ2,920001,N)) Q:'N  S COMMS(N)=""
+ Q
  ;----------
 INPTCHK ;EP
  ;---> Edit the parameter that determines whether Inpatient Status
  ;---> is checked (and changed, if necessary) when storing Visits.
  ;---> Called by Protocol BI SITE INPATIENT CHECK ENABLE.
  ;
+ ; ZEXCEPT: BISITE
  Q:$$BISITE^BISITE2
  D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE INPATIENT VISIT CHECK"),TEXT1
  N BIDFLT,DIR,DIRUT,Y
@@ -112,6 +124,8 @@ RISKP ;EP
  ;---> for patients with regard to Flu and Pneumo should be checked
  ;---> (in the Visit files) when forecasting those vaccines.
  ;---> Called by Protocol BI SITE INPATIENT CHECK ENABLE.
+ ;
+ ; ZEXCEPT: BISITE
  ;
  Q:$$BISITE^BISITE2
  D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE RISK FACTOR CHECKS"),TEXT2
@@ -198,6 +212,8 @@ IMPCPT ;EP
  ;---> not already been entered.
  ;---> Called by Protocol BI SITE CPT VISITS IMPORT.
  ;
+ ; ZEXCEPT: BISITE
+ ;
  Q:$$BISITE^BISITE2
  D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE IMPORT OF CPT-CODED VISITS"),TEXT3
  N BIDFLT,DIR,DIRUT,Y
@@ -239,6 +255,8 @@ VISMNU ;EP
  ;---> for patients with regard to Flu and Pneumo should be checked
  ;---> (in the Visit files) when forecasting those vaccines.
  ;---> Called by Protocol BI SITE INPATIENT CHECK ENABLE.
+ ;
+ ; ZEXCEPT: BISITE
  ;
  Q:$$BISITE^BISITE2
  D FULL^VALM1,TITLE^BIUTL5("ENABLE/DISABLE VISIT SELECTION MENU"),TEXT4
