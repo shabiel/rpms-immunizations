@@ -163,14 +163,23 @@ INIT ;EP
  K X
  ;
  ;---> GPRA Communities.
- D
+ I $$RPMS^BIUTL9() D  ; RPMS - original logic
  .N BIGPRA D GETGPRA^BISITE4(.BIGPRA,BISITE)
- .I '$O(BIGPRA(0)) S X="No" Q
- .N N S (N,X)=0 F  S N=$O(BIGPRA(N)) Q:'N  S X=X+1
- S X=X_" Communities selected for GPRA."
- S X="  16) GPRA Communities.............: "_X
- D WRITE(.BILINE,X)
- K X
+ .I '$O(BIGPRA(0)) S X="No"
+ .E  N N S (N,X)=0 F  S N=$O(BIGPRA(N)) Q:'N  S X=X+1
+ .S X=X_" Communities selected for GPRA."
+ .S X="  16) GPRA Communities.............: "_X
+ .D WRITE(.BILINE,X)
+ .K X
+ ;
+ ELSE  DO  ; VISTA
+ .N COMMS D GETCOMMS^BISITE4(.COMMS,BISITE)
+ .I '$O(COMMS(0)) S X="No"
+ .E  N N S (N,X)=0 F  S N=$O(COMMS(N)) Q:'N  S X=X+1
+ .S X=X_" communities selected."
+ .S X="  16) Communities for Statistics...: "_X
+ .D WRITE(.BILINE,X)
+ .K X
  ;
  ;---> Inpatient Check enabled.
  S X=$S($$INPTCHK^BIUTL2(BISITE):"Enabled",1:"Disabled")
