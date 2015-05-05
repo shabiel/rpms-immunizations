@@ -59,7 +59,7 @@ DATA          NAME                  GLOBAL        DATA
 ELEMENT       TITLE                 LOCATION      TYPE
 -------------------------------------------------------------------------------
 
-9002084.02,920000.03VISTA OTHER LOCATION 920000;1 FREE TEXT
+9002084.02,920000.01VISTA OTHER LOCATION 920000;1 FREE TEXT
 
               INPUT TRANSFORM:  K:$L(X)>50!($L(X)<2) X
               LAST EDITED:      APR 19, 2015 

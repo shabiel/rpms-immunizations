@@ -1,0 +1,5 @@
+BISITE1 gets using GETGPRA^BISITE4
+
+GPRA^BISITE4 selects; called by protocol BI SITE GPRA COMS
+
+Plan: Modify getter then setter.
