@@ -44,20 +44,19 @@ GPRA ;EP
  ;
  ;
  ;----------
-GETGPRA(BIGPRA,BIDUZ,BIERR) ;PEP - Return GPRA Communities Array.
+GETGPRA(BIGPRA,BIDUZ2,BIERR) ;PEP - Return GPRA Communities Array.
  ;---> Retrieve GPRA Communities Array of IEN's for this DUZ(2).
  ;---> Parameters:
  ;     1 - BIGPRA (ret) Array of GPRA IEN's in the COMMUNITY file - ^AUTTCOM(.
- ;     2 - BIDUZ  (req) Site IEN or DUZ(2).
+ ;     2 - BIDUZ2  (req) Site IEN or DUZ(2).
  ;     3 - BIERR  (ret) Error text, if any.
  ;
- I '$G(BIDUZ) S BIDUZ=$G(DUZ(2))
- I '$G(BIDUZ) D ERRCD^BIUTL2(109,.BIERR) Q
- I '$O(^BISITE(DUZ(2),2,0)) D ERRCD^BIUTL2(110,.BIERR) Q
+ I '$G(BIDUZ2) S BIDUZ2=$G(DUZ(2))
+ I '$G(BIDUZ2) D ERRCD^BIUTL2(109,.BIERR) Q
+ I '$O(^BISITE(BIDUZ2,2,0)) D ERRCD^BIUTL2(110,.BIERR) Q
  N N S N=0
- F  S N=$O(^BISITE(DUZ(2),2,N)) Q:'N  S BIGPRA(N)=""
+ F  S N=$O(^BISITE(BIDUZ2,2,N)) Q:'N  S BIGPRA(N)=""
  Q
- ;
  ;
  ;----------
 INPTCHK ;EP
