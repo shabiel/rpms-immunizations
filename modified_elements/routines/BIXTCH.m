@@ -16,6 +16,7 @@ SAMPLE ;
  ; U "|TCP|4" R X:1
  ; C "|TCP|4"
  ; U 0 W !,X
+ N POP,X
  D CALL^%ZISTCP("127.0.0.1",6708,10)
  I $G(POP) W "I failed!!!" QUIT
  USE IO
@@ -45,16 +46,13 @@ RUN(BIHX,BIDUZ2,BIRPT,BIDATA,BIERR) ;EP
  I $G(BIHX)="" S (BIRPT,BIDATA,BIERR)=$$ERROR(999) Q
  ;
  ;---> Uncomment to see Patient History sent to TCH Forecaster.
- ;W !,"Full Input String: ",BIHX R ZZZ
+ ; W !,"Full Input String: ",BIHX R ZZZ
  ;
  S BIERR="",BIRPT="",BIDATA=""
  S BIHX=BIHX_$C(10)
  N BIRESULT
  ;
- ;---> SAC Exemption from 2.2.3.3.2
- ;---> Purpose: Cache proprietary call to check/set Immserve directory.
- ;---> SAC Exemption Memo dated Feb 2004.
- S $ZT="ERRTRAP^BIXTCH"
+ N $ET S $ET="GOTO ERRTRAP^BIXTCH"
  ;
  ;---> Preserve the current Device to return to after using TCP.
  N BIDEVICE S BIDEVICE=$IO
@@ -83,9 +81,11 @@ RUN(BIHX,BIDUZ2,BIRPT,BIDATA,BIERR) ;EP
  ;
  ; In of CONT^%ZISTCP, "S" mode is set with send/rec buffers of 512 bytes
  ;
+ ; ZEXCEPT: BISIMERRTRAP - from the Unit Tester
  N POP
  D CALL^%ZISTCP(BIIP,6708,3)
  I $G(POP) S $EC=",U-TCH-TCP-CXN-FAIL,"  ; Invoke the error trap
+ I $D(BISIMERRTRAP) S $EC=",U-SIMULATED-ERROR," ; for our unit tests 
  U IO ; Use TCP device
  W BIHX,$C(13,10),! ; TCH Listener seems to use CR/LF as a delimiter.
  R BIRESULT:1
@@ -125,12 +125,36 @@ ERRMSG(X) ;EP
  ;
  ;----------
 ERRTRAP ;EP
- ;---> Error trap for Invalid ImmServe Path.
- ;---> Attempt to open Host File Server.
- ;---> SAC Exemption from 2.4.3.1, 2.4.9.1, 2.4.11.1.
- ;---> Purpose: to address HFS for forecasting without changing
- ;---> the current display/print Device and its IO characteristics.
- ;---> SAC Exemption Memo dated 1 Nov 99.
+ ; ZEXCEPT: BIERR from above
  ;
  D ERRCD^BIUTL2(123,.BIERR)
+ D CLOSE^%ZISTCP ; close just in case the error happened when are still comm
  Q
+ ;
+ ;----------
+ ;
+ ; 
+TEST D EN^%ut($T(+0),1) QUIT  ; ---> vide https://github.com/joelivey/M-Unit
+ ;
+ ; Expected Results:
+ ; FOIA 2015-02>D TEST^BIXTCH
+ ;
+ ; T1 - Run the sample data in the TCH Technical Manual.------------------  [OK]
+ ; T2 - Force an error to test the M error trap.--------------------------  [OK]
+ ;
+ ;
+T1 ; @TEST Run the sample data in the TCH Technical Manual
+ ; ---> vide http://www.ihs.gov/RPMS/PackageDocs/BI/TCH%20Forecaster%20Installation%20Instructions.pdf
+ N RPT,DATA,ERR
+ N S S S="20140424^0^0^0^0^TEST,PAIIENT  Chart#: 00-00-31^31^19830215^Male^U^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^~~~3484^03^20140414^0^0^0|||"
+ D RUN(S,DUZ(2),.RPT,.DATA,.ERR)
+ D CHKTF^%ut($L($G(RPT)),"No data was obtained")
+ QUIT
+ ;
+T2 ; @TEST Force an error to test the M error trap
+ N BISIMERRTRAP S BISIMERRTRAP=1
+ N RPT,DATA,ERR
+ N S S S="20140424^0^0^0^0^TEST,PATIENT  Chart#: 00-00-31^31^19830215^Male^U^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^~~~3484^03^20140414^0^0^0|||"
+ D RUN(S,DUZ(2),.RPT,.DATA,.ERR)
+ D CHKTF^%ut($L($G(ERR)),"An error was expected")
+ QUIT
