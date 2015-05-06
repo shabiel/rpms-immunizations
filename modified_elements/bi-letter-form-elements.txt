@@ -1,0 +1,16 @@
+Form: BI LETTER FORM
+
+Protocol menu: BI MENU LETTER FORM
+Hidden       : VALM HIDDEN ACTIONS
+
+Protocols:
+Select PROTOCOL NAME:    BI MENU LETTER FORM     Form Letter View/Edit     
+itemName: BI LETTER EDIT TOP             itemAction: D EDITSEC^BILETVW2(1)
+itemName: BI LETTER EDIT MIDDLE          itemAction: D EDITSEC^BILETVW2(2)
+itemName: BI LETTER EDIT BOTTOM          itemAction: D EDITSEC^BILETVW2(3)
+itemName: BI LETTER HISTORY              itemAction: D HISTORY^BILETVW2
+itemName: BI LETTER FORECAST             itemAction: D FORECAST^BILETVW2
+itemName: BI LETTER DATE/LOCATION        itemAction: D DATELOC^BILETVW2
+itemName: BI LETTER EDIT CLOSING         itemAction: D EDITSEC^BILETVW2(4)
+itemName: BI LETTER PRINT SAMPLE         itemAction: D PRINTSAM^BILETVW2
+itemName: BI LETTER DELETE               itemAction: D DELETLET^BILETVW2
