@@ -14,6 +14,11 @@ CHKSTAND(BIERROR) ;EP
  ;---> Parameters:
  ;     1 - BIERROR (ret) BIERROR=Text.
  ;
+ ; VEN/SMH: Most of this doesn't apply to VISTA as ^AUTTIMM is Standardized and
+ ;          not allowed to be changed. So we will not run this at all here.
+ ;
+ I '$$RPMS^BIUTL9() QUIT  ; quit if we are on VISTA
+ ;
  S BIERROR=""
  ;
  ;---> If Vaccine globals do not exist, return Error Text and quit.
