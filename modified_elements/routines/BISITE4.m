@@ -138,7 +138,7 @@ INPTCHK ;EP
 TEXT1 ;EP
  ;;When an Immunization Visit or Skin Test Visit is stored, the default
  ;;Category of Visit is "Ambulatory" (Outpatient).
- ;;However, if the RPMS PIMS (Patient Information Management System) or
+ ;;However, if the PIMS (Patient Information Management System) or
  ;;various Billing applications are in use, the patient may have the
  ;;Status of "Inpatient" at the time of the visit.
  ;;
@@ -279,7 +279,7 @@ IMPCPT ;EP
  ;
  ;----------
 TEXT3 ;EP
- ;;In RPMS it is possible for some immunizations to be entered by
+ ;;It is possible for some immunizations to be entered by
  ;;CPT Code into the CPT Visit File, rather than into the true
  ;;Immunization Visit File.  These "CPT-coded immunizations"
  ;;do NOT appear on the patient's Immunization Profile, nor are

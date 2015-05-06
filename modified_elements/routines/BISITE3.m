@@ -31,16 +31,16 @@ FORECAS ;EP
  ;----------
 TEXT1 ;EP
  ;;
- ;;If the ImmServe Forecasting Utility is properly installed and
+ ;;If the Forecasting Utility is properly installed and
  ;;Immunizations Due should be forecast when viewing and editing
  ;;patient histories, printing Due Lists, etc., choose "Enable" below.
- ;;If the ImmServe Utility is not installed, choose "Disable" below.
+ ;;If the Forecasting Utility is not installed, choose "Disable" below.
  ;;
- ;;NOTE: If at any point in the software an <XCALL> error occurs,
- ;;      this is due to the ImmServe Utility being called without
- ;;      it being installed.  In this case, either the ImmServe
- ;;      Utility should be installed (see Installation Notes in
- ;;      the Technical Manual), or this parameter should be Disabled.
+ ;;NOTE: If at any point in the software an error message saying
+ ;;      "Failure to open forecaster. Check Apache Tomcat Service."
+ ;;      appears, then this is due to an error in the Forecasting Utility. 
+ ;;      In this case, either the Forecaster needs to be fixed (see the
+ ;;      release notes), or this parameter should be Disabled.
  ;;
  D PRINTX("TEXT1")
  Q
@@ -314,11 +314,11 @@ IPTCH ;EP
 TEXT13 ;EP
  ;;Enter the IP Address of the server hosting the TCH Forecaster.
  ;;A typical installation has the forecaster running on the same
- ;;machine as Ensemble, EHR and RPMS.  In that case the address
+ ;;machine as the one hosting this system.  In that case the address
  ;;would be 127.0.0.1 (which is the default).
  ;;
- ;;However, if your network is configured correctly, RPMS can access the
- ;;TCH Forecaster hosted on another machine at a different IP address.
+ ;;However, the TCH Forecaster hosted on another machine at a different 
+ ;;IP address.
  ;;
  ;;Enter a different IP address for the TCH Forecaster below, if you wish
  ;;to change it:
