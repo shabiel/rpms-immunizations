@@ -187,8 +187,13 @@ RISKP ;EP
  ;---> Save user selection.
  S BISEL=Y S:Y=3 BISEL=12
  ;
+ ;---> Ask for current smokers.
+ ; Don't ask for smokers on VISTA. WHY?
+ ; In VISTA, it's very close to impossible (today) to identify smokers.
+ ; I will beg again for an API to determine smokers in VISTA.
+ ;
  N BISMOK S BISMOK=0
- D:(BISEL[2)
+ I $$RPMS^BIUTL9(),BISEL[2 D  ; only ask for smokers on RPMS
  .D FULL^VALM1,TITLE^BIUTL5("INCLUDE SMOKING AS A PNEUMO RISK FACTOR"),TEXT21
  .W !!,"     Do you wish to include a history of SMOKING in the criteria for"
  .W !,"     the High Risk Pneumo group?",!
@@ -198,7 +203,7 @@ RISKP ;EP
  .S DIR("B")=$S(BIDFLT[3:"YES",1:"NO")
  .D ^DIR
  .I Y S BISMOK=1
- ;
+ E  ; Phantom else for VISTA!
  Q:$D(DIRUT)
  D
  .I BISEL<2 Q
