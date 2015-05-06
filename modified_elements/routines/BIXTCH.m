@@ -126,10 +126,16 @@ ERRMSG(X) ;EP
  ;----------
 ERRTRAP ;EP
  ; ZEXCEPT: BIERR from above
+ ; Emergency Trap: (Replace newed trap; don't create another one)
+ S $ET="D ^%ZTER HALT"
  ;
  D ERRCD^BIUTL2(123,.BIERR)
  D CLOSE^%ZISTCP ; close just in case the error happened when are still comm
- Q
+ ;
+ S $EC=""  ; clear error
+ ; no need in this code to unwind the stack since there is only a single stack
+ ; level
+ QUIT
  ;
  ;----------
  ;
@@ -157,4 +163,18 @@ T2 ; @TEST Force an error to test the M error trap
  N S S S="20140424^0^0^0^0^TEST,PATIENT  Chart#: 00-00-31^31^19830215^Male^U^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^~~~3484^03^20140414^0^0^0|||"
  D RUN(S,DUZ(2),.RPT,.DATA,.ERR)
  D CHKTF^%ut($L($G(ERR)),"An error was expected")
+ QUIT
+ ;
+T3 ; [Private; Standalone] Regular test of error trap. See what happens to us
+ ; ---> This entry point is just for the developer's use. Really!!!
+ ; ---> We are checking that we exit at the right stack level. In this case,
+ ; ---> we need to just see that the error message is printed on the screen.
+ ; ---> This way we know that we just poped the stack correctly. If we didn't
+ ; ---> the stack will keep poping and we won't see the ERR message
+ D
+ . N BISIMERRTRAP S BISIMERRTRAP=1
+ . N RPT,DATA,ERR
+ . N S S S="20140424^0^0^0^0^TEST,PATIENT  Chart#: 00-00-31^31^19830215^Male^U^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^~~~3484^03^20140414^0^0^0|||"
+ . D RUN(S,DUZ(2),.RPT,.DATA,.ERR)
+ . W ERR,!
  QUIT
