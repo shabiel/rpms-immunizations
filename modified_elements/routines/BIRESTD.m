@@ -17,7 +17,7 @@ CHKSTAND(BIERROR) ;EP
  ; VEN/SMH: Most of this doesn't apply to VISTA as ^AUTTIMM is Standardized and
  ;          not allowed to be changed. So we will not run this at all here.
  ;
- I '$$RPMS^BIUTL9() QUIT  ; quit if we are on VISTA
+ I '$$RPMS^BIUTL9() K ^BISITE(-1) QUIT  ; quit if we are on VISTA (and say a ok)
  ;
  S BIERROR=""
  ;
