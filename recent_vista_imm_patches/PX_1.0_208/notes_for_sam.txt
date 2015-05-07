@@ -1,0 +1,10 @@
+This build only does one thing: It changes the pointer on the series flag
+to make sure that series that is selected is correct for the current
+immunization.
+
+DATA DICTIONARY #9000010.11 (V IMMUNIZATION)
+FIELD: SERIES (#.04)
+CODE TO SET POINTER SCREEN: S DIC("S")="I Y'>$$SERIES^PXVUTL0"   
+
+vs (old) CODE TO SET POINTER SCREEN: S DIC("S")="I Y'>$S($G(DA):$P($G(^AUTTIMM($P(^AUPNVIMM(DA,0),""^""),0)),""^"",5),1:8)"
+
