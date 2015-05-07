@@ -1,0 +1,8 @@
+PX*1*206 requires the XU and HDI patch. 
+ 
+The post install will not run if DUZ("AG") does not equal "V".
+
+The post install: 
+
+1. Converts the SKIN TEST file (9999999.28).  It should result in 8 entries with a CLASS of NATIONAL.
+2. Calls an STS API to standardize 9 VIMM files.   This will NOT occur in a non-VA account since it requires connectivity to FORUM and to VIE.

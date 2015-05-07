@@ -1,0 +1,11 @@
+^XTMP("K2VC","EXPORT","KRN",19,IEN,-1)="0^2"
+^XTMP("K2VC","EXPORT","KRN",19,IEN,0)="PXTT IN/ACTIVATE SKIN TEST^Skin Tests^Do not use! Placed out of order by PX*1*206^E^^^^^^^n^"
+^XTMP("K2VC","EXPORT","KRN",19,IEN,1,0)="^^2^2^2951122^"
+^XTMP("K2VC","EXPORT","KRN",19,IEN,1,1,0)="This option allows you to toggle the Inactive flag on a Skin Test entry"
+^XTMP("K2VC","EXPORT","KRN",19,IEN,1,2,0)="found in the SKIN TEST file."
+^XTMP("K2VC","EXPORT","KRN",19,IEN,30)="AUTTSK("
+^XTMP("K2VC","EXPORT","KRN",19,IEN,31)="QAMEZ"
+^XTMP("K2VC","EXPORT","KRN",19,IEN,50)="AUTTSK("
+^XTMP("K2VC","EXPORT","KRN",19,IEN,51)=.03
+^XTMP("K2VC","EXPORT","KRN",19,IEN,53)="BACKOUTOK"
+^XTMP("K2VC","EXPORT","KRN",19,IEN,"U")="SKIN TESTS"
