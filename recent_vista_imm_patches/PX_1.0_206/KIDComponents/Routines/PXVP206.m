@@ -20,7 +20,7 @@ PRE ;
  I $D(^DD(9999999.14,0,"ID",.02)) K ^DD(9999999.14,0,"ID",.02)
  I $$DUP() D  Q
  . D BMES^XPDUTL("DUPLICATE Names were found in the SKIN TEST file - INSTALLATION ABORTED")
- . S XPDABORT=2
+ . S XPDABORT=1
  D DELETE(920) ;kills file
  Q
  ;
@@ -32,19 +32,18 @@ POST ;Post installation
  S XUMF=1
  K ^XTMP("PXVSKX"),^XTMP("PXVERR")
  M ^XTMP("PXVSKX")=@XPDGREF@("PXVSKX")
- I '$D(^XTMP("PXVSKX")) D BMES^XPDUTL("Skin Test table not loaded - INSTALLATION ABORTED") S XPDQUIT=2 Q
  I '$D(^XTMP("PXVSKB")) M ^XTMP("PXVSKB",9999999.28)=^AUTTSK
  S PXVCPDT=$$FMADD^XLFDT(DT,90)
  S ^XTMP("PXVSKX",0)=PXVCPDT_"^"_DT  ;set purge ddt/creation dt
- S PXVCPDT=$$FMADD^XLFDT(DT,90)
+ S PXVCPDT=$$FMADD^XLFDT(DT,60)
  S ^XTMP("PXVSKB",0)=PXVCPDT_"^"_DT
  ;backup files populated in PX*1*201
  I '$D(^XTMP("PXVBKUP")) D
- . F PXVF=920.1,920.2,920.3,9999999.04,9999999.14 D
+ . F PXVF=920.1,920.2,920.3,9999999.04,9999999.14,920.4,920.5 D
  . . S PXVGL=$$ROOT^DILFD(PXVF,"",1) Q:PXVGL=""
  . . M ^XTMP("PXVBKUP",PXVF)=@PXVGL
  S ^XTMP("PXVBKUP",0)=PXVCPDT_"^"_DT  ;90 days
- D DATA  ;restores backup of skin test file
+ D DATA ;restores original SKIN TEST file
  D SELECT ;standardizes entries in skin test file
  D REMAIN  ;inactivates non-standard entries
  D SHORTNM  ;fixes spelling error
@@ -249,9 +248,8 @@ ERTBULL ;
  ;
 RESTORE(PXVF) ;
  N PXVGL,PXVI
- I PXVF=920!(PXVF=9999999.28)!(PXVF=920.4)!(PXVF=920.5) W !,"Re-install PX*1*206 to restore this file" Q
- I (PXVF'=920.1)&(PXVF'=920.2)&(PXVF'=920.3)&(PXVF'=9999999.04)&(PXVF'=9999999.14) D  Q
- . W !,"Only 920.1, 920.2, 920.3, 9999999.04 and 9999999.14 can be restored using this API."
+ I (PXVF'=920.1)&(PXVF'=920.2)&(PXVF'=920.3)&(PXVF'=920.4)&(PXVF'=920.5)&(PXVF'=9999999.04)&(PXVF'=9999999.14) D  Q
+ . W !,"Only 920.1, 920.2, 920.3, 920.4, 920.5,9999999.04 and 9999999.14 can be restored using this API."
  I '$D(^XTMP("PXVBKUP",PXVF)) W !,"Data backup has been purged.  Restore is aborted." Q
  D DELETE(PXVF)
  S PXVGL=$$ROOT^DILFD(PXVF)

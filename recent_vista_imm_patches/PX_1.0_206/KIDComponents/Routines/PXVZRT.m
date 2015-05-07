@@ -4,6 +4,7 @@ PXVZRT ;SLC/PBB - VIMM UTILITY ROUTINE ;01/15/2015  4:44 PM
  Q
 ZRT ;Manipulate update of MFN ZRT segment for Immunization files
  I IEN,((NAME="Term")!(NAME="Status")) K XXIEN ;This is the indication that it's first update for any subfile
+ S:$D(HLNODE(1)) HLNODE=HLNODE_HLNODE(1)
  G 920:IFN=920,99999914:IFN=9999999.14,99999928:IFN=9999999.28,9204:IFN=920.4,99999904:IFN=9999999.04,9201:IFN=920.1
  Q
 920 ; Manipulate update of MFN ZRT segment for 920 File
@@ -143,8 +144,6 @@ ZRT ;Manipulate update of MFN ZRT segment for Immunization files
  I IEN,NAME="vista_applies_to" D  Q
  .I $P(HLNODE,HLFS,3)="""""" D DS(920.43,IEN) S OUT=1 Q
  .I '$G(XXIEN(920.43)) D DS(920.43,IEN)  S XXIEN(920.43)=1 ;CLEAN SUBFILE ENTRY
- I IEN,NAME="VistA_Textual_Definition" D  Q
- .S:$D(HLNODE(1)) HLNODE=HLNODE_HLNODE(1)
  I IEN,NAME="Status" D IFST(.03,0,1) Q
  Q
 9201 ; Manipulate update of MFN ZRT Segment for 920.01 File
