@@ -1,0 +1,12 @@
+.01,0)="NAME^RF^^0;1^K:$L(X)>10!($L(X)<3)!'(X'?1P.E)!(X'?.ANP) X"         |  .01,0)="NAME^RFXa^^0;1^K:$L(X)>30!($L(X)<3)!'(X'?1P.E)!(X'?.ANP) X"
+.02,0)="CODE^RFX^^0;2^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($L(X)< |  .02,0)="CODE^FXIa^^0;2^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($L(X)
+.03,0)="INACTIVE FLAG^S^1:INACTIVE;^0;3^Q"                                |  .03,0)="INACTIVE FLAG^Sa^1:INACTIVE;^0;3^Q"
+.11,0)="CPT CODE^P81'^ICPT(^0;11^Q"                                       |  .11,0)="CPT CODE^P81'Ia^ICPT(^0;11^Q"
+8801,0)="MNEMONIC^F^^88;1^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($L |  3,0)="CODING SYSTEM^9999999.283^^3;0"
+                                                                          >  99.97,0)="REPLACED BY VHA STANDARD TERM^P9999999.28'aI^AUTTSK(^VUID;3^Q"
+                                                                          >  99.98,0)="MASTER ENTRY FOR VUID^RSaI^1:YES;0:NO;^VUID;2^Q"
+                                                                          >  99.99,0)="VUID^RFXIa^^VUID;1^S X=+X K:$L(X)>20!($L(X)<1)!'(X?1.20N) X"
+                                                                          >  99.991,0)="EFFECTIVE DATE/TIME^9999999.2899DA^^TERMSTATUS;0"
+                                                                          >  100,0)="CLASS^Sa^N:NATIONAL;V:VISN;L:LOCAL;^100;1^Q"
+                                                                          >  1201,0)="PRINT NAME^Fa^^12;1^K:$L(X)>15!($L(X)<3) X"
+                                                                          >  8801,0)="MNEMONIC^Fa^^88;1^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($
