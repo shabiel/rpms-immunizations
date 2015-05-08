@@ -1,4 +1,13 @@
-# Description of the similarities and differences between PX\*1.0\*201 and RPMS tables
+# Description of the similarities and differences between VA Imm Patches and RPMS tables
+
+VA VISTA Released the following patches to support Immunizations in VISTA:
+ 
+ * PX\*1.0\*200
+ * PX\*1.0\*201
+ * PX\*1.0\*208
+ * PX\*1.0\*206
+ * PX\*1.0\*209
+
 VA VISTA patch PX\*1.0\*201 introduced enhanced support for capturing
 immunization data in VISTA. Previously immunization data in VISTA was captured
 with no intelligence as it its meaning; essentially in a book keeping sense;
@@ -9,20 +18,33 @@ supplied. A post install routine `PXVP201` moves data from unused fields in V
 IMMUNIZATION which happen to collide with RPMS fields into newly created
 multiples outside of the RPMS field space.
 
-# Description of data in PX\*1.0\*201
-Since the content of this patch is almost all data dictionaries and data,
+PX\*1.0\*200 adds support for PCE calls to save Immunizations; this is updated
+in PX\*1.0\*209 to support extra fields.
+
+PX\*1.0\*206 expands MFS control to all the 920 series of files; brings in
+920.4 (Contraindications) and 920.5 (Refusal Reasons); adds 2D barcode values
+to the VIS file (#920) sent in PX\*1.0\*201. It brings in as well a standardized
+skin test file. Finally, it turns on auditing for all MFS controlled files.
+
+PX\*1.0\*208 is a quick fix for an omission earlier.
+
+# Description of data in PX\*1.0\*201 and PX\*1.0\*206
+Since the content of these patchs is almost all data dictionaries and data,
 they are described below:
 
-| File Number   | File Name     | Partial?     | Has Data?     | MFS Controlled? | In RPMS?      |
-| ------------- | ------------- |------------- | ------------- | --------------- | ------------- |
-| 9000010.11    | V Immunization | No          | No            |                 |     Yes       |
-| 9999999.04    | Immunization Manufacturer | No | Yes         | Yes             |     Yes       |
-| 9999999.14    | Immuniaztion  | No           | Yes           | Yes             |     Yes       |
-| 9999999.41    | Immunization Lot | No        | No            |                 |     Yes       |
-| 920.1         | Immunization Information Source | No | Yes   |                 |     No        |
-| 920.2         | Immunization Administration Route | No | Yes |                 |     No        |
-| 920.3         | Immunization Administration Site | No | Yes  |                 |     No        |
-| 920           | Vaccine Information Sheets | No | Yes        | Yes             |     No        |
+| File Number   | File Name     | Partial?     | Has Data?     | MFS Controlled? | In RPMS?      | Sent in      |
+| ------------- | ------------- |------------- | ------------- | --------------- | ------------- | ------------ | 
+| 9000010.11    | V Immunization | No          | No            |                 |     Yes       | PX\*1.0\*201 |
+| 9999999.04    | Immunization Manufacturer | No | Yes         | Yes             |     Yes       | PX\*1.0\*201 |
+| 9999999.14    | Immuniaztion  | No           | Yes           | Yes             |     Yes       | PX\*1.0\*201 |
+| 9999999.41    | Immunization Lot | No        | No            |                 |     Yes       | PX\*1.0\*201 |
+| 9999999.28    | Skin Test     | No           | Yes           | Yes             |     Yes       | PX\*1.0\*206 |
+| 920.1         | Immunization Information Source | No | Yes   | Yes             |     No        | PX\*1.0\*201 |
+| 920.2         | Immunization Administration Route | No | Yes | Yes             |     No        | PX\*1.0\*201 |
+| 920.3         | Immunization Administration Site | No | Yes  | Yes             |     No        | PX\*1.0\*201 |
+| 920.4         | Imm Contraindications | No   | Yes           | Yes             |     No        | PX\*1.0\*206 |
+| 920.5         | Imm Refusals  | No           | Yes           | Yes             |     No        | PX\*1.0\*206 |
+| 920           | Vaccine Information Sheets | No | Yes        | Yes             |     No        | PX\*1.0\*201 |
 
 At this point, we can come up with some conclusions. The 920\* files are
 actually completely new. A look through the RPMS files shows that the 920\*
@@ -185,6 +207,25 @@ something IHS couldn't do due to the fact that they do not maintain these files.
                                                                           >  .18,0)="NDC CODE (VA)^P50.67'^PSNDF(50.67,^0;18^Q"
 ```
 
+## 9999999.28 (SKIN TEST)
+
+VISTA Adds several fields for MFS control. All the other fields are almost the
+same as the RPMS equivalents.
+
+```
+.01,0)="NAME^RF^^0;1^K:$L(X)>10!($L(X)<3)!'(X'?1P.E)!(X'?.ANP) X"         |  .01,0)="NAME^RFXa^^0;1^K:$L(X)>30!($L(X)<3)!'(X'?1P.E)!(X'?.ANP) X"
+.02,0)="CODE^RFX^^0;2^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($L(X)< |  .02,0)="CODE^FXIa^^0;2^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($L(X)
+.03,0)="INACTIVE FLAG^S^1:INACTIVE;^0;3^Q"                                |  .03,0)="INACTIVE FLAG^Sa^1:INACTIVE;^0;3^Q"
+.11,0)="CPT CODE^P81'^ICPT(^0;11^Q"                                       |  .11,0)="CPT CODE^P81'Ia^ICPT(^0;11^Q"
+8801,0)="MNEMONIC^F^^88;1^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($L |  3,0)="CODING SYSTEM^9999999.283^^3;0"
+                                                                          >  99.97,0)="REPLACED BY VHA STANDARD TERM^P9999999.28'aI^AUTTSK(^VUID;3^Q"
+                                                                          >  99.98,0)="MASTER ENTRY FOR VUID^RSaI^1:YES;0:NO;^VUID;2^Q"
+                                                                          >  99.99,0)="VUID^RFXIa^^VUID;1^S X=+X K:$L(X)>20!($L(X)<1)!'(X?1.20N) X"
+                                                                          >  99.991,0)="EFFECTIVE DATE/TIME^9999999.2899DA^^TERMSTATUS;0"
+                                                                          >  100,0)="CLASS^Sa^N:NATIONAL;V:VISN;L:LOCAL;^100;1^Q"
+                                                                          >  1201,0)="PRINT NAME^Fa^^12;1^K:$L(X)>15!($L(X)<3) X"
+                                                                          >  8801,0)="MNEMONIC^Fa^^88;1^K:X[""""""""!($A(X)=45) X I $D(X) K:$L(X)>2!($
+```
 # Overall pattern of differences
 Overall, the VA version of the fields are much better documented. Reference
 files are locked down to be updated by MFS (see above). For reference files,
