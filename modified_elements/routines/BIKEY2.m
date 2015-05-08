@@ -32,14 +32,20 @@ HDR ;EP
  ;
  ;----------
 INIT ;EP
+ ;ZEXCEPT: VALM,VALMCNT,VALMSG
  ;---> Initialize variables and list array.
  S VALM("TITLE")=" (Immunization v"_$$VER^BILOGO_")"
  ;
  ;---> Gather text from ^BINFO( Word Processing global.
+ ;---> On VISTA, get it from the Dialog file entry 9200001
  N BILINE,N
  S BILINE=0,N=0
- F  S N=$O(^BINFO(2,1,N)) Q:'N  D
+ I $$RPMS^BIUTL9() F  S N=$O(^BINFO(2,1,N)) Q:'N  D
  .D WL^BIW(.BILINE,"BIKEY2",$G(^BINFO(2,1,N,0)))
+ E  D
+ .N TXT
+ .D BLD^DIALOG(9200001,,,$NAME(TXT))
+ .F  S N=$O(TXT(N)) Q:'N  D WL^BIW(.BILINE,"BIKEY2",$G(TXT(N)))
  S VALMCNT=BILINE
  I VALMCNT>15 D
  .S VALMSG="Scroll down to view more. Type ?? for more actions."
@@ -49,6 +55,7 @@ INIT ;EP
  ;----------
 RESET ;EP
  ;---> Update partition for return to Listmanager.
+ ;ZEXCEPT: VALMBCK,VALMQUIT
  I $D(VALMQUIT) S VALMBCK="Q" Q
  D TERM^VALM0 S VALMBCK="R"
  D INIT,HDR Q
