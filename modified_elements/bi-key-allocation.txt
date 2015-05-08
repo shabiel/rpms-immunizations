@@ -1,0 +1,78 @@
+Allocate/Deallocate Imm Menu Keys [BI KEYS ALLOCATE]
+
+List: BI KEY HOLDERS VIEW/EDIT
+
+Main Protocol: BI MENU KEY HOLDERS
+-> itemName: BI KEYS ALLOCATE/DEALLOC                itemAction: D ^BIKEY1
+-> itemName: BI KEYS HELP VIEW                       itemAction: D ^BIKEY2
+
+BIKEY2 asks for another list:
+List: BI KEY EXPLANANTION VIEW
+
+Main Protocol: BI MENU PACKAGE INFO VIEW
+-> itemName: BI BLANK                                itemAction:
+
+Help Text:
+
+     This screen displays all users who hold any of the four  Keys to
+     the Immunization Package.  The Keys, which begin with BIZ, are 
+     listed as column headers at the top of the screen.
+ 
+     A "YES" in the column under a Key name indicates that the user
+     listed on that line holds the Key in the column header.
+ 
+     There are four Keys included in the Immunization Package:
+     
+     
+     1 - BIZMENU
+     -----------
+     Gives Users access to the Main Menu of the Immunization Package,
+     with minimal permission to view Patients' Immunization data, to print
+     Official Immunization Records, to view/print Due Lists, and to run
+     reports.
+     
+     
+     2 - BIZ EDIT PATIENTS
+     ---------------------
+     Gives Users the ability to ADD/EDIT Patients' immunization data,
+     contraindications, skin tests, and other patient information.  This
+     Key functions by making various Add/Edit Actions available on the
+     main Patient View screen of the Patient Immunization Record Option.
+     
+     (Users without this key will still be able to view patient data
+     from the Patient Immunization Record Option, but they will only be
+     able to view the Immunization data and the Health Summary, and print
+     the Official Immunization Record.)
+     
+     
+     3 - BIZ MANAGER
+     ---------------
+     Gives Users access to the Manager Menu of the New Immunization
+     Package and the full range of Manager functions, such as, editing
+     Case Managers, editing Form Letters, editing Site Parameters, etc.
+     Since you are here, you have the BIZ MANAGER Key described above and are 
+     allowed to allocate or de-allocate any of the Immunization (BIZ) Keys to 
+     other Users.
+ 
+ 
+     4 - BIZ LOT ONLY
+     ----------------
+     This "stand-alone" option is NOT connected to the rest of the RPMS 
+     Immunization Menu; instead it may be assigned to any menu of any user
+     for the purpose of adding and editing Lot Numbers in the Immunization
+     Package. The option allows someone, such as a pharmacist, to add and
+     maintain the Lot Number Inventory without gaining access to the rest
+     of the Manager Menu in the Immunization Package.
+     
+     There are two Actions presented at the bottom of the screen:
+      
+        1 - "Add/Edit a Holder" allows you to allocate or deallocate the
+            Immunization Keys to users.
+        
+        2 - "Help" (this screen) presents a detailed explanation of the
+            privileges each Key bestows upon holders of the Key.
+ 
+ 
+     NOTE: If you intend to allocate Keys to a large number of Users,
+           it may be more convenient to have your Site Manager to this
+           in batch mode under the Site Manager's Key Management Menu.
