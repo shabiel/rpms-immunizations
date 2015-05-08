@@ -1,58 +1,66 @@
-HDI1014A ;SLC/AJB - PATCH 14 POST INSTALL;01/05/2015
+HDI1014A ;SLC/AJB - PATCH 14 POST INSTALL;04/28/2015
  ;;1.0;HEALTH DATA & INFORMATICS;**14**;Feb 22, 2005
  ;
 POST ;
- N DOMAIN,HDIMSG,HDDOM,HDISDFFS
- I +$$PATCH^XPDUTL("HDI*1.0*14") D CLEAN
- S DOMAIN="IMMUNIZATIONS"
- I '+$$UPDTDOM^HDISVCUT(DOMAIN) D PSTHALT Q  ;Adds Domain
- I '+$$GETIEN^HDISVF09("IMMUNIZATIONS",.HDDOM) D PSTHALT Q
- I '+HDDOM D PSTHALT Q
- ; set fields
- S HDISDFFS(920)=".01"
- S HDISDFFS(920.1)=".01"
- S HDISDFFS(920.2)=".01"
- S HDISDFFS(920.3)=".01"
- S HDISDFFS(920.4)=".01"
- S HDISDFFS(920.5)=".01"
- S HDISDFFS(9999999.04)=".01"
- S HDISDFFS(9999999.14)=".01"
- S HDISDFFS(9999999.28)=".01"
- S HDIMSG(1)=" "
+ N DOMAIN,HDIDOM,HDIERROR,HDIMSG
+ ;
+ S HDIMSG(1)="Post-Installation (POST^HDI1014A) will now be run."
  S HDIMSG(2)=" "
- S HDIMSG(3)="Post-Installation (POST^HDI1014A) will now be run"
- S HDIMSG(4)=" "
- S HDIMSG(5)=" "
  D MES^XPDUTL(.HDIMSG) K HDIMSG
- ;Updates HDIS FILE/FIELD file
- I '+$$ADDDFFS^HDISVF09(HDDOM,.HDISDFFS) D PSTHALT
- I '$$VUID^HDISVCUT("IMM","HDI1014B") D PSTHALT
- Q
-PSTHALT ;Print post-install halted text
- N HDIMSG
- S HDIMSG(1)=" "
- S HDIMSG(2)="*****"
- S HDIMSG(3)="***** Post-installation has been halted"
- S HDIMSG(4)="***** Please contact Enterprise VistA Support"
- S HDIMSG(5)="*****"
- S HDIMSG(6)=" "
+ ;
+ S DOMAIN="IMMUNIZATIONS" ; domain to be added to HDIS DOMAIN File #7115.1
+ ;
+ ; add domain
+ I '+$$UPDTDOM^HDISVCUT(DOMAIN) D  Q
+ . D MES^XPDUTL("***** Error adding the "_DOMAIN_" domain to the HDIS DOMAIN FILE #7115.1."),PSTHALT("")
+ ;
+ ; get domain IEN
+ I '+$$GETIEN^HDISVF09(DOMAIN,.HDIDOM) D  Q
+ . D MES^XPDUTL("***** Error retrieving the IEN for the "_DOMAIN_" domain."),PSTHALT("")
+ ;
+ ; verify domain IEN
+ I '+HDIDOM D  Q
+ . D MES^XPDUTL("***** Error verifying the IEN for the "_DOMAIN_" domain."),PSTHALT("")
+ ;
+ ; get files & fields to be added to File #7115.6
+ N DATA,LINE F LINE=1:1 S DATA=$P($T(DATA+LINE),";;",2) Q:DATA=""  D
+ . N FILE,FIELD,HDIDATA,HDIERMSG
+ . S FILE=$P(DATA,U),FIELD=$P(DATA,U,2)
+ . I +$$GETIEN^HDISVF05(FILE,FIELD) Q  ; quit if entry already exists
+ . S HDIDATA(FILE)=FIELD
+ . ; add entry to HDIS FILE/FIELD File #7115.6
+ . I '+$$ADDDFFS^HDISVF09(HDIDOM,.HDIDATA,.HDIERMSG) D
+ . . I '$D(HDIERROR) D MES^XPDUTL("***** "_"Error updating File #7115.6")
+ . . S HDIERROR=1
+ . . D MES^XPDUTL("***** "_HDIERMSG)
+ ;
+ I +$D(HDIERROR) D PSTHALT("") Q
+ ;
+ ; Initiate VUIDs for set of code fields
+ I '$$VUID^HDISVCUT("IMM","HDI1014B") D  Q
+ . D MES^XPDUTL("***** VUIDs for set of code fields update failed."),PSTHALT("")
+ ;
+ S HDIMSG(1)="Post-Installation complete."
+ S HDIMSG(2)=""
  D MES^XPDUTL(.HDIMSG)
  Q
-CLEAN ; Remove entries in 7115.1 and 7115.6 for re-installations as needed
- N HDIFILES
- S HDIFILES(920)=".01"
- S HDIFILES(920.1)=".01"
- S HDIFILES(920.2)=".01"
- S HDIFILES(920.3)=".01"
- S HDIFILES(920.4)=".01"
- S HDIFILES(920.5)=".01"
- S HDIFILES(9999999.04)=".01"
- S HDIFILES(9999999.14)=".01"
- S HDIFILES(9999999.28)=".01"
- S HDIFILES="" F  S HDIFILES=$O(HDIFILES(HDIFILES)) Q:'+HDIFILES  D
- . N IEN S IEN="",IEN=$O(^HDIS(7115.6,"B",HDIFILES_"~.01",IEN)) I +IEN D
- . . N DA,DIK S DA=IEN,DIK="^HDIS(7115.6," D ^DIK
- ;
- S HDIFILES="",HDIFILES=$O(^HDIS(7115.1,"B","IMMUNIZATIONS",HDIFILES)) I +HDIFILES D
- . N DA,DIK S DA=HDIFILES,DIK="^HDIS(7115.1," D ^DIK
+PSTHALT(MSG) ; display error message
+ S HDIMSG(1)=""
+ S HDIMSG(2)=MSG
+ S HDIMSG(3)="***** Post-installation has been halted."
+ S HDIMSG(4)="***** Please contact Enterprise VistA Support."
+ S HDIMSG(5)=""
+ D MES^XPDUTL(.HDIMSG)
+ Q
+DATA ;
+ ;;920^.01
+ ;;920.1^.01
+ ;;920.2^.01
+ ;;920.3^.01
+ ;;920.4^.01
+ ;;920.5^.01
+ ;;9999999.04^.01
+ ;;9999999.14^.01
+ ;;9999999.28^.01
+ ;;
  Q
