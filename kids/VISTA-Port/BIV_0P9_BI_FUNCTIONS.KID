@@ -1,0 +1,486 @@
+KIDS Distribution saved on May 08, 2015@13:22:29
+Functions in Function file!!!
+**KIDS**:BIV 0.9^
+
+**INSTALL NAME**
+BIV 0.9
+"BLD",4549,0)
+BIV 0.9^IMMUNIZATIONS VISTA PORT^0^3150508^y
+"BLD",4549,1,0)
+^^1^1^3150508^
+"BLD",4549,1,1,0)
+FUNCTIONS
+"BLD",4549,4,0)
+^9.64PA^^
+"BLD",4549,6.3)
+1
+"BLD",4549,"KRN",0)
+^9.67PA^9002226^21
+"BLD",4549,"KRN",.4,0)
+.4
+"BLD",4549,"KRN",.401,0)
+.401
+"BLD",4549,"KRN",.402,0)
+.402
+"BLD",4549,"KRN",.403,0)
+.403
+"BLD",4549,"KRN",.5,0)
+.5
+"BLD",4549,"KRN",.5,"NM",0)
+^9.68A^18^18
+"BLD",4549,"KRN",.5,"NM",1,0)
+BI CASE MANAGER^^0
+"BLD",4549,"KRN",.5,"NM",2,0)
+BI CHART NUMBER^^0
+"BLD",4549,"KRN",.5,"NM",3,0)
+BI DATE OF BIRTH^^0
+"BLD",4549,"KRN",.5,"NM",4,0)
+BI HE/SHE^^0
+"BLD",4549,"KRN",.5,"NM",5,0)
+BI HIM/HER^^0
+"BLD",4549,"KRN",.5,"NM",6,0)
+BI HIS/HER^^0
+"BLD",4549,"KRN",.5,"NM",7,0)
+BI MAILING ADD-CITY^^0
+"BLD",4549,"KRN",.5,"NM",8,0)
+BI MAILING ADD-CITY STATE ZIP^^0
+"BLD",4549,"KRN",.5,"NM",9,0)
+BI MAILING ADD-STATE^^0
+"BLD",4549,"KRN",.5,"NM",10,0)
+BI MAILING ADD-STREET^^0
+"BLD",4549,"KRN",.5,"NM",11,0)
+BI MAILING ADD-STREET-2^^0
+"BLD",4549,"KRN",.5,"NM",12,0)
+BI MAILING ADD-ZIP^^0
+"BLD",4549,"KRN",.5,"NM",13,0)
+BI NAME FIRST^^0
+"BLD",4549,"KRN",.5,"NM",14,0)
+BI NAME FIRST LAST^^0
+"BLD",4549,"KRN",.5,"NM",15,0)
+BI NEXT APPOINTMENT^^0
+"BLD",4549,"KRN",.5,"NM",16,0)
+BI NOW^^0
+"BLD",4549,"KRN",.5,"NM",17,0)
+BI PARENT/GUARDIAN^^0
+"BLD",4549,"KRN",.5,"NM",18,0)
+BI TODAY^^0
+"BLD",4549,"KRN",.5,"NM","B","BI CASE MANAGER",1)
+
+"BLD",4549,"KRN",.5,"NM","B","BI CHART NUMBER",2)
+
+"BLD",4549,"KRN",.5,"NM","B","BI DATE OF BIRTH",3)
+
+"BLD",4549,"KRN",.5,"NM","B","BI HE/SHE",4)
+
+"BLD",4549,"KRN",.5,"NM","B","BI HIM/HER",5)
+
+"BLD",4549,"KRN",.5,"NM","B","BI HIS/HER",6)
+
+"BLD",4549,"KRN",.5,"NM","B","BI MAILING ADD-CITY",7)
+
+"BLD",4549,"KRN",.5,"NM","B","BI MAILING ADD-CITY STATE ZIP",8)
+
+"BLD",4549,"KRN",.5,"NM","B","BI MAILING ADD-STATE",9)
+
+"BLD",4549,"KRN",.5,"NM","B","BI MAILING ADD-STREET",10)
+
+"BLD",4549,"KRN",.5,"NM","B","BI MAILING ADD-STREET-2",11)
+
+"BLD",4549,"KRN",.5,"NM","B","BI MAILING ADD-ZIP",12)
+
+"BLD",4549,"KRN",.5,"NM","B","BI NAME FIRST",13)
+
+"BLD",4549,"KRN",.5,"NM","B","BI NAME FIRST LAST",14)
+
+"BLD",4549,"KRN",.5,"NM","B","BI NEXT APPOINTMENT",15)
+
+"BLD",4549,"KRN",.5,"NM","B","BI NOW",16)
+
+"BLD",4549,"KRN",.5,"NM","B","BI PARENT/GUARDIAN",17)
+
+"BLD",4549,"KRN",.5,"NM","B","BI TODAY",18)
+
+"BLD",4549,"KRN",.84,0)
+.84
+"BLD",4549,"KRN",3.6,0)
+3.6
+"BLD",4549,"KRN",3.8,0)
+3.8
+"BLD",4549,"KRN",9.2,0)
+9.2
+"BLD",4549,"KRN",9.8,0)
+9.8
+"BLD",4549,"KRN",19,0)
+19
+"BLD",4549,"KRN",19.1,0)
+19.1
+"BLD",4549,"KRN",101,0)
+101
+"BLD",4549,"KRN",409.61,0)
+409.61
+"BLD",4549,"KRN",771,0)
+771
+"BLD",4549,"KRN",779.2,0)
+779.2
+"BLD",4549,"KRN",870,0)
+870
+"BLD",4549,"KRN",8989.51,0)
+8989.51
+"BLD",4549,"KRN",8989.52,0)
+8989.52
+"BLD",4549,"KRN",8994,0)
+8994
+"BLD",4549,"KRN",9002226,0)
+9002226
+"BLD",4549,"KRN","B",.4,.4)
+
+"BLD",4549,"KRN","B",.401,.401)
+
+"BLD",4549,"KRN","B",.402,.402)
+
+"BLD",4549,"KRN","B",.403,.403)
+
+"BLD",4549,"KRN","B",.5,.5)
+
+"BLD",4549,"KRN","B",.84,.84)
+
+"BLD",4549,"KRN","B",3.6,3.6)
+
+"BLD",4549,"KRN","B",3.8,3.8)
+
+"BLD",4549,"KRN","B",9.2,9.2)
+
+"BLD",4549,"KRN","B",9.8,9.8)
+
+"BLD",4549,"KRN","B",19,19)
+
+"BLD",4549,"KRN","B",19.1,19.1)
+
+"BLD",4549,"KRN","B",101,101)
+
+"BLD",4549,"KRN","B",409.61,409.61)
+
+"BLD",4549,"KRN","B",771,771)
+
+"BLD",4549,"KRN","B",779.2,779.2)
+
+"BLD",4549,"KRN","B",870,870)
+
+"BLD",4549,"KRN","B",8989.51,8989.51)
+
+"BLD",4549,"KRN","B",8989.52,8989.52)
+
+"BLD",4549,"KRN","B",8994,8994)
+
+"BLD",4549,"KRN","B",9002226,9002226)
+
+"KRN",.5,172,-1)
+0^14
+"KRN",.5,172,0)
+BI NAME FIRST LAST
+"KRN",.5,172,1)
+S X=$S($G(BIDFN):$$NAME^BIUTL1(BIDFN,1),1:"")
+"KRN",.5,172,2)
+X
+"KRN",.5,172,3)
+0
+"KRN",.5,172,9)
+Returns full name in the form First Name Last Name.
+"KRN",.5,173,-1)
+0^16
+"KRN",.5,173,0)
+BI NOW
+"KRN",.5,173,1)
+S X=$$NOW^BIUTL5()
+"KRN",.5,173,2)
+X
+"KRN",.5,173,3)
+0
+"KRN",.5,173,9)
+Returns current date and time in external format.
+"KRN",.5,174,-1)
+0^1
+"KRN",.5,174,0)
+BI CASE MANAGER
+"KRN",.5,174,1)
+S X=$S($G(BIDFN):$$CMGR^BIUTL1(BIDFN,1,1),1:"")
+"KRN",.5,174,2)
+X
+"KRN",.5,174,3)
+0
+"KRN",.5,174,9)
+Returns name of Patient's Case Manager.
+"KRN",.5,175,-1)
+0^17
+"KRN",.5,175,0)
+BI PARENT/GUARDIAN
+"KRN",.5,175,1)
+S X=$$PARENT^BIUTL1($G(BIDFN),1)
+"KRN",.5,175,2)
+X
+"KRN",.5,175,3)
+0
+"KRN",.5,175,9)
+Returns name of Patient's Parent or Guardian as store in the Immunization Package (or just "Parent/Guardian of" if no data).
+"KRN",.5,176,-1)
+0^3
+"KRN",.5,176,0)
+BI DATE OF BIRTH
+"KRN",.5,176,1)
+S X=$S($G(BIDFN):$$DOBF^BIUTL1(BIDFN),1:"")
+"KRN",.5,176,2)
+X
+"KRN",.5,176,3)
+0
+"KRN",.5,176,9)
+Returns the Patient's Date of Birth
+"KRN",.5,177,-1)
+0^2
+"KRN",.5,177,0)
+BI CHART NUMBER
+"KRN",.5,177,1)
+S X=$S($G(BIDFN)&($D(DUZ(2))):$$HRCN^BIUTL1(BIDFN,DUZ(2)),1:"")
+"KRN",.5,177,2)
+X
+"KRN",.5,177,3)
+0
+"KRN",.5,177,9)
+Returns Patient's Chart# at this site DUZ(2).
+"KRN",.5,178,-1)
+0^10
+"KRN",.5,178,0)
+BI MAILING ADD-STREET
+"KRN",.5,178,1)
+S X=$S($G(BIDFN):$$STREET^BIUTL1(BIDFN),1:"")
+"KRN",.5,178,2)
+X
+"KRN",.5,178,3)
+0
+"KRN",.5,178,9)
+Returns patient's address street.
+"KRN",.5,179,-1)
+0^9
+"KRN",.5,179,0)
+BI MAILING ADD-STATE
+"KRN",.5,179,1)
+S X=$S($G(BIDFN):$$STATE^BIUTL1(BIDFN),1:"")
+"KRN",.5,179,2)
+X
+"KRN",.5,179,3)
+0
+"KRN",.5,179,9)
+Returns patient's address state (e.g., AK for Alaska).
+"KRN",.5,180,-1)
+0^12
+"KRN",.5,180,0)
+BI MAILING ADD-ZIP
+"KRN",.5,180,1)
+S X=$S($G(BIDFN):$$ZIP^BIUTL1(BIDFN),1:"")
+"KRN",.5,180,2)
+X
+"KRN",.5,180,3)
+0
+"KRN",.5,180,9)
+Returns patient's address zipcode.
+"KRN",.5,181,-1)
+0^7
+"KRN",.5,181,0)
+BI MAILING ADD-CITY
+"KRN",.5,181,1)
+S X=$S($G(BIDFN):$$CITY^BIUTL1(BIDFN),1:"")
+"KRN",.5,181,2)
+X
+"KRN",.5,181,3)
+0
+"KRN",.5,181,9)
+Returns patient's address city.
+"KRN",.5,182,-1)
+0^8
+"KRN",.5,182,0)
+BI MAILING ADD-CITY STATE ZIP
+"KRN",.5,182,1)
+S X=$S($G(BIDFN):$$CTYSTZ^BIUTL1(BIDFN),1:"")
+"KRN",.5,182,2)
+X
+"KRN",.5,182,3)
+0
+"KRN",.5,182,9)
+Returns patient's city, state zip (e.g., EAGLE RIVER, AK  99577).
+"KRN",.5,183,-1)
+0^13
+"KRN",.5,183,0)
+BI NAME FIRST
+"KRN",.5,183,1)
+S X=$S($G(BIDFN):$$NAME^BIUTL1(BIDFN,2),2:"")
+"KRN",.5,183,2)
+X
+"KRN",.5,183,3)
+0
+"KRN",.5,183,9)
+Returns patient's first name.
+"KRN",.5,184,-1)
+0^18
+"KRN",.5,184,0)
+BI TODAY
+"KRN",.5,184,1)
+S X=$$TXDT1^BIUTL5(DT)
+"KRN",.5,184,2)
+X
+"KRN",.5,184,3)
+0
+"KRN",.5,184,9)
+Returns current data in DD-MMM-YYYY
+"KRN",.5,199,-1)
+0^4
+"KRN",.5,199,0)
+BI HE/SHE
+"KRN",.5,199,1)
+S X=$S($G(BIDFN):$$SEX^BIUTL1(BIDFN,1),1:"")
+"KRN",.5,199,2)
+X
+"KRN",.5,199,3)
+0
+"KRN",.5,199,9)
+Given BIDFN, return "he" or "she".
+"KRN",.5,200,-1)
+0^5
+"KRN",.5,200,0)
+BI HIM/HER
+"KRN",.5,200,1)
+S X=$S($G(BIDFN):$$SEX^BIUTL1(BIDFN,2),1:"")
+"KRN",.5,200,2)
+X
+"KRN",.5,200,3)
+0
+"KRN",.5,200,9)
+Given BIDFN, return "him" or "her".
+"KRN",.5,201,-1)
+0^6
+"KRN",.5,201,0)
+BI HIS/HER
+"KRN",.5,201,1)
+S X=$S($G(BIDFN):$$SEX^BIUTL1(BIDFN,3),1:"")
+"KRN",.5,201,2)
+X
+"KRN",.5,201,3)
+0
+"KRN",.5,201,9)
+Given BIDFN, return "his" or "her".
+"KRN",.5,203,-1)
+0^15
+"KRN",.5,203,0)
+BI NEXT APPOINTMENT
+"KRN",.5,203,1)
+S X=$S($G(BIDFN):$$NEXTAPPT^BIUTL11(BIDFN),1:"")
+"KRN",.5,203,2)
+X
+"KRN",.5,203,3)
+0
+"KRN",.5,203,9)
+Given BIDFN, return Patient's next appointment.
+"KRN",.5,225,-1)
+0^11
+"KRN",.5,225,0)
+BI MAILING ADD-STREET-2
+"KRN",.5,225,1)
+S X=$S($G(BIDFN):$$STREET^BIUTL1(BIDFN,2),1:"")
+"KRN",.5,225,2)
+X
+"KRN",.5,225,3)
+0
+"KRN",.5,225,9)
+Returns patient's address street, line 2.
+"MBREQ")
+0
+"ORD",4,.5)
+.5;4;;;EDEOUT^DIFROMSO(.5,DA,"",XPDA);FPRE^DIFROMSI(.5,"",XPDA);EPRE^DIFROMSI(.5,DA,"",XPDA,"",OLDA);;EPOST^DIFROMSI(.5,DA,"",XPDA)
+"ORD",4,.5,0)
+FUNCTION
+"PKG",426,-1)
+1^1
+"PKG",426,0)
+IMMUNIZATIONS VISTA PORT^BIV^VISTA Port of RPMS Immunizations
+"PKG",426,22,0)
+^9.49I^1^1
+"PKG",426,22,1,0)
+0.9^3150508
+"PKG",426,22,1,1,0)
+^^1^1^3150508
+"PKG",426,22,1,1,1,0)
+FUNCTIONS
+"PKG",426,"VERSION")
+0.9
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"VER")
+8.0^22.0
+**END**
+**END**
