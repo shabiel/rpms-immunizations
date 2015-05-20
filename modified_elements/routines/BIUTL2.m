@@ -32,6 +32,7 @@ ERRCD(BIIEN,BITEXT,BIDISPL,BIABBRV) ;EP
  .S BITEXT=$P(^BIERR(BIIEN,0),"^",2)_" #"_BIIEN
  ;
  ;---> Display Error Code Text.
+ ; ZEXCEPT: IOF,IOST
  D:$G(BIDISPL)
  .N BICRT S BICRT=$S(($E($G(IOST))="C")!($G(IOST)["BROWSER"):1,1:0)
  .W !!?3,BITEXT
@@ -55,7 +56,10 @@ VNAME(IEN,LONG) ;EP
  Q:$G(LONG)=1 $P(^AUTTIMM(IEN,0),"^")
  Q:$G(LONG)=2 $P($G(^AUTTIMM(IEN,1)),"^",14)
  Q:$G(LONG)=3 " "_$P(^AUTTIMM(IEN,0),"^",2)_"  ("_$P(^AUTTIMM(IEN,0),"^")_") "
- Q $P(^AUTTIMM(IEN,0),"^",2)
+ ; ven/smh - VISTA doesn't necessarily have the short name filled.
+ ; ---> so return it only if it exists.
+ I $L($P(^AUTTIMM(IEN,0),"^",2)) QUIT $P(^(0),"^",2)
+ QUIT $P(^AUTTIMM(IEN,0),"^")
  ;
  ;
  ;----------
@@ -144,7 +148,7 @@ VGROUP(BIVG,Z) ;EP
  ;
  ;---> If null, set Vaccine Group IEN=12: "Other".
  S:'$G(BIVG) BIVG=12
- S BIVG0=$G(^BISERT(BIVG,0))
+ N BIVG0 S BIVG0=$G(^BISERT(BIVG,0))
  S:BIVG0="" BIVG=12,BIVG0=$G(^BISERT(BIVG,0))
  ;
  S:('$G(Z)) Z=1
@@ -435,6 +439,8 @@ ZIS(BIPOP,BIQUE,BIDEF,BIPRMPT,BIMES) ;EP
  ;---> Example: D ZIS^BIUTL2(.BIPOP,1,"HOME")
  ;
 ZIS1 ;EP for loop back from failed BIQUE.
+ ; ZEXCEPT:%ZIS,IOM,ION,IOSL,IOST
+ ; ZEXCEPT:ZTDESC,ZTDTH,ZTIO,ZTRTN,ZTSAVE,ZTSK
  S BIPOP=0
  ;
  ;---> BIPRMPT=BIPRMPT.
@@ -484,12 +490,14 @@ ZISEXIT ;EP
  ;----------
 DFNCHECK() ;EP
  ;---> If BIDFN not supplied, set Error Code and quit.
+ ; ZEXCEPT: BIDFN
  I '$G(BIDFN) D ERRCD^BIUTL2(201,,1) Q 1
  Q 0
  ;
  ;
  ;----------
 DUZCHECK() ;EP
+ ; ZEXCEPT: BIDUZ2
  ;---> If no BIDUZ2 (Site IEN), Set it equal to User's DUZ(2).
  ;---> If User's DUZ(2) fails, set Error Code and quit.
  S:'$G(BIDUZ2) BIDUZ2=$G(DUZ(2))
