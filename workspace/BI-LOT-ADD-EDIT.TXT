@@ -1,0 +1,46 @@
+  Protocol Information                              Other Fields
+   Type of List: PROTOCOL                              OK to Transport?: OK
+  Protocol Menu: BI MENU LOT NUMBER EDIT             Use Cursor Control: YES
+ Print Protocol: BI LOT NUMBER PRINT        Allowable Number of Actions: 1
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:
+                                                     Automatic Defaults: YES
+           MUMPS Code Related
+ Header: D HDR^BILOT()
+  Entry: D INIT^BILOT
+   Exit: D EXIT^BILOT
+ Expand:
+   Help: D HELP^BILOT
+  Array:  ^TMP("BILOT",$J)
+         
+
+   Caption Line Information
+ Name      Column    Width     Display Text                  Video  Scroll Lock
+ SELECTION   3         1       #                                    NO
+ LOT NUMBER  6        12       Lot Number                           NO
+ MVX        32         3       MVX                                  NO
+ STATUS     40         6       Status                               NO
+ VACCINE    28         7       Vaccine                              NO
+ EXP DATE   48         8       Exp Date                             NO
+ START AMT  58         5       Start                                NO
+ UNUSED     64         6       Unused                               NO
+ FACILITY   72         8       Facility                             NO
+ 
+Prot:
+Select PROTOCOL NAME:    BI MENU LOT NUMBER EDIT     Lot Number Edit
+itemName: BI LOT NUMBER CHANGE ORDER              itemAction: D CHGORDR^BILOT1
+itemName: BI LOT NUMBER EDIT                      itemAction: D EDITLOT^BILOT1()
+itemName: BI LOT NUMBER HELP                      itemAction: D HELP1^BILOT
+itemName: BI LOT NUMBER ADD                       itemAction: D EDITLOT^BILOT1(1)
+itemName: BI LOT NUMBERS INACTIVATE OLD           itemAction: D INACTA^BILOT1
+itemName: BI SEARCH LIST                          itemAction: D FIND^VALM40
+itemName: BI BLANK                                itemAction:
+itemName: BI BLANK                                itemAction:
+itemName: BI LOT NUMBER DISP INACTIVE             itemAction: D DISPLYI^BILOT2
+  
+BI LOT NUMBER PRINT               ITEM TEXT: Print Lot Number Table
+  TYPE: action                          CREATOR: ADAM,ADAM
+  PACKAGE: IMMUNIZATION                 ENTRY ACTION: D PRINT^BILOT
+  TIMESTAMP: 62430,31031
+ 
+ S DIR("S")="I $P(^AUTTIMAN(Y,0),U,3)=$S($$RPMS^BIUTL9():1,1:0)"
+  

@@ -1,0 +1,11 @@
+This is a list of items which I thought were too hard for me to do or I would
+rather not spend any more time doing them.
+
+1. Getting smoking status for VISTA
+   (need to do create a reminder based on an unreleased patch and ship that
+   ... too hard!!!)
+2. Recording the NDC for a lot number in VISTA.
+   (need to modify form BI LOT to create a new field that backs the VISTA
+    new field and then unload that in a BI variable).
+3. BILOT expiration date sort doesn't work.
+4. BILOT help doesn't work (need to port over help text to dialog file).
