@@ -1,0 +1,894 @@
+KIDS Distribution saved on May 20, 2015@11:27:08
+Third try
+**KIDS**:BIV 1.2^
+
+**INSTALL NAME**
+BIV 1.2
+"BLD",4552,0)
+BIV 1.2^IMMUNIZATIONS VISTA PORT^0^3150520^y
+"BLD",4552,1,0)
+^^1^1^3150520^
+"BLD",4552,1,1,0)
+LOT NUMBER EDIT
+"BLD",4552,4,0)
+^9.64PA^^
+"BLD",4552,6.3)
+3
+"BLD",4552,"KRN",0)
+^9.67PA^9002226^21
+"BLD",4552,"KRN",.4,0)
+.4
+"BLD",4552,"KRN",.401,0)
+.401
+"BLD",4552,"KRN",.402,0)
+.402
+"BLD",4552,"KRN",.403,0)
+.403
+"BLD",4552,"KRN",.403,"NM",0)
+^9.68A^1^1
+"BLD",4552,"KRN",.403,"NM",1,0)
+BI FORM-LOT NUMBER EDIT    FILE #9999999.41^9999999.41^0
+"BLD",4552,"KRN",.403,"NM","B","BI FORM-LOT NUMBER EDIT    FILE #9999999.41",1)
+
+"BLD",4552,"KRN",.5,0)
+.5
+"BLD",4552,"KRN",.84,0)
+.84
+"BLD",4552,"KRN",3.6,0)
+3.6
+"BLD",4552,"KRN",3.8,0)
+3.8
+"BLD",4552,"KRN",9.2,0)
+9.2
+"BLD",4552,"KRN",9.8,0)
+9.8
+"BLD",4552,"KRN",19,0)
+19
+"BLD",4552,"KRN",19.1,0)
+19.1
+"BLD",4552,"KRN",101,0)
+101
+"BLD",4552,"KRN",101,"NM",0)
+^9.68A^10^10
+"BLD",4552,"KRN",101,"NM",1,0)
+BI LOT NUMBER ADD^^0
+"BLD",4552,"KRN",101,"NM",2,0)
+BI LOT NUMBER CHANGE ORDER^^0
+"BLD",4552,"KRN",101,"NM",3,0)
+BI LOT NUMBER DISP INACTIVE^^0
+"BLD",4552,"KRN",101,"NM",4,0)
+BI LOT NUMBER EDIT^^0
+"BLD",4552,"KRN",101,"NM",5,0)
+BI LOT NUMBER HELP^^0
+"BLD",4552,"KRN",101,"NM",6,0)
+BI LOT NUMBER PRINT^^0
+"BLD",4552,"KRN",101,"NM",7,0)
+BI LOT NUMBERS INACTIVATE OLD^^0
+"BLD",4552,"KRN",101,"NM",8,0)
+BI SEARCH LIST^^0
+"BLD",4552,"KRN",101,"NM",9,0)
+BI BLANK^^0
+"BLD",4552,"KRN",101,"NM",10,0)
+BI MENU LOT NUMBER EDIT^^0
+"BLD",4552,"KRN",101,"NM","B","BI BLANK",9)
+
+"BLD",4552,"KRN",101,"NM","B","BI LOT NUMBER ADD",1)
+
+"BLD",4552,"KRN",101,"NM","B","BI LOT NUMBER CHANGE ORDER",2)
+
+"BLD",4552,"KRN",101,"NM","B","BI LOT NUMBER DISP INACTIVE",3)
+
+"BLD",4552,"KRN",101,"NM","B","BI LOT NUMBER EDIT",4)
+
+"BLD",4552,"KRN",101,"NM","B","BI LOT NUMBER HELP",5)
+
+"BLD",4552,"KRN",101,"NM","B","BI LOT NUMBER PRINT",6)
+
+"BLD",4552,"KRN",101,"NM","B","BI LOT NUMBERS INACTIVATE OLD",7)
+
+"BLD",4552,"KRN",101,"NM","B","BI MENU LOT NUMBER EDIT",10)
+
+"BLD",4552,"KRN",101,"NM","B","BI SEARCH LIST",8)
+
+"BLD",4552,"KRN",409.61,0)
+409.61
+"BLD",4552,"KRN",409.61,"NM",0)
+^9.68A^1^1
+"BLD",4552,"KRN",409.61,"NM",1,0)
+BI LOT TABLE EDIT^^0
+"BLD",4552,"KRN",409.61,"NM","B","BI LOT TABLE EDIT",1)
+
+"BLD",4552,"KRN",771,0)
+771
+"BLD",4552,"KRN",779.2,0)
+779.2
+"BLD",4552,"KRN",870,0)
+870
+"BLD",4552,"KRN",8989.51,0)
+8989.51
+"BLD",4552,"KRN",8989.52,0)
+8989.52
+"BLD",4552,"KRN",8994,0)
+8994
+"BLD",4552,"KRN",9002226,0)
+9002226
+"BLD",4552,"KRN","B",.4,.4)
+
+"BLD",4552,"KRN","B",.401,.401)
+
+"BLD",4552,"KRN","B",.402,.402)
+
+"BLD",4552,"KRN","B",.403,.403)
+
+"BLD",4552,"KRN","B",.5,.5)
+
+"BLD",4552,"KRN","B",.84,.84)
+
+"BLD",4552,"KRN","B",3.6,3.6)
+
+"BLD",4552,"KRN","B",3.8,3.8)
+
+"BLD",4552,"KRN","B",9.2,9.2)
+
+"BLD",4552,"KRN","B",9.8,9.8)
+
+"BLD",4552,"KRN","B",19,19)
+
+"BLD",4552,"KRN","B",19.1,19.1)
+
+"BLD",4552,"KRN","B",101,101)
+
+"BLD",4552,"KRN","B",409.61,409.61)
+
+"BLD",4552,"KRN","B",771,771)
+
+"BLD",4552,"KRN","B",779.2,779.2)
+
+"BLD",4552,"KRN","B",870,870)
+
+"BLD",4552,"KRN","B",8989.51,8989.51)
+
+"BLD",4552,"KRN","B",8989.52,8989.52)
+
+"BLD",4552,"KRN","B",8994,8994)
+
+"BLD",4552,"KRN","B",9002226,9002226)
+
+"KRN",.403,364,-1)
+0^1
+"KRN",.403,364,0)
+BI FORM-LOT NUMBER EDIT^@^@^^3080819.2133^^^9999999.41^0^1^1
+"KRN",.403,364,40,0)
+^.4031I^6^6
+"KRN",.403,364,40,1,0)
+1^^1,1
+"KRN",.403,364,40,1,1)
+Page 1
+"KRN",.403,364,40,1,40,0)
+^.4032IP^1238^2
+"KRN",.403,364,40,1,40,1237,0)
+BI BLK-LOT NUMBER HEADER^1^1,1^d
+"KRN",.403,364,40,1,40,1238,0)
+BI BLK-LOT NUMBER EDIT^2^5,1^e
+"KRN",.403,364,40,2,0)
+2^^8,6^^^1^12,71
+"KRN",.403,364,40,2,1)
+BI PAGE-INVENTORY OFF
+"KRN",.403,364,40,2,40,0)
+^.4032IP^1239^1
+"KRN",.403,364,40,2,40,1239,0)
+BI BLK-INVENTORY OFF^1^1,1^d
+"KRN",.403,364,40,3,0)
+3^^8,4^^^1^16,77
+"KRN",.403,364,40,3,1)
+BI PAGE-CHANGE LOT WARNING
+"KRN",.403,364,40,3,40,0)
+^.4032IP^1240^1
+"KRN",.403,364,40,3,40,1240,0)
+BI BLK-CHANGE LOT WARNING^1^3,4^d
+"KRN",.403,364,40,4,0)
+4^^2,3^^^1^15,77
+"KRN",.403,364,40,4,1)
+BI PAGE-FACILITY CAUTION
+"KRN",.403,364,40,4,40,0)
+^.4032IP^1241^1
+"KRN",.403,364,40,4,40,1241,0)
+BI BLK-FACILITY CAUTION^1^3,3^d
+"KRN",.403,364,40,5,0)
+5^^9,10^^^1^14,70
+"KRN",.403,364,40,5,1)
+BI PAGE-INACTIVE VACCINE
+"KRN",.403,364,40,5,40,0)
+^.4032IP^1242^1
+"KRN",.403,364,40,5,40,1242,0)
+BI BLK-INACTIVE VACCINE^1^2,3^d
+"KRN",.403,364,40,6,0)
+6^^8,7^^^1^17,75
+"KRN",.403,364,40,6,1)
+BI PAGE-LOT DUPLICATE WARNING
+"KRN",.403,364,40,6,40,0)
+^.4032IP^1263^1
+"KRN",.403,364,40,6,40,1263,0)
+BI BLK-LOT DUPLICATE WARNING^1^1,1^d
+"KRN",.404,1237,0)
+BI BLK-LOT NUMBER HEADER^9999999.41^
+"KRN",.404,1237,40,0)
+^.4044I^5^4
+"KRN",.404,1237,40,1,0)
+1^!M^1
+"KRN",.404,1237,40,1,.1)
+S Y="Imm v"_$$VER^BILOGO()
+"KRN",.404,1237,40,1,2)
+^^2,2
+"KRN",.404,1237,40,2,0)
+2^!M^1
+"KRN",.404,1237,40,2,.1)
+S Y="* * *  "_$S($G(BINEW):"ADD",1:"EDIT")_" A LOT NUMBER  * * *"
+"KRN",.404,1237,40,2,2)
+^^2,25
+"KRN",.404,1237,40,3,0)
+3^!M^1
+"KRN",.404,1237,40,3,.1)
+S Y=IOINORM_"Lot Number: "_IORVON_" "_$$LOTTX^BIUTL6($G(BILOT))_" "_IOINORM
+"KRN",.404,1237,40,3,2)
+^^4,7
+"KRN",.404,1237,40,5,0)
+10^_______________________________________________________________________________^1
+"KRN",.404,1237,40,5,2)
+^^5,1
+"KRN",.404,1238,0)
+BI BLK-LOT NUMBER EDIT^9999999.41
+"KRN",.404,1238,11)
+D LOADLOT^BILOT1
+"KRN",.404,1238,40,0)
+^.4044I^15^15
+"KRN",.404,1238,40,1,0)
+1^Lot Number^2
+"KRN",.404,1238,40,1,2)
+3,15^20^3,3
+"KRN",.404,1238,40,1,4)
+1
+"KRN",.404,1238,40,1,10)
+I '$G(BINEW),X'=DDSOLD S DDSSTACK="BI PAGE-CHANGE LOT WARNING"
+"KRN",.404,1238,40,1,11)
+D HLP^DDSUTL("Enter/edit the Lot Number.")
+"KRN",.404,1238,40,1,12)
+S BI("A")=X
+"KRN",.404,1238,40,1,13)
+I '$G(BINEW) D HLP^DDSUTL("NOTE! Changing the text of an existing Lot Number should be done with caution, as it affects existing historical data.")
+"KRN",.404,1238,40,1,14)
+D LOTDVAL^BILOT2(X)
+"KRN",.404,1238,40,1,20)
+F^^3:20
+"KRN",.404,1238,40,1,21,0)
+^^3^3^3110708^^^
+"KRN",.404,1238,40,1,21,1,0)
+Enter the Lot Number.  NOTE! Changing the text of an existing Lot Number
+"KRN",.404,1238,40,1,21,2,0)
+should be done with extreme caution.  Existing prior patient data that
+"KRN",.404,1238,40,1,21,3,0)
+used this Lot Number will reflect the change.
+"KRN",.404,1238,40,2,0)
+2^Vaccine^2
+"KRN",.404,1238,40,2,2)
+3,47^33^3,38
+"KRN",.404,1238,40,2,4)
+1^^^1
+"KRN",.404,1238,40,2,10)
+D VACINA1^BILOT1
+"KRN",.404,1238,40,2,11)
+D HLP^DDSUTL("Select the Vaccine that corresponds to this Lot Number.")
+"KRN",.404,1238,40,2,13)
+S BI("B")=X D PUT^DDSVALF(2.5,,,"("_$$VNAME^BIUTL2(X)_")")
+"KRN",.404,1238,40,2,20)
+P^^9999999.14:QEM
+"KRN",.404,1238,40,2,21,0)
+^^4^4^3080828^^^
+"KRN",.404,1238,40,2,21,1,0)
+Select the vaccine for this Lot Number.  NOTE: Once the vaccine for a new 
+"KRN",.404,1238,40,2,21,2,0)
+Lot Number has been entered and that Lot Number has been saved, the 
+"KRN",.404,1238,40,2,21,3,0)
+Vaccine field will no longer be editable.  (Such a change would render 
+"KRN",.404,1238,40,2,21,4,0)
+historical data using that Lot Number inaccurate.)
+"KRN",.404,1238,40,3,0)
+2.5^^2
+"KRN",.404,1238,40,3,2)
+4,47^12
+"KRN",.404,1238,40,3,4)
+0^^^1
+"KRN",.404,1238,40,3,20)
+F
+"KRN",.404,1238,40,4,0)
+3^Status^2
+"KRN",.404,1238,40,4,2)
+6,20^8^6,12
+"KRN",.404,1238,40,4,11)
+D VACINA2^BILOT1
+"KRN",.404,1238,40,4,12)
+S BI("C")=X
+"KRN",.404,1238,40,4,20)
+S^^0:Active;1:Inactive
+"KRN",.404,1238,40,4,21,0)
+^^4^4^3080821^
+"KRN",.404,1238,40,4,21,1,0)
+Enter 0 or "A" if this Lot Number should be active (used in entering
+"KRN",.404,1238,40,4,21,2,0)
+immunization data).  Enter 1 or "I" if it should be Inactive.
+"KRN",.404,1238,40,4,21,3,0)
+Note: If you make a Lot Number Inactive, users will be unable to select
+"KRN",.404,1238,40,4,21,4,0)
+it when entering Immunization Visits with a Category of "Ambulatory."
+"KRN",.404,1238,40,5,0)
+4^Expiration Date^2
+"KRN",.404,1238,40,5,2)
+7,20^11^7,3
+"KRN",.404,1238,40,5,11)
+D HLP^DDSUTL("Enter the date on which this Lot Number expires.")
+"KRN",.404,1238,40,5,12)
+S BI("D")=X
+"KRN",.404,1238,40,5,20)
+D
+"KRN",.404,1238,40,5,21,0)
+^^1^1^3080820^
+"KRN",.404,1238,40,5,21,1,0)
+Enter the date on which this Lot Number expires.
+"KRN",.404,1238,40,6,0)
+5^Starting Count^2
+"KRN",.404,1238,40,6,2)
+10,20^5^10,4
+"KRN",.404,1238,40,6,4)
+^^0
+"KRN",.404,1238,40,6,10)
+I X<$G(BI("F")) D INVOFF^BILOT1(1)
+"KRN",.404,1238,40,6,11)
+D HLP^DDSUTL("Enter the Starting Count for this Lot.  This is for inventory purposes.")
+"KRN",.404,1238,40,6,12)
+S:(X'<$G(BI("F"))) BI("E")=X D CALCDOS^BILOT1($G(BI("E")),$G(BI("F")))
+"KRN",.404,1238,40,6,13)
+I $G(BI("F"))="" S BI("F")=X D PUT^DDSVALF(6,,,BI("F"),"I")
+"KRN",.404,1238,40,6,20)
+N^^1:99999
+"KRN",.404,1238,40,6,21,0)
+^^3^3^3080820^
+"KRN",.404,1238,40,6,21,1,0)
+Enter the Starting Count (number of doses) for this Lot Number.  This is 
+"KRN",.404,1238,40,6,21,2,0)
+for inventory purposes.  It is the initial total number of doses that the
+"KRN",.404,1238,40,6,21,3,0)
+facility/clinic received from the manufacturer.
+"KRN",.404,1238,40,7,0)
+6^Doses Unused^2
+"KRN",.404,1238,40,7,2)
+10,42^5^10,28
+"KRN",.404,1238,40,7,4)
+^^0
+"KRN",.404,1238,40,7,10)
+I X>$G(BI("E")) D INVOFF^BILOT1(2)
+"KRN",.404,1238,40,7,11)
+D HLP^DDSUTL("Enter or correct the number of doses of this Lot that are remaining (sitting on the shelf unused.)")
+"KRN",.404,1238,40,7,12)
+S:(X'>$G(BI("E"))) BI("F")=X D CALCDOS^BILOT1($G(BI("E")),$G(BI("F")))
+"KRN",.404,1238,40,7,20)
+N^^0:99999
+"KRN",.404,1238,40,7,21,0)
+^^2^2^3080820^^
+"KRN",.404,1238,40,7,21,1,0)
+Enter or correct the number of doses of this Lot that are remaining 
+"KRN",.404,1238,40,7,21,2,0)
+(sitting on the shelf unused.)
+"KRN",.404,1238,40,8,0)
+7^Low Supply Alert^2
+"KRN",.404,1238,40,8,2)
+11,20^5^11,2
+"KRN",.404,1238,40,8,4)
+^^0
+"KRN",.404,1238,40,8,11)
+D HLP^DDSUTL("Enter the number of remaining doses (Number Unused) that will trigger a Low Supply Alert.")
+"KRN",.404,1238,40,8,12)
+S BI("G")=X
+"KRN",.404,1238,40,8,20)
+N^^0:9999
+"KRN",.404,1238,40,8,21,0)
+^^3^3^3080820^
+"KRN",.404,1238,40,8,21,1,0)
+Enter the number of doses remaining that will trigger a Low Supply Alert 
+"KRN",.404,1238,40,8,21,2,0)
+for this Lot during data entry of immunizations.  Type a number between 0 
+"KRN",.404,1238,40,8,21,3,0)
+and 9999.
+"KRN",.404,1238,40,9,0)
+10^Manufacturer^2
+"KRN",.404,1238,40,9,2)
+6,47^30^6,33
+"KRN",.404,1238,40,9,4)
+1
+"KRN",.404,1238,40,9,10)
+I $G(BINEW(1)) S DDSBR=3 K BINEW(1)
+"KRN",.404,1238,40,9,11)
+D HLP^DDSUTL("Select the Manufacturer for this Lot Number.  NOTE: This is a required field; you must select a manufacturer.")
+"KRN",.404,1238,40,9,12)
+S BI("M")=X
+"KRN",.404,1238,40,9,20)
+P^^9999999.04:QEM
+"KRN",.404,1238,40,9,21,0)
+^^1^1^3120911^^
+"KRN",.404,1238,40,9,21,1,0)
+Select the Manufacturer for this Lot Number.
+"KRN",.404,1238,40,9,24)
+S DIR("S")="I $P(^AUTTIMAN(Y,0),U,3)=1"
+"KRN",.404,1238,40,10,0)
+8^Doses Used^2
+"KRN",.404,1238,40,10,2)
+10,62^5^10,50
+"KRN",.404,1238,40,10,4)
+^^0^1
+"KRN",.404,1238,40,10,20)
+N^^0:99999
+"KRN",.404,1238,40,11,0)
+8.5^(calculated)^1
+"KRN",.404,1238,40,11,2)
+^^11,50
+"KRN",.404,1238,40,12,0)
+11^Source^2
+"KRN",.404,1238,40,12,2)
+7,47^12^7,39
+"KRN",.404,1238,40,12,11)
+D HLP^DDSUTL("Enter the source of this Lot.")
+"KRN",.404,1238,40,12,12)
+S BI("H")=X
+"KRN",.404,1238,40,12,20)
+S^^v:VFC;o:Other State;i:IHS/Tribal
+"KRN",.404,1238,40,12,21,0)
+^^1^1^3100316^
+"KRN",.404,1238,40,12,21,1,0)
+Enter the source of this Lot.
+"KRN",.404,1238,40,13,0)
+9^Facility^2
+"KRN",.404,1238,40,13,2)
+13,20^30^13,10
+"KRN",.404,1238,40,13,10)
+I X'=DDSOLD,X]"" S DDSSTACK="BI PAGE-FACILITY CAUTION"
+"KRN",.404,1238,40,13,11)
+D HLP^DDSUTL("Select the Facility where this Lot will be stored and used.")
+"KRN",.404,1238,40,13,12)
+S BI("N")=X
+"KRN",.404,1238,40,13,20)
+P^^9999999.06:QEM
+"KRN",.404,1238,40,13,21,0)
+^^10^10^3080821^
+"KRN",.404,1238,40,13,21,1,0)
+Generally, limiting a Lot Number to a Facility is NOT necessary and
+"KRN",.404,1238,40,13,21,2,0)
+NOT recommended.  It is only for multi-clinic or multi-facility sites
+"KRN",.404,1238,40,13,21,3,0)
+where more than one inventory of Lot Numbers is being maintained on
+"KRN",.404,1238,40,13,21,4,0)
+the same computer.  An entry in this field will restrict availability
+"KRN",.404,1238,40,13,21,5,0)
+to only those users who are logged on to that Facility.
+"KRN",.404,1238,40,13,21,6,0)
+ 
+"KRN",.404,1238,40,13,21,7,0)
+To proceed, select the Facility where this Lot Number will be stored
+"KRN",.404,1238,40,13,21,8,0)
+and used.
+"KRN",.404,1238,40,13,21,9,0)
+If you've entered a Facility in error, simply return to the Facilty
+"KRN",.404,1238,40,13,21,10,0)
+field and delete it by entering an "@" (no quotes).
+"KRN",.404,1238,40,14,0)
+1.5^Sub-lot^2
+"KRN",.404,1238,40,14,2)
+4,20^8^4,11
+"KRN",.404,1238,40,14,11)
+D SUBLOTH^BILOT2($G(BI("A")))
+"KRN",.404,1238,40,14,12)
+S BI("S")=X
+"KRN",.404,1238,40,14,14)
+D SUBLOTD^BILOT2(BI("A"),X)
+"KRN",.404,1238,40,14,20)
+F
+"KRN",.404,1238,40,14,21,0)
+^^2^2^3100314^
+"KRN",.404,1238,40,14,21,1,0)
+If you wish to designate sub-lots for this lot number, enter the sub-lot 
+"KRN",.404,1238,40,14,21,2,0)
+suffix in this space.
+"KRN",.404,1238,40,15,0)
+4.5^Default NDC Code^2
+"KRN",.404,1238,40,15,2)
+8,20^20^8,2
+"KRN",.404,1238,40,15,11)
+D HLP^DDSUTL("Select the NDC Code that will be the default for this Lot Number.")
+"KRN",.404,1238,40,15,12)
+S BI("O")=X
+"KRN",.404,1238,40,15,20)
+P^^9002084.95:QEM
+"KRN",.404,1239,0)
+BI BLK-INVENTORY OFF^9999999.41^
+"KRN",.404,1239,40,0)
+^.4044I^1^1
+"KRN",.404,1239,40,1,0)
+1^The Doses Unused cannot be greater than the Starting Count.^1
+"KRN",.404,1239,40,1,2)
+^^3,4
+"KRN",.404,1240,0)
+BI BLK-CHANGE LOT WARNING^9999999.41^
+"KRN",.404,1240,40,0)
+^.4044I^4^4
+"KRN",.404,1240,40,1,0)
+1^Changing an existing Lot Number will affect historical patient data.^1
+"KRN",.404,1240,40,1,2)
+^^3,2
+"KRN",.404,1240,40,2,0)
+2^Previous immunizations that used the old Lot Number will now show^1
+"KRN",.404,1240,40,2,2)
+^^4,2
+"KRN",.404,1240,40,3,0)
+.5^CAUTION!^1
+"KRN",.404,1240,40,3,2)
+^^1,31
+"KRN",.404,1240,40,4,0)
+3^the new one.^1
+"KRN",.404,1240,40,4,2)
+^^5,2
+"KRN",.404,1241,0)
+BI BLK-FACILITY CAUTION^9999999.41^
+"KRN",.404,1241,40,0)
+^.4044I^8^8
+"KRN",.404,1241,40,1,0)
+1^CAUTION!^1
+"KRN",.404,1241,40,1,2)
+^^1,30
+"KRN",.404,1241,40,2,0)
+2^Generally, limiting a Lot Number to a Facility is NOT necessary and^1
+"KRN",.404,1241,40,2,2)
+^^3,2
+"KRN",.404,1241,40,3,0)
+3^NOT recommended.  It is only for multi-clinic or multi-facility sites,^1
+"KRN",.404,1241,40,3,2)
+^^4,2
+"KRN",.404,1241,40,4,0)
+4^where more than one inventory of Lot Numbers is being maintained on^1
+"KRN",.404,1241,40,4,2)
+^^5,2
+"KRN",.404,1241,40,5,0)
+5^the same computer.  An entry in this field will restrict availability^1
+"KRN",.404,1241,40,5,2)
+^^6,2
+"KRN",.404,1241,40,6,0)
+6^to only those users who are logged on to that Facility.^1
+"KRN",.404,1241,40,6,2)
+^^7,2
+"KRN",.404,1241,40,7,0)
+7^If you've entered a Facility in error, simply return to the Facilty^1
+"KRN",.404,1241,40,7,2)
+^^9,2
+"KRN",.404,1241,40,8,0)
+8^field and delete it by entering an "@" (no quotes).^1
+"KRN",.404,1241,40,8,2)
+^^10,2
+"KRN",.404,1242,0)
+BI BLK-INACTIVE VACCINE^9999999.41^
+"KRN",.404,1242,12)
+D VACINA3^BILOT1
+"KRN",.404,1242,40,0)
+^.4044I^2^2
+"KRN",.404,1242,40,1,0)
+1^The vaccine you have selected is Inactive.  You must^1
+"KRN",.404,1242,40,1,2)
+^^2,3
+"KRN",.404,1242,40,2,0)
+2^either Activate the vaccine or select a different one.^1
+"KRN",.404,1242,40,2,2)
+^^3,3
+"KRN",.404,1263,0)
+BI BLK-LOT DUPLICATE WARNING^9999999.41^
+"KRN",.404,1263,40,0)
+^.4044I^5^5
+"KRN",.404,1263,40,1,0)
+1^WARNING!  This Lot Number already exists!^1
+"KRN",.404,1263,40,1,2)
+^^3,14
+"KRN",.404,1263,40,2,0)
+2^If you are creating a Sub-lot, then continue.  But if you are^1
+"KRN",.404,1263,40,2,2)
+^^5,5
+"KRN",.404,1263,40,3,0)
+3^adding just a new Lot Number, then exit this screen and select^1
+"KRN",.404,1263,40,3,2)
+^^6,5
+"KRN",.404,1263,40,4,0)
+4^it from the List.  (NOTE: It may be Inactive. If you cannot^1
+"KRN",.404,1263,40,4,2)
+^^7,5
+"KRN",.404,1263,40,5,0)
+5^find it, check the Inactive list.)^1
+"KRN",.404,1263,40,5,2)
+^^8,5
+"KRN",101,5303,-1)
+0^9
+"KRN",101,5303,0)
+BI BLANK^   ^^^^^^^^^^IMMUNIZATION
+"KRN",101,5303,4)
+^3
+"KRN",101,5303,99)
+63526,11158
+"KRN",101,5417,-1)
+0^10
+"KRN",101,5417,0)
+BI MENU LOT NUMBER EDIT^Lot Number Edit^^M^^^^^^^^IMMUNIZATION
+"KRN",101,5417,4)
+25^3
+"KRN",101,5417,10,0)
+^101.01PA^12^12
+"KRN",101,5417,10,3,0)
+5419^C^2^
+"KRN",101,5417,10,3,"^")
+BI LOT NUMBER CHANGE ORDER
+"KRN",101,5417,10,4,0)
+5420^E^4^
+"KRN",101,5417,10,4,"^")
+BI LOT NUMBER EDIT
+"KRN",101,5417,10,5,0)
+5421^H^9^
+"KRN",101,5417,10,5,"^")
+BI LOT NUMBER HELP
+"KRN",101,5417,10,7,0)
+5422^A^1^
+"KRN",101,5417,10,7,"^")
+BI LOT NUMBER ADD
+"KRN",101,5417,10,8,0)
+5428^I^8^
+"KRN",101,5417,10,8,"^")
+BI LOT NUMBERS INACTIVATE OLD
+"KRN",101,5417,10,9,0)
+5496^S^5^
+"KRN",101,5417,10,9,"^")
+BI SEARCH LIST
+"KRN",101,5417,10,10,0)
+5303^^3^
+"KRN",101,5417,10,10,"^")
+BI BLANK
+"KRN",101,5417,10,11,0)
+5303^^6^
+"KRN",101,5417,10,11,"^")
+BI BLANK
+"KRN",101,5417,10,12,0)
+5937^D^7^
+"KRN",101,5417,10,12,"^")
+BI LOT NUMBER DISP INACTIVE
+"KRN",101,5417,26)
+D SHOW^VALM
+"KRN",101,5417,28)
+Select Action: 
+"KRN",101,5417,29)
+Quit
+"KRN",101,5417,99)
+63526,11159
+"KRN",101,5418,-1)
+0^6
+"KRN",101,5418,0)
+BI LOT NUMBER PRINT^Print Lot Number Table^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5418,20)
+D PRINT^BILOT
+"KRN",101,5418,99)
+62430,31031
+"KRN",101,5419,-1)
+0^2
+"KRN",101,5419,0)
+BI LOT NUMBER CHANGE ORDER^Change List Order^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5419,20)
+D CHGORDR^BILOT1
+"KRN",101,5419,99)
+62650,35549
+"KRN",101,5420,-1)
+0^4
+"KRN",101,5420,0)
+BI LOT NUMBER EDIT^Edit a Lot Number^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5420,20)
+D EDITLOT^BILOT1()
+"KRN",101,5420,99)
+62650,35549
+"KRN",101,5421,-1)
+0^5
+"KRN",101,5421,0)
+BI LOT NUMBER HELP^Help^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5421,20)
+D HELP1^BILOT
+"KRN",101,5421,99)
+62650,35549
+"KRN",101,5422,-1)
+0^1
+"KRN",101,5422,0)
+BI LOT NUMBER ADD^Add a Lot Number^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5422,20)
+D EDITLOT^BILOT1(1)
+"KRN",101,5422,99)
+62650,35549
+"KRN",101,5428,-1)
+0^7
+"KRN",101,5428,0)
+BI LOT NUMBERS INACTIVATE OLD^Inactivate Old Lots^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5428,20)
+D INACTA^BILOT1
+"KRN",101,5428,99)
+62650,35549
+"KRN",101,5496,-1)
+0^8
+"KRN",101,5496,0)
+BI SEARCH LIST^Search List^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5496,20)
+D FIND^VALM40
+"KRN",101,5496,99)
+63526,11159
+"KRN",101,5937,-1)
+0^3
+"KRN",101,5937,0)
+BI LOT NUMBER DISP INACTIVE^Display Inactives Yes/No^^A^^^^^^^^IMMUNIZATION
+"KRN",101,5937,20)
+D DISPLYI^BILOT2
+"KRN",101,5937,99)
+62650,35549
+"KRN",409.61,1041,-1)
+0^1
+"KRN",409.61,1041,0)
+BI LOT TABLE EDIT^1^^80^9^19^1^1^Lot Number^BI MENU LOT NUMBER EDIT^Lot Number Edit^1^^1
+"KRN",409.61,1041,1)
+BI LOT NUMBER PRINT^VALM HIDDEN ACTIONS
+"KRN",409.61,1041,"ARRAY")
+ ^TMP("BILOT",$J)
+"KRN",409.61,1041,"COL",0)
+^409.621^10^8
+"KRN",409.61,1041,"COL",1,0)
+SELECTION^3^1^#^^0
+"KRN",409.61,1041,"COL",2,0)
+LOT NUMBER^6^12^Lot Number^^0
+"KRN",409.61,1041,"COL",3,0)
+MVX^32^3^MVX
+"KRN",409.61,1041,"COL",4,0)
+STATUS^40^6^Status
+"KRN",409.61,1041,"COL",5,0)
+VACCINE^28^7^Vaccine
+"KRN",409.61,1041,"COL",6,0)
+EXP DATE^48^8^Exp Date
+"KRN",409.61,1041,"COL",7,0)
+START AMT^58^5^Start
+"KRN",409.61,1041,"COL",9,0)
+UNUSED^64^6^Unused
+"KRN",409.61,1041,"COL",10,0)
+FACILITY^72^8^Facility
+"KRN",409.61,1041,"COL","AIDENT",0,1)
+
+"KRN",409.61,1041,"COL","AIDENT",0,2)
+
+"KRN",409.61,1041,"COL","B","EXP DATE",6)
+
+"KRN",409.61,1041,"COL","B","FACILITY",10)
+
+"KRN",409.61,1041,"COL","B","LOT NUMBER",2)
+
+"KRN",409.61,1041,"COL","B","MVX",3)
+
+"KRN",409.61,1041,"COL","B","SELECTION",1)
+
+"KRN",409.61,1041,"COL","B","START AMT",7)
+
+"KRN",409.61,1041,"COL","B","STATUS",4)
+
+"KRN",409.61,1041,"COL","B","UNUSED",9)
+
+"KRN",409.61,1041,"COL","B","VACCINE",5)
+
+"KRN",409.61,1041,"FNL")
+D EXIT^BILOT
+"KRN",409.61,1041,"HDR")
+D HDR^BILOT()
+"KRN",409.61,1041,"HLP")
+D HELP^BILOT
+"KRN",409.61,1041,"INIT")
+D INIT^BILOT
+"MBREQ")
+0
+"ORD",8,.403)
+.403;8;;;EDEOUT^DIFROMSO(.403,DA,"",XPDA);FPRE^DIFROMSI(.403,"",XPDA);EPRE^DIFROMSI(.403,DA,$E("N",$G(XPDNEW)),XPDA,"",OLDA);;EPOST^DIFROMSI(.403,DA,"",XPDA);DEL^DIFROMSK(.403,"",%)
+"ORD",8,.403,0)
+FORM
+"ORD",15,101)
+101;15;;;PRO^XPDTA;PROF1^XPDIA;PROE1^XPDIA;PROF2^XPDIA;;PRODEL^XPDIA
+"ORD",15,101,0)
+PROTOCOL
+"ORD",17,409.61)
+409.61;17;1;;;;;;;LMDEL^XPDIA1
+"ORD",17,409.61,0)
+LIST TEMPLATE
+"PKG",426,-1)
+1^1
+"PKG",426,0)
+IMMUNIZATIONS VISTA PORT^BIV^VISTA Port of RPMS Immunizations
+"PKG",426,22,0)
+^9.49I^1^1
+"PKG",426,22,1,0)
+1.2^3150520
+"PKG",426,22,1,1,0)
+^^1^1^3150520
+"PKG",426,22,1,1,1,0)
+LOT NUMBER EDIT
+"PKG",426,"VERSION")
+1.2
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"VER")
+8.0^22.0
+**END**
+**END**
