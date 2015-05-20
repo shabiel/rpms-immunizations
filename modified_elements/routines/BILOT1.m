@@ -90,8 +90,12 @@ LINE(BIIEN,BILINE,BIENT) ;EP
  S X=X_$$VNAME^BIUTL2($P(BI0,U,4))
  S X=$$PAD^BIUTL5(X,39,".")
  ;
- ;---> Active/Inactive.
- S X=X_$S($P(BI0,U,3)=1:"Inactive",1:"Active")
+ ;---> Active/Inactive/(VISTA:Expried)
+ ; NB: Trick here: +$P makes the value 0, which is active. B/c I don't want
+ ; EXT^DILFD to give me back an empty string for null entries.
+ N EXT S EXT=$$EXTERNAL^DILFD(9999999.41,.03,,+$P(BI0,U,3))
+ S X=X_$$TITLE^XLFSTR(EXT)
+ ; S X=X_$S($P(BI0,U,3)=1:"Inactive",1:"Active") ven/smh
  S X=$$PAD^BIUTL5(X,47,".")
  ;
  ;---> Expiration Date.
@@ -441,7 +445,7 @@ INACTLN ;EP
  ;---> Inactivate all Lot Numbers that either have expired or have
  ;---> no Expiration Date.
  ;
- D ^XBKVAR
+ ; D ^XBKVAR ; ven/smh - now this is just silly! Why here?
  N M,N S M=0,N=0
  F  S N=$O(^AUTTIML(N)) Q:'N  D
  .Q:'$D(^AUTTIML(N,0))
@@ -450,7 +454,11 @@ INACTLN ;EP
  .;---> Quit if this Lot Number is already Inactive.
  .Q:($P(^AUTTIML(N,0),"^",3)=1)
  .;---> Inactivate this Lot Number.
- .S $P(^AUTTIML(N,0),"^",3)=1,M=M+1
+ .I $$RPMS^BIUTL9 S $P(^AUTTIML(N,0),"^",3)=1,M=M+1
+ .E  S $P(^AUTTIML(N,0),"^",3)=2,M=M+1               ; Vista has code 2 = expired.
+ .                                                   ; Mike: you prob want that for RPMS
+ .;---> Re-index (TODO: not tested-->must test prior to release to prod. Create index and see if it gets set correctly.)
+ .N DA,DIK S DA=N,DIK="^AUTTIML(",DIK(1)=".03" D EN^DIK  ; kill and then set.
  W !!?5,"Done.  ",M," Lot Numbers have been Inactivated." D DIRZ^BIUTL3()
  Q
  ;
@@ -468,7 +476,7 @@ NULLACT ;EP
  ;---> Activate all Lot Numbers that have a Status=null.
  ;---> Call by postinit for Imm v8.5.
  ;
- D ^XBKVAR
+ ; D ^XBKVAR
  W !!?5,"Checking Lot Numbers for null Status..."
  N M,N S M=0,N=0
  F  S N=$O(^AUTTIML(N)) Q:'N  D
