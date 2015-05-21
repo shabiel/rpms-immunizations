@@ -289,6 +289,7 @@ OLDDATE(X) ;EP
  .I ($G(DT)-X)>5 D NOPROV^BIUTL7("E")
  ;
  D PUT^DDSVALF(10.2,,,BIDATEE,"E") S BI("QQ")=BIDATEE
+ QUIT
  ;**********
  ;
  ;
