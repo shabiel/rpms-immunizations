@@ -34,7 +34,9 @@ UPDATE(BIDFN,BIFDT,BIERR,BINOP,BIDUZ2,BIPDSS) ;EP
  I '$G(BIDFN) D ERRCD^BIUTL2(201,.BIERR) Q
  ;
  ;---> Return 1 if Forecasting is enabled.
- I '$$FORECAS^BIUTL2(DUZ(2)) D ERRCD^BIUTL2(314,.BIERR) Q
+ ; I '$$FORECAS^BIUTL2(DUZ(2)) D ERRCD^BIUTL2(314,.BIERR) Q
+ ; ven/smh - not an error condition
+ I '$$FORECAS^BIUTL2(DUZ(2)) QUIT
  ;
  ;---> If no Forecast Date passed, set it equal to today.
  S:'$G(BIFDT) BIFDT=DT
@@ -129,7 +131,7 @@ UPDATE(BIDFN,BIFDT,BIERR,BINOP,BIDUZ2,BIPDSS) ;EP
  D LDFORC^BIPATUP1(BIDFN,BIFORC,BIHX,BIFDT,BIDUZ2,.BINF,.BIPDSS)
  ;
  ;---> Load Report Text into patient WP global (^BIP(DFN,1,).
- D:'BINOP LDPROF(BIDFN,BIPROF)
+ D:'BINOP LDPROF(BIDFN,BIPROF,BIFDT)
  ;
  ;---> Unlock patient.
  D UNLOCK(BIDFN)
@@ -137,12 +139,13 @@ UPDATE(BIDFN,BIFDT,BIERR,BINOP,BIDUZ2,BIPDSS) ;EP
  ;
  ;
  ;----------
-LDPROF(BIDFN,BIPROF,BIERR) ;EP
+LDPROF(BIDFN,BIPROF,BIFDT,BIERR) ;EP
  ;---> Entry point to load Immserve Profile into Patient's global.
  ;---> Parameters:
  ;     1 - BIDFN  (req) Patient IEN.
  ;     2 - BIPROF (req) String containing text of Patient's Imm Profile.
- ;     3 - BIERR  (ret) String returning text of error code.
+ ;     3 - BIFDT  (opt) Forecast Date
+ ;     3 - BIERR  (ret opt) String returning text of error code.
  ;
  S BIERR=""
  ;
@@ -170,7 +173,7 @@ LDPROF(BIDFN,BIPROF,BIERR) ;EP
  S ^BIP(BIDFN,1,1,0)=" "
  S ^BIP(BIDFN,1,2,0)="Patient: "_$$NAME^BIUTL1(BIDFN)_"    DOB: "_$$DOBF^BIUTL1(BIDFN,$G(BIFDT))
  S ^BIP(BIDFN,1,3,0)=" "
- F I=1:1:X S ^BIP(BIDFN,1,(I+3),0)=$P(BIPROF,"|||",I)
+ N I F I=1:1:X S ^BIP(BIDFN,1,(I+3),0)=$P(BIPROF,"|||",I)
  ;**********
  ;
  S ^BIP(BIDFN,1,0)=U_U_X_U_X_U_DT
@@ -221,7 +224,8 @@ DISPLAY ;EP
  ;---> Uncomment any of the next lines to see History or ImmServe data:
  ;W !!,"BIHX Out: ",BIHX R ZZZ
  ;W !!,"BIFORC Full: ",BIFORC R ZZZ
- ;
+ ; ZEXCEPT: BIHX,BIFORC
+ N ZZZ
  D  R ZZZ:600
  .W #!," RPMS INPUT String, Patient Data: "
  .W !,"   ",$P(BIHX,"~~~",1)
