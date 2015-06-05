@@ -276,9 +276,15 @@ KILLALL(BIGLOBS) ;EP
  I $T(^XBVK)]"" D
  . D EN^XBVK("BI")
  . D EN^XBVK("DI")
- E  D  ; works in GT.M and Cache for VISTA (NB: This is a standards extension to MUMPS.)
- . S X="BI" F  S X=$O(@X) Q:$E(X,1,2)'="BI"  K @X
- . S X="DI" F  S X=$O(@X) Q:$E(X,1,2)'="BI"  K @X
+ ; E  D  ; works in GT.M and Cache for VISTA (NB: This is a standards extension to MUMPS.)
+ ; . S X="BI" F  S X=$O(@X) Q:$E(X,1,2)'="BI"  K @X
+ ; . S X="DI" F  S X=$O(@X) Q:$E(X,1,2)'="BI"  K @X
+ E  D  ; way to do it w/o exclusive kills
+ . N X,Y,KBI
+ . S Y="BI*",X="KBI(" D ORDER^%ZOSV
+ . N I S I=""
+ . F  S I=$O(KBI(I)) Q:I=""  K @I
+ QUIT
  ;
  ;---> FILEMAN KILLS.
  D DKILLS^BIFMAN
