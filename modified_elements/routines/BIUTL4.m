@@ -11,6 +11,7 @@ BIUTL4 ;IHS/CMI/MWR - UTIL: SCREENMAN CODE; OCT 15, 2010
  ;
  ;----------
 VACSCR ;EP
+ ;ZEXCEPT:DIR
  ;---> Set Screen for vaccine selection in Screen field of
  ;---> "Form Only Field Parameters" of the Form BI FORM-IMM VISIT ADD/EDIT
  ;---> when selecting vaccine.
@@ -24,6 +25,7 @@ VACSCR ;EP
  ;
  ;----------
 VACSEL(BIVAC) ;EP
+ ;ZEXCEPT:BI
  ;---> For IMMUNIZATIONS:
  ;---> Actions to take in Screenman when Vaccine is selected.
  ;---> Called by the POST ACTION of Field 2, Vaccine
@@ -40,6 +42,7 @@ VACSEL(BIVAC) ;EP
  ;
  ;----------
 VACSELC(BIVAC) ;EP
+ ;ZEXCEPT:BI
  ;---> For CONTRAINDICATIONS:
  ;---> Actions to take in Screenman when Vaccine is selected.
  ;---> Called by the POST ACTION of Field 2, Vaccine
@@ -63,6 +66,7 @@ VACSELC(BIVAC) ;EP
  ;
  ;----------
 VACCHG(BIVAC) ;EP
+ ;ZEXCEPT:BI
  ;---> Actions to take in Screenman when the Vaccine is selected
  ;---> or changed.
  ;---> Called by the POST ACTION ON CHANGE of Field 2, Vaccine"
@@ -108,6 +112,7 @@ VACCHG(BIVAC) ;EP
  ;
  ;----------
 VISVOL(BIVAC) ;EP
+ ;ZEXCEPT:BI
  ;---> Stuff VIS and Volume defaults for a Lot Number on
  ;---> the Form BI FORM-IMM VISIT ADD/EDIT.
  ;---> Parameters:
@@ -156,6 +161,7 @@ LOTDUP(BILIEN) ;EP
  ;
  ;----------
 LOTHELP(BILIEN) ;EP
+ ;ZEXCEPT:BI,DDSBR
  ;---> If chosen Lot# is a duplicate, provide help message.
  ;---> Parameters:
  ;     1 - BILIEN  (req) IEN of Lot# in IMMUNIZATION LOT File.
@@ -179,6 +185,7 @@ LOTHELP(BILIEN) ;EP
  ;
  ;----------
 LOTSCR ;EP
+ ;ZEXCEPT:BI,DIR,Y
  ;---> Set Screen for Lot Number selection in Screen field of
  ;---> "Form Only Field Parameters" of the Form BI FORM-IMM VISIT ADD/EDIT
  ;---> when selecting Lot Number.
@@ -197,6 +204,7 @@ LOTSCR ;EP
  ;
  ;----------
 LOTSEL(BIX) ;EP
+ ;ZEXCEPT:BI
  ;---> Action to take after Lot Number has been selected.
  ;---> Parameters:
  ;     1 - BIX (req) X=Internal Value of Lot Number selected.
@@ -230,6 +238,7 @@ LOTSEL(BIX) ;EP
  ;
  ;----------
 NDCSCR ;EP
+ ;ZEXCEPT:BI,DIR
  ;---> Set Screen for NDC Code selection in Screen field of
  ;---> "Form Only Field Parameters" of the Form BI FORM-IMM VISIT ADD/EDIT
  ;---> when selecting NDC Code.
@@ -242,22 +251,41 @@ NDCSCR ;EP
  ;
  ;
  ;----------
-CREASCR ;EP
+CREASCR() ;EP
+ ;ZEXCEPT:BI,Y
  ;---> Set Screen for Contraindication Reason selection in Reason field
+ ;---> VEN/SMH - All of this is changed now. We now will point to 920.4 for
+ ;--->           both VISTA and RPMS.
+ ;--->           Rather than setting DIC("S") here, we will become DIC("S"),
+ ;--->           such that the form will S DIR("S")="I $$CREASCR^BIUTL4()"
  ;---> "Form Only Field Parameters" of the Form BI FORM-CONTRAINDICATION ADD.
  ;---> Screen: If this Reason is Active AND if this Reason is Skin Test
  ;--->         related AND this Vaccine is a Skin Test.
  ;
+ ; OLD RPMS CODE
  ;---> If no vaccine chosen, then screen says all reasons are invalid.
- I '$G(BI("B")) S DIR("S")="I 0" Q
+ ; I '$G(BI("B")) S DIR("S")="I 0" Q
  ;
- S DIR("S")="I ($P(^BICONT(Y,0),U,3))&(+$P(^BICONT(Y,0),U,4)"
- S DIR("S")=DIR("S")_"=+$P(^AUTTIMM(BI(""B""),0),U,8))"
+ ; S DIR("S")="I ($P(^BICONT(Y,0),U,3))&(+$P(^BICONT(Y,0),U,4)"
+ ; S DIR("S")=DIR("S")_"=+$P(^AUTTIMM(BI(""B""),0),U,8))"
+ ;
+ ;---> If no vaccine chosen, then screen says all reasons are invalid.
+ I '$G(BI("B")) Q 0
+ ;
+ ;---> if not active, quit
+ I $$GET1^DIQ(920.4,Y,"INACTIVE") Q 0
+ ;
+ ;---> Vaccine must be associated with this contraindication
+ I '$DATA(^PXV(920.4,"D",BI("B"),Y)) QUIT 0
+ ;
+ QUIT 1
+ ;
  Q
  ;
  ;
  ;----------
 HISTORY(X) ;EP
+ ;ZEXCEPT:BI
  ;---> Add/Edit Screenman actions to take ON POST-CHANGE of Category Field.
  ;---> Parameters:
  ;     1 - X (opt) X=Internal Value of Category Field ("E"=Historical Event).
@@ -272,6 +300,7 @@ HISTORY(X) ;EP
  ;
  ;----------
 OLDDATE(X) ;EP
+ ;ZEXCEPT:BI
  ;---> Add/Edit Screenman actions to take ON POST-CHANGE of Date Field.
  ;---> If date entered is earlier than today, Category default changes to
  ;---> Historical.  If the date is more than 5 days earlier than today,
@@ -295,6 +324,7 @@ OLDDATE(X) ;EP
  ;
  ;----------
 SKINCHG(BISKIEN) ;EP
+ ;ZEXCEPT:BI
  ;---> Actions to take in Screenman when the Skin Test is selected
  ;---> or changed.
  ;---> Called by the POST ACTION ON CHANGE of Field 2, Skin Test"
@@ -322,13 +352,14 @@ SKINCHG(BISKIEN) ;EP
  ;
  ;----------
 SERVAL(BIDOSE,BIVAC) ;EP
+ ; ZEXCEPT: DDSERROR
  ;---> Validate Dose# for this Immunization Visit.
  ;---> Parameters:
  ;     1 - BIDOSE (req) Dose# entered by the user.
  ;     2 - BIVAC  (req) IEN of Vaccine IMMUNIZATION File (9999999.14).
  ;
  Q:'BIDOSE  Q:'BIVAC
- S BIMAX=$$VMAX^BIUTL2(BIVAC)
+ N BIMAX S BIMAX=$$VMAX^BIUTL2(BIVAC)
  ;
  ;---> If Dose# entered is greater than Max Dose# for this Vaccine,
  ;---> reject value and display help text.
@@ -342,6 +373,7 @@ SERVAL(BIDOSE,BIVAC) ;EP
  ;
  ;----------
 INACTV(X) ;EP
+ ;ZEXCEPT:BI
  ;---> Called by the POST ACTION of Field 4, "Inactive Date"
  ;---> of the Form BI FORM-CASE DATA EDIT.
  ;---> Actions to take in Screenman when Patient is made Inactive
@@ -362,6 +394,7 @@ INACTV(X) ;EP
  ;
  ;----------
 LOCBR ;EP
+ ;ZEXCEPT:BI,X,DDSOLD
  ;---> Location Type branching logic for Add/Edit Imm Visit Form:
  ;---> "Location" field.
  ;
@@ -400,6 +433,7 @@ LOCBR ;EP
  ;
  ;----------
 VISDATE ;EP
+ ;ZEXCEPT:BI,X
  ;---> Enable/disable and if necessary clear VIS Date, based on
  ;---> YES/NO answer of VIS Given question.
  ;
@@ -431,6 +465,7 @@ DEFSITE ;EP
  ;
  ;----------
 BADREAD ;EP
+ ;ZEXCEPT:DDSERROR
  ;---> Code to check Skin Test results: If the result is Negative,
  ;---> the Reading must be less than 15 millimeters; in that case,
  ;---> display help message and reject value.
@@ -444,6 +479,7 @@ BADREAD ;EP
  ;
  ;----------
 BADRDAT ;EP
+ ;ZEXCEPT:DDSERROR,Y
  ;---> If the Read Date is earlier than the initial visit date or later
  ;---> than today, advise and return to Read Date field.
  ;
