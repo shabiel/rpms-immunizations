@@ -1,10 +1,10 @@
 FORM LISTING - BI FORM-CONTRAIND ADD/EDIT (#130)
-FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  11:41    PAGE 1
+FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  14:34    PAGE 1
 -----------------------------------------------------------------------------------------------------------------------------------
 
          PRIMARY FILE: 9000001                   READ ACCESS: @
          DATE CREATED: JAN 01, 1998@15:22       WRITE ACCESS: @
-       DATE LAST USED: JUN 05, 2015@11:34            CREATOR: 
+       DATE LAST USED: JUN 05, 2015@14:27            CREATOR: 
 
 Page    Page
 Number  Properties
@@ -62,7 +62,7 @@ Number  Properties
                6      FIELD TYPE:            CAPTION ONLY
 
 FORM LISTING - BI FORM-CONTRAIND ADD/EDIT (#130)
-FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  11:41    PAGE 2
+FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  14:34    PAGE 2
 -----------------------------------------------------------------------------------------------------------------------------------
                       CAPTION:               ________________________________________________________________________________
                       CAPTION COORDINATE:    6,1
@@ -102,11 +102,11 @@ FILE: PATIENT/IHS (#9000001)                                                    
                4      FIELD TYPE:            FORM ONLY
                       CAPTION:               Reason
                       READ TYPE:             POINTER
-                      QUALIFIERS:            9002084.81:QEM
+                      QUALIFIERS:            920.4:QEM
                       HELP:
                         Select the reason or reaction that has caused this vaccine/immunization to be contraindicated for this
                         patient.  
-                      SCREEN:                D CREASCR^BIUTL4
+                      SCREEN:                S DIR("S")="I $$CREASCR^BIUTL4()"
                       CAPTION COORDINATE:    6,7
                       DATA COORDINATE:       6,15
                       DATA LENGTH:           26
@@ -125,7 +125,7 @@ FILE: PATIENT/IHS (#9000001)                                                    
                         Enter the date on which this Contraindication was noted.  
 
 FORM LISTING - BI FORM-CONTRAIND ADD/EDIT (#130)
-FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  11:41    PAGE 3
+FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  14:34    PAGE 3
 -----------------------------------------------------------------------------------------------------------------------------------
                       CAPTION COORDINATE:    9,3
                       DATA COORDINATE:       9,15
