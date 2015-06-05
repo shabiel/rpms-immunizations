@@ -1,0 +1,3 @@
+^DD(9002084.11,.03,0)="REASON FOR CONTRAINDICATION^P9002084.81'^BICONT(^0;3^Q"
+^DD(9002084.11,.03,3)="Select the reason this vaccine is contraindicated for this patient."
+^DD(9002084.11,.03,"DT")=2980223
