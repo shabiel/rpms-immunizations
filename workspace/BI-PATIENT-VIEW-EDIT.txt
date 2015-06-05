@@ -1,0 +1,179 @@
+NAME: BI PATIENT VIEW/EDIT              MENU TEXT: Single Patient Record
+  TYPE: action                          CREATOR: 0
+  E ACTION PRESENT: YES                 X ACTION PRESENT: YES
+ DESCRIPTION:   Allows users to view and/or edit Patients' Immunization
+ Records.  A user must have the BIZ EDIT PATIENTS Key for Edit Actions to
+ appear at the bottom of the screen.
+  EXIT ACTION: D MENUT^BIUTL5("PATIENT MENU")
+  ENTRY ACTION: D ^BIPATVW              ROUTINE: BIPATVW
+  UPPERCASE MENU TEXT: SINGLE PATIENT RECORD
+
+ S BILIST="BI PATIENT DATA VIEW"_$S($G(BIEDIT)=1:"/EDIT",1:" ONLY")
+ I '$D(^SD(409.61,"B",BILIST)) D ERRCD^BIUTL2(628,,1) Q
+ D EN^VALM(BILIST)
+ 
+ ==============================================================================
+ 
+    Demographics                                      List Region
+ Template Name: BI PATIENT DATA VIEW ONLY             Top Margin:   7
+   Entity Name: Immunization                       Bottom    "  :  20
+  Screen Title: IMMUNIZATION PATIENT SCREEN         Right    "  :  80
+
+
+  Protocol Information                              Other Fields
+   Type of List: PROTOCOL                              OK to Transport?: OK
+  Protocol Menu: BI MENU PATIENT VIEW ONLY           Use Cursor Control: YES
+ Print Protocol: BI PATIENT VIEW PRINT      Allowable Number of Actions: 1
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:
+                                                     Automatic Defaults: YES
+
+  MUMPS Code Related
+ Header: D HDR^BIPATVW()  
+   Entry: D INIT^BIPATVW
+   Exit: D EXIT^BIPATVW
+ Expand:
+   Help: D HELP^BIPATVW
+  Array:  ^TMP("BILMVW",$J)
+
+  Caption Line Information
+ Name      Column    Width     Display Text                  Video  Scroll Lock
+ SELECTION   3         1       #                                    NO
+ IMM HISTOR  6        35       Immunization History                 NO
+ IMMUNIZATI 44 DUE    33       Immunizations DUE                    NO
+ 
+ 
+ ==============================================================================
+ 
+ 
+   Demographics                                      List Region
+ Template Name: BI PATIENT DATA VIEW/EDIT             Top Margin:   7
+   Entity Name: Visit                              Bottom    "  :  18
+  Screen Title: IMMUNIZATION PATIENT SCREEN         Right    "  :  80
+
+
+  Protocol Information                              Other Fields
+   Type of List: PROTOCOL                              OK to Transport?: OK
+  Protocol Menu: BI MENU PATIENT VIEW                Use Cursor Control: YES
+ Print Protocol: BI PATIENT VIEW PRINT      Allowable Number of Actions: 1
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:
+                                                     Automatic Defaults: YES
+
+
+
+  MUMPS Code Related
+ Header: D HDR^BIPATVW()
+   Entry: D INIT^BIPATVW
+   Exit: D EXIT^BIPATVW
+ Expand:
+   Help: D HELP^BIPATVW
+  Array:  ^TMP("BILMVW",$J)
+
+  Caption Line Information
+ Name      Column    Width     Display Text                  Video  Scroll Lock
+ SELECTION   3         1       #                                    NO
+ IMM HISTOR  6        39       Immunization History                 NO
+ IMMUNIZATI 48 DUE    33       Immunizations DUE                    NO
+ 
+ =============================================================================
+ 
+ Protocols:
+ ==========
+1. BI MENU PATIENT VIEW ONLY     View ONLY Patient Imm Data
+itemName: BI HEALTH SUMMARY                       itemAction: D ^BIHS
+itemName: BI PATIENT PROFILE VIEW                 itemAction: D HAVEPAT^BIPATPF(BIDFN,$G(BIFDT),$G(BIDUZ2))
+itemName: BI OFFICIAL IMM REC PRINT               itemAction: D OFFICIAL^BILETPR2($G(BIDFN),$G(BIRTN))
+itemName: BI BLANK                                itemAction:
+itemName: BI BLANK                                itemAction:
+
+2. BI MENU PATIENT VIEW     View Patient Imm Data
+itemName: BI IMMUNIZATION VISIT EDIT              itemAction: D EDITIMM^BIPATVW2
+itemName: BI HEALTH SUMMARY                       itemAction: D ^BIHS
+itemName: BI IMMUNIZATION VISIT DELETE            itemAction: D DELETIMM^BIPATVW2
+itemName: BI IMMUNIZATION VISIT ADD               itemAction: D ADDIMM^BIPATVW2
+itemName: BI SKIN TEST VISIT ADD                  itemAction: D ADDSK^BIPATVW2
+itemName: BI PATIENT CASE DATA EDIT               itemAction: D SCREEN^BIPATE($G(BIDFN))
+itemName: BI CONTRAINDICATIONS                    itemAction: D EN^BIPATCO($G(BIDFN))
+itemName: BI LETTER PRINT INDIVIDUAL              itemAction: D INDIVLET^BILETPR2($G(BIDFN),$G(BIRTN))
+itemName: BI PATIENT PROFILE VIEW                 itemAction: D HAVEPAT^BIPATPF(BIDFN,$G(BIFDT),$G(BIDUZ2))
+
+3. NAME: BI PATIENT VIEW PRINT             ITEM TEXT: Print Patient Data
+  TYPE: action
+  PACKAGE: IMMUNIZATION
+  ENTRY ACTION: D HAVEPAT^BIPATVW($G(BIDFN),$G(BIFDT),1)
+  TIMESTAMP: 62430,31031
+  
+ Help calls LM: BI GENERIC HELP VIEW
+ 
+ List Manager Workbench        May 21, 2015 11:02:37          Page:    1 of    2
+Template: BI GENERIC HELP VIEW
+--------------------------------------------------------------------------------
+  Demographics                                      List Region
+ Template Name: BI GENERIC HELP VIEW                  Top Margin:   5
+   Entity Name:                                    Bottom    "  :  20
+  Screen Title:                                     Right    "  :  80
+
+
+  Protocol Information                              Other Fields
+   Type of List: PROTOCOL                              OK to Transport?: OK
+  Protocol Menu: BI MENU GENERIC HELP VIEW           Use Cursor Control: YES
+ Print Protocol:                            Allowable Number of Actions: 1
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:
+                                                     Automatic Defaults: YES
+
+
+
+  MUMPS Code Related
+ Header: D HDR^BIHELP
+ 
+ Select PROTOCOL NAME: BI MENU GENERIC HELP VIEW       View Help Text
+itemName: BI BLANK                                itemAction:
+-------------------------------------------------------------------------------
+Contraindications stuff:::::
+
+
+ 
+List Manager Workbench        May 22, 2015 14:01:50          Page:    1 of    2 
+Template: BI PATIENT CONTRAINDICATIONS
+--------------------------------------------------------------------------------
+  Demographics                                      List Region                 
+ Template Name: BI PATIENT CONTRAINDICATIONS          Top Margin:   7           
+   Entity Name: Contraindication                   Bottom    "  :  14           
+  Screen Title: CONTRAINDICATIONS SCREEN            Right    "  :  80           
+                                                                                
+                                                                                
+  Protocol Information                              Other Fields                
+   Type of List: PROTOCOL                              OK to Transport?: OK     
+  Protocol Menu: BI MENU CONTRAINDICATIONS           Use Cursor Control: YES    
+ Print Protocol:                            Allowable Number of Actions: 1      
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:        
+                                                     Automatic Defaults: YES    
+                                                                                
+                                                                                
+                                                                                
+  MUMPS Code Related                                                            
+ Header: D HDR^BIPATCO                                                          
+  Entry: D INIT^BIPATCO                                                         
+   Exit: D EXIT^BIPATCO                                                         
+ Expand:                                                                        
+   Help: D HELP^BIPATCO                                                         
+  Array:  ^TMP("BILMCO",$J)                                                     
+                                                                                
+  Caption Line Information                                                      
+ Name      Column    Width     Display Text                  Video  Scroll Lock 
+ SELECTION   5         1       #                                    NO          
+ VACCINE     8        10       Vaccine                              NO          
+ REASON     20        30       Reason                               NO          
+ DATE NOTED 48        12       Date Noted                           NO          
+
+ 
+ Select PROTOCOL NAME:    BI MENU CONTRAINDICATIONS     Contraindications     
+itemName: BI CONTRAINDICATION DELETE              itemAction: D DELETCON^BIPATCO2
+itemName: BI CONTRAINDICATION ADD                 itemAction: D ADDCON^BIPATCO2
+itemName: BI CONTRAINDICATION HELP                itemAction: D HELP1^BIPATCO
+itemName: BI CONTRAINDICATIONS EDIT               itemAction: D EDITCON^BIPATCO2
+
+ BI FORM-CONTRAIND ADD/EDIT
+ 
+ Files:
+ BI PATIENT CONTRAINDICATIONS
+ BI TABLE CONTRA REASON FILE
