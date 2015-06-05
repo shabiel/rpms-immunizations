@@ -132,13 +132,13 @@ REACTXT(X) ;EP
  ;
  ;----------
 CONTXT(X) ;EP
+ ;---> VEN/SMH - changed for VISTA; RPMS to be the same as VISTA
+ ;--->           File 920.4 much better than 9002084.81
  ;---> Return text of a Contraindication Reason.
  ;---> Parameters:
  ;     1 - X  (req) =IEN in BI TABLE CONTRA REASON File #9002084.81.
  ;
- Q:'$G(X) ""
- Q:'$D(^BICONT(X,0)) ""
- Q $P(^BICONT(X,0),U)
+ Q $$GET1^DIQ(920.4,X,.01)
  ;
  ;
  ;----------
