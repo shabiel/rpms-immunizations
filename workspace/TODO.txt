@@ -9,6 +9,12 @@ rather not spend any more time doing them.
     new field and then unload that in a BI variable).
 3. BILOT expiration date sort doesn't work.
 4. BILOT help doesn't work (need to port over help text to dialog file).
+5. I disabled the "error" that the forecaster isn't working (it isn't a
+   software error); but it doesn't say anything in the listman form. It needs
+   to say "forecaster disabled" in the imms due section.
+6. None of the errors (BIERR) have been ported over. All error entries need to
+   go in the 920 x 10000 numberspace in the Dialog file and invoked using the
+   ^DIALOG API.
 
 ---
 Rest of MGR Menu:
@@ -23,3 +29,7 @@ Export Imm --> Later. Can't do or test now.
  ------
  
 Next work on Patient Enter/Edit Imm.
+--> Get LM form working
+--> Get Screen Form working
+--> Add VISTA fields to it.
+--> Create a filer for VISTA
