@@ -1,0 +1,136 @@
+FORM LISTING - BI FORM-CONTRAIND ADD/EDIT (#130)
+FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  11:41    PAGE 1
+-----------------------------------------------------------------------------------------------------------------------------------
+
+         PRIMARY FILE: 9000001                   READ ACCESS: @
+         DATE CREATED: JAN 01, 1998@15:22       WRITE ACCESS: @
+       DATE LAST USED: JUN 05, 2015@11:34            CREATOR: 
+
+Page    Page
+Number  Properties
+------  ----------
+1       Page 1
+
+        PAGE COORDINATE:        1,1
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-CONTRAINDICATION HEADER (#492)
+
+               TYPE OF BLOCK:          DISPLAY
+               BLOCK COORDINATE:       1,1
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               .5     FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="Imm v"_$$VER^BILOGO()
+                      CAPTION COORDINATE:    2,2
+
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="* * *  "_$S('$G(BI("N")):"ADD",1:"EDIT")_" A CONTRAINDICATION  * * *"
+                      CAPTION COORDINATE:    2,22
+
+               2      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y=IOINORM_" Patient: "_IORVON_$$NAME^BIUTL1(BIDFN)_IOINORM
+                      CAPTION COORDINATE:    4,1
+
+               3      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="DOB: "_IORVON_$$DOBF^BIUTL1(BIDFN)_IOINORM
+                      CAPTION COORDINATE:    4,44
+
+               4      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="  Chart#: "_IORVON_$$HRCN^BIUTL1(BIDFN)_" at "_$E($$INSTTX^BIUTL6($G(DUZ(2))),1,1
+                                             7)_IOINORM
+                      CAPTION COORDINATE:    5,1
+
+               5      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y=$$ACTIVE^BIUTL1(BIDFN)_"     "_$$SEXW^BIUTL1(BIDFN)
+                      CAPTION COORDINATE:    5,49
+
+               6      FIELD TYPE:            CAPTION ONLY
+
+FORM LISTING - BI FORM-CONTRAIND ADD/EDIT (#130)
+FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  11:41    PAGE 2
+-----------------------------------------------------------------------------------------------------------------------------------
+                      CAPTION:               ________________________________________________________________________________
+                      CAPTION COORDINATE:    6,1
+
+        2      BI BLK-CONTRAINDICATION ADD (#493)
+
+               TYPE OF BLOCK:          EDIT
+               BLOCK COORDINATE:       7,1
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+               PRE ACTION:             D LDCONTR^BIUTL7
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Vaccine
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9999999.14:QEM
+                      HELP:
+                        Select the vaccine that is contraindicated for this patient.  
+                      CAPTION COORDINATE:    3,6
+                      DATA COORDINATE:       3,15
+                      DATA LENGTH:           30
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Select the vaccine that is contraindicated for this patient.")
+                      POST ACTION:           S BI("B")=X D VACSEL^BIUTL4(X)
+
+               2.5    FIELD TYPE:            FORM ONLY
+                      READ TYPE:             FREE TEXT
+                      DATA COORDINATE:       4,15
+                      DATA LENGTH:           12
+                      DISABLE EDITING:       YES
+
+               4      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Reason
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9002084.81:QEM
+                      HELP:
+                        Select the reason or reaction that has caused this vaccine/immunization to be contraindicated for this
+                        patient.  
+                      SCREEN:                D CREASCR^BIUTL4
+                      CAPTION COORDINATE:    6,7
+                      DATA COORDINATE:       6,15
+                      DATA LENGTH:           26
+                      REQUIRED:              YES
+                      BRANCHING LOGIC:       I '$G(BI("B")) D HLP^DDSUTL("You must first choose a vaccine."),HLP^DDSUTL("$$EOP") S 
+                                             DDSBR=1
+                      PRE ACTION:            D HLP^DDSUTL("Select the reason or reaction that has caused this vaccine/immunization 
+                                             to be contraindicated for this patient.")
+                      POST ACTION:           S BI("C")=X D CREASCHK^BIUTL7
+
+               5      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Date Noted
+                      READ TYPE:             DATE
+                      QUALIFIERS:            ::PTEX
+                      HELP:
+                        Enter the date on which this Contraindication was noted.  
+
+FORM LISTING - BI FORM-CONTRAIND ADD/EDIT (#130)
+FILE: PATIENT/IHS (#9000001)                                                                          JUN 05, 2015  11:41    PAGE 3
+-----------------------------------------------------------------------------------------------------------------------------------
+                      CAPTION COORDINATE:    9,3
+                      DATA COORDINATE:       9,15
+                      DATA LENGTH:           11
+                      DEFAULT:               !M
+                      EXECUTABLE DEFAULT:    S Y=$$TXDT^BIUTL5(DT)
+                      PRE ACTION:            D HLP^DDSUTL("Enter the date on which this Contraindication was noted.")
+                      POST ACTION:           S BI("D")=X
