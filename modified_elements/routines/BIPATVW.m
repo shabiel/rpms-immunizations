@@ -114,6 +114,8 @@ HDR(BIPRT) ;EP
  ;     1 - BIPRT  (opt) If BIPRT=1 array is for print: Add Privacy Act
  ;                      line and Site Header line.
  ;
+ ; ven/smh: rm all IOV* variables. New LM doesn't support presence of ctrl chars
+ ;
  N BILINE,X,Y S BILINE=0 K VALMHDR
  N BICRT S BICRT=$S(($E($G(IOST))="C")!(IOST["BROWSER"):1,1:0)
  ;
@@ -130,20 +132,14 @@ HDR(BIPRT) ;EP
  ;
  S Y=$E($$NAME^BIUTL1(BIDFN),1,25)
  S X=" Patient: "
- S:BICRT X=X_IORVON
  S X=X_Y
- S:BICRT X=X_IOINORM
  S X=X_$$SP^BIUTL5(27-$L(Y))_"DOB: "
- S:BICRT X=X_IORVON
  S X=X_$$DOBF^BIUTL1(BIDFN,$G(BIFDT))
- S:BICRT X=X_IOINORM
  D WH^BIW(.BILINE,X)
  S X="  Chart#: "
- S:BICRT X=X_IORVON
  S X=X_$$HRCN^BIUTL1(BIDFN)
  S Y=$E($$INSTTX^BIUTL6($G(DUZ(2))),1,17)
  S X=X_" at "_Y
- S:BICRT X=X_IOINORM
  S X=X_$$SP^BIUTL5(49-$L(X))_$$ACTIVE^BIUTL1(BIDFN)
  S X=X_"   "_$$SEXW^BIUTL1(BIDFN)
  D:$D(^BIP(BIDFN,0))
@@ -223,9 +219,28 @@ RESET ;EP
 HELP ;EP
  ;---> Help code.
  N BIX S BIX=X
- D EN^XBNEW("HELP^BIPATVW3","VALM*;IO*")
+ ;---> RPMS
+ I $T(EN^XBNEW)]"" D EN^XBNEW("HELP^BIPATVW3","VALM*;IO*") D:BIX'="??" RE^VALM4 QUIT
+ ;
+ ;---> VISTA (new version of LM... different behavior!!!)
+ N NVALM,NIO,NOR
+ N X,Y
+ S X="NVALM(",Y="VALM*" D ORDER^%ZOSV
+ S X="NXQOR(",Y="XQOR*" D ORDER^%ZOSV
+ S X="NOR(",Y="OR*"     D ORDER^%ZOSV
+ N IOLMVARS S IOLMVARS=$$IO^VALM0_";IOBON;IOBOFF;IOSGR0"
+ D
+ . N I S I="" F  S I=$O(NVALM(I)) Q:I=""  NEW @I
+ . N I S I="" F  S I=$O(NXQOR(I)) Q:I=""  NEW @I
+ . N I S I="" F  S I=$O(NOR(I)) Q:I=""  NEW @I
+ . N I,J F I=1:1:$L(IOLMVARS,";") S J=$P(IOLMVARS,";",I) N @J
+ . K ^TMP("BIXQORS-SAVE",$J)
+ . M ^TMP("BIXQORS-SAVE",$J)=^TMP("XQORS",$J)
+ . D HELP^BIPATVW3
+ . M ^TMP("XQORS",$J)=^TMP("BIXQORS-SAVE",$J)
+ . K ^TMP("BIXQORS-SAVE",$J)
  D:BIX'="??" RE^VALM4
- Q
+ QUIT
  ;
  ;
  ;----------
