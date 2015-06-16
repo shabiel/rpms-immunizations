@@ -1,0 +1,784 @@
+KIDS Distribution saved on Jun 16, 2015@09:43:11
+BI TABLE ERROR CODE
+**KIDS**:BIV 1.6^
+
+**INSTALL NAME**
+BIV 1.6
+"BLD",4556,0)
+BIV 1.6^IMMUNIZATIONS VISTA PORT^0^3150616^y
+"BLD",4556,1,0)
+^^1^1^3150616^
+"BLD",4556,1,1,0)
+Error codes
+"BLD",4556,4,0)
+^9.64PA^9002084.33^1
+"BLD",4556,4,9002084.33,0)
+9002084.33
+"BLD",4556,4,9002084.33,222)
+y^y^f^^n^^y^o^n
+"BLD",4556,4,"B",9002084.33,9002084.33)
+
+"BLD",4556,6.3)
+1
+"BLD",4556,"KRN",0)
+^9.67PA^9002226^21
+"BLD",4556,"KRN",.4,0)
+.4
+"BLD",4556,"KRN",.401,0)
+.401
+"BLD",4556,"KRN",.402,0)
+.402
+"BLD",4556,"KRN",.403,0)
+.403
+"BLD",4556,"KRN",.5,0)
+.5
+"BLD",4556,"KRN",.84,0)
+.84
+"BLD",4556,"KRN",3.6,0)
+3.6
+"BLD",4556,"KRN",3.8,0)
+3.8
+"BLD",4556,"KRN",9.2,0)
+9.2
+"BLD",4556,"KRN",9.8,0)
+9.8
+"BLD",4556,"KRN",19,0)
+19
+"BLD",4556,"KRN",19.1,0)
+19.1
+"BLD",4556,"KRN",101,0)
+101
+"BLD",4556,"KRN",409.61,0)
+409.61
+"BLD",4556,"KRN",771,0)
+771
+"BLD",4556,"KRN",779.2,0)
+779.2
+"BLD",4556,"KRN",870,0)
+870
+"BLD",4556,"KRN",8989.51,0)
+8989.51
+"BLD",4556,"KRN",8989.52,0)
+8989.52
+"BLD",4556,"KRN",8994,0)
+8994
+"BLD",4556,"KRN",9002226,0)
+9002226
+"BLD",4556,"KRN","B",.4,.4)
+
+"BLD",4556,"KRN","B",.401,.401)
+
+"BLD",4556,"KRN","B",.402,.402)
+
+"BLD",4556,"KRN","B",.403,.403)
+
+"BLD",4556,"KRN","B",.5,.5)
+
+"BLD",4556,"KRN","B",.84,.84)
+
+"BLD",4556,"KRN","B",3.6,3.6)
+
+"BLD",4556,"KRN","B",3.8,3.8)
+
+"BLD",4556,"KRN","B",9.2,9.2)
+
+"BLD",4556,"KRN","B",9.8,9.8)
+
+"BLD",4556,"KRN","B",19,19)
+
+"BLD",4556,"KRN","B",19.1,19.1)
+
+"BLD",4556,"KRN","B",101,101)
+
+"BLD",4556,"KRN","B",409.61,409.61)
+
+"BLD",4556,"KRN","B",771,771)
+
+"BLD",4556,"KRN","B",779.2,779.2)
+
+"BLD",4556,"KRN","B",870,870)
+
+"BLD",4556,"KRN","B",8989.51,8989.51)
+
+"BLD",4556,"KRN","B",8989.52,8989.52)
+
+"BLD",4556,"KRN","B",8994,8994)
+
+"BLD",4556,"KRN","B",9002226,9002226)
+
+"BLD",4556,"QUES",0)
+^9.62^^
+"DATA",9002084.33,99,0)
+99
+"DATA",9002084.33,100,0)
+100^SITE PARAMETERS, HOST FILE, OP SYSTEM, STANDARD VARIABLE ERRORS
+"DATA",9002084.33,101,0)
+101^Save to Host File Server FAILED (software error).
+"DATA",9002084.33,102,0)
+102^File name is not provided.
+"DATA",9002084.33,103,0)
+103^There is no entry in the BI SITE PARAMETER File for this site.
+"DATA",9002084.33,104,0)
+104^The Host File Path in the BI SITE PARAMETER File has not been set.
+"DATA",9002084.33,105,0)
+105^Site IEN (DUZ(2)) not provided (software error).
+"DATA",9002084.33,106,0)
+106^User/Person ID (DUZ) not provided (software error).
+"DATA",9002084.33,108,0)
+108^Immunizations Due Letter IEN does not exist in file (software error).
+"DATA",9002084.33,109,0)
+109^Site IEN not passed (software error).
+"DATA",9002084.33,110,0)
+110^Site IEN does not exist in BI SITE PARAMETER File (software error).
+"DATA",9002084.33,111,0)
+111^Variable BISITE is not provided (software error).
+"DATA",9002084.33,112,0)
+112^User ID (DUZ) does not exist in NEW PERSON File (software error).
+"DATA",9002084.33,113,0)
+113^Site Param for Official Imm Record not set. (Go MGR-->ESP-->4)
+"DATA",9002084.33,114,0)
+114^Official Imm Record Letter has been deleted. (Go MGR-->ESP-->4)
+"DATA",9002084.33,115,0)
+115^Save patient history to Host File Server failed (software error).
+"DATA",9002084.33,116,0)
+116^Site Parameter for Operating System not set. (Go MGR-->ESP-->15)
+"DATA",9002084.33,117,0)
+117^Read of forecast from Host File Server failed (software error).
+"DATA",9002084.33,118,0)
+118^Invalid ImmServe Path; edit Site Parameter. (Go MGR-->ESP-->15)
+"DATA",9002084.33,119,0)
+119^ImmServe Path not set; edit Site Parameter. (Go MGR-->ESP-->15)
+"DATA",9002084.33,120,0)
+120^Unable to identify Operating System (software error).
+"DATA",9002084.33,121,0)
+121^Site IEN (DUZ(2)) not provided in BIRPC3 (software error).
+"DATA",9002084.33,122,0)
+122^Call to OS level Immserve library failed (software error).^Immserve call fail
+"DATA",9002084.33,123,0)
+123^Failure to open forecaster. Check Apache Tomcat Service.^Check Apache Svc
+"DATA",9002084.33,124,0)
+124^Site IEN (BIDUZ2) not provided to rtn BIXTCH (software error).
+"DATA",9002084.33,125,0)
+125^IP address for TCH Forecaster not set in Site Parameters.
+"DATA",9002084.33,199,0)
+199^ 
+"DATA",9002084.33,200,0)
+200^PATIENT ERRORS
+"DATA",9002084.33,201,0)
+201^Patient DFN not provided (software error).
+"DATA",9002084.33,202,0)
+202^This patient did not have an IMM ACTIVE/INACTIVE Status.
+"DATA",9002084.33,203,0)
+203^DFN does not exist in RPMS Patient database (software error).
+"DATA",9002084.33,204,0)
+204^This patient is not in the Immunization Register.
+"DATA",9002084.33,205,0)
+205^Records indicate this patient is deceased.
+"DATA",9002084.33,206,0)
+206^Valid DFN for Patient Case Data edit not provided (software error).
+"DATA",9002084.33,207,0)
+207^Patient Case Data for edit not provided (software error).
+"DATA",9002084.33,208,0)
+208^Valid Case Manager IEN not provided (software error).
+"DATA",9002084.33,209,0)
+209^Inactive Date provided is not valid (software error).
+"DATA",9002084.33,210,0)
+210^Patient Case Data edit failed in call to DIE (software error).
+"DATA",9002084.33,211,0)
+211^Unable to add patient to Immunization database (software error).
+"DATA",9002084.33,212,0)
+212^This Patient is being edited by another user.  Please try later.  
+"DATA",9002084.33,213,0)
+213^Case Manager is INACTIVE.  Reactivate under Manager Menu (MGR-->CMG).
+"DATA",9002084.33,214,0)
+214^Default Case Manager is INACTIVE.  Check Site Parameters (MGR-->ESP).
+"DATA",9002084.33,215,0)
+215^Precise Date of Birth not recorded.  Edit patient's DOB.
+"DATA",9002084.33,216,0)
+216^Valid Patient DFN not retrieved from BIPERR global (software error).
+"DATA",9002084.33,217,0)
+217^Valid BIDFN not provided for AUPNPAT global (software error).
+"DATA",9002084.33,218,0)
+218^This patient is already in the Immunization Database.
+"DATA",9002084.33,219,0)
+219^An Inactive Date requires a Inactive REASON. 
+"DATA",9002084.33,299,0)
+299^ 
+"DATA",9002084.33,300,0)
+300^IMMUNIZATION HISTORY, FORECASTING AND PROFILE ERRORS
+"DATA",9002084.33,301,0)
+301^Patient DFN not provided for Forecast (software error).
+"DATA",9002084.33,302,0)
+302^Location for Immunization Visit not entered.
+"DATA",9002084.33,303,0)
+303^Immunization History not provided (software error).
+"DATA",9002084.33,305,0)
+305^Patient DFN not provided for Profile (software error).
+"DATA",9002084.33,306,0)
+306^Patient DFN not provided for Imm History (software error).
+"DATA",9002084.33,307,0)
+307^Imm/Serve Patient Profile not provided (software error).
+"DATA",9002084.33,308,0)
+308^Patient DFN not provided for contraindications (software error).
+"DATA",9002084.33,309,0)
+309^Patient zero node is null (software error).
+"DATA",9002084.33,310,0)
+310^Contraindications string not provided (software error).
+"DATA",9002084.33,311,0)
+311^Unable to add contraindication for this patient (software error).
+"DATA",9002084.33,312,0)
+312^Vaccine entry does not exist in IMMUNIZATION File (software error).
+"DATA",9002084.33,313,0)
+313^There are no Contraindications to delete!
+"DATA",9002084.33,314,0)
+314^Immunization Forecasting disabled (see Site Parameters).
+"DATA",9002084.33,315,0)
+315^Forecast Date is before Patient's Date of Birth.
+"DATA",9002084.33,399,0)
+399^ 
+"DATA",9002084.33,400,0)
+400^PCC VISIT, CONTRAINDICATION, HEALTH SUMMARY, FACE SHEET ERRORS
+"DATA",9002084.33,401,0)
+401^PCC VISIT not created.
+"DATA",9002084.33,402,0)
+402^PCC V IMMUNIZATION not created (software error).
+"DATA",9002084.33,403,0)
+403^New Immunization Visit data not provided (software error).
+"DATA",9002084.33,404,0)
+404^DA to delete V File Visit not provided (software error).
+"DATA",9002084.33,405,0)
+405^Patient DFN for Immunization Visit not provided (software error).
+"DATA",9002084.33,406,0)
+406^No selection made.
+"DATA",9002084.33,407,0)
+407^Health Summary not produced (software error).
+"DATA",9002084.33,408,0)
+408^Face Sheet not produced (software error).
+"DATA",9002084.33,409,0)
+409^IEN for V FILE entry not provided (software error).
+"DATA",9002084.33,410,0)
+410^Visit Type (I or S) not provided (software error).
+"DATA",9002084.33,411,0)
+411^V File entry does not exist (software error).
+"DATA",9002084.33,412,0)
+412^Failure to retrieve Visit data (software error).
+"DATA",9002084.33,413,0)
+413^PCC V SKIN TEST not created (software error).
+"DATA",9002084.33,414,0)
+414^IEN to delete Contraindication not provided (software error).
+"DATA",9002084.33,415,0)
+415^Patient DFN for Contraindication not provided (software error).
+"DATA",9002084.33,416,0)
+416^New Contraindication data not provided (software error).
+"DATA",9002084.33,417,0)
+417^Valid Patient DFN for contraindication not provided (software error).
+"DATA",9002084.33,418,0)
+418^Valid Vaccine IEN for contraindication not provided (software error).
+"DATA",9002084.33,419,0)
+419^IEN for Contraindication Reason is not valid (software error).
+"DATA",9002084.33,420,0)
+420^Contraindication NOT added (software error).
+"DATA",9002084.33,421,0)
+421^Vaccine Information Statement (VIS) not stored (software error).
+"DATA",9002084.33,422,0)
+422^Visit date submitted is before Patient's Date of Birth.
+"DATA",9002084.33,423,0)
+423^An Immunization for this vaccine on this date is already recorded.
+"DATA",9002084.33,424,0)
+424^This Skin Test has already been recorded for this date.
+"DATA",9002084.33,425,0)
+425^Invalid Lot# IEN passed to PCC (software error).
+"DATA",9002084.33,426,0)
+426^Lot# is INACTIVE.  Reactivate under Manager Menu (MGR-->LOT).
+"DATA",9002084.33,427,0)
+427^Lot# for this Visit is a duplicate.  Check Lot Table.
+"DATA",9002084.33,428,0)
+428^Failure to delete V File entry (software error).
+"DATA",9002084.33,429,0)
+429^Vaccine is INACTIVE.  Reactivate under Manager Menu (MGR-->VAC).
+"DATA",9002084.33,430,0)
+430^Invalid Vaccine IEN passed to PCC (software error).
+"DATA",9002084.33,431,0)
+431^A Lot# is required.  (Add a Lot# or edit Site Parameter: MGR-->ESP)
+"DATA",9002084.33,432,0)
+432^VISIT (at IEN=BIVSIT) does not exist (software error).
+"DATA",9002084.33,433,0)
+433^DIE call to change Visit Location failed (software error).
+"DATA",9002084.33,434,0)
+434^DIE call to change Visit Outside Location failed (software error).
+"DATA",9002084.33,435,0)
+435^Failed call to APCDAPI4 (software error).
+"DATA",9002084.33,436,0)
+436^If you enter a Skin Test Result you MUST enter a Reading.^Missing Reading
+"DATA",9002084.33,437,0)
+437^Visit data not provided (software error)
+"DATA",9002084.33,438,0)
+438^Failed to identify Visit after call to APCDAPI4 (software error)
+"DATA",9002084.33,439,0)
+439^This would be a duplicate Contraindication.^Duplicate Contraind
+"DATA",9002084.33,440,0)
+440^Entry does not exist in the Refusal Type file (software error).^Bad pointer
+"DATA",9002084.33,441,0)
+441^Vaccine IEN not provided.
+"DATA",9002084.33,442,0)
+442^New Lot Number data not provided (software error).^No Lot Number data
+"DATA",9002084.33,443,0)
+443^Lot Number provided is too long(software error).^Lot Number too long
+"DATA",9002084.33,444,0)
+444^New Lot Number provided already exists (software error).^Lot# already exists
+"DATA",9002084.33,445,0)
+445^Invalid CVX Code provided (software error).^Invalid CVX Code
+"DATA",9002084.33,446,0)
+446^Invalid MVX Code provided (software error).^Invalid MVX
+"DATA",9002084.33,447,0)
+447^Failure to match new Lot Number IEN (software error).^Fail IEN
+"DATA",9002084.33,448,0)
+448^Contraindication IEN does not exist (software error).^Bad Contra IEN
+"DATA",9002084.33,449,0)
+449^Bad IEN for BI CONTRA DELETED (software error).^Contra Del bad IEN
+"DATA",9002084.33,450,0)
+450^Bad IEN for BI V IMM DELETED (software error).^Bad IEN for Imm Del
+"DATA",9002084.33,499,0)
+499^ 
+"DATA",9002084.33,500,0)
+500^IMMUNIZATION TABLES ERRORS
+"DATA",9002084.33,501,0)
+501^There are no ACTIVE Vaccine Names.  Check Site Parameters.
+"DATA",9002084.33,502,0)
+502^Vaccine IEN not provided (software error).
+"DATA",9002084.33,503,0)
+503^Vaccine Table (IMMUNIZATION File) is not standard--cannot proceed.
+"DATA",9002084.33,504,0)
+504^Vaccine Short Name not passed--contact OIRM Headquarters for help.
+"DATA",9002084.33,505,0)
+505^Vaccine Translation Table corrupt--contact OIRM Headquarters for help.
+"DATA",9002084.33,506,0)
+506^Vaccine not selected.  * Halting installation. *
+"DATA",9002084.33,507,0)
+507^Problem with pointers mapping old Vaccine Table to new HL7 Table.
+"DATA",9002084.33,508,0)
+508^Non-standard entry in the Vaccine Table (IMMUNIZATION File).
+"DATA",9002084.33,509,0)
+509^A standard entry is missing from the Vaccine Table (IMM File).
+"DATA",9002084.33,510,0)
+510^Vaccine Group IEN not provided (software error).
+"DATA",9002084.33,511,0)
+511^Valid Lot Number IEN not provided (software error).^No Lot IEN.
+"DATA",9002084.33,512,0)
+512^Lot Number IEN does not exist (software error).^No Lot
+"DATA",9002084.33,513,0)
+513^Lot Number not assigned to Vaccine provided.  Check Lot Table.^Lot not for Vaccine
+"DATA",9002084.33,514,0)
+514^Eligibility Code IEN not provided (software error).
+"DATA",9002084.33,515,0)
+515^NDC Code IEN not provided (software error).
+"DATA",9002084.33,516,0)
+516^NDC Code IEN does not exist in global (software error).
+"DATA",9002084.33,517,0)
+517^Unable to create new NDC Code (software error).
+"DATA",9002084.33,599,0)
+599
+"DATA",9002084.33,600,0)
+600^SELECTION AND OTHER UTILITY ERRORS
+"DATA",9002084.33,601,0)
+601^Lookup global for this File# does not exist (software error).
+"DATA",9002084.33,602,0)
+602^Local array name for Item Selection not passed (software error).
+"DATA",9002084.33,604,0)
+604^IEN of Selected Item not found in TMP (sofware error).
+"DATA",9002084.33,605,0)
+605^Selection Array is subscripted; see routine BISELECT (software error).
+"DATA",9002084.33,606,0)
+606^Selection Array may not be a global (software error).
+"DATA",9002084.33,607,0)
+607^File Number not passed (software error).
+"DATA",9002084.33,608,0)
+608^DD or Data global for File# passed does not exist (software error).
+"DATA",9002084.33,609,0)
+609^Form Letter IEN not provided (software error).
+"DATA",9002084.33,610,0)
+610^Form Letter IEN does not exist in file (software error).
+"DATA",9002084.33,611,0)
+611^Section Node for Form Letter edit not provided (software error).
+"DATA",9002084.33,612,0)
+612^Form Letter Section Node does not exist in file (software error).
+"DATA",9002084.33,613,0)
+613^Age Range not provided (software error).
+"DATA",9002084.33,614,0)
+614^Current Community array not provided (software error).
+"DATA",9002084.33,615,0)
+615^Case Manager array not provided (software error).
+"DATA",9002084.33,616,0)
+616^Forecast Date not provided (software error).
+"DATA",9002084.33,617,0)
+617^Minimum Interval Days not provided (software error).
+"DATA",9002084.33,618,0)
+618^Order of Listing not provided (software error).
+"DATA",9002084.33,619,0)
+619^Sorry, you do not have the Manager's Key to edit the Due Letter.
+"DATA",9002084.33,620,0)
+620^Patient Group parameter not passed (software error).
+"DATA",9002084.33,621,0)
+621^Calling routine for reset not passed (software error).
+"DATA",9002084.33,622,0)
+622^Please enter a valid Quarter Ending Date.    
+"DATA",9002084.33,623,0)
+623^Quarter Ending Date not provided (software error).
+"DATA",9002084.33,624,0)
+624^Listman array node not passed (software error).
+"DATA",9002084.33,625,0)
+625^Health Care Facility array not provided (software error).
+"DATA",9002084.33,626,0)
+626^Beginning Date not provided (software error).
+"DATA",9002084.33,627,0)
+627^Ending Date not provided (software error).
+"DATA",9002084.33,628,0)
+628^Valid List Template not provided (software error).
+"DATA",9002084.33,629,0)
+629^Additional Information parameter not provided (software error).
+"DATA",9002084.33,630,0)
+630^Lot Number array not provided (software error).
+"DATA",9002084.33,631,0)
+631^You do not have the BIZ MANAGER Key required to allocate Keys.
+"DATA",9002084.33,632,0)
+632^Key does not exist in SECURITY KEY File (software error).
+"DATA",9002084.33,633,0)
+633^There are duplicates of this Key in the SECURITY KEY File.
+"DATA",9002084.33,634,0)
+634^BIALL parameter not specified (software error).
+"DATA",9002084.33,635,0)
+635^Key name not provided (software error).
+"DATA",9002084.33,636,0)
+636^FILE~DICN lookup failed (Fileman software error).
+"DATA",9002084.33,637,0)
+637^TMP("BILET",$J global storing letter does not exist (software error).
+"DATA",9002084.33,638,0)
+638^Immunizations Due array not provided (software error).
+"DATA",9002084.33,639,0)
+639^Patient Group variable, BIPG, not passed (software error).
+"DATA",9002084.33,640,0)
+640^Survey Date, BISVDT, not passed to Export (software error).
+"DATA",9002084.33,641,0)
+641^Patient Group, BIGRP, not passed to Export (software error).
+"DATA",9002084.33,642,0)
+642^Age Range, BIAGRG, not passed to Export (software error).
+"DATA",9002084.33,643,0)
+643^Health Care Facility, BIHCF, not passed to Export (software error).
+"DATA",9002084.33,644,0)
+644^Current Community, BICC, not passed to Export (software error).
+"DATA",9002084.33,645,0)
+645^Immunization, BIMMR, not passed to Export (software error).
+"DATA",9002084.33,646,0)
+646^No Data Elements selected.
+"DATA",9002084.33,647,0)
+647^Format, BIFMT, not passed to Export (software error).
+"DATA",9002084.33,648,0)
+648^Output Device, BIOUT, not passed to Export (software error).
+"DATA",9002084.33,649,0)
+649^File Name, BIFLNM, not passed to Export (software error).
+"DATA",9002084.33,650,0)
+650^No patients selected.
+"DATA",9002084.33,651,0)
+651^Path Name, BIPATH, not passed to Export (software error).
+"DATA",9002084.33,652,0)
+652^Immunizations Received array not provided (software error).
+"DATA",9002084.33,653,0)
+653^Search Template IEN not passed (software error).
+"DATA",9002084.33,654,0)
+654^Search Template does not exist (software error).
+"DATA",9002084.33,655,0)
+655^Search Template does not contain any patients.
+"DATA",9002084.33,656,0)
+656^Subheader array not passed (software error).
+"DATA",9002084.33,657,0)
+657^Subheader Item Name not passed (software error).
+"DATA",9002084.33,658,0)
+658^Subheader Item global not passed (software error).
+"DATA",9002084.33,659,0)
+659^Invalid global name for Subheader Items (software error).
+"DATA",9002084.33,660,0)
+660^  * INVALID AGE RANGE.  Please begin again.
+"DATA",9002084.33,661,0)
+661^Listman item not defined (software error).
+"DATA",9002084.33,662,0)
+662^Beneficiary Type array not provided (software error).
+"DATA",9002084.33,663,0)
+663^Include Historical Visits parameter not provided (software error).
+"DATA",9002084.33,664,0)
+664^Visit Type array not provided (software error).
+"DATA",9002084.33,665,0)
+665^Invalid Set of Codes for Subheader Items (software error).
+"DATA",9002084.33,666,0)
+666^Explanation Text Array not passed (software error).
+"DATA",9002084.33,667,0)
+667^Adult Report statistics not passed (software error).^Stats not passed.
+"DATA",9002084.33,668,0)
+668^Too many subheaders for screen display. Print Report instead.^Too many subheaders
+"DATA",9002084.33,669,0)
+669^Report Menu parameter not passed (software error).^Param not passed
+"DATA",9002084.33,670,0)
+670^This Entry is being edited by another user.  Please try later.
+"DATA",9002084.33,671,0)
+671^Invalid File Number passed (software error).^Invalid File Number
+"DATA",9002084.33,672,0)
+672^Internal Entry Number not passed (software error).^IEN not passed.
+"DATA",9002084.33,673,0)
+673^Passed File Entry does not exist (software error).^Entry doesn't exist
+"DATA",9002084.33,674,0)
+674^Fileman Error reported by FILE~DIE (software error).^Fileman Error
+"DATA",9002084.33,675,0)
+675^Fileman Error reported by UPDATE~DIE (software error).^UPDATE~DIE Error
+"DATA",9002084.33,676,0)
+676^Invalid Age Range passed (software error).
+"DATA",9002084.33,677,0)
+677^24-Month Column display parameter not provided (software error).^No 24-Month param
+"DATA",9002084.33,678,0)
+678^Vaccine Combination Number not passed (software error).^Vac Comb not passed
+"DATA",9002084.33,679,0)
+679^Please enter a valid year [yyyy].^Valid year
+"DATA",9002084.33,680,0)
+680^Designated Provider array not provided (software error).^No Desig Provider
+"DATA",9002084.33,681,0)
+681^Display by Lot Number parameter not provided (software error).^Display Lot Number
+"DATA",9002084.33,682,0)
+682^Include Adults parameter not provided (software error).^Incl Adults missing
+"DATA",9002084.33,683,0)
+683^Delimiter parameter not provided (software error).^Delimiter missing
+"DATA",9002084.33,699,0)
+699
+"DATA",9002084.33,800,0)
+800^IMMSERVE ERROR CODES
+"DATA",9002084.33,801,0)
+801^Bad dose date in series history.^Bad Dose date
+"DATA",9002084.33,802,0)
+802^Unsupported dose date in series history.^Bad Dose date
+"DATA",9002084.33,803,0)
+803^Dose date earlier than Date of Birth.^Dose Date<DOB
+"DATA",9002084.33,804,0)
+804^Dose date later than Date of Forecast.^Dose Date>Forc Date
+"DATA",9002084.33,805,0)
+805^Dose number too big for the series.^Dose# too big
+"DATA",9002084.33,806,0)
+806^Unsupported numbered dose date source.^Bad Dose date
+"DATA",9002084.33,807,0)
+807^More than one designated dose.^>1 Designate Dose
+"DATA",9002084.33,808,0)
+808^Too many prior doses in a designated dose series.^Too many Doses
+"DATA",9002084.33,809,0)
+809^Numbered dose out of sequence in a low number series.^Dose# out of seq
+"DATA",9002084.33,810,0)
+810^Multiple doses with the same number in a low number series.^Duplicate Dose#'s
+"DATA",9002084.33,811,0)
+811^Too many prior doses in a low number series.^Too many Doses
+"DATA",9002084.33,812,0)
+812^Numbered dose out of order.^Dose# out of seq
+"DATA",9002084.33,813,0)
+813^Multiple doses with the same number.^Duplicate Dose#'s
+"DATA",9002084.33,814,0)
+814^Un-numbered dose.^Un-numbered dose
+"DATA",9002084.33,815,0)
+815^Screening a prior dose in a designated dose series.^Prior Dose problem
+"DATA",9002084.33,816,0)
+816^Screening the designated dose.^Desig Dose problem
+"DATA",9002084.33,817,0)
+817^Screening a prior dose in a low number series.^Prior Dose problem
+"DATA",9002084.33,818,0)
+818^Screening the lowest numbered dose.^Lowest Dose problem
+"DATA",9002084.33,819,0)
+819^The Series is incomplete and has a problem dose.^Incomplete Series
+"DATA",9002084.33,998,0)
+998^ 
+"DATA",9002084.33,999,0)
+999^Unknown error.
+"FIA",9002084.33)
+BI TABLE ERROR CODE
+"FIA",9002084.33,0)
+^BIERR(
+"FIA",9002084.33,0,0)
+9002084.33I
+"FIA",9002084.33,0,1)
+y^y^f^^n^^y^o^n
+"FIA",9002084.33,0,10)
+
+"FIA",9002084.33,0,11)
+
+"FIA",9002084.33,0,"RLRO")
+
+"FIA",9002084.33,0,"VR")
+1.6^BIV
+"FIA",9002084.33,9002084.33)
+0
+"MBREQ")
+0
+"PKG",426,-1)
+1^1
+"PKG",426,0)
+IMMUNIZATIONS VISTA PORT^BIV^VISTA Port of RPMS Immunizations
+"PKG",426,22,0)
+^9.49I^1^1
+"PKG",426,22,1,0)
+1.6^3150616
+"PKG",426,22,1,1,0)
+^^1^1^3150616
+"PKG",426,22,1,1,1,0)
+Error codes
+"PKG",426,"VERSION")
+1.6
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"SEC","^DIC",9002084.33,9002084.33,0,"AUDIT")
+M
+"SEC","^DIC",9002084.33,9002084.33,0,"DD")
+@
+"SEC","^DIC",9002084.33,9002084.33,0,"DEL")
+M
+"SEC","^DIC",9002084.33,9002084.33,0,"LAYGO")
+M
+"SEC","^DIC",9002084.33,9002084.33,0,"RD")
+M
+"SEC","^DIC",9002084.33,9002084.33,0,"WR")
+M
+"VER")
+8.0^22.0
+"^DD",9002084.33,9002084.33,0)
+FIELD^^.03^3
+"^DD",9002084.33,9002084.33,0,"DDA")
+N
+"^DD",9002084.33,9002084.33,0,"DT")
+2990422
+"^DD",9002084.33,9002084.33,0,"ID",.02)
+W "   ",$P(^(0),U,2)
+"^DD",9002084.33,9002084.33,0,"IX","B",9002084.33,.01)
+
+"^DD",9002084.33,9002084.33,0,"IX","C",9002084.33,.02)
+
+"^DD",9002084.33,9002084.33,0,"IX","U",9002084.33,.02)
+
+"^DD",9002084.33,9002084.33,0,"NM","BI TABLE ERROR CODE")
+
+"^DD",9002084.33,9002084.33,0,"PT",9002084.12,.02)
+
+"^DD",9002084.33,9002084.33,0,"PT",9002084.35,.02)
+
+"^DD",9002084.33,9002084.33,0,"VRPK")
+BI
+"^DD",9002084.33,9002084.33,.01,0)
+ERROR CODE#^RNJ4,0XI^^0;1^K:+X'=X!(X>9999)!(X<1)!(X?.E1"."1N.N) X S:$G(X) DINUM=X
+"^DD",9002084.33,9002084.33,.01,1,0)
+^.1
+"^DD",9002084.33,9002084.33,.01,1,1,0)
+9002084.33^B
+"^DD",9002084.33,9002084.33,.01,1,1,1)
+S ^BIERR("B",$E(X,1,30),DA)=""
+"^DD",9002084.33,9002084.33,.01,1,1,2)
+K ^BIERR("B",$E(X,1,30),DA)
+"^DD",9002084.33,9002084.33,.01,3)
+Enter an Error Code number between 1 and 9999.
+"^DD",9002084.33,9002084.33,.01,"DT")
+2990131
+"^DD",9002084.33,9002084.33,.02,0)
+ERROR CODE TEXT^F^^0;2^K:$L(X)>70!($L(X)<1) X
+"^DD",9002084.33,9002084.33,.02,1,0)
+^.1
+"^DD",9002084.33,9002084.33,.02,1,1,0)
+9002084.33^C
+"^DD",9002084.33,9002084.33,.02,1,1,1)
+S ^BIERR("C",$E(X,1,30),DA)=""
+"^DD",9002084.33,9002084.33,.02,1,1,2)
+K ^BIERR("C",$E(X,1,30),DA)
+"^DD",9002084.33,9002084.33,.02,1,1,"DT")
+2970908
+"^DD",9002084.33,9002084.33,.02,1,2,0)
+9002084.33^U^MUMPS
+"^DD",9002084.33,9002084.33,.02,1,2,1)
+D UPXREF^BIUTL5(X,"^BIERR(")
+"^DD",9002084.33,9002084.33,.02,1,2,2)
+D KUPXREF^BIUTL5(X,"^BWERR(")
+"^DD",9002084.33,9002084.33,.02,1,2,"DT")
+2970908
+"^DD",9002084.33,9002084.33,.02,3)
+Enter the text of this Error Code (70 characters or less).
+"^DD",9002084.33,9002084.33,.02,"DT")
+2970908
+"^DD",9002084.33,9002084.33,.03,0)
+ERROR ABBREVIATED TEXT^F^^0;3^K:$L(X)>19!($L(X)<2) X
+"^DD",9002084.33,9002084.33,.03,3)
+Enter an abbreviated form of the Error Text.  Answer must be 2-19 characters in length.
+"^DD",9002084.33,9002084.33,.03,"DT")
+2990422
+"^DIC",9002084.33,9002084.33,0)
+BI TABLE ERROR CODE^9002084.33
+"^DIC",9002084.33,9002084.33,0,"GL")
+^BIERR(
+"^DIC",9002084.33,"B","BI TABLE ERROR CODE",9002084.33)
+
+**END**
+**END**
