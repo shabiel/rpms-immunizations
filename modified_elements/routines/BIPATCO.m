@@ -112,7 +112,7 @@ TEXT1(BITEXT) ;EP
  ;;which you add or delete the patient's contraindications.
  ;;
  ;;The TOP of the screen lists the patient's demographic information,
- ;;most of which is edited through the RPMS Patient Registration.
+ ;;most of which is edited through the Patient Registration.
  ;;
  ;;The MIDDLE of the screen lists any Contraindications to vaccines
  ;;that the patient may have, along with the Reason for the
