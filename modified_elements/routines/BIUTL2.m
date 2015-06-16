@@ -171,7 +171,16 @@ HL7TX(BICVX,BIGRP) ;EP
  ;
  ;
  I '$G(BICVX) S BICVX=999
- I '$D(^AUTTIMM("C",BICVX)) S BICVX=999
+ ;
+ ;---> In VISTA, the HL7 codes for single numbers is "03" etc per CDC.
+ ;---> In RPMS, the HL7 codes are coerced into M style numbers.
+ ;---> From BIRPC4, we are passed 3 (MMR). We need to make sure that we can
+ ;---> translate that into either form.
+ ;
+ I '$D(^AUTTIMM("C",BICVX)) D
+ . I $L(BICVX)=1,$D(^AUTTIMM("C","0"_BICVX)) S BICVX="0"_BICVX 
+ . E  S BICVX=999
+ ;
  N BIVIEN S BIVIEN=$O(^AUTTIMM("C",BICVX,0))
  S:'BIVIEN BIVIEN=137
  ;---> Return Vaccine IEN for this CVX.
