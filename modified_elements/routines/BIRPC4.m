@@ -40,7 +40,8 @@ ADDCONT(BIERR,BIDATA) ;PEP - Add a Contraindication.
  .D ERRCD^BIUTL2(418,.BIERR) S BIERR=BI31_BIERR
  ;
  ;---> If IEN for Contra Reason is not valid, set Error Code and quit.
- I BICRIEN I '$D(^BICONT(BICRIEN,0)) D  Q
+ ;I BICRIEN I '$D(^BICONT(BICRIEN,0)) D  Q
+ I BICRIEN I '$D(^PXV(920.4,BICRIEN,0)) D  Q
  .D ERRCD^BIUTL2(419,.BIERR) S BIERR=BI31_BIERR
  ;
  ;---> Check if Contra already exists for this reason; quit if duplicate.
@@ -55,53 +56,57 @@ ADDCONT(BIERR,BIDATA) ;PEP - Add a Contraindication.
  ;
  ;---> If this patient is Immune Deficient, use BIMDEF array below
  ;---> to add other live vaccines as contraindicated.
- I $P($G(^BICONT(+BICRIEN,0)),U)="Immune Deficiency" D
- .S BIMDEF("C")=BICRIEN,BIMDEF("D")=BIDATE
  ;
+ ; ^PXV(920.4,"C","VXC27",20)="" <-- Immune deficiency; record 20.
+ ; Record locked down by MFS. We can rely on its presence at record 20.
+ ; VXC27 is defined by OID 2.16.840.1.114222.4.11.3288 Vaccine Contraindications
+ ; http://www.cdc.gov/vaccines/programs/iis/technical-guidance/downloads/hl7guide-1-5-Mar2014.pdf
  ;
- ;---> ADD Contraindication.
+ ; Old RPMS code; won't use for RPMS nor VISTA.
+ ; I $P($G(^BICONT(+BICRIEN,0)),U)="Immune Deficiency" D
+ ; .S BIMDEF("C")=BICRIEN,BIMDEF("D")=BIDATE
  ;
- ;********** PATCH 5, v8.5, JUL 01,2013, IHS/CMI/MWR
- ;---> Add SNOMED Codes for this Contraindication.
- ;N BIERR,BIFLD
- N BIERR,BIFLD,BIIEN
- S BIFLD(.01)=BIDFN,BIFLD(.02)=BIVIEN,BIFLD(.03)=BICRIEN,BIFLD(.04)=BIDATE
- ;D UPDATE^BIFMAN(9002084.11,,.BIFLD,.BIERR)
- D UPDATE^BIFMAN(9002084.11,.BIIEN,.BIFLD,.BIERR)
+ I +BICRIEN=20 S BIMDEF("C")=BICRIEN,BIMDEF("D")=BIDATE
  ;
- ;---> If add of Contra is successful, BIIEN(1)=IEN of new Patient Contra,
- ;---> so add SNOMED Codes.
- D:(+$G(BIIEN(1)))
- .N I,X,Y
- .;---> Get string of Vaccine Component IEN's.
- .S X=$$VCOMPS^BIUTL2(BIVIEN)
- .;---> If no components process the vaccine itself.
- .S:('+X) X=BIVIEN
- .;
- .F I=1:1:6 S Y=$P(X,";",I) Q:'Y  D
- ..;---> Get Vaccine Group IEN of this vaccine.
- ..N BIVGRP S BIVGRP=$$IMMVG^BIUTL2(Y)
- ..;---> Quit if Vaccine Group is Other, Skin Test, or Combo.
- ..Q:((BIVGRP=12)!(BIVGRP=13)!(BIVGRP=14)!(BIVGRP<1))
- ..;---> Call Lori's Magic Mapper to get SNOMED Code.
- ..D SNOMED(BIVGRP,BICRIEN,BIIEN(1))
+ ;---> Get CDC concept code (may be SNOMED)
+ N CDCCON S CDCCON=$P(^PXV(920.4,BICRIEN,0),U,2)
  ;
- ;**********
+ ;---> ADD Contraindication w/ Concept
+ N DIERR,BIFDA,BIIEN,BIERR,BIMSG
+ S BIFDA(9002084.11,"+1,",.01)=BIDFN   ; pt
+ S BIFDA(9002084.11,"+1,",.02)=BIVIEN  ; vaccine
+ S BIFDA(9002084.11,"+1,",.03)=BICRIEN ; ci
+ S BIFDA(9002084.11,"+1,",.04)=BIDATE  ; recording data
+ S BIFDA(9002084.111,"+2,+1,",.01)=CDCCON ; concept
+ D UPDATE^DIE(,$NA(BIFDA),$NA(BIIEN),$NA(BIMSG))
+ I $D(DIERR) S BIERR=BIMSG("DIERR",1,"TEXT",1)
  ;
  ;---> If add contraindication fails, set Error Code and quit.
- I $G(BIERR)]"" D  Q
+ I $G(BIERR)]"" D  QUIT  ; <---------- QUIT HERE
  .N X S X=BIERR
  .D ERRCD^BIUTL2(420,.BIERR) S BIERR=BI31_BIERR_" "_X
  ;
+ ;---> If add of Contra is successful, BIIEN(1)=IEN of new Patient Contra,
+ ;---> so add extra SNOMED Codes (IHS only)
+ ; TODO: This is certainly different for VISTA; perhaps change this for RPMS
+ ; as well?
+ ;********** PATCH 5, v8.5, JUL 01,2013, IHS/CMI/MWR
+ ;---> Add SNOMED Codes for this Contraindication.
+ D:$G(BIIEN(1))&$$RPMS^BIUTL9() SNOMED0(BIVIEN,BICRIEN,.BIIEN)
+ ;**********
+ ;
+ ; NOW REALLY---A REFUSAL IS A CONTRAINDICATION????
+ ; VEN/SMH - COMMENTING OUT
  ;---> If this is a Refusal, add it to PATIENT REFUSALS FOR SERVICE/NMI
  ;---> File #9000022.
- D:((BICRIEN=11)!(BICRIEN=16))
- .N BIREFI S BIREFI=$$VNAME^BIUTL2(BIVIEN)_" - "_$$CONTXT^BIUTL6(BICRIEN)
- .D REFUSAL("IMMUNIZATION",BIDFN,BIDATE,BIREFI,9999999.14,BIVIEN,"R",$G(DUZ))
+ ;D:((BICRIEN=11)!(BICRIEN=16))
+ ;.N BIREFI S BIREFI=$$VNAME^BIUTL2(BIVIEN)_" - "_$$CONTXT^BIUTL6(BICRIEN)
+ ;.D REFUSAL("IMMUNIZATION",BIDFN,BIDATE,BIREFI,9999999.14,BIVIEN,"R",$G(DUZ))
  ;
  ;
  ;---> Add Adverse Reaction to ART Package.
  ;---> Sept 2005: Not possible at this time.
+ ;---> VEN/SMH - 2015, 10 years later. I still don't think we can do it.
  I (BICRIEN=4)!(BICRIEN=8)!(BICRIEN=9) D
  .;SEND EVENT(?) TO ART PACKAGE.
  ;
@@ -129,12 +134,32 @@ ADDCONT(BIERR,BIDATA) ;PEP - Add a Contraindication.
  .S BIFLD(.01)=BIDFN,BIFLD(.02)=BIIEN
  .S BIFLD(.03)=BIMDEF("C"),BIFLD(.04)=BIMDEF("D")
  .D UPDATE^BIFMAN(9002084.11,,.BIFLD,.BIERR)
- Q
+ QUIT
  ;
- ;
- ;********** PATCH 5, v8.5, JUL 01,2013, IHS/CMI/MWR
- ;---> Add SNOMED Codes for this Contraindication.
+ ;---> Add extra SNOMED Codes for this Contraindication (IHS)
+ ;---> (VEN/SMH - I really don't know if this is needed)
  ;----------
+SNOMED0(BIVIEN,BICRIEN,BIIEN) ; EP only for IHS - Prep to add SNOMED data.
+ ; VEN/SMH Moved down here for code clarity as only applicable for RPMS
+ ; ---> Internal Call to call SNOMED below; this does the actual filing
+ ; ---> Pars:
+ ; ---> - BIVIEN  Vaccine IEN
+ ; ---> - BICRIEN CI IEN
+ ; ---> - BIIEN (ref) BIIEN(1) contains the recored obtained by UPDATE^DIE
+ N I,X,Y
+ ;---> Get string of Vaccine Component IEN's.
+ S X=$$VCOMPS^BIUTL2(BIVIEN)
+ ;---> If no components process the vaccine itself.
+ S:('+X) X=BIVIEN
+ ;
+ F I=1:1:6 S Y=$P(X,";",I) Q:'Y  D
+ .;---> Get Vaccine Group IEN of this vaccine.
+ .N BIVGRP S BIVGRP=$$IMMVG^BIUTL2(Y)
+ .;---> Quit if Vaccine Group is Other, Skin Test, or Combo.
+ .Q:((BIVGRP=12)!(BIVGRP=13)!(BIVGRP=14)!(BIVGRP<1))
+ .;---> Call Lori's Magic Mapper to get SNOMED Code.
+ .D SNOMED(BIVGRP,BICRIEN,BIIEN(1))
+ ;
 SNOMED(BIVGRP,BICRIEN,BIIEN) ;PP - Add SNOMED data.
  ;---> File SNOMED data for this Contraindication.
  ;---> Parameters:
@@ -196,7 +221,7 @@ DELCONT(BIERR,BICIEN) ;PEP - Add a Contraindication.
  S BIFLD(.03)=$P(BINODE,U,3)
  S BIFLD(.04)=$P(BINODE,U,4)
  S BIFLD(2.01)=+$G(DUZ)
- D NOW^%DTC S BIFLD(2.02)=%
+ N % D NOW^%DTC S BIFLD(2.02)=%
  D UPDATE^BIFMAN(9002084.115,.BIIEN,.BIFLD,.BIERR)
  ;---> Quit if new entry failed.
  I BIERR]"" S BIERR=BI31_BIERR Q
@@ -235,7 +260,7 @@ EDITCAS(BIERR,BIDATA) ;EP
  .D ERRCD^BIUTL2(207,.BIERR) S BIERR=BI31_BIERR
  ;
  ;---> Break out BIDATA into pieces.
- N A,B,C,D,E,F,G,H,I,J
+ N A,B,C,D,E,F,G,H,I,J,K
  S A=$P(BIDATA,U,1)    ;Patient DFN.
  S B=$P(BIDATA,U,2)    ;IEN of Case Manager.
  S C=$P(BIDATA,U,3)    ;Parent or Guardian, text.
