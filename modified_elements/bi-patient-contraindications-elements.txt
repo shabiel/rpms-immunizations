@@ -37,3 +37,8 @@ itemName: BI CONTRAINDICATION ADD                 itemAction: D ADDCON^BIPATCO2
 itemName: BI CONTRAINDICATION HELP                itemAction: D HELP1^BIPATCO
 itemName: BI CONTRAINDICATIONS EDIT               itemAction: D EDITCON^BIPATCO2
  
+ 
+ Notes for reverse port to RPMS:
+ Pointed to file changed
+ 2. coll: File changed (.03       REASON FOR CONTRAINDICATION (P920.4'), [0;3])
+ 3. coll: Form changed to point to new file.

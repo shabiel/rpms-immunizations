@@ -33,3 +33,11 @@ Next work on Patient Enter/Edit Imm.
 --> Get Screen Form working
 --> Add VISTA fields to it.
 --> Create a filer for VISTA
+
+
+----
+WORKING ON CI:
+next thing: get LM delete working.
+check that filing is correct (there are many elements to that)
+(duplicate files now when editing).
+Port files and forms to RPMS
