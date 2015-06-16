@@ -37,7 +37,8 @@ Next work on Patient Enter/Edit Imm.
 
 ----
 WORKING ON CI:
-next thing: get LM delete working.
-check that filing is correct (there are many elements to that)
-(duplicate files now when editing).
-Port files and forms to RPMS
+next thing: get LM delete working --> DONE.
+Check that filing is correct (there are many elements to that)--> DONE
+SNOMED field is sometimes not populated. Why not??? Check that.
+LM Screen is too narrow. Fix that.
+Port files and forms to RPMS.
