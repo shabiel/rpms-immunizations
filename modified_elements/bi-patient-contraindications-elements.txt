@@ -1,0 +1,39 @@
+List Manager Workbench                                  Jun 05, 2015@15:14:29                                    Page:    1 of    1 
+Template: BI PATIENT CONTRAINDICATIONS
+------------------------------------------------------------------------------------------------------------------------------------
+  Demographics                                      List Region                 
+ Template Name: BI PATIENT CONTRAINDICATIONS          Top Margin:   7           
+   Entity Name: Contraindication                   Bottom    "  :  14           
+  Screen Title: CONTRAINDICATIONS SCREEN            Right    "  :  80           
+                                                                                
+                                                                                
+  Protocol Information                              Other Fields                
+   Type of List: PROTOCOL                              OK to Transport?: OK     
+  Protocol Menu: BI MENU CONTRAINDICATIONS           Use Cursor Control: YES    
+ Print Protocol:                            Allowable Number of Actions: 1      
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:        
+                                                     Automatic Defaults: YES    
+                                                                                
+                                                                                
+                                                                                
+  MUMPS Code Related                                                            
+ Header: D HDR^BIPATCO                                                          
+  Entry: D INIT^BIPATCO                                                         
+   Exit: D EXIT^BIPATCO                                                         
+ Expand:                                                                        
+   Help: D HELP^BIPATCO                                                         
+  Array:  ^TMP("BILMCO",$J)                                                     
+                                                                                
+  Caption Line Information                                                      
+ Name      Column    Width     Display Text                  Video  Scroll Lock 
+ SELECTION   5         1       #                                    NO          
+ VACCINE     8        10       Vaccine                              NO          
+ REASON     20        30       Reason                               NO          
+ DATE NOTED 48        12       Date Noted                           NO          
+
+ Select PROTOCOL NAME: BI MENU CONTRAINDICATIONS       Contraindications     
+itemName: BI CONTRAINDICATION DELETE              itemAction: D DELETCON^BIPATCO2
+itemName: BI CONTRAINDICATION ADD                 itemAction: D ADDCON^BIPATCO2
+itemName: BI CONTRAINDICATION HELP                itemAction: D HELP1^BIPATCO
+itemName: BI CONTRAINDICATIONS EDIT               itemAction: D EDITCON^BIPATCO2
+ 
