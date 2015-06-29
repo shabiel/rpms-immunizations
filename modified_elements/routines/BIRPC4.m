@@ -159,6 +159,7 @@ SNOMED0(BIVIEN,BICRIEN,BIIEN) ; EP only for IHS - Prep to add SNOMED data.
  .Q:((BIVGRP=12)!(BIVGRP=13)!(BIVGRP=14)!(BIVGRP<1))
  .;---> Call Lori's Magic Mapper to get SNOMED Code.
  .D SNOMED(BIVGRP,BICRIEN,BIIEN(1))
+ QUIT
  ;
 SNOMED(BIVGRP,BICRIEN,BIIEN) ;PP - Add SNOMED data.
  ;---> File SNOMED data for this Contraindication.
