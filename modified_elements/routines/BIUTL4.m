@@ -488,3 +488,39 @@ BADRDAT ;EP
  I Y>DT S DDSERROR="" D  Q
  .D HLP^DDSUTL(" * Date of Reading may not be later than today.")
  Q
+ ;
+ ; VEN/SMH - HAND EDIT IMMUN CONTRAINDICATIONS (920.4) file
+ ; NB: This is just one time use code. No need to run again.
+ ; This is written to port the VISTA CI data from VISTA to RPMS.
+ ; Kept here for reference.
+KILLALL ; [Private] Delete all entries
+ N I F I=0:0 S I=$O(^PXV(920.4,I)) Q:'I  D
+ . N J F J=0:0 S J=$O(^PXV(920.4,I,3,J)) Q:'J  D
+ .. N DA,DIK S DA(1)=I,DA=J,DIK=$$OREF^DILF($NA(^PXV(920.4,I,3))) D ^DIK
+ QUIT
+ ;
+EDIT2 ; [Private] Get entries from VISTA and file them.
+ ; ZEXCEPT: AUTTIMM,PXV
+ N FDA,DIERR
+ N CNT S CNT=0
+ N VISTA S VISTA="/var/local/foia201502/mumps.gld"
+ N VGLOCI S VGLOCI=$NA(^|VISTA|PXV(920.4)) ; exteneded ref to VISTA
+ N VGLOIMM S VGLOIMM=$NA(^|VISTA|AUTTIMM)  ; ditto
+ N BII F BII=0:0 S BII=$O(^PXV(920.4,BII)) Q:'BII  D
+ . W $P(^PXV(920.4,BII,0),U),!
+ . N BIJ F BIJ=0:0 S BIJ=$O(@VGLOCI@(BII,3,BIJ)) Q:'BIJ  D
+ .. S CNT=CNT+1
+ .. N IMM S IMM=$P(@VGLOCI@(BII,3,BIJ,0),U)
+ .. N VIMM S VIMM=$P(@VGLOIMM@(IMM,0),U)
+ .. N CVX S CVX=$P(@VGLOIMM@(IMM,0),U,3)
+ .. ; W ?3,VIMM,?40,CVX,!
+ .. N RPMSIEN S RPMSIEN=$$FIND1^DIC(9999999.14,,"QX",+CVX,"C")
+ .. W ?3,CVX," ",$$GET1^DIQ(9999999.14,RPMSIEN,.01),!
+ .. N C S C=","
+ .. N P S P="+"
+ .. S FDA(920.43,P_CNT_C_BII_C,.01)=RPMSIEN
+ .. ; N DIE,DR,DA S DIE=$$OREF^DILF($NA(^PXV(920.4))),DR="3//CVX",DA=BII D ^DIE
+ ;
+ D UPDATE^DIE(,$NA(FDA))
+ ;i $d(DIERR) break
+ QUIT
