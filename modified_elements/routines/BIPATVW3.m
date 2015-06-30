@@ -9,6 +9,7 @@ BIPATVW3 ;IHS/CMI/MWR - ADD OTHER ITEMS, DISPLAY HELP; MAY 10, 2010
  ;
  ;----------
 LASTLET(BIDFN,BIRMAX,BIENT) ;EP
+ ; ZEXCEPT: BI31
  ;---> Retrieve date of last letter sent to this patient and
  ;---> display it just below forecast.
  ;---> Parameters:
@@ -46,6 +47,7 @@ LASTLET(BIDFN,BIRMAX,BIENT) ;EP
  ;
  ;----------
 CONTRAS(BIDFN,BILMAX,BIRMAX,BIENT) ;EP
+ ; ZEXCEPT: BI31
  ;---> Now retrieve Patient's Contraindications and append to
  ;---> right half of screen, below Forecast.
  ;---> Parameters:
@@ -84,6 +86,7 @@ CONTRAS(BIDFN,BILMAX,BIRMAX,BIENT) ;EP
  ;
  ;---> Build Listmanager array from BICONT string.
  ;
+ N I,Y
  F I=1:1 S Y=$P(BICONT,U,I) Q:Y=""  D
  .;---> Build display line for this Contraindication.
  .N V S V="|"
@@ -126,8 +129,14 @@ ADDINFO(BIDFN,BILINE,BIENT,BIDUZ2,BIFDT) ;EP
  ;
  S X="   Case Manager.........: "_$$CMGR^BIUTL1(BIDFN,1)
  D WRITE^BIPATVW1(.BILINE,X,,Z)
- S X="   Designated Provider..: "_$$DPRV^BIUTL1(BIDFN,1)
- D WRITE^BIPATVW1(.BILINE,X,,Z)
+ ;
+ ; ---
+ ; TODO (VEN/SMH): 
+ ; VISTA has the PCMM package for me grab a provider from.
+ ; Alas, not that important, so I am skipping this for VISTA.
+ I $$RPMS^BIUTL9() D
+ . S X="   Designated Provider..: "_$$DPRV^BIUTL1(BIDFN,1)
+ . D WRITE^BIPATVW1(.BILINE,X,,Z)
  S X="   Parent/Guardian......: "_$$PARENT^BIUTL1(BIDFN)
  D WRITE^BIPATVW1(.BILINE,X,,Z)
  S X="   Current Community....: "_$$CURCOM^BIUTL11(BIDFN,1)
