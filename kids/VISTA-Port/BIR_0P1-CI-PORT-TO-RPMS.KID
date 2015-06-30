@@ -1,0 +1,1188 @@
+KIDS Distribution saved on Jun 29, 2015@16:58:38
+Port of Contraindications file (920.4)
+**KIDS**:BIR 0.1^
+
+**INSTALL NAME**
+BIR 0.1
+"BLD",4558,0)
+BIR 0.1^^0^3150629^y
+"BLD",4558,1,0)
+^^1^1^3150629^
+"BLD",4558,1,1,0)
+Port of changes to Contraindications to RPMS.
+"BLD",4558,4,0)
+^9.64PA^920.4^1
+"BLD",4558,4,920.4,0)
+920.4
+"BLD",4558,4,920.4,222)
+y^y^f^^n^^y^o^n
+"BLD",4558,4,"B",920.4,920.4)
+
+"BLD",4558,6.3)
+2
+"BLD",4558,"KRN",0)
+^9.67PA^779.2^20
+"BLD",4558,"KRN",.4,0)
+.4
+"BLD",4558,"KRN",.401,0)
+.401
+"BLD",4558,"KRN",.402,0)
+.402
+"BLD",4558,"KRN",.403,0)
+.403
+"BLD",4558,"KRN",.403,"NM",0)
+^9.68A^1^1
+"BLD",4558,"KRN",.403,"NM",1,0)
+BI FORM-CONTRAIND ADD/EDIT    FILE #9000001^9000001^0
+"BLD",4558,"KRN",.403,"NM","B","BI FORM-CONTRAIND ADD/EDIT    FILE #9000001",1)
+
+"BLD",4558,"KRN",.5,0)
+.5
+"BLD",4558,"KRN",.84,0)
+.84
+"BLD",4558,"KRN",3.6,0)
+3.6
+"BLD",4558,"KRN",3.8,0)
+3.8
+"BLD",4558,"KRN",9.2,0)
+9.2
+"BLD",4558,"KRN",9.8,0)
+9.8
+"BLD",4558,"KRN",19,0)
+19
+"BLD",4558,"KRN",19.1,0)
+19.1
+"BLD",4558,"KRN",101,0)
+101
+"BLD",4558,"KRN",409.61,0)
+409.61
+"BLD",4558,"KRN",771,0)
+771
+"BLD",4558,"KRN",779.2,0)
+779.2
+"BLD",4558,"KRN",870,0)
+870
+"BLD",4558,"KRN",8989.51,0)
+8989.51
+"BLD",4558,"KRN",8989.52,0)
+8989.52
+"BLD",4558,"KRN",8994,0)
+8994
+"BLD",4558,"KRN","B",.4,.4)
+
+"BLD",4558,"KRN","B",.401,.401)
+
+"BLD",4558,"KRN","B",.402,.402)
+
+"BLD",4558,"KRN","B",.403,.403)
+
+"BLD",4558,"KRN","B",.5,.5)
+
+"BLD",4558,"KRN","B",.84,.84)
+
+"BLD",4558,"KRN","B",3.6,3.6)
+
+"BLD",4558,"KRN","B",3.8,3.8)
+
+"BLD",4558,"KRN","B",9.2,9.2)
+
+"BLD",4558,"KRN","B",9.8,9.8)
+
+"BLD",4558,"KRN","B",19,19)
+
+"BLD",4558,"KRN","B",19.1,19.1)
+
+"BLD",4558,"KRN","B",101,101)
+
+"BLD",4558,"KRN","B",409.61,409.61)
+
+"BLD",4558,"KRN","B",771,771)
+
+"BLD",4558,"KRN","B",779.2,779.2)
+
+"BLD",4558,"KRN","B",870,870)
+
+"BLD",4558,"KRN","B",8989.51,8989.51)
+
+"BLD",4558,"KRN","B",8989.52,8989.52)
+
+"BLD",4558,"KRN","B",8994,8994)
+
+"DATA",920.4,4,0)
+SEVERE ALLERGY EGGS^91930004^^04^C
+"DATA",920.4,4,1)
+Allergy to eggs (disorder) 
+"DATA",920.4,4,2)
+Anaphylaxis or severe allergy to egg or egg protein
+"DATA",920.4,4,3,0)
+^920.43PA^10^10
+"DATA",920.4,4,3,1,0)
+162
+"DATA",920.4,4,3,2,0)
+120
+"DATA",920.4,4,3,3,0)
+228
+"DATA",920.4,4,3,4,0)
+122
+"DATA",920.4,4,3,5,0)
+140
+"DATA",920.4,4,3,6,0)
+242
+"DATA",920.4,4,3,7,0)
+243
+"DATA",920.4,4,3,8,0)
+253
+"DATA",920.4,4,3,9,0)
+254
+"DATA",920.4,4,3,10,0)
+260
+"DATA",920.4,4,"VUID")
+^^^SCT 
+"DATA",920.4,6,0)
+SEVERE NEOMYCIN ALLERGY^294468006^^06^C
+"DATA",920.4,6,1)
+Neomycin allergy (disorder) 
+"DATA",920.4,6,2)
+Anaphylaxis or severe allergy to Neomycin
+"DATA",920.4,6,3,0)
+^920.43PA^14^14
+"DATA",920.4,6,3,1,0)
+117
+"DATA",920.4,6,3,2,0)
+107
+"DATA",920.4,6,3,3,0)
+132
+"DATA",920.4,6,3,4,0)
+101
+"DATA",920.4,6,3,5,0)
+131
+"DATA",920.4,6,3,6,0)
+122
+"DATA",920.4,6,3,7,0)
+201
+"DATA",920.4,6,3,8,0)
+126
+"DATA",920.4,6,3,9,0)
+216
+"DATA",920.4,6,3,10,0)
+226
+"DATA",920.4,6,3,11,0)
+227
+"DATA",920.4,6,3,12,0)
+230
+"DATA",920.4,6,3,13,0)
+242
+"DATA",920.4,6,3,14,0)
+243
+"DATA",920.4,6,"VUID")
+^^^SCT 
+"DATA",920.4,7,0)
+SEVERE STREPTOMYCIN ALLERGY^294466005^^07^C
+"DATA",920.4,7,1)
+Streptomycin allergy (disorder) 
+"DATA",920.4,7,2)
+Anaphylaxis or severe allergy to Streptomycin
+"DATA",920.4,7,3,0)
+^920.43PA^1^1
+"DATA",920.4,7,3,1,0)
+107
+"DATA",920.4,7,"VUID")
+^^^SCT 
+"DATA",920.4,9,0)
+SEVERE REACTION PREVIOUS DOSE^VXC20^^09^C
+"DATA",920.4,9,1)
+allergy to previous dose of this vaccine or to any of its unlisted vaccine components (anaphylactic) 
+"DATA",920.4,9,2)
+Severe allergy or reaction to previous dose of this vaccine or to any of its vaccine components, including Guillan Barre following previous dose without other explanation
+"DATA",920.4,9,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,11,0)
+LATEX ALLERGY^300916003^^^C
+"DATA",920.4,11,1)
+Latex allergy (disorder) 
+"DATA",920.4,11,2)
+Allergy to latex (see package insert to determine whether product contains latex)
+"DATA",920.4,11,"VUID")
+^^^SCT 
+"DATA",920.4,12,0)
+SEVERE POLYMYXIN B ALLERGY^294530006^^^C
+"DATA",920.4,12,1)
+Polymyxin B allergy (disorder) 
+"DATA",920.4,12,2)
+Anaphylaxis or severe allergy to Polymyxin B
+"DATA",920.4,12,3,0)
+^920.43PA^7^7
+"DATA",920.4,12,3,1,0)
+101
+"DATA",920.4,12,3,2,0)
+139
+"DATA",920.4,12,3,3,0)
+216
+"DATA",920.4,12,3,4,0)
+226
+"DATA",920.4,12,3,5,0)
+230
+"DATA",920.4,12,3,6,0)
+242
+"DATA",920.4,12,3,7,0)
+243
+"DATA",920.4,12,"VUID")
+^^^SCT 
+"DATA",920.4,13,0)
+HX INTUSSUSCEPTION^VXC21^^^C
+"DATA",920.4,13,1)
+Previous history of intussusception 
+"DATA",920.4,13,2)
+Previous history of intussusception
+"DATA",920.4,13,3,0)
+^920.43PA^4^4
+"DATA",920.4,13,3,1,0)
+135
+"DATA",920.4,13,3,2,0)
+222
+"DATA",920.4,13,3,3,0)
+225
+"DATA",920.4,13,3,4,0)
+154
+"DATA",920.4,13,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,14,0)
+ENCEPHALOPATHY PREVIOUS DOSE^VXC22^^15^C
+"DATA",920.4,14,1)
+encephalopathy within 7 days of previous dose of DTP or DTaP 
+"DATA",920.4,14,2)
+History of encephalopathy, without other identifiable cause, occurring within 7 days of previous pertussis-containing vaccine.
+"DATA",920.4,14,3,0)
+^920.43PA^13^13
+"DATA",920.4,14,3,1,0)
+145
+"DATA",920.4,14,3,2,0)
+133
+"DATA",920.4,14,3,3,0)
+151
+"DATA",920.4,14,3,4,0)
+166
+"DATA",920.4,14,3,5,0)
+208
+"DATA",920.4,14,3,6,0)
+211
+"DATA",920.4,14,3,7,0)
+212
+"DATA",920.4,14,3,8,0)
+216
+"DATA",920.4,14,3,9,0)
+221
+"DATA",920.4,14,3,10,0)
+226
+"DATA",920.4,14,3,11,0)
+230
+"DATA",920.4,14,3,12,0)
+238
+"DATA",920.4,14,3,13,0)
+103
+"DATA",920.4,14,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,15,0)
+CURRENT FEVER^VXC23^^16^P
+"DATA",920.4,15,1)
+current fever with moderate- to-severe illness
+"DATA",920.4,15,2)
+Not a contraindication to vaccination, but may consider delaying vaccine if current fever.
+"DATA",920.4,15,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,16,0)
+CURRENT ACUTE ILLNESS^VXC24^^21^P
+"DATA",920.4,16,1)
+current acute illness, moderate to severe (with or without fever) (e.g., diarrhea, otitis media, vomiting) 
+"DATA",920.4,16,2)
+Not a contraindication to vaccination, but may consider delaying vaccine during current acute illness.
+"DATA",920.4,16,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,18,0)
+HX ARTHUS REACTION^VXC25^^^C
+"DATA",920.4,18,1)
+History of Arthus hypersensitivity reaction to a tetanus-containing vaccine administered < 10 yrs previously 
+"DATA",920.4,18,2)
+History of Arthus hypersensitivity reaction to a tetanus-containing vaccine administered <10 years previously. Defer vaccine until 10 years after Arthus reaction.
+"DATA",920.4,18,3,0)
+^920.43PA^20^20
+"DATA",920.4,18,3,1,0)
+103
+"DATA",920.4,18,3,2,0)
+102
+"DATA",920.4,18,3,3,0)
+133
+"DATA",920.4,18,3,4,0)
+151
+"DATA",920.4,18,3,5,0)
+123
+"DATA",920.4,18,3,6,0)
+104
+"DATA",920.4,18,3,7,0)
+166
+"DATA",920.4,18,3,8,0)
+208
+"DATA",920.4,18,3,9,0)
+211
+"DATA",920.4,18,3,10,0)
+212
+"DATA",920.4,18,3,11,0)
+216
+"DATA",920.4,18,3,12,0)
+218
+"DATA",920.4,18,3,13,0)
+219
+"DATA",920.4,18,3,14,0)
+221
+"DATA",920.4,18,3,15,0)
+226
+"DATA",920.4,18,3,16,0)
+230
+"DATA",920.4,18,3,17,0)
+238
+"DATA",920.4,18,3,18,0)
+244
+"DATA",920.4,18,3,19,0)
+245
+"DATA",920.4,18,3,20,0)
+246
+"DATA",920.4,18,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,19,0)
+UNSTABLE/EVOLVING NEURO DZ^VXC26^^37^P
+"DATA",920.4,19,1)
+underlying unstable, evolving neurologic disorders, (including seizure disorders, cerebral palsy, and developmental delay) 
+"DATA",920.4,19,2)
+Underlying unstable, evolving neurologic disorders, (including seizure disorders, cerebral palsy, Guillan Barre and developmental delay)
+"DATA",920.4,19,3,0)
+^920.43PA^29^29
+"DATA",920.4,19,3,1,0)
+145
+"DATA",920.4,19,3,2,0)
+148
+"DATA",920.4,19,3,3,0)
+217
+"DATA",920.4,19,3,4,0)
+133
+"DATA",920.4,19,3,5,0)
+151
+"DATA",920.4,19,3,6,0)
+166
+"DATA",920.4,19,3,7,0)
+149
+"DATA",920.4,19,3,8,0)
+208
+"DATA",920.4,19,3,9,0)
+211
+"DATA",920.4,19,3,10,0)
+212
+"DATA",920.4,19,3,11,0)
+216
+"DATA",920.4,19,3,12,0)
+140
+"DATA",920.4,19,3,13,0)
+221
+"DATA",920.4,19,3,14,0)
+226
+"DATA",920.4,19,3,15,0)
+229
+"DATA",920.4,19,3,16,0)
+230
+"DATA",920.4,19,3,17,0)
+238
+"DATA",920.4,19,3,18,0)
+236
+"DATA",920.4,19,3,19,0)
+242
+"DATA",920.4,19,3,20,0)
+243
+"DATA",920.4,19,3,21,0)
+248
+"DATA",920.4,19,3,22,0)
+253
+"DATA",920.4,19,3,23,0)
+254
+"DATA",920.4,19,3,24,0)
+255
+"DATA",920.4,19,3,25,0)
+257
+"DATA",920.4,19,3,26,0)
+259
+"DATA",920.4,19,3,27,0)
+260
+"DATA",920.4,19,3,28,0)
+264
+"DATA",920.4,19,3,29,0)
+103
+"DATA",920.4,19,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,20,0)
+CURRENT IMMUNODEFICIENCY^VXC27^^36^C
+"DATA",920.4,20,1)
+immunodeficiency due to any cause, including HIV (hematologic and solid tumors, congenital immunodeficiency, long-term immunosuppressive therapy, including steroids) 
+"DATA",920.4,20,2)
+Immunodeficiency for any cause, including HIV, hematologic and solid tumors, congenital immunodeficiency, long-term immunosuppressive therapy, including steroids. Caution with live vaccines. Inactivated flu vaccine is NOT contraindicated.
+"DATA",920.4,20,3,0)
+^920.43PA^8^8
+"DATA",920.4,20,3,1,0)
+117
+"DATA",920.4,20,3,2,0)
+116
+"DATA",920.4,20,3,3,0)
+132
+"DATA",920.4,20,3,4,0)
+201
+"DATA",920.4,20,3,5,0)
+140
+"DATA",920.4,20,3,6,0)
+227
+"DATA",920.4,20,3,7,0)
+253
+"DATA",920.4,20,3,8,0)
+255
+"DATA",920.4,20,"VUID")
+^^^CDCPHINVS 
+"DATA",920.4,21,0)
+CURRENT PREGNANCY^77386006^^39^C
+"DATA",920.4,21,1)
+Patient currently pregnant (finding) 
+"DATA",920.4,21,2)
+Patient currently pregnant. Avoid live vaccines. Inactivated influenza vaccine is NOT contraindicated.
+"DATA",920.4,21,3,0)
+^920.43PA^8^8
+"DATA",920.4,21,3,1,0)
+117
+"DATA",920.4,21,3,2,0)
+116
+"DATA",920.4,21,3,3,0)
+132
+"DATA",920.4,21,3,4,0)
+201
+"DATA",920.4,21,3,5,0)
+140
+"DATA",920.4,21,3,6,0)
+227
+"DATA",920.4,21,3,7,0)
+253
+"DATA",920.4,21,3,8,0)
+255
+"DATA",920.4,21,"VUID")
+^^^SCT 
+"DATA",920.4,22,0)
+THROMBOCYTOPENIA^302215000^^40^P
+"DATA",920.4,22,1)
+Thrombocytopenic disorder (disorder) 
+"DATA",920.4,22,2)
+Precaution: MMR vaccination may cause or worsen thrombocytopenia.
+"DATA",920.4,22,3,0)
+^920.43PA^2^2
+"DATA",920.4,22,3,1,0)
+117
+"DATA",920.4,22,3,2,0)
+201
+"DATA",920.4,22,"VUID")
+^^^SCT 
+"DATA",920.4,25,0)
+CONCURRENT TB SKIN TEST^^^^P
+"DATA",920.4,25,2)
+If patient needs TB skin test (PPD) this visit, avoid giving MMR. MMR can suppress PPD reaction. Consider giving PPD this visit, and MMR when patient returns to have PPD read. If MMR given first, must wait 4 weeks to give PPD/TB skin test.
+"DATA",920.4,25,3,0)
+^920.43PA^2^2
+"DATA",920.4,25,3,1,0)
+117
+"DATA",920.4,25,3,2,0)
+201
+"FIA",920.4)
+IMM CONTRAINDICATIONS
+"FIA",920.4,0)
+^PXV(920.4,
+"FIA",920.4,0,0)
+920.4I
+"FIA",920.4,0,1)
+y^y^f^^n^^y^o^n
+"FIA",920.4,0,10)
+
+"FIA",920.4,0,11)
+
+"FIA",920.4,0,"RLRO")
+
+"FIA",920.4,920.4)
+0
+"FIA",920.4,920.43)
+0
+"FIA",920.4,920.499)
+0
+"IX",920.4,920.4,"AMASTERVUID",0)
+920.4^AMASTERVUID^This cross-reference identifies the Master entry for a VUID.^R^^R^IR^I^920.4^^^^^S
+"IX",920.4,920.4,"AMASTERVUID",.1,0)
+^^3^3^3150127^
+"IX",920.4,920.4,"AMASTERVUID",.1,1,0)
+If multiple entries have the same VUID in the file, this cross-reference 
+"IX",920.4,920.4,"AMASTERVUID",.1,2,0)
+can be used to identify the Master entry for a VUID associated with a 
+"IX",920.4,920.4,"AMASTERVUID",.1,3,0)
+Term/Concept.
+"IX",920.4,920.4,"AMASTERVUID",1)
+S ^PXV(920.4,"AMASTERVUID",$E(X(1),1,30),X(2),DA)=""
+"IX",920.4,920.4,"AMASTERVUID",2)
+K ^PXV(920.4,"AMASTERVUID",$E(X(1),1,30),X(2),DA)
+"IX",920.4,920.4,"AMASTERVUID",2.5)
+K ^PXV(920.4,"AMASTERVUID")
+"IX",920.4,920.4,"AMASTERVUID",11.1,0)
+^.114IA^2^2
+"IX",920.4,920.4,"AMASTERVUID",11.1,1,0)
+1^F^920.4^99.99^30^1^F
+"IX",920.4,920.4,"AMASTERVUID",11.1,1,3)
+
+"IX",920.4,920.4,"AMASTERVUID",11.1,2,0)
+2^F^920.4^99.98^^2^F
+"IX",920.4,920.4,"AMASTERVUID",11.1,2,3)
+
+"KRN",.403,369,-1)
+0^1
+"KRN",.403,369,0)
+BI FORM-CONTRAIND ADD/EDIT^@^@^^2980101.1522^^^9000001^0^1^1
+"KRN",.403,369,14)
+
+"KRN",.403,369,40,0)
+^.4031I^1^1
+"KRN",.403,369,40,1,0)
+1^^1,1
+"KRN",.403,369,40,1,1)
+Page 1
+"KRN",.403,369,40,1,40,0)
+^.4032IP^1230^2
+"KRN",.403,369,40,1,40,1229,0)
+BI BLK-CONTRAINDICATION HEADER^1^1,1^d
+"KRN",.403,369,40,1,40,1230,0)
+BI BLK-CONTRAINDICATION ADD^2^7,1^e
+"KRN",.404,1229,0)
+BI BLK-CONTRAINDICATION HEADER^9000001^
+"KRN",.404,1229,40,0)
+^.4044I^7^7
+"KRN",.404,1229,40,1,0)
+1^!M^1
+"KRN",.404,1229,40,1,.1)
+S Y="* * *  "_$S('$G(BI("N")):"ADD",1:"EDIT")_" A CONTRAINDICATION  * * *"
+"KRN",.404,1229,40,1,2)
+^^2,22
+"KRN",.404,1229,40,2,0)
+2^!M^1
+"KRN",.404,1229,40,2,.1)
+S Y=IOINORM_" Patient: "_IORVON_$$NAME^BIUTL1(BIDFN)_IOINORM
+"KRN",.404,1229,40,2,2)
+^^4,1
+"KRN",.404,1229,40,3,0)
+3^!M^1
+"KRN",.404,1229,40,3,.1)
+S Y="DOB: "_IORVON_$$DOBF^BIUTL1(BIDFN)_IOINORM
+"KRN",.404,1229,40,3,2)
+^^4,44
+"KRN",.404,1229,40,4,0)
+4^!M^1
+"KRN",.404,1229,40,4,.1)
+S Y="  Chart#: "_IORVON_$$HRCN^BIUTL1(BIDFN)_" at "_$E($$INSTTX^BIUTL6($G(DUZ(2))),1,17)_IOINORM
+"KRN",.404,1229,40,4,2)
+^^5,1
+"KRN",.404,1229,40,5,0)
+5^!M^1
+"KRN",.404,1229,40,5,.1)
+S Y=$$ACTIVE^BIUTL1(BIDFN)_"     "_$$SEXW^BIUTL1(BIDFN)
+"KRN",.404,1229,40,5,2)
+^^5,49
+"KRN",.404,1229,40,6,0)
+6^________________________________________________________________________________^1
+"KRN",.404,1229,40,6,2)
+^^6,1
+"KRN",.404,1229,40,7,0)
+.5^!M^1
+"KRN",.404,1229,40,7,.1)
+S Y="Imm v"_$$VER^BILOGO()
+"KRN",.404,1229,40,7,2)
+^^2,2
+"KRN",.404,1230,0)
+BI BLK-CONTRAINDICATION ADD^9000001
+"KRN",.404,1230,11)
+D LDCONTR^BIUTL7
+"KRN",.404,1230,12)
+
+"KRN",.404,1230,40,0)
+^.4044I^11^4
+"KRN",.404,1230,40,2,0)
+1^Vaccine^2
+"KRN",.404,1230,40,2,2)
+3,15^30^3,6
+"KRN",.404,1230,40,2,4)
+1
+"KRN",.404,1230,40,2,11)
+D HLP^DDSUTL("Select the vaccine that is contraindicated for this patient.")
+"KRN",.404,1230,40,2,12)
+S BI("B")=X D VACSEL^BIUTL4(X)
+"KRN",.404,1230,40,2,20)
+P^^9999999.14:QEM
+"KRN",.404,1230,40,2,21,0)
+^^1^1^2990530^^
+"KRN",.404,1230,40,2,21,1,0)
+Select the vaccine that is contraindicated for this patient.
+"KRN",.404,1230,40,3,0)
+2.5^^2
+"KRN",.404,1230,40,3,2)
+4,15^12
+"KRN",.404,1230,40,3,4)
+0^^^1
+"KRN",.404,1230,40,3,20)
+F
+"KRN",.404,1230,40,10,0)
+4^Reason^2
+"KRN",.404,1230,40,10,2)
+6,15^26^6,7
+"KRN",.404,1230,40,10,4)
+1
+"KRN",.404,1230,40,10,10)
+I '$G(BI("B")) D HLP^DDSUTL("You must first choose a vaccine."),HLP^DDSUTL("$$EOP") S DDSBR=1
+"KRN",.404,1230,40,10,11)
+D HLP^DDSUTL("Select the reason or reaction that has caused this vaccine/immunization to be contraindicated for this patient.")
+"KRN",.404,1230,40,10,12)
+S BI("C")=X D CREASCHK^BIUTL7
+"KRN",.404,1230,40,10,20)
+P^^920.4:QEM
+"KRN",.404,1230,40,10,21,0)
+^^2^2^3150605^^^
+"KRN",.404,1230,40,10,21,1,0)
+Select the reason or reaction that has caused this vaccine/immunization to
+"KRN",.404,1230,40,10,21,2,0)
+be contraindicated for this patient.
+"KRN",.404,1230,40,10,24)
+S DIR("S")="I $$CREASCR^BIUTL4()"
+"KRN",.404,1230,40,11,0)
+5^Date Noted^2
+"KRN",.404,1230,40,11,2)
+9,15^11^9,3
+"KRN",.404,1230,40,11,3)
+!M
+"KRN",.404,1230,40,11,3.1)
+S Y=$$TXDT^BIUTL5(DT)
+"KRN",.404,1230,40,11,11)
+D HLP^DDSUTL("Enter the date on which this Contraindication was noted.")
+"KRN",.404,1230,40,11,12)
+S BI("D")=X
+"KRN",.404,1230,40,11,20)
+D^^::PTEX
+"KRN",.404,1230,40,11,21,0)
+^^1^1^2990530^^
+"KRN",.404,1230,40,11,21,1,0)
+Enter the date on which this Contraindication was noted.
+"MBREQ")
+0
+"ORD",8,.403)
+.403;8;;;EDEOUT^DIFROMSO(.403,DA,"",XPDA);FPRE^DIFROMSI(.403,"",XPDA);EPRE^DIFROMSI(.403,DA,$E("N",$G(XPDNEW)),XPDA,"",OLDA);;EPOST^DIFROMSI(.403,DA,"",XPDA);DEL^DIFROMSK(.403,"",%)
+"ORD",8,.403,0)
+FORM
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"SEC","^DIC",920.4,920.4,0,"AUDIT")
+@
+"SEC","^DIC",920.4,920.4,0,"DD")
+@
+"SEC","^DIC",920.4,920.4,0,"DEL")
+@
+"SEC","^DIC",920.4,920.4,0,"LAYGO")
+@
+"SEC","^DIC",920.4,920.4,0,"RD")
+@
+"SEC","^DIC",920.4,920.4,0,"WR")
+@
+"VER")
+8.0^22.0
+"^DD",920.4,920.4,0)
+FIELD^^3^13
+"^DD",920.4,920.4,0,"DDA")
+N
+"^DD",920.4,920.4,0,"DT")
+3150316
+"^DD",920.4,920.4,0,"ID",.02)
+W "   ",$P(^(0),U,2)
+"^DD",920.4,920.4,0,"IX","AREPLACETERM",920.4,99.97)
+
+"^DD",920.4,920.4,0,"IX","AVUID",920.4,99.99)
+
+"^DD",920.4,920.4,0,"IX","B",920.4,.01)
+
+"^DD",920.4,920.4,0,"IX","C",920.4,.02)
+
+"^DD",920.4,920.4,0,"IX","D",920.43,.01)
+
+"^DD",920.4,920.4,0,"NM","IMM CONTRAINDICATIONS")
+
+"^DD",920.4,920.4,0,"PT",920.4,99.97)
+
+"^DD",920.4,920.4,0,"VRPK")
+PX
+"^DD",920.4,920.4,.01,0)
+NAME^Fa^^0;1^K:$L(X)>30!($L(X)<3) X
+"^DD",920.4,920.4,.01,.1)
+VA SHORT NAME
+"^DD",920.4,920.4,.01,1,0)
+^.1
+"^DD",920.4,920.4,.01,1,1,0)
+920.4^B
+"^DD",920.4,920.4,.01,1,1,1)
+S ^PXV(920.4,"B",$E(X,1,30),DA)=""
+"^DD",920.4,920.4,.01,1,1,2)
+K ^PXV(920.4,"B",$E(X,1,30),DA)
+"^DD",920.4,920.4,.01,3)
+Answer must be 3-30 characters in length.
+"^DD",920.4,920.4,.01,7.5)
+I $G(DIC(0))["L",'$D(XUMF) K X D EN^DDIOL("Entries must be edited via the Master File Server (MFS).","","!?5")
+"^DD",920.4,920.4,.01,9)
+^
+"^DD",920.4,920.4,.01,21,0)
+^^3^3^3150305^
+"^DD",920.4,920.4,.01,21,1,0)
+This is the name of the specific situation in which an immunization, 
+"^DD",920.4,920.4,.01,21,2,0)
+skin test or other procedure should not be used because it may be 
+"^DD",920.4,920.4,.01,21,3,0)
+harmful to the patient.
+"^DD",920.4,920.4,.01,"AUDIT")
+y
+"^DD",920.4,920.4,.01,"DEL",1,0)
+D:'$D(XUMF) EN^DDIOL("Entries must be inactivated via the Master File Server (MFS).","","!?5") I $D(XUMF)
+"^DD",920.4,920.4,.01,"DT")
+3150311
+"^DD",920.4,920.4,.01,"LAYGO",1,0)
+D:'$D(XUMF) EN^DDIOL("Entries must be added via the Master File Server (MFS).","","!?5") I $D(XUMF)
+"^DD",920.4,920.4,.02,0)
+CONCEPT CODE^Fa^^0;2^K:$L(X)>10!($L(X)<2)!'(X'?1P.E) X
+"^DD",920.4,920.4,.02,.1)
+CDC CONCEPT CODE
+"^DD",920.4,920.4,.02,1,0)
+^.1
+"^DD",920.4,920.4,.02,1,1,0)
+920.4^C
+"^DD",920.4,920.4,.02,1,1,1)
+S ^PXV(920.4,"C",$E(X,1,30),DA)=""
+"^DD",920.4,920.4,.02,1,1,2)
+K ^PXV(920.4,"C",$E(X,1,30),DA)
+"^DD",920.4,920.4,.02,1,1,"%D",0)
+^^1^1^3150226^
+"^DD",920.4,920.4,.02,1,1,"%D",1,0)
+This provides lookup by CONCEPT CODE in addition to VA SHORT NAME.
+"^DD",920.4,920.4,.02,1,1,"DT")
+3150226
+"^DD",920.4,920.4,.02,3)
+Answer must be 2-10 characters in length.
+"^DD",920.4,920.4,.02,9)
+^
+"^DD",920.4,920.4,.02,21,0)
+^.001^1^1^3150226^^^
+"^DD",920.4,920.4,.02,21,1,0)
+The CONCEPT CODE as it came from the CDC.
+"^DD",920.4,920.4,.02,"AUDIT")
+y
+"^DD",920.4,920.4,.02,"DT")
+3150312
+"^DD",920.4,920.4,.03,0)
+INACTIVE^Sa^0:NO;1:YES;^0;3^Q
+"^DD",920.4,920.4,.03,3)
+Enter YES if this is an inactive contraindication.
+"^DD",920.4,920.4,.03,9)
+^
+"^DD",920.4,920.4,.03,21,0)
+^.001^1^1^3150403^^
+"^DD",920.4,920.4,.03,21,1,0)
+This field indicates if this contraindication is active or inactive.
+"^DD",920.4,920.4,.03,"AUDIT")
+y
+"^DD",920.4,920.4,.03,"DT")
+3150305
+"^DD",920.4,920.4,.04,0)
+NIP004^Fa^^0;4^K:$L(X)>2!($L(X)<2) X
+"^DD",920.4,920.4,.04,.1)
+CDC V 2.3.1.VALUE NIP004
+"^DD",920.4,920.4,.04,3)
+Answer must be 2 characters in length.
+"^DD",920.4,920.4,.04,9)
+^
+"^DD",920.4,920.4,.04,21,0)
+^^2^2^3150305^
+"^DD",920.4,920.4,.04,21,1,0)
+This is the National Immunization Program (NIP) defined table NIP004
+"^DD",920.4,920.4,.04,21,2,0)
+value related to this contraindication.
+"^DD",920.4,920.4,.04,"AUDIT")
+y
+"^DD",920.4,920.4,.04,"DT")
+3150305
+"^DD",920.4,920.4,.05,0)
+HL7 CODE^Fa^^VUID;4^K:$L(X)>10!($L(X)<3) X
+"^DD",920.4,920.4,.05,.1)
+CDC HL7 TABLE 0396 CODE
+"^DD",920.4,920.4,.05,3)
+Answer must be 3-10 characters in length.
+"^DD",920.4,920.4,.05,9)
+^
+"^DD",920.4,920.4,.05,21,0)
+^.001^1^1^3150402^^
+"^DD",920.4,920.4,.05,21,1,0)
+This is the corresponding HL7 code for this contraindication.
+"^DD",920.4,920.4,.05,"AUDIT")
+y
+"^DD",920.4,920.4,.05,"DT")
+3150305
+"^DD",920.4,920.4,.06,0)
+CONTRAINDICATION/PRECAUTION^RSa^P:PRECAUTION;C:CONTRAINDICATION;^0;5^Q
+"^DD",920.4,920.4,.06,3)
+Enter 'C' if this is a Contraindication or enter 'P' is this is a Precaution.
+"^DD",920.4,920.4,.06,9)
+^
+"^DD",920.4,920.4,.06,21,0)
+^^2^2^3150316^
+"^DD",920.4,920.4,.06,21,1,0)
+A value of 'C' indicates that this is a Contraindication, and a value of 
+"^DD",920.4,920.4,.06,21,2,0)
+'P' indicates that this is merely a Precaution.
+"^DD",920.4,920.4,.06,"AUDIT")
+y
+"^DD",920.4,920.4,.06,"DT")
+3150316
+"^DD",920.4,920.4,1,0)
+CONCEPT NAME^Fa^^1;1^K:$L(X)>175!($L(X)<6) X
+"^DD",920.4,920.4,1,.1)
+CDC CONCEPT NAME
+"^DD",920.4,920.4,1,3)
+Answer must be 6-175 characters in length.
+"^DD",920.4,920.4,1,9)
+^
+"^DD",920.4,920.4,1,21,0)
+^^1^1^3150202^
+"^DD",920.4,920.4,1,21,1,0)
+The CONCEPT NAME as it came from the CDC.
+"^DD",920.4,920.4,1,"AUDIT")
+y
+"^DD",920.4,920.4,1,"DT")
+3150227
+"^DD",920.4,920.4,2,0)
+CONCEPT DEFINITION^Fa^^2;1^K:$L(X)>240!($L(X)<1) X
+"^DD",920.4,920.4,2,.1)
+CDC CONCEPT DEFINTION
+"^DD",920.4,920.4,2,3)
+Answer must be 1-240 characters in length.
+"^DD",920.4,920.4,2,9)
+^
+"^DD",920.4,920.4,2,21,0)
+^^1^1^3150202^
+"^DD",920.4,920.4,2,21,1,0)
+The CONCEPT DEFINITION as it came from the CDC.
+"^DD",920.4,920.4,2,"AUDIT")
+y
+"^DD",920.4,920.4,2,"DT")
+3150227
+"^DD",920.4,920.4,3,0)
+IMMUNIZATIONS LIMITED TO^920.43PA^^3;0
+"^DD",920.4,920.4,3,9)
+^
+"^DD",920.4,920.4,3,21,0)
+^^3^3^3150311^
+"^DD",920.4,920.4,3,21,1,0)
+These are the Vaccines that apply to this Contraindication (or 
+"^DD",920.4,920.4,3,21,2,0)
+Precaution). If this list is empty, then the Contraindication applies to 
+"^DD",920.4,920.4,3,21,3,0)
+all Vaccines.
+"^DD",920.4,920.4,99.97,0)
+REPLACED BY VHA STANDARD TERM^P920.4'aI^PXV(920.4,^VUID;3^Q
+"^DD",920.4,920.4,99.97,1,0)
+^.1
+"^DD",920.4,920.4,99.97,1,1,0)
+920.4^AREPLACETERM
+"^DD",920.4,920.4,99.97,1,1,1)
+S ^PXV(920.4,"AREPLACETERM",$E(X,1,30),DA)=""
+"^DD",920.4,920.4,99.97,1,1,2)
+K ^PXV(920.4,"AREPLACETERM",$E(X,1,30),DA)
+"^DD",920.4,920.4,99.97,1,1,"%D",0)
+^^2^2^3150127^
+"^DD",920.4,920.4,99.97,1,1,"%D",1,0)
+This cross-reference can be used to identify the replacement entries 
+"^DD",920.4,920.4,99.97,1,1,"%D",2,0)
+associated with a Term/Concept.
+"^DD",920.4,920.4,99.97,1,1,"DT")
+3150127
+"^DD",920.4,920.4,99.97,3)
+Enter the Term/Concept that replaces this entry.
+"^DD",920.4,920.4,99.97,9)
+^
+"^DD",920.4,920.4,99.97,21,0)
+^^4^4^3150127^
+"^DD",920.4,920.4,99.97,21,1,0)
+This field is populated when one Term/Concept replaces another 
+"^DD",920.4,920.4,99.97,21,2,0)
+Term/Concept.  This field is controlled by standardization and should 
+"^DD",920.4,920.4,99.97,21,3,0)
+only be changed by standardization processes.  This field contains a 
+"^DD",920.4,920.4,99.97,21,4,0)
+pointer to a VHA standard term that replaces this entry.
+"^DD",920.4,920.4,99.97,"AUDIT")
+y
+"^DD",920.4,920.4,99.97,"DT")
+3150327
+"^DD",920.4,920.4,99.98,0)
+MASTER ENTRY FOR VUID^RSIa^1:YES;0:NO;^VUID;2^Q
+"^DD",920.4,920.4,99.98,1,0)
+^.1^^0
+"^DD",920.4,920.4,99.98,3)
+Enter YES if this is the Master entry.
+"^DD",920.4,920.4,99.98,9)
+^
+"^DD",920.4,920.4,99.98,21,0)
+^^2^2^3150127^
+"^DD",920.4,920.4,99.98,21,1,0)
+This field identifies the Master entry for a VUID associated with a 
+"^DD",920.4,920.4,99.98,21,2,0)
+Term/Concept.
+"^DD",920.4,920.4,99.98,"AUDIT")
+y
+"^DD",920.4,920.4,99.98,"DT")
+3150127
+"^DD",920.4,920.4,99.99,0)
+VUID^RFXIa^^VUID;1^S X=+X K:$L(X)>20!($L(X)<1)!'(X?1.20N) X
+"^DD",920.4,920.4,99.99,1,0)
+^.1
+"^DD",920.4,920.4,99.99,1,1,0)
+920.4^AVUID
+"^DD",920.4,920.4,99.99,1,1,1)
+S ^PXV(920.4,"AVUID",$E(X,1,30),DA)=""
+"^DD",920.4,920.4,99.99,1,1,2)
+K ^PXV(920.4,"AVUID",$E(X,1,30),DA)
+"^DD",920.4,920.4,99.99,1,1,3)
+XXX--CAN'T BE ALTERED EXCEPT BY PROGRAMMER
+"^DD",920.4,920.4,99.99,1,1,"%D",0)
+^^1^1^3150127^
+"^DD",920.4,920.4,99.99,1,1,"%D",1,0)
+This cross-reference is by VUID.
+"^DD",920.4,920.4,99.99,1,1,"DT")
+3150127
+"^DD",920.4,920.4,99.99,3)
+Answer must be 1-20 characters in length.
+"^DD",920.4,920.4,99.99,9)
+^
+"^DD",920.4,920.4,99.99,21,0)
+^^2^2^3150127^
+"^DD",920.4,920.4,99.99,21,1,0)
+VHA Unique ID (VUID). A unique meaningless integer assigned to 
+"^DD",920.4,920.4,99.99,21,2,0)
+reference terms VHA wide.
+"^DD",920.4,920.4,99.99,"AUDIT")
+y
+"^DD",920.4,920.4,99.99,"DT")
+3150227
+"^DD",920.4,920.4,99.991,0)
+EFFECTIVE DATE/TIME^920.499DA^^TERMSTATUS;0
+"^DD",920.4,920.4,99.991,9)
+^
+"^DD",920.4,920.4,99.991,21,0)
+^^1^1^3150127^
+"^DD",920.4,920.4,99.991,21,1,0)
+Describes the pair Status and Effective Date/Time for each reference term.
+"^DD",920.4,920.43,0)
+IMMUNIZATIONS LIMITED TO SUB-FIELD^^.01^1
+"^DD",920.4,920.43,0,"DT")
+3150311
+"^DD",920.4,920.43,0,"IX","B",920.43,.01)
+
+"^DD",920.4,920.43,0,"NM","IMMUNIZATIONS LIMITED TO")
+
+"^DD",920.4,920.43,0,"UP")
+920.4
+"^DD",920.4,920.43,.01,0)
+IMMUNIZATIONS LIMITED TO^MP9999999.14'a^AUTTIMM(^0;1^Q
+"^DD",920.4,920.43,.01,1,0)
+^.1
+"^DD",920.4,920.43,.01,1,1,0)
+920.43^B
+"^DD",920.4,920.43,.01,1,1,1)
+S ^PXV(920.4,DA(1),3,"B",$E(X,1,30),DA)=""
+"^DD",920.4,920.43,.01,1,1,2)
+K ^PXV(920.4,DA(1),3,"B",$E(X,1,30),DA)
+"^DD",920.4,920.43,.01,1,2,0)
+920.4^D
+"^DD",920.4,920.43,.01,1,2,1)
+S ^PXV(920.4,"D",$E(X,1,30),DA(1),DA)=""
+"^DD",920.4,920.43,.01,1,2,2)
+K ^PXV(920.4,"D",$E(X,1,30),DA(1),DA)
+"^DD",920.4,920.43,.01,1,2,"%D",0)
+^^1^1^3150318^
+"^DD",920.4,920.43,.01,1,2,"%D",1,0)
+This cross reference allows whole file lookups and sorting.
+"^DD",920.4,920.43,.01,1,2,"DT")
+3150311
+"^DD",920.4,920.43,.01,3)
+Enter an immunization to which this contraindication applies or leave blank if it applies to all immunizations.
+"^DD",920.4,920.43,.01,21,0)
+^^2^2^3150311^
+"^DD",920.4,920.43,.01,21,1,0)
+This is an immunization that applies to this Contraindication or 
+"^DD",920.4,920.43,.01,21,2,0)
+Precaution.
+"^DD",920.4,920.43,.01,"AUDIT")
+y
+"^DD",920.4,920.43,.01,"DT")
+3150316
+"^DD",920.4,920.499,0)
+EFFECTIVE DATE/TIME SUB-FIELD^^.02^2
+"^DD",920.4,920.499,0,"DT")
+3150127
+"^DD",920.4,920.499,0,"IX","B",920.499,.01)
+
+"^DD",920.4,920.499,0,"NM","EFFECTIVE DATE/TIME")
+
+"^DD",920.4,920.499,0,"UP")
+920.4
+"^DD",920.4,920.499,.01,0)
+EFFECTIVE DATE/TIME^RDIXa^^0;1^S %DT="ESTX" D ^%DT S X=Y K:Y<1 X
+"^DD",920.4,920.499,.01,1,0)
+^.1
+"^DD",920.4,920.499,.01,1,1,0)
+920.499^B
+"^DD",920.4,920.499,.01,1,1,1)
+S ^PXV(920.4,DA(1),"TERMSTATUS","B",$E(X,1,30),DA)=""
+"^DD",920.4,920.499,.01,1,1,2)
+K ^PXV(920.4,DA(1),"TERMSTATUS","B",$E(X,1,30),DA)
+"^DD",920.4,920.499,.01,3)
+Enter the date/time when the Status of the reference term was established.
+"^DD",920.4,920.499,.01,9)
+^
+"^DD",920.4,920.499,.01,21,0)
+^.001^2^2^3150127^^
+"^DD",920.4,920.499,.01,21,1,0)
+This is the date/time when the Status of the reference term was 
+"^DD",920.4,920.499,.01,21,2,0)
+established.
+"^DD",920.4,920.499,.01,"AUDIT")
+y
+"^DD",920.4,920.499,.01,"DT")
+3150227
+"^DD",920.4,920.499,.02,0)
+STATUS^RSIa^1:ACTIVE;0:INACTIVE;^0;2^Q
+"^DD",920.4,920.499,.02,3)
+Enter the Status of reference term, ACTIVE or INACTIVE.
+"^DD",920.4,920.499,.02,9)
+^
+"^DD",920.4,920.499,.02,21,0)
+^^4^4^3150127^
+"^DD",920.4,920.499,.02,21,1,0)
+The Status of a reference term is either 'ACTIVE' or 'INACTIVE'. If 
+"^DD",920.4,920.499,.02,21,2,0)
+'ACTIVE', then the term will be accessible by end-users to document a 
+"^DD",920.4,920.499,.02,21,3,0)
+particular patient event. If 'INACTIVE', then the term will only be 
+"^DD",920.4,920.499,.02,21,4,0)
+accessible by the application to display legacy data.
+"^DD",920.4,920.499,.02,"AUDIT")
+y
+"^DD",920.4,920.499,.02,"DT")
+3150227
+"^DIC",920.4,920.4,0)
+IMM CONTRAINDICATIONS^920.4
+"^DIC",920.4,920.4,0,"GL")
+^PXV(920.4,
+"^DIC",920.4,920.4,"%",0)
+^1.005^^0
+"^DIC",920.4,920.4,"%D",0)
+^1.001^12^12^3150311^^^
+"^DIC",920.4,920.4,"%D",1,0)
+Per VHA Directive, this file has been "locked down" by Data 
+"^DIC",920.4,920.4,"%D",2,0)
+Standardization (DS). The file definition (i.e. data dictionary) shall 
+"^DIC",920.4,920.4,"%D",3,0)
+not be modified. All additions, changes and deletions to entries in the
+"^DIC",920.4,920.4,"%D",4,0)
+file shall be done by Enterprise Reference Terminology (ERT) using the
+"^DIC",920.4,920.4,"%D",5,0)
+Master File Server (MFS), provided by the Common Services (CS). Creating
+"^DIC",920.4,920.4,"%D",6,0)
+and/or editing locally defined fields in the file are not permitted. Use
+"^DIC",920.4,920.4,"%D",7,0)
+of locally defined fields that were created prior to the VHA Directive
+"^DIC",920.4,920.4,"%D",8,0)
+shall not be supported.
+"^DIC",920.4,920.4,"%D",9,0)
+ 
+"^DIC",920.4,920.4,"%D",10,0)
+This is a table of contraindications regarding immunizations and skin
+"^DIC",920.4,920.4,"%D",11,0)
+tests. The data for this table is derived from the CDC table 
+"^DIC",920.4,920.4,"%D",12,0)
+Vaccinations Contraindications.
+"^DIC",920.4,"B","IMM CONTRAINDICATIONS",920.4)
+
+**END**
+**END**
