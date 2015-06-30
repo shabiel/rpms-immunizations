@@ -242,6 +242,9 @@ CURCOM(BIDFN,TEXT) ;EP
  ;     2 - TEXT (opt) If TEXT=1, return text of Current Community.
  ;
  Q:'$G(BIDFN) "No Patient"
+ ;
+ I '$$RPMS^BIUTL9() QUIT $$GET1^DIQ(2,BIDFN,"ZIP CODE")  ; for VISTA
+ ; 
  Q:'$D(^AUPNPAT(BIDFN,11)) "Unknown1"
  ;
  N X,Y,Z
@@ -335,9 +338,9 @@ LASTIMM(BIDFN,BICVXS,BIQDT,BIALL) ;PEP - Return latest date patient received CVX
  N BICVX,BIDATE,I S BIDATE=0
  ;
  F I=1:1 S BICVX=$P(BICVXS,",",I) Q:BICVX=""  D
- .S BIIEN=$$HL7TX^BIUTL2(BICVX)
+ .N BIIEN S BIIEN=$$HL7TX^BIUTL2(BICVX)
  .;---> Quit if CVX Code does not exist in Vaccine Table (or=OTHER).
- .Q:('BIIEN!(BIIEN=137)) 0
+ .Q:('BIIEN!(BIIEN=137))
  .N N S N=0
  .F  S N=$O(^AUPNVIMM("AC",BIDFN,N)) Q:'N  D
  ..N X,Y S X=$G(^AUPNVIMM(N,0))
