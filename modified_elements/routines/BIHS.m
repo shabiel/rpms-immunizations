@@ -7,11 +7,14 @@ BIHS ;IHS/CMI/MWR - DISPLAY HEALTH SUMMARY; MAY 10, 2010
  ;
  ;----------
 HS ;EP
+ ; ZEXCEPT: BIDFN
  ;---> Called from Protocol to display Health Summary.
  ;
  Q:'$G(BIDFN)
  N DFN,X,Y
  D FULL^VALM1
+ ;
+ I '$$RPMS^BIUTL9() D VISTA QUIT
  ;
  ;---> Set Health Summary Type default.
  D
@@ -42,3 +45,32 @@ HS ;EP
  .;D HSOUT^APCHS,DIRZ^BIUTL3()
  ;
  Q
+ ; 
+VISTA ; EP Print VISTA Health Summary
+ ; ZEXCEPT: BIDFN
+ ; Use IA 242
+ N DIC,X,Y,DLAYGO,DINUM,DTOUT,DUOUT 
+ S DIC=142,DIC(0)="AEMQ" D ^DIC  ; Select Health Summary type
+ I $G(DTOUT)!$G(DUOUT) QUIT
+ N TYP S TYP=+Y
+ ;
+ N %ZIS S %ZIS="Q"  ; queueing allowed
+ D ^%ZIS
+ Q:$G(POP)
+ ;
+ I $D(IO("Q")) D  ; queueing requested
+ . N ZTRTN,ZTDESC,ZTDTH,ZTIO,ZTUCI,ZTCPU,ZTPRI,ZTSAVE,ZTKIL,ZTSYNC,ZTSK
+ . S ZTRTN="ENX^GMTSDVR(BIDFN,TYP)",ZTDTH=$H,ZTDESC="Health Summary from Immunizations Package"
+ . S ZTSAVE("BIDFN")="",ZTSAVE("TYP")=""
+ . D ^%ZTLOAD
+ . I $G(ZTSK) W "Printing off as task number "_ZTSK_" ."
+ . E  W "Couldn't task this. Please call support."
+ . N DIR,X,Y,DA,DTOUT,DUOUT,DIRUT,DIROUT
+ . S DIR(0)="E" D ^DIR
+ ;
+ E  D  ; no queueing. Print in process.
+ . U IO
+ . D ENX^GMTSDVR(BIDFN,TYP)
+ ;
+ D ^%ZISC  ; close device in either case
+ QUIT
