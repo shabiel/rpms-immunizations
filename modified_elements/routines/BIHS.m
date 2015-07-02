@@ -46,7 +46,7 @@ HS ;EP
  ;
  Q
  ; 
-VISTA ; EP Print VISTA Health Summary
+VISTA ; [Internal Only] EP Print VISTA Health Summary
  ; ZEXCEPT: BIDFN
  ; Use IA 242
  N DIC,X,Y,DLAYGO,DINUM,DTOUT,DUOUT 
