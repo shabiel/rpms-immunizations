@@ -57,6 +57,8 @@ EN(BIDFN,BIFDT,BIDUZ2) ;EP
  ;
  ;----------
 HDR ;EP
+ ; ZEXCEPT: BIDFN
+ ; ZEXCEPT: IOST,VALMHDR
  ;---> Header code.
  Q:'$D(BIDFN)
  N BICRT,X,Y
@@ -64,20 +66,20 @@ HDR ;EP
  S VALMHDR(1)=""
  S Y=$E($$NAME^BIUTL1(BIDFN),1,25)
  S X=" Patient: "
- S:BICRT X=X_IORVON
+ ; S:BICRT X=X_IORVON
  S X=X_Y
- S:BICRT X=X_IOINORM
+ ; S:BICRT X=X_IOINORM
  S X=X_$$SP^BIUTL5(27-$L(Y))_"DOB: "
- S:BICRT X=X_IORVON
+ ; S:BICRT X=X_IORVON
  S X=X_$$DOBF^BIUTL1(BIDFN)
- S:BICRT X=X_IOINORM
+ ; S:BICRT X=X_IOINORM
  S VALMHDR(2)=X
  S X="  Chart#: "
- S:BICRT X=X_IORVON
+ ; S:BICRT X=X_IORVON
  S X=X_$$HRCN^BIUTL1(BIDFN)
  S Y=$E($$INSTTX^BIUTL6($G(DUZ(2))),1,17)
  S X=X_" at "_Y
- S:BICRT X=X_IOINORM
+ ; S:BICRT X=X_IOINORM
  S X=X_$$SP^BIUTL5(20-$L(Y))_$$ACTIVE^BIUTL1(BIDFN)
  S X=X_"     "_$$SEXW^BIUTL1(BIDFN)
  S VALMHDR(3)=X
@@ -87,6 +89,8 @@ HDR ;EP
  ;
  ;----------
 INIT ;EP
+ ; ZEXCEPT: BIDFN
+ ; ZEXCEPT: VALMCNT,VALMQUIT
  ;---> Initialize variables and list array.
  ;
  ;---> If BIDFN not supplied, set Error Code and quit.
@@ -129,6 +133,7 @@ INIT ;EP
  ;
  ;----------
 RESET ;EP
+ ; ZEXCEPT: VALMBCK,VALMQUIT
  ;---> Update partition for return to Listmanager.
  I $D(VALMQUIT) S VALMBCK="Q" Q
  D TERM^VALM0 S VALMBCK="R"
@@ -137,6 +142,7 @@ RESET ;EP
  ;
  ;----------
 HELP ;EP
+ ; ZEXCEPT: X
  ;---> Help code.
  N BIX S BIX=X
  D FULL^VALM1
