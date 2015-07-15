@@ -83,6 +83,10 @@ CREATE(BIVSIT,BIERR,BINOM) ;EP
  ;     3 - BINOM  (opt) 0=Allow display of Visit Selection Menu if site
  ;                      parameter is set. 1=No display (for export).
  ;
+ ;
+ ;---> For VISTA, run another routine
+ I '$$RPMS^BIUTL9() D CREATE^PXVVISIT(.BIVSIT,.BIERR,BINOM) QUIT 
+ ;
  ;---> Set permission override for this file.
  S DLAYGO=9000010
  ;

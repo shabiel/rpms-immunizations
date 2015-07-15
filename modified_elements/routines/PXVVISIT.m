@@ -32,7 +32,9 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  ;---> PCC Date/Time; If no time, 12 noon will be attached.
  N VSIT 
  S VSIT=BIDATE
- S VSIT(0)="N"  ; Controller of how a visit is added on VISTA. N means okay to add a visit.
+ S VSIT(0)="EN"  ; Controller of how a visit is added on VISTA. 
+ ;                 N means okay to add a visit.
+ ;                 E means use patient 1ry eligibility
  ;
  ;---> If Visit Selection Menu is Disabled, create/link automatically:
  ;---> Linking/Adding PCC Visits:
@@ -54,11 +56,9 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  I $G(PXVNOM),VSIT(0)'["I" S VSIT(0)=VSIT(0)_"I"
  ;
  ; Institution (BILOC is really IHS Location, which is DINUMMED to file 4).
- ; TODO(VEN/SMH): BILOC may be an empty string. Is VISTA picky about this???
- S VSIT("INS")=BILOC
+ S VSIT("INS")=$G(BILOC)
  ;
  ;---> Other Location (Text if Location="OTHER").
- ; TODO(VEN/SMH): Ditto
  S VSIT("OUT")=$G(BIOLOC)
  ;
  ;---> Set Type of Visit from VISIT TRACK PARAMETERS file (VISTA copy of RPMS
@@ -90,10 +90,7 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  ;
  S BIVSIT=+VSIT("IEN")
  ;
- ;S BITEST=1
- D:$G(BITEST) DISPLAY1^BIPCC
- ;
- Q
+ QUIT
  ;
  ;
  ;
@@ -118,7 +115,8 @@ TCRHX ; @TEST Test Create Historical
  N BISITE S BISITE=$O(^BISITE(0))
  N BIDFN S BIDFN=1
  N BIDATE S BIDATE=$$FMADD^XLFDT(DT,-$R(9999))
- N BILOC S BILOC=$P($$SITE^VASITE(),U,3)
+ ;N BILOC S BILOC=$P($$SITE^VASITE(),U,3)
+ N BIOLOC S BIOLOC="TEST OTHER LOCATION"
  N BICAT S BICAT="E"
  N BIVST,BIERR
  ; S PXVNOM=1
@@ -126,6 +124,7 @@ TCRHX ; @TEST Test Create Historical
  D ASSERT(BIVST>0,"Visit should be created.")
  D ASSERT('$D(BIERR),"No error expected")
  D ASSERT($P(^AUPNVSIT(BIVST,0),U,7)="E","An event is expected.")
+ D ASSERT(^AUPNVSIT(BIVST,21)=BIOLOC,"Outside location didn't get recorded")
  QUIT
  ;
 TCRDUP ; @TEST Make sure we don't duplicate a visit
@@ -148,6 +147,7 @@ TCRDUP ; @TEST Make sure we don't duplicate a visit
  QUIT
  ;
 ASSERT(X,MSG) ; Primitive assertion engine.
+ ; ZEXCEPT: %ut
  I $D(%ut) D CHKTF^%ut(X,$G(MSG)) QUIT
  I 'X S $EC=",U-ASSERTION-FAILED,"
  QUIT
