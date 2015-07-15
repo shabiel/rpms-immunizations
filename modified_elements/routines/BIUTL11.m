@@ -127,7 +127,17 @@ INPT(BIDFN,BIDATE) ;EP
  ;     1 - BIDFN  (req) Patient's IEN in VA PATIENT File #2.
  ;     2 - BIDATE (req) Date to check if patient was inpatient.
  ;
+ ; VEN/SMH: ^AUPNVINP (V INPATIENT) is only in RPMS.
+ ; VISTA API is EN^DGPMSTAT
+ ;
  Q:'$G(BIDFN) 0  Q:'$G(BIDATE) 0
+ ;
+ I '$$RPMS^BIUTL9() N VISTAIP D  QUIT VISTAIP
+ . N DFN S DFN=BIDFN
+ . N DGT S DGT=BIDATE
+ . N DGA1,DG1,DGXFR0
+ . D EN^DGPMSTAT ; IA 2464
+ . S VISTAIP=''$G(DGA1)  ; not not the IEN of the Inpatient Entry in ^DGPM
  ;
  ;---> Get last discharge previous to BIDATE.
  N X,Y S BIDATE=9999999.9999999-BIDATE
