@@ -36,7 +36,7 @@ VISIT(BIDFN,BIDATE,BICAT,BILOC,BIOLOC,BISITE,BIVSIT,BIERR,BINOM) ;EP
  S:('$G(BILOC)!($G(BIOLOC)]"")) BILOC=$$OTHERLOC^BIUTL6(DUZ(2))
  ;
  ;---> Quit if "OTHER" Location has not been selected in Site Parameters.
- I 'BILOC S BIERR="1^"_$$OTHERLOC^BIUTL6(DUZ(2),1) Q
+ I BILOC="" S BIERR="1^"_$$OTHERLOC^BIUTL6(DUZ(2),1) Q
  ;
  ;---> Create Visit if necessary.
  ;
