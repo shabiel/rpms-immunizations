@@ -100,6 +100,51 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;                      See BIDATA definition at linelabel PARSE.
  ;     3 - BIERR  (ret) Text of Error Code if any, otherwise null.
  ;
+ ; *** VEN/SMH - THIS IS A FIRST DRAFT OF HOW THIS THING SHOULD WORK ***
+ ; Some major differences between this and RPMS code in BIVISIT
+ ; 1. There is not auto-contraindications filing. This happens when we document
+ ;    the reaction to an immunization or to a PPD. I can't find where in the
+ ;    software you enter a reaction at the same time as a an immunization; so
+ ;    I am taking that out for auto-contraindications for Immunizations.
+ ;    Adding a CI for a positive PPD is done in such an extremely sloppy way
+ ;    in RPMS that I won't port this over. PPD is represented as an Immunization
+ ;    not a skin test!
+ ; 2. There is no representation currently of VFC eligibility for VISTA. This is
+ ;    important and I would like to port that over. Thankfully, the field has
+ ;    been brought over from RPMS in PX*1.0*201.
+ ; 3. VISTA wants to store Lot, Manufacturer and Expiration Date; RPMS wants
+ ;    to store Lot and NDC. Both are illogical since you really only need Lot.
+ ;    Lot has information on the rest of the data.
+ ; 4. The PXAPI code in VISTA wants you to file the data all at once via itself.
+ ;    You are not given a handle back to the IEN of the V IMM or V SK to add
+ ;    extra fields to the entry, which is what is done in BIVISIT.
+ ; 5. There are many todos for missing fields that I need to gradually bring
+ ;    over:
+ ;
+ ; TODOs:
+ ; - Three skin test fields are missing from VISTA. These need to be brought
+ ;   over: 
+ ;   -> .08: Skin Test Reader
+ ;   -> .09: Skin Test Site
+ ;   -> .11: Volume
+ ; - The VIS fields for VISTA don't have a way to file them right now. I may
+ ;   have to change the PXA* routines to do that. And there are two different
+ ;   VIS fields: Which VIS is it (Imm and Date) and when it was given to the
+ ;   patient
+ ; - Dose Overide field? I don't know whether I need that. I think it has to do
+ ;   with overriding the forecaster, but I haven't seen where that is used.
+ ; - Injection Site and Volume are stored in different places in VISTA. The
+ ;   Form needs to be changed to point them. The VISTA stuff is brand new files.
+ ; - RPMS has a field to say "this CPT created me". It something to look into,
+ ;   but I don't think I will actually get to supporting it.
+ ; - RPMS has a field in V IMM to say whether an Immunization was imported. I
+ ;   think a useful thing to have.
+ ; - Some random extra fields for RPMS:
+ ;   -> Admin Note
+ ;   -> Admin Date (seperate from Visit Date. Reason: In RPMS, they have V
+ ;       INPATIENT, and an Inpatinent Visit can span many days; so a workaround
+ ;       to say when something really took place is a seperate field for Admin
+ ;       Date)
  ;
  I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
  ;
@@ -139,7 +184,8 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ; | #.16 NDC            |  Not used                                   |
  ; | #1 ADMIN NOTES      |  Not used                                   |
  ; | #1201 EVENT DT/TM   |  Not used (says exact time of V Imm)        |
- ; | #.17 DATE VIS PRES  |  #2 (see above)
+ ; | #.17 DATE VIS PRES  |  #2 (see above)                             |
+ ; + ------------------- | ------------------------------------------- |
  ;
  I BIVTYPE="I" D
  . S PXVIMM("IMMUNIZATION",1,"IMMUN")=BIPTR              ; Immunization/vaccine name.
@@ -155,7 +201,6 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ; .08: Skin Test Reader
  ; .09: Skin Test Site
  ; .11: Volume
- ; We won't be filing these
  I BIVTYPE="S" D
  . S PXVIMM("SKIN TEST",1,"TEST")=BIPTR                  ; Skin Test
  . S PXVIMM("SKIN TEST",1,"RESULT")=BIRES                ; Result
@@ -164,7 +209,7 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  . S PXVIMM("SKIN TEST",1,"ENC PROVIDER")=BIPROV         ; Skin test provider
  ;
  ; $$DATA2PCE^PXAPI(INPUTROOT,PKG,SOURCE,.VISIT,USER,ERRDISP,.ERRARRAY,PPEDIT,.ERRPROB, .ACCOUNT)
- N % S %=$$DATA2PCE^PXAPI($NAME(PXVIMM),"BIV","IMMUNIZATION PACKAGE",.BIVISIT,BIPROV,1)
+ N % S %=$$DATA2PCE^PXAPI($NAME(PXVIMM),"BIV","IMMUNIZATION PACKAGE",.BIVSIT,BIPROV,1)
  ;
  I %'=1 D  QUIT
  .I BIVTYPE="I" D ERRCD^BIUTL2(402,.BIERR) S BIERR="1^"_BIERR Q
@@ -172,15 +217,6 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;
  ;---> Save IEN of V IMMUNIZATION just created.
  ;XXX find how to get that for VISTA
- ;
- ;
- ;---> If Skin Test is a PPD and result is Positive, add Contraindication
- ;---> to further TST-PPD tests.
- I BIVTYPE="S",$$SKNAME^BIUTL6($G(BIPTR))="PPD",$E($G(BIRES))="P" D
- .;---> Set date equal to either Date Read, or Date of Visit, or Today.
- .N BIDTC S BIDTC=$S($G(BIDTR):BIDTR,$G(BIDATE):$P(BIDATE,"."),1:$G(DT))
- .S BIDATA=BIDFN_"|"_203_"|"_17_"|"_BIDTC
- .D ADDCONT^BIRPC4(,BIDATA)
  ;
  ;
  ;---> ADD OTHER V IMMUNIZATION FIELDS:
