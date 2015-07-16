@@ -170,7 +170,7 @@ VFILE(BIVSIT,BIDATA,BIERR) ;EP
  ;     3 - BIERR  (ret) Text of Error Code if any, otherwise null.
  ;
  ;---> if we are on VISTA, do the VISTA V File update.
- I '$$RPMS^BIUTL9() D VFILE^PXVVISIT(BIVSIT,BIDATA,.BIERR)
+ I '$$RPMS^BIUTL9() D VFILE^PXVVISIT(BIVSIT,BIDATA,.BIERR) QUIT
  ;
  I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
  ;

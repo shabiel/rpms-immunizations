@@ -118,7 +118,9 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ; 4. The PXAPI code in VISTA wants you to file the data all at once via itself.
  ;    You are not given a handle back to the IEN of the V IMM or V SK to add
  ;    extra fields to the entry, which is what is done in BIVISIT.
- ; 5. There are many todos for missing fields that I need to gradually bring
+ ; 5. RPMS does not require that you have a hospital location for an encounter.
+ ;    VISTA seems to require it. I need to do some more research.
+ ; 6. There are many todos for missing fields that I need to gradually bring
  ;    over:
  ;
  ; TODOs:
