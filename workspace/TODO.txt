@@ -27,6 +27,13 @@ Export Imm --> Later. Can't do or test now.
    CMT    Transfer a Case Manager's Patients <-- Maybe it works? Don't know.
    SCN    Scan For Patients <-- Need more patients to do that.
  ------
+
+Skipped:
+
+ON CI: LM add/edit screen; column short for VISTA.
+On Patient main form: Says no BDP package. Use PCMM. However, for now, hide this.
+
+---
  
 Next work on Patient Enter/Edit Imm.
 --> Get LM form working
@@ -35,10 +42,644 @@ Next work on Patient Enter/Edit Imm.
 --> Create a filer for VISTA
 
 
-----
-WORKING ON CI:
-next thing: get LM delete working --> DONE.
-Check that filing is correct (there are many elements to that)--> DONE
-SNOMED field is sometimes not populated. Why not??? Check that.
-LM Screen is too narrow. Fix that.
-Port files and forms to RPMS.
+
+ Imm v8.5*9         * * *  ADD AN IMMUNIZATION VISIT  * * *
+
+ Patient: MOUSE,MICKEY                     DOB: 22-Nov-1977 (37 yrs)
+  Chart#: 505112277P at SOFTWARE SERVICE        Active     Male
+________________________________________________________________________________
+
+     Visit Date: JUL 16,2015                 Category: Ambulatory      
+     Admin Date:
+  Vaccine: DTAP                                  Lot#: AAA112123           
+           (DTAP)                                      Remaining: 50         
+ NDC Code:                                              Exp Date: 01/01/16 
+ Inj Site: Left Thigh IM           Vol: 0.5  ml
+ Location Type: IHS      Location: ALAMOSA CBOC                            
+ Provider: HABIEL,SAM                  
+ VIS Date: JUL 16,2015 Presented: JUL 16,2015
+ Vac Elig: 1                          
+_______________________________________________________________________________
+Exit     Save     Refresh
+%GTM-I-BREAKZBA, Break instruction encountered during ZBREAK action
+		At M source location ADDV^BIVISIT
+
+FOIA 2015-02>D FULL^VALM1
+
+FOIA 2015-02>S $ZSTEP="W $T(@$ZPOS),! B"
+
+FOIA 2015-02>ZST INTO
+ I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+12^BIVISIT
+
+FOIA 2015-02>W BIDATA
+I|1|1020||5|3150716|2094||A|||||||1|3150716|51||LTI|.5||1||||||3150716
+FOIA 2015-02>ZST
+ N BIVTYPE,BIDFN,BIPTR,BIDOSE,BILOT,BIDATE,BILOC,BIOLOC,BICAT,BIVSIT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+14^BIVISIT
+
+FOIA 2015-02>ZST
+ N BIOIEN,BIRES,BIREA,BIDTR,BIREC,BIVISD,BIPROV,BIOVRD,BIINJS,BIVOL
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+15^BIVISIT
+
+FOIA 2015-02>ZST
+ N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+16^BIVISIT
+
+FOIA 2015-02>ZST
+ D PARSE(BIDATA)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+19^BIVISIT
+
+FOIA 2015-02>ZST
+ N APCDALVR,APCDANE,AUPNTALK,BITEST,DLAYGO,X
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+21^BIVISIT
+
+FOIA 2015-02>ZST
+ S BIERR=0
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+22^BIVISIT
+
+FOIA 2015-02>ZST
+ S BITEST=0
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+27^BIVISIT
+
+FOIA 2015-02>ZST
+ D:$G(BIOIEN)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+30^BIVISIT
+
+FOIA 2015-02>ZST INTO
+ Q:BIERR
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+42^BIVISIT
+
+FOIA 2015-02>ZST INTO
+ S:($G(BINOM)="") BINOM=0
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+49^BIVISIT
+
+FOIA 2015-02>ZST INTO
+ D VISIT^BIVISIT1(BIDFN,BIDATE,BICAT,BILOC,BIOLOC,BISITE,.BIVSIT,.BIERR,BINOM)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+51^BIVISIT
+
+FOIA 2015-02>ZST INTO
+VISIT(BIDFN,BIDATE,BICAT,BILOC,BIOLOC,BISITE,BIVSIT,BIERR,BINOM) ;EP
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VISIT^BIVISIT1
+
+FOIA 2015-02>ZST INTO
+ S:($G(BINOM)="") BINOM=0
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VISIT+17^BIVISIT1
+
+FOIA 2015-02>ZST INTO
+ S:('$G(BILOC)!($G(BIOLOC)]"")) BILOC=$$OTHERLOC^BIUTL6(DUZ(2))
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VISIT+22^BIVISIT1
+
+FOIA 2015-02>ZST INTO
+ I 'BILOC S BIERR="1^"_$$OTHERLOC^BIUTL6(DUZ(2),1) Q
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VISIT+25^BIVISIT1
+
+FOIA 2015-02>ZST
+ I '$G(BIVSIT) D CREATE(.BIVSIT,.BIERR,BINOM) Q
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VISIT+30^BIVISIT1
+
+FOIA 2015-02>ZST INTO
+CREATE(BIVSIT,BIERR,BINOM) ;EP
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location CREATE^BIVISIT1
+
+FOIA 2015-02>ZST INTO
+ I '$$RPMS^BIUTL9() D CREATE^PXVVISIT(.BIVSIT,.BIERR,BINOM) QUIT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location CREATE+10^BIVISIT1
+
+FOIA 2015-02>ZST INTO
+RPMS() ; [Public $$] Are we running on RPMS??
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location RPMS^BIUTL9
+
+FOIA 2015-02>ZST INTO
+ if $data(^AUTTSITE(0)) quit 1
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location RPMS+6^BIUTL9
+
+FOIA 2015-02>ZST INTO
+ quit 0
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location RPMS+7^BIUTL9
+
+FOIA 2015-02>ZST INTO
+CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
+rom there.
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location CREATE^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ N VSITPKG S VSITPKG="BIV" ; "IMMUNIZATIONS VISTA PORT"
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location CREATE+12^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ I $$PKGON^VSIT("BIV")=-1 N % S %=$$PKG^VSIT("BIV",1)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location CREATE+15^PXVVISIT
+
+FOIA 2015-02>ZST OUTOF
+ Q:BIERR
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+53^BIVISIT
+
+FOIA 2015-02>W BIERR
+0
+FOIA 2015-02>ZST INTO
+ D VFILE($G(BIVSIT),BIDATA,.BIERR)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location ADDV+56^BIVISIT
+
+FOIA 2015-02>W BIVSIT
+67
+FOIA 2015-02>ZST INTO
+VFILE(BIVSIT,BIDATA,BIERR) ;EP
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE^BIVISIT
+
+FOIA 2015-02>ZST INTO
+ I '$$RPMS^BIUTL9() D VFILE^PXVVISIT(BIVSIT,BIDATA,.BIERR)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+9^BIVISIT
+
+FOIA 2015-02>ZST INTO
+RPMS() ; [Public $$] Are we running on RPMS??
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location RPMS^BIUTL9
+
+FOIA 2015-02>ZST INTO
+ if $data(^AUTTSITE(0)) quit 1
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location RPMS+6^BIUTL9
+
+FOIA 2015-02>ZST INTO
+ quit 0
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location RPMS+7^BIUTL9
+
+FOIA 2015-02>ZST INTO
+VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
+BIVISIT.
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+54^PXVVISIT
+
+FOIA 2015-02>W BIDATA
+I|1|1020||5|3150716|2094||A|||||||1|3150716|51||LTI|.5||1||||||3150716
+FOIA 2015-02>ZST
+ N BIVTYPE,BIDFN,BIPTR,BIDOSE,BILOT,BIDATE,BILOC,BIOLOC,BICAT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+56^PXVVISIT
+
+FOIA 2015-02>ZST
+ N BIOIEN,BIRES,BIREA,BIDTR,BIREC,BIVISD,BIPROV,BIOVRD,BIINJS,BIVOL
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+57^PXVVISIT
+
+FOIA 2015-02>ZST
+ N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+58^PXVVISIT
+
+FOIA 2015-02>ZST
+ D PARSE^BIVISIT(BIDATA,1)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+61^PXVVISIT
+
+FOIA 2015-02>ZST
+ I '$D(^AUPNVSIT(+$G(BIVSIT),0)) D  Q
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+64^PXVVISIT
+
+FOIA 2015-02>ZST
+ N PXVIMM
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+68^PXVVISIT
+
+FOIA 2015-02>ZST
+ S PXVIMM("PROVIDER",1,"NAME")=BIPROV
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+70^PXVVISIT
+
+FOIA 2015-02>ZST
+ S PXVIMM("PROVIDER",1,"PRIMARY")=1
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+71^PXVVISIT
+
+FOIA 2015-02>ZST
+ I BIVTYPE="I" D
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+95^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ . S PXVIMM("IMMUNIZATION",1,"IMMUN")=BIPTR              ; Immunization/vaccine 
+name.
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+96^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ . S PXVIMM("IMMUNIZATION",1,"LOT")=$G(BILOT)            ; Lot Number
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+97^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ . S PXVIMM("IMMUNIZATION",1,"REACTION")=$G(BIREC)       ; Reaction XXX INVESTIG
+ATE XXX
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+98^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ . S PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=BIPROV      ; Shot provider
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+99^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ . S PXVIMM("IMMUNIZATION",1,"DOSAGE")=BIVOL             ; Dosage (e.g. 0.5 mL) 
+XXX Check Data
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+100^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ . S PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")=BIINJS       ; Injection Site XXX Ch
+ange Field
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+101^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ . S PXVIMM("IMMUNIZATION",1,"ANATOMIC LOCATION")=BIINJS ; Injection Site XXX Ch
+ange Form Field
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+102^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ .
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+103^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ I BIVTYPE="S" D
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+109^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ N % S %=$$DATA2PCE^PXAPI($NAME(PXVIMM),"BIV","IMMUNIZATION PACKAGE",.BIVSIT,BIP
+ROV,1)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+117^PXVVISIT
+
+FOIA 2015-02>ZWRITE PXVIMM
+PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")="LTI"
+PXVIMM("IMMUNIZATION",1,"ANATOMIC LOCATION")="LTI"
+PXVIMM("IMMUNIZATION",1,"DOSAGE")=.5
+PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=51
+PXVIMM("IMMUNIZATION",1,"IMMUN")=1020
+PXVIMM("IMMUNIZATION",1,"LOT")=5
+PXVIMM("IMMUNIZATION",1,"REACTION")=""
+PXVIMM("PROVIDER",1,"NAME")=51
+PXVIMM("PROVIDER",1,"PRIMARY")=1
+
+FOIA 2015-02>ZST
+ I %'=1 D  QUIT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+119^PXVVISIT
+
+FOIA 2015-02>W %
+1
+FOIA 2015-02>ZWRITE
+%=1
+%DT="T"
+A=1
+B=1020
+BEFOR11=""
+BI("A")=1
+BI("B")=1020
+BI("D")=5
+BI("E")=3150716
+BI("EE")=""
+BI("F")=2094
+BI("G")=""
+BI("H")=""
+BI("I")="A"
+BI("O")=""
+BI("P")=1
+BI("Q")=3150716
+BI("QQ")=3150716
+BI("R")=51
+BI("S")=""
+BI("T")="LTI"
+BI("W")=.5
+BI("Z")=1
+BI31=$C(31,31)
+BIADMIN=""
+BIANOT=""
+BICAT="A"
+BICCPT=""
+BIDATA="I|1|1020||5|3150716|2094||A|||||||1|3150716|51||LTI|.5||1||||||3150716"
+BIDATE=3150716.12
+BIDEFDT=3150716
+BIDFN=1
+BIDOSE=""
+BIDTR=""
+BIDUZ2=1
+BIEDIT=1
+BIERR=0 ;*
+BIFDT=3150716
+BIHX(1)="NO RECORDS TO BE EXPORTED"
+BIINJS="LTI"
+BILIST="BI PATIENT DATA VIEW/EDIT"
+BILOC=2094
+BILOT=5
+BIMPRT=""
+BINDC=""
+BINOM=0
+BIOIEN=""
+BIOLOC=""
+BIOVRD=""
+BIPOP=0
+BIPROV=51
+BIPTR=1020
+BIREA=""
+BIREC=""
+BIREDR=""
+BIRES=""
+BIRTN="BIPATVW"
+BISAVE=1
+BISITE=1
+BITEST=0
+BIVER="8.5*9"
+BIVFC=1
+BIVISD=3150716
+BIVOL=.5
+BIVPRES=3150716
+BIVSIT=67
+BIVTYPE="I"
+CLN=0
+D=.18
+D0=67
+DA=36
+DDER=0
+DFN=1
+DI=""
+DIC="^AUPNVSIT("
+DIC1=200
+DILN=21
+DILOCKTM=3
+DISL="Pharmacy Service Providers-Pharmacist-"
+DISYS=19
+DQ=0
+DT=3150716
+DTIME=300
+DUZ=51
+DUZ(0)="#d"
+DUZ(1)=""
+DUZ(2)=1
+DUZ("AG")="V"
+DUZ("AUTO")=1
+DUZ("BUF")=1
+DUZ("LANG")=""
+DUZ("TEST")=" <TEST ACCOUNT>"
+E=3150716
+EE=""
+F=2094
+G=""
+H=""
+I=0
+IO="/dev/pts/15"
+IO(0)="/dev/pts/15"
+IO(1,"/dev/pts/15")=""
+IO("CLOSE")="SCK$40783"
+IO("ERROR")=""
+IO("HOME")="40^/dev/pts/15"
+IO("ZIO")="/dev/pts/15"
+IOBM=24
+IOBOFF=$C(27)_"[25m"
+IOBON=$C(27)_"[5m"
+IOBS="$C(8)"
+IOEDEOP=$C(27)_"[J"
+IOF="#,$C(27,91,50,74,27,91,72)"
+IOIL=$C(27)_"[L"
+IOINHI=$C(27)_"[1m"
+IOINORM=$C(27)_"[22m"
+IOM=80
+ION="GTM-UNIX-TELNET"
+IOPAR=""
+IORC=$C(27)_"8"
+IORVOFF=$C(27)_"[27m"
+IORVON=$C(27)_"[7m"
+IOS=40
+IOSC=$C(27)_"7"
+IOSGR0=$C(27)_"[m"
+IOSL=24
+IOST="C-VT320"
+IOST(0)=92
+IOSTBM="$C(27,91)_(+IOTM)_$C(59)_(+IOBM)_$C(114)"
+IOT="VTRM"
+IOTM=1
+IOUOFF=$C(27)_"[24m"
+IOUON=$C(27)_"[4m"
+IOUPAR=""
+IOXY="W $C(27,91)_((DY+1))_$C(59)_((DX+1))_$C(72)"
+J=""
+K=""
+L=""
+M=""
+N=""
+NAME="BI PATIENT DATA VIEW/EDIT"
+O=""
+P=1
+PRVN(200,51,.01)="HABIEL,SAM"
+PXALOOK=-1
+PXKOE=""
+PXUCV=""
+PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")="LTI"
+PXVIMM("IMMUNIZATION",1,"ANATOMIC LOCATION")="LTI"
+PXVIMM("IMMUNIZATION",1,"DOSAGE")=.5
+PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=51
+PXVIMM("IMMUNIZATION",1,"IMMUN")=1020
+PXVIMM("IMMUNIZATION",1,"LOT")=5
+PXVIMM("IMMUNIZATION",1,"REACTION")=""
+PXVIMM("PROVIDER",1,"NAME")=51
+PXVIMM("PROVIDER",1,"PRIMARY")=1
+Q=3150716
+QQ=3150716
+R=51
+S=""
+SPEL="Pharmacist"
+SUBL=""
+T="LTI"
+TYPEI=246
+U="^"
+V="|"
+VALM=707
+VALM(0)=""
+VALM("BM")=18
+VALM("DEFS")=1
+VALM("ENTITY")="Visit"
+VALM("EXP")=""
+VALM("FIXED")=0
+VALM("HDR")="D HDR^BIPATVW()"
+VALM("IFN")=707
+VALM("LINES")=12
+VALM("MAX")=1
+VALM("PROTOCOL")="4732;ORD(101,"
+VALM("PRT")="BI PATIENT VIEW PRINT"
+VALM("RM")=80
+VALM("TITLE")="PATIENT VIEW (IMM v8.5*9)"
+VALM("TM")=7
+VALM("TYPE")=1
+VALMAR="^TMP(""BILMVW"",$J)"
+VALMBG=1
+VALMCAP="  #  Immunization History                  |   Immunizations DUE on 07/
+16/2015  "
+VALMCC=1
+VALMCNT=23
+VALMCOFF=$C(13,27)_"[?25l"_$C(13)
+VALMCON=$C(13,27)_"[?25h"_$C(13)
+VALMDDF("IMM HISTORY")="IMM HISTORY^6^39^Immunization History                  |
+"
+VALMDDF("IMMUNIZATIONS DUE")="IMMUNIZATIONS DUE^48^33^Immunizations DUE on 07/16
+/2015"
+VALMDDF("SELECTION")="SELECTION^3^1^#"
+VALMDN=1
+VALMEVL=0
+VALMHDR(1)=" "
+VALMHDR(2)=" Patient: MOUSE,MICKEY               DOB: 22-Nov-1977 (37 yrs)"
+VALMHDR(3)="  Chart#: 505112277P at SOFTWARE SERVICE         Active   Male    M 
+HBsAg: NEG"
+VALMHDR(4)=" "
+VALMIOXY="S $X=DX,$Y=DY ; <====="
+VALMKEY="15^VALM HIDDEN ACTIONS"
+VALMKEY(11)="442^+^11"
+VALMKEY(12)="443^-^12"
+VALMKEY(13)="447^UP^13"
+VALMKEY(14)="448^DN^14"
+VALMKEY(15)="463^>^15"
+VALMKEY(16)="464^<^16"
+VALMKEY(21)="446^FS^21"
+VALMKEY(22)="445^LS^22"
+VALMKEY(23)="466^GO^23"
+VALMKEY(24)="444^RD^24"
+VALMKEY(25)="451^PS^25"
+VALMKEY(26)="452^PL^26"
+VALMKEY(31)="456^SL^31"
+VALMKEY(32)="454^ADPL^32"
+VALMKEY(33)="450^Q^33"
+VALMKEY(10001)="442^NEXT^10001"
+VALMKEY(10002)="443^PREV^10002"
+VALMKEY(10003)="450^QUIT^10003"
+VALMLFT=1
+VALMLST=12
+VALMMENU=1
+VALMPGE=1
+VALMSGR=$C(27)_"[m"
+VALMUP=0
+VALMWD=80
+W=.5
+X="A^^"
+XMDUZ=51
+XQAUSER=51
+XQCH=""
+XQDIC=11574
+XQJMP=0
+XQORNEST=2
+XQORNEST(1)="4732;ORD(101,"
+XQORNEST(2)="4736;ORD(101,"
+XQORS=2
+XQORSPEW=0
+XQPSM="P11573"
+XQSV="11574^11573^BI MENU-PATIENT^Patient Menu^^M^^^^^^^^^^1^^^"
+XQT="A"
+XQUEFLG=0
+XQUSER="SAM HABIEL"
+XQVOL="ROU"
+XQXFLG="0^0^XUP"
+XQY=11572
+XQY0="BI PATIENT VIEW/EDIT^Single Patient Record^^A^0^^^^^^^^^1^1^^"
+XUSQUIT=0
+Z=1
+
+FOIA 2015-02>ZWRITE ^TMP($J,*)
+^TMP(12179,"VSIT-ERROR",0)=11
+^TMP(12179,"VSIT-ERROR",1)="   When: JUL 16, 2015@11:23:09         Option: BI PA
+TIENT VIEW/EDIT"
+^TMP(12179,"VSIT-ERROR",2)="   User: HABIEL,SAM             Division: SOFTWARE S
+ERVICE"
+^TMP(12179,"VSIT-ERROR",3)="-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+  -  -  -  -  -  -  "
+^TMP(12179,"VSIT-ERROR",4)="The following are a list of required variables."
+^TMP(12179,"VSIT-ERROR",5)="    VSIT = Undefined"
+^TMP(12179,"VSIT-ERROR",6)="     DFN =   (patient)"
+^TMP(12179,"VSIT-ERROR",7)=" VSIT(0) = D0EM"
+^TMP(12179,"VSIT-ERROR",8)="Hospital Location = ^LOC^^Invalid Hospital Location 
+[0:22] - The specified Hospital Location was not found defined in the Hospital L
+ocation file."
+^TMP(12179,"VSIT-ERROR",9)="-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+  -  -  -  -  -  -  "
+^TMP(12179,"VSIT-ERROR",10)="*** Fatal Error - Required Variable Not Defined ***
+"
+^TMP(12179,"VSIT-ERROR",11)="Invalid Hospital Location [0:22] - The specified Ho
+spital Location was not found defined in the Hospital Location file.  -> "
+
+FOIA 2015-02>ZWRITE ^TMP(:,$j)
+
+FOIA 2015-02>ZST INTO
+ Q:BIVTYPE'="I"
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+129^PXVVISIT
+
+FOIA 2015-02>ZST INTO
+ D TRIGADD^BIVISIT2
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+134^PXVVISIT
+
+FOIA 2015-02>ZST
+ QUIT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+135^PXVVISIT
+
+FOIA 2015-02>ZST
+ I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+11^BIVISIT
+
+FOIA 2015-02>ZST
+ N BIVTYPE,BIDFN,BIPTR,BIDOSE,BILOT,BIDATE,BILOC,BIOLOC,BICAT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+13^BIVISIT
+
+FOIA 2015-02>ZST
+ N BIOIEN,BIRES,BIREA,BIDTR,BIREC,BIVISD,BIPROV,BIOVRD,BIINJS,BIVOL
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+14^BIVISIT
+
+FOIA 2015-02>ZST
+ N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+15^BIVISIT
+
+FOIA 2015-02>ZST
+ D PARSE(BIDATA,1)
+%GTM-I-BREAKZST, Break instruction encountered during ZSTEP action
+		At M source location VFILE+18^BIVISIT
