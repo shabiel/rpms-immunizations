@@ -51,7 +51,6 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  . I $G(BINOM) QUIT  ; No
  . S VSIT(0)=VSIT(0)_"I" ; interactive
  ;
- ; test
  ; ZEXCEPT: PXVNOM Used internally for testing forcing interactiveness
  I $G(PXVNOM),VSIT(0)'["I" S VSIT(0)=VSIT(0)_"I"
  ;
@@ -93,7 +92,108 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  QUIT
  ;
  ;
+VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^BIVISIT.
+ ;---> Add (create) V IMMUNIZATION or V SKIN TEST entry for this Visit.
+ ;---> Parameters:
+ ;     1 - BIVSIT (req) IEN of Parent Visit.
+ ;     2 - BIDATA (req) String of data for the Visit to be added.
+ ;                      See BIDATA definition at linelabel PARSE.
+ ;     3 - BIERR  (ret) Text of Error Code if any, otherwise null.
  ;
+ ;
+ I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
+ ;
+ N BIVTYPE,BIDFN,BIPTR,BIDOSE,BILOT,BIDATE,BILOC,BIOLOC,BICAT
+ N BIOIEN,BIRES,BIREA,BIDTR,BIREC,BIVISD,BIPROV,BIOVRD,BIINJS,BIVOL
+ N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT
+ ;
+ ;---> See BIDATA definition at linelabel PARSE (above).
+ D PARSE^BIVISIT(BIDATA,1)
+ ;
+ ;---> Check that a Parent VISIT exists.
+ I '$D(^AUPNVSIT(+$G(BIVSIT),0)) D  Q
+ .D ERRCD^BIUTL2(432,.BIERR) S BIERR="1^"_BIERR
+ ;
+ ;
+ N PXVIMM
+ ;
+ S PXVIMM("PROVIDER",1,"NAME")=BIPROV
+ S PXVIMM("PROVIDER",1,"PRIMARY")=1
+ ;
+ ; Notes regarding port.
+ ; Dose # in RPMS is disabled. Rm here.
+ ; Last modified user in not an explicit field to be set here like in RPMS
+ ;
+ ; VISTA DEPRECATED/MISSING FIELDS
+ ; +-------------------------------------------------------------------+
+ ; | RPMS                |  VISTA                                      |
+ ; | ------------------- | ------------------------------------------- |
+ ; | #.08 DOSE OVERRIDE  |  Not used                                   |
+ ; | #.09 INJECTION SITE |  #1302 ROUTE OF ADMINISTRATION  &           |
+ ; |                     |  #1303 SITE OF ADMINISTRATION               |
+ ; | #.11 VOLUME         |  #1312 DOSAGE                               |
+ ; | #.12 DATE OF VIS    |  #2 (Multiple) VIS OFFERED/GIVEN TO PATIENT |
+ ; | #.13 CREATED BY V CPT ENTRY | Not used                            |
+ ; | #.14 VAC ELIGIBILITY|  Not used                                   |
+ ; | #.15 IMPORT FROM... |  Not used                                   |
+ ; | #.16 NDC            |  Not used                                   |
+ ; | #1 ADMIN NOTES      |  Not used                                   |
+ ; | #1201 EVENT DT/TM   |  Not used (says exact time of V Imm)        |
+ ; | #.17 DATE VIS PRES  |  #2 (see above)
+ ;
+ I BIVTYPE="I" D
+ . S PXVIMM("IMMUNIZATION",1,"IMMUN")=BIPTR              ; Immunization/vaccine name.
+ . S PXVIMM("IMMUNIZATION",1,"LOT")=$G(BILOT)            ; Lot Number
+ . S PXVIMM("IMMUNIZATION",1,"REACTION")=$G(BIREC)       ; Reaction XXX INVESTIGATE XXX
+ . S PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=BIPROV      ; Shot provider
+ . S PXVIMM("IMMUNIZATION",1,"DOSAGE")=BIVOL             ; Dosage (e.g. 0.5 mL) XXX Check Data
+ . S PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")=BIINJS       ; Injection Site XXX Change Field
+ . S PXVIMM("IMMUNIZATION",1,"ANATOMIC LOCATION")=BIINJS ; Injection Site XXX Change Form Field
+ . 
+ ;
+ ; NB: RPMS has these extra fields, which are not in VISTA:
+ ; .08: Skin Test Reader
+ ; .09: Skin Test Site
+ ; .11: Volume
+ ; We won't be filing these
+ I BIVTYPE="S" D
+ . S PXVIMM("SKIN TEST",1,"TEST")=BIPTR                  ; Skin Test
+ . S PXVIMM("SKIN TEST",1,"RESULT")=BIRES                ; Result
+ . S PXVIMM("SKIN TEST",1,"READING")=BIREA               ; Reading
+ . S PXVIMM("SKIN TEST",1,"D/T READ")=BIDTR              ; Date Read
+ . S PXVIMM("SKIN TEST",1,"ENC PROVIDER")=BIPROV         ; Skin test provider
+ ;
+ ; $$DATA2PCE^PXAPI(INPUTROOT,PKG,SOURCE,.VISIT,USER,ERRDISP,.ERRARRAY,PPEDIT,.ERRPROB, .ACCOUNT)
+ N % S %=$$DATA2PCE^PXAPI($NAME(PXVIMM),"BIV","IMMUNIZATION PACKAGE",.BIVISIT,BIPROV,1)
+ ;
+ I %'=1 D  QUIT
+ .I BIVTYPE="I" D ERRCD^BIUTL2(402,.BIERR) S BIERR="1^"_BIERR Q
+ .I BIVTYPE="S" D ERRCD^BIUTL2(413,.BIERR) S BIERR="1^"_BIERR Q
+ ;
+ ;---> Save IEN of V IMMUNIZATION just created.
+ ;XXX find how to get that for VISTA
+ ;
+ ;
+ ;---> If Skin Test is a PPD and result is Positive, add Contraindication
+ ;---> to further TST-PPD tests.
+ I BIVTYPE="S",$$SKNAME^BIUTL6($G(BIPTR))="PPD",$E($G(BIRES))="P" D
+ .;---> Set date equal to either Date Read, or Date of Visit, or Today.
+ .N BIDTC S BIDTC=$S($G(BIDTR):BIDTR,$G(BIDATE):$P(BIDATE,"."),1:$G(DT))
+ .S BIDATA=BIDFN_"|"_203_"|"_17_"|"_BIDTC
+ .D ADDCONT^BIRPC4(,BIDATA)
+ ;
+ ;
+ ;---> ADD OTHER V IMMUNIZATION FIELDS:
+ ;---> Quit if this is not an Immunization.
+ Q:BIVTYPE'="I"
+ ;
+ ; XXX VIS DATA MUST BE ENTERED INTO VISTA VIA FILEMAN! .12 and .17
+ ;
+ ;---> Now trigger New Immunization Trigger Event.
+ D TRIGADD^BIVISIT2
+ QUIT
+ ;
+ ;----------
 TEST D EN^%ut($T(+0),1,1) QUIT
  ;
 TCRREG ; @TEST Test Create Regular
