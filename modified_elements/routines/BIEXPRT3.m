@@ -38,18 +38,19 @@ HISTORY(BIFMT,BIDE,BIMM,BIFDT,BISKIN,BIDUZ2,BINF) ;EP
  S:BIFMT>1 BISKIN=0 S:'$G(BISKIN) BISKIN=0
  ;
  ;---> Gather Histories for all patients stored in ^BITMP($J,1,BIDFN.
+ N IX S IX=$S($$RPMS^BIUTL9():"AC",1:"C") ; Index is C in VISTA, AC in RPMS
  S BIDFN=0
  F  S BIDFN=$O(^BITMP($J,1,BIDFN)) Q:'BIDFN  D
  .;
  .;---> Gather Immunization History for one patient (BIDFN).
  .S BIVIMM=0
- .F  S BIVIMM=$O(^AUPNVIMM("AC",BIDFN,BIVIMM)) Q:'BIVIMM  D
+ .F  S BIVIMM=$O(^AUPNVIMM(IX,BIDFN,BIVIMM)) Q:'BIVIMM  D
  ..;
  ..;---> Gather Immunization data for one visit.
  ..;---> If this is an invalid pointer, clean up and quit.
  ..N BIVDATA  S BIVDATA=$G(^AUPNVIMM(BIVIMM,0))
- ..I BIVDATA="" K ^AUPNVIMM("AC",BIDFN,BIVIMM) Q
- ..I $P(BIVDATA,U,2)'=BIDFN K ^AUPNVIMM("AC",BIDFN,BIVIMM) Q
+ ..I BIVDATA="" K ^AUPNVIMM(IX,BIDFN,BIVIMM) Q
+ ..I $P(BIVDATA,U,2)'=BIDFN K ^AUPNVIMM(IX,BIDFN,BIVIMM) Q
  ..;
  ..;---> Quit if not selecting all Immunization Types and if this
  ..;---> record is not one of the Immunization Types selected.
@@ -92,12 +93,12 @@ HISTORY(BIFMT,BIDE,BIMM,BIFDT,BISKIN,BIDUZ2,BINF) ;EP
  ..N I F I=24,26,29,38,39,40,41 S BIDE(I)=""
  .;
  .S BIVSKN=0
- .F  S BIVSKN=$O(^AUPNVSK("AC",BIDFN,BIVSKN)) Q:'BIVSKN  D
+ .F  S BIVSKN=$O(^AUPNVSK(IX,BIDFN,BIVSKN)) Q:'BIVSKN  D
  ..;
  ..;---> Gather Skin Test data for one visit.
  ..;---> If this is an invalid pointer, clean up and quit.
- ..I '$D(^AUPNVSK(BIVSKN,0)) K ^AUPNVSK("AC",BIDFN,BIVSKN) Q
- ..I $P(^AUPNVSK(BIVSKN,0),U,2)'=BIDFN K ^AUPNVSK("AC",BIDFN,BIVSKN) Q
+ ..I '$D(^AUPNVSK(BIVSKN,0)) K ^AUPNVSK(IX,BIDFN,BIVSKN) Q
+ ..I $P(^AUPNVSK(BIVSKN,0),U,2)'=BIDFN K ^AUPNVSK(IX,BIDFN,BIVSKN) Q
  ..;
  ..;---> If format=1, build ASCII record.
  ..D HISTORY1(BIVSKN,.BIDE,BIFMT,"S") Q
