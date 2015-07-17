@@ -25,6 +25,10 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  ;---> Make sure that the Imm package is allowed to create visits
  I $$PKGON^VSIT("BIV")=-1 N % S %=$$PKG^VSIT("BIV",1)
  ;
+ ;---> Make sure we have a hospital location to use for Standalone Immunizations
+ ;TODO: MAKE SURE THAT WHEN WE USE CPRS, WE HAVE AN ACTUAL HOSPITAL LOCATION
+ ;
+ ;
  ;---> Patient.
  ; ZEXCEPT: DFN
  S DFN=BIDFN
@@ -54,8 +58,12 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  ; ZEXCEPT: PXVNOM Used internally for testing forcing interactiveness
  I $G(PXVNOM),VSIT(0)'["I" S VSIT(0)=VSIT(0)_"I"
  ;
- ; Institution (BILOC is really IHS Location, which is DINUMMED to file 4).
+ ;---> Institution (BILOC is really IHS Location, which is DINUMMED to file 4).
  S VSIT("INS")=$G(BILOC)
+ ;
+ ;---> Hospital Location
+ ;XXX TODO XXX: This is hardcoded.
+ I BICAT'="E" S VSIT("LOC")=2
  ;
  ;---> Other Location (Text if Location="OTHER").
  S VSIT("OUT")=$G(BIOLOC)
@@ -148,6 +156,9 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;       to say when something really took place is a seperate field for Admin
  ;       Date)
  ;
+ ; - Edits for Immunizations doesn't work b/c of missing VFC field
+ ; - Edits for Skin tests happened to delete my previous entry. Need to track down.
+ ;
  I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
  ;
  N BIVTYPE,BIDFN,BIPTR,BIDOSE,BILOT,BIDATE,BILOC,BIOLOC,BICAT
@@ -164,7 +175,7 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;
  N PXVIMM
  ;
- S PXVIMM("PROVIDER",1,"NAME")=BIPROV
+ S PXVIMM("PROVIDER",1,"NAME")=DUZ
  S PXVIMM("PROVIDER",1,"PRIMARY")=1
  ;
  ; Notes regarding port.
@@ -197,7 +208,6 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  . S PXVIMM("IMMUNIZATION",1,"DOSAGE")=BIVOL             ; Dosage (e.g. 0.5 mL) XXX Check Data
  . S PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")=BIINJS       ; Injection Site XXX Change Field
  . S PXVIMM("IMMUNIZATION",1,"ANATOMIC LOCATION")=BIINJS ; Injection Site XXX Change Form Field
- . 
  ;
  ; NB: RPMS has these extra fields, which are not in VISTA:
  ; .08: Skin Test Reader
