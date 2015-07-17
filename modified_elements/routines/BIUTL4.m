@@ -309,15 +309,13 @@ OLDDATE(X) ;EP
  ;     1 - X (opt) X=Internal Value of Date of Visit entered.
  ;
  ;
- ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
- ;---> Make VIS Presented Date default to Visit Date (when changed).
  N BIDATEE S BIDATEE=X
  ;
  I '$G(BI("K"))&($P(X,".")'=DT) D
  .D PUT^DDSVALF(11,,,"E","I") S BI("I")="E"
  .I ($G(DT)-X)>5 D NOPROV^BIUTL7("E")
  ;
- D PUT^DDSVALF(10.2,,,BIDATEE,"E") S BI("QQ")=BIDATEE
+ I $G(BIVTYPE)="I" D PUT^DDSVALF(10.2,,,BIDATEE,"E") S BI("QQ")=BIDATEE
  QUIT
  ;**********
  ;
