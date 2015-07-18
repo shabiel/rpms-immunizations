@@ -4,6 +4,7 @@ PXVBIVD ;VEN/SMH - Elements to disable from IHS port;05/08/2015
  ; ---> Don't Run on RPMS!!!
  QUIT:$$RPMS^BIUTL9()
  ;
+POSTVIST ; [Public] KIDS POST Install
  ; ---> Options in the Site Manager menu BI MENU-MANAGER
  D OUT^XPDMENU("BI NDC ADD/EDIT","Not used in VISTA")    ; NDC Code Add/Edit
  D OUT^XPDMENU("BI VACCINE TABLE RESTAND","Not used in VISTA") ; Restandardize Vaccine Table
