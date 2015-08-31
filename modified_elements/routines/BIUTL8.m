@@ -1,5 +1,5 @@
-BIUTL8 ;IHS/CMI/MWR - UTIL: PATLKUP, PRTLST, ZGBL; MAY 10, 2010
- ;;8.5;IMMUNIZATION;**9**;OCT 01,2014
+BIUTL8 ;IHS/CMI/MWR - UTIL: PATLKUP, PRTLST, ZGBL;2015-08-31  1:32 PM
+ ;;8.5;IMMUNIZATION;**10**;MAY 30,2015
  ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
  ;;  UTILITY: PATIENT LOOKUP, DUPTEST, PRINT LIST, K/ZGBL, KILLALL.
  ;;           HFSPATH, IMMSVDIR.
@@ -9,6 +9,7 @@ BIUTL8 ;IHS/CMI/MWR - UTIL: PATLKUP, PRTLST, ZGBL; MAY 10, 2010
  ;;  PATCH 9: Fix so that TAB key will not skip Eligibility.  ELIGLAB+10
  ;;           Return the IP Address used for the TCH Forecaster.  IPTCH
  ;;           Add default of V01 (Ineligible) for patients 19 and over.  VFCSET+14
+ ;;  PATCH 10: Screen code for PPD Lot Number in Lot Number File.  LOTSCRS+0
  ;
  ;
  ;----------

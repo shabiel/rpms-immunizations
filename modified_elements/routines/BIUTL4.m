@@ -1,5 +1,5 @@
-BIUTL4 ;IHS/CMI/MWR - UTIL: SCREENMAN CODE; OCT 15, 2010
- ;;8.5;IMMUNIZATION;**9**;OCT 01,2014
+BIUTL4 ;IHS/CMI/MWR - UTIL: SCREENMAN CODE;2015-08-31  1:24 PM
+ ;;8.5;IMMUNIZATION;**10**;MAY 30,2015
  ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
  ;;  UTILITY: SCREENMAN CODE: VAC SELECT ACTIONS, SERIES VALID,
  ;;           LOC BRANCHING LOGIC, VISIT LOC DEF, SKIN TEST READ MM.
@@ -8,6 +8,7 @@ BIUTL4 ;IHS/CMI/MWR - UTIL: SCREENMAN CODE; OCT 15, 2010
  ;;  PATCH 5: Add NDC to reset fields when vaccine is changed.  VACCHG+14
  ;;  PATCH 5: Add leading zero to default volume if less than 1.  VISVOL+21
  ;;  PATCH 9: Make VIS Presented Date default to Visit Date (when changed).  OLDATE+9
+ ;;  PATCH 10: Only stuff VIS Presented Date if this is a V Imm.  OLDDATE+18
  ;
  ;----------
 VACSCR ;EP
@@ -309,12 +310,18 @@ OLDDATE(X) ;EP
  ;     1 - X (opt) X=Internal Value of Date of Visit entered.
  ;
  ;
+ ;********** PATCH 9, v8.5, OCT 01,2014, IHS/CMI/MWR
+ ;---> Make VIS Presented Date default to Visit Date (when changed).
  N BIDATEE S BIDATEE=X
  ;
  I '$G(BI("K"))&($P(X,".")'=DT) D
  .D PUT^DDSVALF(11,,,"E","I") S BI("I")="E"
  .I ($G(DT)-X)>5 D NOPROV^BIUTL7("E")
  ;
+ ;
+ ;********** PATCH 10, v8.5, MAY 30,2015, IHS/CMI/MWR
+ ;---> Only stuff VIS Presented Date if this is a V Imm.
+ ;D PUT^DDSVALF(10.2,,,BIDATEE,"E") S BI("QQ")=BIDATEE
  I $G(BIVTYPE)="I" D PUT^DDSVALF(10.2,,,BIDATEE,"E") S BI("QQ")=BIDATEE
  QUIT
  ;**********
@@ -465,7 +472,7 @@ DEFSITE ;EP
 BADREAD ;EP
  ;ZEXCEPT:DDSERROR
  ;---> Code to check Skin Test results: If the result is Negative,
- ;---> the Reading must be less than 15 millimeters; in that case,
+ ;---> the Reading must be <15mm; in that case,
  ;---> display help message and reject value.
  ;
  N X

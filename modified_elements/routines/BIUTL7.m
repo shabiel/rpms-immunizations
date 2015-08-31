@@ -1,9 +1,11 @@
-BIUTL7 ;IHS/CMI/MWR - UTIL: SCREENMAN CODE; MAY 10, 2010
- ;;8.5;IMMUNIZATION;**9**;OCT 01,2014
+BIUTL7 ;IHS/CMI/MWR - UTIL: SCREENMAN CODE;2015-08-31  1:32 PM
+ ;;8.5;IMMUNIZATION;**10**;MAY 30,2015
  ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
  ;;  SCREENMAN RELATED CODE TO LOAD & SAVE: VISIT, CASE DATA, CONTRAS.
  ;;  PATCH 9: Added Preload of Admin Date and VIS Presented Date. LOADVIS+70
  ;;           Added save of Admin Date and VIS Presented Date. SAVISIT+41
+ ;;  PATCH 10: Added Preload of Skin Test Lot Number. LOADVIS+92
+ ;;            Added save of Skin Test Lot Number.  SAVISIT+46
  ;
  ;
  ;----------
@@ -98,6 +100,11 @@ LOADVIS(BIVTYPE) ;EP
  ..;
  ..;---> Load the Volume.
  ..I $G(BI("W"))]"" D PUT^DDSVALF(2.8,,,BI("W"),"I")
+ ..;
+ ..;********** PATCH 10, v8.5, MAY 30,2015, IHS/CMI/MWR
+ ..;---> Preload Skin Test Lot Number.
+ ..I $G(BI("LL"))>1 D PUT^DDSVALF(2.9,,,BI("LL"),"I")
+ ..;**********
  .;
  .;
  .;---> If there is text for Other Location:
@@ -266,7 +273,7 @@ SAVISIT(BIVTYPE,BI) ;EP
  ;---> not="S" (Skin Test Visit), then set Error Code and quit.
  I ($G(BIVTYPE)'="I")&($G(BIVTYPE)'="S") D ERRCD^BIUTL2(410,,1) Q
  ;
- N A,B,BIDATA,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T1,T2,V,W,X,Y,Z,EE,QQ S V="|"
+ N A,B,BIDATA,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T1,T2,V,W,X,Y,Z,EE,QQ,LL  S V="|"
  ;
  S A=$G(BI("A"))      ;Patient DFN.
  S B=$G(BI("B"))      ;Vaccine or Skin Test IEN.
@@ -301,6 +308,9 @@ SAVISIT(BIVTYPE,BI) ;EP
  S EE=$G(BI("EE"))     ;Admin Date (Date shot admin'd to patient.
  S QQ=$G(BI("QQ"))     ;Date VIS Presented to Patient.
  ;
+ ;********** PATCH 10, v8.5, MAY 30,2015, IHS/CMI/MWR
+ ;---> Add Skin Test Lot Number.
+ S LL=$G(BI("LL"))
  ;
  ;---> Check Site IEN for parameters.
  S:'$G(Z) Z=$G(DUZ(2))
@@ -309,8 +319,8 @@ SAVISIT(BIVTYPE,BI) ;EP
  S BIDATA=BIVTYPE_V_A_V_B_V_C_V_D_V_E_V_F_V_G_V_I_V_J_V_K
  ;---> NOTE: Y will be pc 25 (not 24) because BIRPC6 feeds CPT Import to pc 24.
  ;---> Add pieces 27-29.
- ;---> Piece:     12  13  14  15  16  17  18  19       20     21  22  23 24 25  26 27  28   29
- S BIDATA=BIDATA_V_L_V_M_V_N_V_O_V_P_V_Q_V_R_V_S_V_T1_"-"_T2_V_W_V_X_V_Z_V_V_Y_V_H_V_V_EE_V_QQ
+ ;---> Piece:     12  13  14  15  16  17  18  19       20     21  22  23 24 25  26 27  28   29   30
+ S BIDATA=BIDATA_V_L_V_M_V_N_V_O_V_P_V_Q_V_R_V_S_V_T1_"-"_T2_V_W_V_X_V_Z_V_V_Y_V_H_V_V_EE_V_QQ_V_LL
  ;
  ;**********
  ;
