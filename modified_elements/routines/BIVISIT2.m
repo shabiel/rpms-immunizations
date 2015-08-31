@@ -75,6 +75,7 @@ DELETE(BIDA,BIVTYPE,BIERR) ;EP
  ;
  ;---> If the DEPENDENT ENTRY COUNT for parent Visit is 0, then
  ;---> delete the Visit, too.
+ ; TODO: Delete VISTA in VISTA too!
  S DLAYGO=9000010
  D:'$P(^AUPNVSIT(APCDVDLT,0),U,9) ^APCDVDLT
  ;

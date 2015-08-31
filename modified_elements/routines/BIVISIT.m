@@ -39,7 +39,7 @@ PARSE(Y,Z) ;EP
  ;    17 - BIVISD  (opt) Release/Revision Date of VIS (YYYMMDD).
  ;    18 - BIPROV  (opt) IEN of Provider of Immunization/Skin Test.
  ;    19 - BIOVRD  (opt) Dose Override.
- ;    20 - BIINJS  (opt) Injection Site.
+ ;    20 - BIINJS  (opt) ROUTE (#920.2) - SITE (#920.3)
  ;    21 - BIVOL   (opt) Volume.
  ;    22 - BIREDR  (opt) IEN of Reader of Skin Test.
  ;    23 - BISITE  (opt) Passed DUZ(2) for Site Parameters.
