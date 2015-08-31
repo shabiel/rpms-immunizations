@@ -1,4 +1,4 @@
-^XTMP("K2VC","EXPORT","FIA",920.4)="IMM CONTRAINDICATIONS"
+^XTMP("K2VC","EXPORT","FIA",920.4)="IMM CONTRAINDICATION REASONS"
 ^XTMP("K2VC","EXPORT","FIA",920.4,0)="^PXV(920.4,"
 ^XTMP("K2VC","EXPORT","FIA",920.4,0,0)="920.4I"
 ^XTMP("K2VC","EXPORT","FIA",920.4,0,1)="y^y^f^^n^^y^o^n"
@@ -9,10 +9,10 @@
 ^XTMP("K2VC","EXPORT","FIA",920.4,920.4)=0
 ^XTMP("K2VC","EXPORT","FIA",920.4,920.43)=0
 ^XTMP("K2VC","EXPORT","FIA",920.4,920.499)=0
-^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,0)="IMM CONTRAINDICATIONS^920.4"
+^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,0)="IMM CONTRAINDICATION REASONS^920.4"
 ^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,0,"GL")="^PXV(920.4,"
-^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%",0)="^1.005^^"
-^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",0)="^1.001^12^12^3150311^^^"
+^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%",0)="^1.005^^0"
+^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",0)="^1.001^12^12^3150528^^^^"
 ^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",1,0)="Per VHA Directive, this file has been ""locked down"" by Data"
 ^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",2,0)="Standardization (DS). The file definition (i.e. data dictionary) shall"
 ^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",3,0)="not be modified. All additions, changes and deletions to entries in the"
@@ -25,7 +25,7 @@
 ^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",10,0)="This is a table of contraindications regarding immunizations and skin"
 ^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",11,0)="tests. The data for this table is derived from the CDC table"
 ^XTMP("K2VC","EXPORT","^DIC",920.4,920.4,"%D",12,0)="Vaccinations Contraindications."
-^XTMP("K2VC","EXPORT","^DIC",920.4,"B","IMM CONTRAINDICATIONS",920.4)=""
+^XTMP("K2VC","EXPORT","^DIC",920.4,"B","IMM CONTRAINDICATION REASONS",920.4)=""
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0)="FIELD^^3^13"
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"DDA")="N"
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"DT")=3150316
@@ -35,8 +35,9 @@
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"IX","B",920.4,.01)=""
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"IX","C",920.4,.02)=""
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"IX","D",920.43,.01)=""
-^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"NM","IMM CONTRAINDICATIONS")=""
+^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"NM","IMM CONTRAINDICATION REASONS")=""
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"PT",920.4,99.97)=""
+^XTMP("K2VC","EXPORT","^DD",920.4,920.4,0,"VRPK")="PX"
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,.01,0)="NAME^Fa^^0;1^K:$L(X)>30!($L(X)<3) X"
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,.01,.1)="VA SHORT NAME"
 ^XTMP("K2VC","EXPORT","^DD",920.4,920.4,.01,1,0)="^.1"

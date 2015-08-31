@@ -9,12 +9,10 @@ PXVP206 ;BPOIFO/CLR - POST INSTALL ;01/14/15 12:38pm
  Q
  ;
 PRETRAN ;Load spreadsheet
- I $G(DUZ("AG"))'="V" Q
  M @XPDGREF@("PXVSKX")=^XTMP("PXVSKX")
  Q
  ;
 PRE ;
- I $G(DUZ("AG"))'="V" Q
  N PXVI,PXVNM,I,PXVC
  ;delete SHORT NAME identifier
  I $D(^DD(9999999.14,0,"ID",.02)) K ^DD(9999999.14,0,"ID",.02)
@@ -27,7 +25,6 @@ PRE ;
 POST ;Post installation
  ;standardize SKIN Test file
  ;
- I $G(DUZ("AG"))'="V" Q
  N ERRCNT,PXVCPDT,XUMF,PXVGL,PXVF
  S XUMF=1
  K ^XTMP("PXVSKX"),^XTMP("PXVERR")
@@ -181,7 +178,7 @@ MAIL ;
 DATA ;deletes data in the SKIN TEST file and restores from backup
  N PXVI,DA,DIK
  S XUMF=1
- I '$D(^XTMP("PXVSKB")) D BMES^XPDUTL("RESTORE FAILED>>GLOBAL DOES NOT EXIST") Q
+ I '$D(^XTMP("PXVSKB")) D BMES^XPDUTL("SKIN TEST was not restored") Q
  F PXVI=0:0 S PXVI=$O(^AUTTSK(PXVI)) Q:PXVI'>0  D
  . S DA=PXVI,DIK="^AUTTSK(" D ^DIK
  S PXVI=-1 F  S PXVI=$O(^XTMP("PXVSKB",9999999.28,PXVI)) Q:PXVI=""  D

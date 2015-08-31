@@ -115,6 +115,9 @@ ZRT ;Manipulate update of MFN ZRT segment for Immunization files
  I IEN,NAME="vista_has_vis" D  Q
  .I $P(HLNODE,HLFS,3)="""""" D DS(9999999.144,IEN) S OUT=1 Q
  .I '$G(XXIEN(9999999.144)) D DS(9999999.144,IEN)  S XXIEN(9999999.144)=1 ;CLEAN SUBFILE ENTRY
+ I IEN,NAME="VistA_Immunization_Group" D  Q
+ .I $P(HLNODE,HLFS,3)="""""" D DS(9999999.147,IEN) S OUT=1 Q
+ .I '$G(XXIEN(9999999.147)) D DS(9999999.147,IEN)  S XXIEN(9999999.147)=1 ;CLEAN SUBFILE ENTRY
  I IEN,NAME="Status" D IFST(.07,"",1) Q
  Q
 99999928  ; Manipulate update of MFN ZRT segment for 9999999.28 File
