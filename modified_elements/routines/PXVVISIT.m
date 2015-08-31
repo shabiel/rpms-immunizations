@@ -206,8 +206,8 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  . S PXVIMM("IMMUNIZATION",1,"REACTION")=$G(BIREC)       ; Reaction XXX INVESTIGATE XXX
  . S PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=BIPROV      ; Shot provider
  . S PXVIMM("IMMUNIZATION",1,"DOSAGE")=BIVOL             ; Dosage (e.g. 0.5 mL) XXX Check Data
- . S PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")=BIINJS       ; Injection Site XXX Change Field
- . S PXVIMM("IMMUNIZATION",1,"ANATOMIC LOCATION")=BIINJS ; Injection Site XXX Change Form Field
+ . S PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")=$P(BIINJS,"-")       ; Injection Site Route
+ . S PXVIMM("IMMUNIZATION",1,"ANATOMIC LOC")=$P(BIINJS,"-",2) ; Injection Site Site
  ;
  ; NB: RPMS has these extra fields, which are not in VISTA:
  ; .08: Skin Test Reader
