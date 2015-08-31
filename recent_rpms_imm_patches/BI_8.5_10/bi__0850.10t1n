@@ -1,0 +1,88 @@
+INSTALLATION NOTES FOR BI - IHS IMMUNIZATION V8.5 patch 10.
+ ========================================================================
+          PREFIX:  BI
+ CURRENT VERSION:  8.5                        PATCH#: 10
+RELEASE DATE: MAY 2015
+ ========================================================================
+ **** NOTE ***** NOTE **** NOTE **** NOTE **** NOTE **** NOTE **** NOTE *
+ ************************************************************************
+ * READ THE ENTIRE NOTES FILE PRIOR TO ATTEMPTING ANY INSTALLATION!!!  *
+ ************************************************************************
+ **** NOTE ***** NOTE **** NOTE **** NOTE **** NOTE **** NOTE **** NOTE *
+
+
+ 1.  GENERAL INFORMATION
+
+     Patch #10 to IMMUNIZATION version 8.5 contains the following changes:
+
+     1)	Several updates to the Vaccine Table, including new CVX Codes
+        162-166, and VIS dates and Active/Inactive as specified by the IHS
+        Immunization Program.
+
+     2) A new Skin Test/PPD Lot Number field has been added to the Add/Edit
+        Skin Test screen and underlying V Skin Test file for the purpose of
+        recording PPD lot number.
+
+     3) The three most recent Skin Test/PPD readings have been added to the
+        History Section of all Imm Letter Templates (and existing customized
+        letter templates). 
+
+     4) The forecasting and reporting system has been updated to accommodate
+        PCV-13 in addition to PPSV23.
+
+     5) A failure to display MMR and Hep B Ped as invalid on the Patient 
+        View Screen when reported by the TCH Forecaster has been corrected.
+        (Invalid doses would show up as marked with an asterisk on the 
+        History section of the Patient View screen in the roll'n'scroll
+        version of the interface.)
+
+     6) An error displayed on the Add/Edit Skin Test screen has been corrected.
+
+
+ 2.  CONTENTS OF DISTRIBUTION
+
+      bi__0850.10k                                KIDS file
+      bi__0850.10n                                Notes file (this file)
+
+
+ 3.  REQUIREMENTS
+
+     a) Kernel 8.0
+
+     b) FM 22 or higher
+
+     c) Immunization v8.5, patch 9
+
+
+
+ 4.  INSTALLATION INSTRUCTIONS
+
+     In all production UCI's/Namespaces:
+
+     a)  (Don't miss step e) below.)
+         Load the Distribution into KIDS using option 1 on the
+         Installation menu.  The distribution was released in a file
+         named bi__0850.10k.
+
+     b)  Verify the load using option 2 on the KIDS Installation Menu.
+         Consider using the options 3 and 4 on the KIDS Installation
+         Menu to print and compare the transport.
+
+     c)  Install the distribution using option 6 on the Installation menu.
+         Answer 'NO' to the 'INHIBIT LOGONs' and 'DISABLE Scheduled
+         Options, Menu Options, and Protocols' prompts.
+
+     d)  For results, use the KIDS "Install File Print" option to
+         view/print the " BI*8.5*10" entry.
+
+     e)  Update the TCH Forecaster per the instructions found in section
+         3.0 (page 7) of the TCH Forecaster Installation Instructions:
+         http://www.ihs.gov/RPMS/PackageDocs/BI/TCH%20Forecaster%20Installation%20Instructions.pdf
+
+
+ 5.  POINT OF CONTACT
+
+     OIT User Support (IHS)
+     Phone: 1-888-830-7280
+       Web: http://www.ihs.gov/helpdesk/
+     Email: support@ihs.gov
