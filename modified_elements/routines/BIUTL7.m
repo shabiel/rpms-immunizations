@@ -266,7 +266,7 @@ SAVISIT(BIVTYPE,BI) ;EP
  ;---> not="S" (Skin Test Visit), then set Error Code and quit.
  I ($G(BIVTYPE)'="I")&($G(BIVTYPE)'="S") D ERRCD^BIUTL2(410,,1) Q
  ;
- N A,B,BIDATA,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,V,W,X,Y,Z,EE,QQ S V="|"
+ N A,B,BIDATA,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T1,T2,V,W,X,Y,Z,EE,QQ S V="|"
  ;
  S A=$G(BI("A"))      ;Patient DFN.
  S B=$G(BI("B"))      ;Vaccine or Skin Test IEN.
@@ -287,7 +287,9 @@ SAVISIT(BIVTYPE,BI) ;EP
  S Q=$G(BI("Q"))      ;Release/Revision Date of VIS (DD-Mmm-YYYY).
  S R=$G(BI("R"))      ;IEN of Provider of Imm/Skin Test.
  S S=$G(BI("S"))      ;Dose Override.
- S T=$G(BI("T"))      ;Injection Site.
+ ;S T=$G(BI("T"))      ;Injection Site.
+ S T1=$G(BI("T1"))    ;Route (#920.2) (New in VISTA Port)
+ S T2=$G(BI("T2"))    ;Site  (#920.3) (New in VISTA Port)
  S W=$G(BI("W"))      ;Volume.
  S X=$G(BI("X"))      ;IEN of Reader (Provider) of Skin Test.
  S Z=$G(BI("Z"))      ;DUZ(2) for Site Parameters.
@@ -307,8 +309,8 @@ SAVISIT(BIVTYPE,BI) ;EP
  S BIDATA=BIVTYPE_V_A_V_B_V_C_V_D_V_E_V_F_V_G_V_I_V_J_V_K
  ;---> NOTE: Y will be pc 25 (not 24) because BIRPC6 feeds CPT Import to pc 24.
  ;---> Add pieces 27-29.
- ;---> Piece:     12  13  14  15  16  17  18  19  20  21  22  23 24 25  26 27  28   29
- S BIDATA=BIDATA_V_L_V_M_V_N_V_O_V_P_V_Q_V_R_V_S_V_T_V_W_V_X_V_Z_V_V_Y_V_H_V_V_EE_V_QQ
+ ;---> Piece:     12  13  14  15  16  17  18  19       20     21  22  23 24 25  26 27  28   29
+ S BIDATA=BIDATA_V_L_V_M_V_N_V_O_V_P_V_Q_V_R_V_S_V_T1_"-"_T2_V_W_V_X_V_Z_V_V_Y_V_H_V_V_EE_V_QQ
  ;
  ;**********
  ;
