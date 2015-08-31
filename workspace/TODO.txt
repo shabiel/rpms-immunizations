@@ -46,3 +46,12 @@ TODO:
 Next work on Patient Enter/Edit Imm.
 --> Add VISTA fields to it.
 --> See PXVVISIT for all the details.
+
+   920          VACCINE INFORMATION STATEMENT  (38 entries)
+   920.1        IMMUNIZATION INFO SOURCE  (9 entries)
+   920.2        IMM ADMINISTRATION ROUTE  (9 entries)
+   920.3        IMM ADMINISTRATION SITE (BODY)  (12 entries)
+   920.4        IMM CONTRAINDICATIONS     (16 entries)
+   920.5        IMM REFUSALS              (4 entries)
+
+NB: Del NDC code
