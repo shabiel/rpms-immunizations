@@ -1,0 +1,5 @@
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,-1)="0^1"
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,0)="PXV IMM INVENTORY MGR^Immunization Inventory Manager"
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,1,0)="^19.11^2^2^3150519^^"
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,1,1,0)="This key is assigned to users responsible for immunization inventory"
+^XTMP("K2VC","EXPORT","KRN",19.1,IEN,1,2,0)="management."
