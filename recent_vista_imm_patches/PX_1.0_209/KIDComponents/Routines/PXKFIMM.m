@@ -1,4 +1,4 @@
-PXKFIMM ;ISL/JVS,SLC/ajb - Fields for V IMMUNIZATIONS file ;04/06/2015  13:15
+PXKFIMM ;ISL/JVS,SLC/ajb - Fields for V IMMUNIZATIONS file ;05/20/15  12:52
  ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,124,201,209**;Aug 12, 1996
  ;
  ;  Adding or Editing of data in a particular field can be controlled
@@ -48,7 +48,7 @@ ADD ;Add an entry to the file
  ;;.01////^S X=$G(
  ;;.02////^S X=$G(
  ;;.03////^S X=$G(
- ;;.04///^S X=$G(
+ ;;.04////^S X=$G(
  ;;
  ;;.06///^S X=$G(
  ;;.07///^S X=$G(
