@@ -1,35 +1,57 @@
 == RPMS ==                                                                |  == VISTA ==
-,1,0)="ADMINISTRATIVE NOTES^F^^1;1^K:$L(X)>160!($L(X)<1) X"               |  ,1,0)="ADMINISTRATIVE NOTES^Fa^^1;1^K:$L(X)>160!($L(X)<1) X"
-                                                                          >  ,2,0)="VIS OFFERED/GIVEN TO PATIENT^9000010.112PA^^2;0"
-                                                                          >  ,3,0)="OTHER DIAGNOSIS^9000010.113P^^3;0"
-,1101,0)="REMARKS^9000010.1111^^11;0"                                        ,1101,0)="REMARKS^9000010.1111^^11;0"
-,1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X" |  ,1201,0)="EVENT DATE AND TIME^Da^^12;1^S %DT=""ESTX"" D ^%DT S X=Y K:Y<1 
-,1202,0)="ORDERING PROVIDER^*P200'X^VA(200,^12;2^S DIC(""S"")=""I $D(^VA( |  ,1202,0)="ORDERING PROVIDER^P200'a^VA(200,^12;2^Q"
-,1203,0)="CLINIC^P40.7'^DIC(40.7,^12;3^Q"                                 |  ,1203,0)="CLINIC^P40.7'a^DIC(40.7,^12;3^Q"
-,1204,0)="ENCOUNTER PROVIDER^P200'^VA(200,^12;4^Q"                        |  ,1204,0)="ENCOUNTER PROVIDER^P200'a^VA(200,^12;4^Q"
-,1208,0)="PARENT^P9000010.11'^AUPNVIMM(^12;8^Q"                           |  ,1205,0)="DATE/TIME RECORDED^Da^^12;5^S %DT=""ETXR"" D ^%DT S X=Y K:Y<1 X
-,1209,0)="EXTERNAL KEY^F^^12;9^K:$L(X)>20!($L(X)<1) X"                    |  ,1206,0)="IMMUNIZATION DOCUMENTER^P200'a^VA(200,^12;6^Q"
-,1210,0)="OUTSIDE PROVIDER NAME^F^^12;10^K:$L(X)>30!($L(X)<1) X"          |  ,1207,0)="LOT NUMBER^RP9999999.41'a^AUTTIML(^12;7^Q"
-,1213,0)="ANCILLARY POV^P80'^ICD9(^12;13^Q"                               |  ,1208,0)="PARENT^P9000010.11'a^AUPNVIMM(^12;8^Q"
-,1214,0)="USER LAST UPDATE^P200'^VA(200,^12;14^Q"                         |  ,1209,0)="EXTERNAL KEY^Fa^^12;9^K:$L(X)>20!($L(X)<1) X"
-,1215,0)="ORDERING LOCATION^P44'^SC(^12;15^Q"                             |  ,1210,0)="OUTSIDE PROVIDER NAME^Fa^^12;10^K:$L(X)>30!($L(X)<1) X"
-,1216,0)="DATE/TIME ENTERED^D^^12;16^S %DT=""ESTXR"" D ^%DT S X=Y K:Y<1 X |  ,1213,0)="ANCILLARY POV^P80'a^ICD9(^12;13^Q"
-,1217,0)="ENTERED BY^P200'^VA(200,^12;17^Q"                               |  ,1214,0)="USER LAST UPDATE^P200'a^VA(200,^12;14^Q"
-,1218,0)="DATE/TIME LAST MODIFIED^D^^12;18^S %DT=""ESTXR"" D ^%DT S X=Y K |  ,1215,0)="ORDERING LOCATION^P44'a^SC(^12;15^Q"
-,1219,0)="LAST MODIFIED BY^P200'^VA(200,^12;19^Q"                         |  ,1216,0)="DATE/TIME ENTERED^Da^^12;16^S %DT=""ESTXR"" D ^%DT S X=Y K:Y<1 
-                                                                          >  ,1217,0)="ENTERED BY^P200'a^VA(200,^12;17^Q"
-                                                                          >  ,1218,0)="DATE/TIME LAST MODIFIED^Da^^12;18^S %DT=""ESTXR"" D ^%DT S X=Y 
-                                                                          >  ,1219,0)="LAST MODIFIED BY^P200'a^VA(200,^12;19^Q"
-                                                                          >  ,1301,0)="EVENT INFORMATION SOURCE^R*P920.1'a^PXV(920.1,^13;1^S DIC(""S""
-                                                                          >  ,1302,0)="ROUTE OF ADMINISTRATION^P920.2'a^PXV(920.2,^13;2^Q"
-                                                                          >  ,1303,0)="SITE OF ADMINISTRATION (BODY)^P920.3'a^PXV(920.3,^13;3^Q"
-                                                                          >  ,1304,0)="PRIMARY DIAGNOSIS^*P80'a^ICD9(^13;4^S DIC(""S"")=""D ^AUPNSICD"
-                                                                          >  ,1305,0)="DOSAGE^RF^^13;5^K:$L(X)>30!($L(X)<3) X"
-,2601,0)="SNOMED CT^9000010.1126A^^26;0"                                     ,2601,0)="SNOMED CT^9000010.1126A^^26;0"
-,2701,0)="LOINC CODES^9000010.1127A^^27;0"                                   ,2701,0)="LOINC CODES^9000010.1127A^^27;0"
-,80101,0)="EDITED FLAG^S^1:EDITED;^801;1^Q"                               |  ,80101,0)="EDITED FLAG^Sa^1:EDITED;^801;1^Q"
-,80102,0)="AUDIT TRAIL^F^^801;2^K:$L(X)>85!($L(X)<2) X"                   |  ,80102,0)="AUDIT TRAIL^Fa^^801;2^K:$L(X)>85!($L(X)<2) X"
-,81101,0)="COMMENTS^F^^811;1^K:$L(X)>245!($L(X)<1) X"                     |  ,81101,0)="COMMENTS^Fa^^811;1^K:$L(X)>245!($L(X)<1) X"
-,81201,0)="VERIFIED^SI^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^812 |  ,81201,0)="VERIFIED^SIa^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^81
-,81202,0)="PACKAGE^P9.4'I^DIC(9.4,^812;2^Q"                               |  ,81202,0)="PACKAGE^P9.4'Ia^DIC(9.4,^812;2^Q"
-,81203,0)="DATA SOURCE^P839.7'I^PX(839.7,^812;3^Q"                        |  ,81203,0)="DATA SOURCE^P839.7'Ia^PX(839.7,^812;3^Q"
+.01,0)="IMMUNIZATION^RP9999999.14'^AUTTIMM(^0;1^Q"                        |  .01,0)="IMMUNIZATION^R*P9999999.14'a^AUTTIMM(^0;1^S DIC(""S"")=""I $P(^(0
+.02,0)="PATIENT NAME^RP9000001'I^AUPNPAT(^0;2^Q"                          |  .02,0)="PATIENT NAME^RP9000001'Ia^AUPNPAT(^0;2^Q"
+.03,0)="VISIT^R*P9000010'I^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$P |  .03,0)="VISIT^R*P9000010'Ia^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$
+.04,0)="SERIES^S^P:PARTIALLY COMPLETE;C:COMPLETE;B:BOOSTER;1:SERIES 1;2:S |  .04,0)="SERIES^*Sa^P:PARTIALLY COMPLETE;C:COMPLETE;B:BOOSTER;1:SERIES 1;2
+.05,0)="LOT^*P9999999.41'^AUTTIML(^0;5^S DIC(""S"")=""I $P(^(0),U,3)=0,$D |  .05,0)="LOT^*P9999999.41'a^AUTTIML(^0;5^S DIC(""S"")=""I $P(^(0),U,3)=0,$
+.06,0)="REACTION^P9002084.8'^BIREC(^0;6^Q"                                |  .06,0)="REACTION^Sa^1:FEVER;2:IRRITABILITY;3:LOCAL REACTION OR SWELLING;4
+.07,0)="*CONTRAINDICATED^S^1:YES (DO NOT REPEAT THIS VACCINE).;0:NO (OK T |  .07,0)="CONTRAINDICATED^Sa^1:YES (DO NOT REPEAT THIS VACCINE).;0:NO (OK T
+.08,0)="DOSE OVERRIDE^S^0:@;1:INVALID--BAD STORAGE;2:INVALID--DEFECTIVE;3 |  .08,0)="DOSE OVERRIDE^Sa^0:@;1:INVALID--BAD STORAGE;2:INVALID--DEFECTIVE;
+.09,0)="INJECTION SITE^S^LTI:Left Thigh IM;LTS:Left Thigh SQ;RTI:Right Th |  .09,0)="INJECTION SITE^Sa^LTI:Left Thigh IM;LTS:Left Thigh SQ;RTI:Right T
+.11,0)="VOLUME^NJ4,2^^0;11^K:+X'=X!(X>5)!(X<0)!(X?.E1"".""3N.N) X"        |  .11,0)="VOLUME^NJ4,2a^^0;11^K:+X'=X!(X>5)!(X<0)!(X?.E1"".""3N.N) X"
+.12,0)="DATE OF VAC INFO STATEMENT^D^^0;12^S %DT=""EX"" D ^%DT S X=Y K:Y< |  .12,0)="DATE OF VAC INFO STATEMENT^Da^^0;12^S %DT=""EX"" D ^%DT S X=Y K:Y
+.13,0)="CREATED BY V CPT ENTRY^NJ9,0^^0;13^K:+X'=X!(X>999999999)!(X<0)!(X |  .13,0)="CREATED BY V CPT ENTRY^NJ9,0a^^0;13^K:+X'=X!(X>999999999)!(X<0)!(
+.14,0)="VAC ELIGIBILITY^P9002084.83'^BIELIG(^0;14^Q"                      |  .14,0)="VAC ELIGIBILITY^P9002084.83'a^BIELIG(^0;14^Q"
+.15,0)="IMPORT FROM OUTSIDE REGISTRY^S^1:IMPORTED;0:NOT IMPORTED;2:EDITED |  .15,0)="IMPORT FROM OUTSIDE REGISTRY^Sa^1:IMPORTED;0:NOT IMPORTED;2:EDITE
+.16,0)="NDC^P9002084.95'^BINDC(^0;16^Q"                                   |  .16,0)="NDC^P9002084.95'a^BINDC(^0;16^Q"
+1,0)="ADMINISTRATIVE NOTES^F^^1;1^K:$L(X)>160!($L(X)<1) X"                |  1,0)="ADMINISTRATIVE NOTES^Fa^^1;1^K:$L(X)>160!($L(X)<1) X"
+                                                                          >  2,0)="VIS OFFERED/GIVEN TO PATIENT^9000010.112PA^^2;0"
+                                                                          >  3,0)="OTHER DIAGNOSIS^9000010.113P^^3;0"
+1101,0)="REMARKS^9000010.1111^^11;0"                                         1101,0)="REMARKS^9000010.1111^^11;0"
+1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"  |  1201,0)="EVENT DATE AND TIME^Da^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
+1202,0)="ORDERING PROVIDER^*P200'X^VA(200,^12;2^S DIC(""S"")=""I $D(^VA(2 |  1202,0)="ORDERING PROVIDER^P200'a^VA(200,^12;2^Q"
+1203,0)="CLINIC^P40.7'^DIC(40.7,^12;3^Q"                                  |  1203,0)="CLINIC^P40.7'a^DIC(40.7,^12;3^Q"
+1204,0)="ENCOUNTER PROVIDER^P200'^VA(200,^12;4^Q"                         |  1204,0)="ENCOUNTER PROVIDER^P200'a^VA(200,^12;4^Q"
+1208,0)="PARENT^P9000010.11'^AUPNVIMM(^12;8^Q"                            |  1205,0)="DATE/TIME RECORDED^Da^^12;5^S %DT=""ETXR"" D ^%DT S X=Y K:Y<1 X"
+1209,0)="EXTERNAL KEY^F^^12;9^K:$L(X)>20!($L(X)<1) X"                     |  1206,0)="IMMUNIZATION DOCUMENTER^P200'a^VA(200,^12;6^Q"
+1210,0)="OUTSIDE PROVIDER NAME^F^^12;10^K:$L(X)>30!($L(X)<1) X"           |  1207,0)="LOT NUMBER^*P9999999.41'a^AUTTIML(^12;7^S DIC(""S"")=""I '$P(^(0
+1213,0)="ANCILLARY POV^P80'^ICD9(^12;13^Q"                                |  1208,0)="PARENT^P9000010.11'a^AUPNVIMM(^12;8^Q"
+1214,0)="USER LAST UPDATE^P200'^VA(200,^12;14^Q"                          |  1209,0)="EXTERNAL KEY^Fa^^12;9^K:$L(X)>20!($L(X)<1) X"
+1215,0)="ORDERING LOCATION^P44'^SC(^12;15^Q"                              |  1210,0)="OUTSIDE PROVIDER NAME^Fa^^12;10^K:$L(X)>30!($L(X)<1) X"
+1216,0)="DATE/TIME ENTERED^D^^12;16^S %DT=""ESTXR"" D ^%DT S X=Y K:Y<1 X" |  1213,0)="ANCILLARY POV^P80'a^ICD9(^12;13^Q"
+1217,0)="ENTERED BY^P200'^VA(200,^12;17^Q"                                |  1214,0)="USER LAST UPDATE^P200'a^VA(200,^12;14^Q"
+1218,0)="DATE/TIME LAST MODIFIED^D^^12;18^S %DT=""ESTXR"" D ^%DT S X=Y K: |  1215,0)="ORDERING LOCATION^P44'a^SC(^12;15^Q"
+1219,0)="LAST MODIFIED BY^P200'^VA(200,^12;19^Q"                          |  1216,0)="DATE/TIME ENTERED^Da^^12;16^S %DT=""ESTXR"" D ^%DT S X=Y K:Y<1 X
+                                                                          >  1217,0)="ENTERED BY^P200'a^VA(200,^12;17^Q"
+                                                                          >  1218,0)="DATE/TIME LAST MODIFIED^Da^^12;18^S %DT=""ESTXR"" D ^%DT S X=Y K
+                                                                          >  1219,0)="LAST MODIFIED BY^P200'a^VA(200,^12;19^Q"
+                                                                          >  1301,0)="EVENT INFORMATION SOURCE^R*P920.1'a^PXV(920.1,^13;1^S DIC(""S"")
+                                                                          >  1302,0)="ROUTE OF ADMINISTRATION^*P920.2'a^PXV(920.2,^13;2^S DIC(""S"")="
+                                                                          >  1303,0)="SITE OF ADMINISTRATION (BODY)^*P920.3'a^PXV(920.3,^13;3^S DIC(""
+                                                                          >  1304,0)="PRIMARY DIAGNOSIS^*P80'Xa^ICD9(^13;4^S DIC(""S"")=""D ^AUPNSICD"
+                                                                          >  1312,0)="DOSAGE^Fa^^13;12^K:$L(X)>30!($L(X)<3) X"
+                                                                          >  1401,0)="RESULTS^Sa^T:TAKE;N:NO TAKE;I:INDETERMINATE;^14;1^Q"
+                                                                          >  1402,0)="READING^NJ2,0a^^14;2^K:+X'=X!(X>40)!(X<0)!(X?.E1"".""1N.N) X"
+                                                                          >  1403,0)="DATE/TIME READ^Da^^14;3^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
+                                                                          >  1404,0)="READER^P200'a^VA(200,^14;4^Q"
+                                                                          >  1405,0)="READING RECORDED^Da^^14;5^S %DT=""ETXR"" D ^%DT S X=Y K:Y<1 X"
+                                                                          >  1406,0)="HOURS READ POST-INOCULATION^NJ3,0a^^14;6^K:+X'=X!(X>100)!(X<0)!(
+                                                                          >  1501,0)="READING COMMENT^Fa^^15;1^K:$L(X)>245!($L(X)<1) X"
+2601,0)="SNOMED CT^9000010.1126A^^26;0"                                      2601,0)="SNOMED CT^9000010.1126A^^26;0"
+2701,0)="LOINC CODES^9000010.1127A^^27;0"                                    2701,0)="LOINC CODES^9000010.1127A^^27;0"
+80101,0)="EDITED FLAG^S^1:EDITED;^801;1^Q"                                |  80101,0)="EDITED FLAG^Sa^1:EDITED;^801;1^Q"
+80102,0)="AUDIT TRAIL^F^^801;2^K:$L(X)>85!($L(X)<2) X"                    |  80102,0)="AUDIT TRAIL^Fa^^801;2^K:$L(X)>85!($L(X)<2) X"
+81101,0)="COMMENTS^F^^811;1^K:$L(X)>245!($L(X)<1) X"                      |  81101,0)="COMMENTS^Fa^^811;1^K:$L(X)>245!($L(X)<1) X"
+81201,0)="VERIFIED^SI^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^812; |  81201,0)="VERIFIED^SIa^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^812
+81202,0)="PACKAGE^P9.4'I^DIC(9.4,^812;2^Q"                                |  81202,0)="PACKAGE^P9.4'Ia^DIC(9.4,^812;2^Q"
+81203,0)="DATA SOURCE^P839.7'I^PX(839.7,^812;3^Q"                         |  81203,0)="DATA SOURCE^P839.7'Ia^PX(839.7,^812;3^Q"
