@@ -202,7 +202,7 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;
  I BIVTYPE="I" D
  . S PXVIMM("IMMUNIZATION",1,"IMMUN")=BIPTR              ; Immunization/vaccine name.
- . S PXVIMM("IMMUNIZATION",1,"LOT")=$G(BILOT)            ; Lot Number
+ . S PXVIMM("IMMUNIZATION",1,"LOT NUM")=$G(BILOT)        ; Lot Number
  . S PXVIMM("IMMUNIZATION",1,"REACTION")=$G(BIREC)       ; Reaction XXX INVESTIGATE XXX
  . S PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=BIPROV      ; Shot provider
  . S PXVIMM("IMMUNIZATION",1,"DOSAGE")=BIVOL             ; Dosage (e.g. 0.5 mL) XXX Check Data
