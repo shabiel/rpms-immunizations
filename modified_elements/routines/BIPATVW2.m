@@ -69,7 +69,9 @@ ADDIMM ;EP
  ;---> BISAVE=Flag to call BIUTL7 to save data (below).  vvv83
  ;---> BITOLONG=Flag used in Screenman to display pop-up: Other Loc too long.
  N BISAVE,BITOLONG
- N DR S DR="[BI FORM-IMM VISIT ADD/EDIT]"
+ N DR 
+ I $$RPMS^BIUTL9() S DR="[BI FORM-IMM VISIT ADD/EDIT]"
+ E  S DR="[BI FORM-IMM VISIT ADD/EDIT V]"
  D DDS^BIFMAN(9000001,DR,BIDFN,"S",.BISAVE,.BIPOP)
  ;
  ;---> If user saved data, call ^BIUTL7 to save it.
