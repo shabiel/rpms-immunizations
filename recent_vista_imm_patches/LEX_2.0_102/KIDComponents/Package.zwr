@@ -1,0 +1,8 @@
+^XTMP("K2VC","EXPORT","PKG",IEN,-1)="1^1"
+^XTMP("K2VC","EXPORT","PKG",IEN,0)="LEXICON UTILITY^LEX^Medical and Biomedical Terminology System."
+^XTMP("K2VC","EXPORT","PKG",IEN,22,0)="^9.49I^1^1"
+^XTMP("K2VC","EXPORT","PKG",IEN,22,1,0)="2.0^2960915^2970115^10958"
+^XTMP("K2VC","EXPORT","PKG",IEN,22,1,"PAH",1,0)="102^3150819"
+^XTMP("K2VC","EXPORT","PKG",IEN,22,1,"PAH",1,1,0)="^^2^2^3150819"
+^XTMP("K2VC","EXPORT","PKG",IEN,22,1,"PAH",1,1,1,0)="This patch installs the UCUM file and associated APIs."
+^XTMP("K2VC","EXPORT","PKG",IEN,22,1,"PAH",1,1,2,0)=""
