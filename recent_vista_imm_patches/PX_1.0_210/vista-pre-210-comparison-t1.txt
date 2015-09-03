@@ -1,0 +1,1099 @@
+Compare KIDS package PX*1.0*210 to current site (Disk)
+Site: FOIA.DOMAIN.EXT  UCI: VAH,ROU                                 Sep 01, 2015@14:32:43
+   KIDS                                                              Disk
+-------------------------------------------------------------------------------
+
+                                                          Routine: PXAIIMM
+  1{PXAIIMM ;ISL/PKR - Set the IMMUNIZATION nodes. ;04/16/15  21}   1{PXAIIMM ;ISL/PKR - Set the IMMUNIZATION nodes. ;04/06/2015  }
+                                                       ^                                                                 ^
+   {:58}                                                             {13:15}
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**45,124,209,210**;Aug 12,}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**45,124,209**;Aug 12, 199}
+                                                  ^                                                                 ^
+   { 1996;Build 4}                                                   {6;Build 4}
+ 13{ . I IND?1(1"VIS",1"REMARKS") D  Q}
+ 14{ . . M PXAA(IND)=@PXADATA@("IMMUNIZATION",PXAK,IND)}
+ 31{ S $P(AFTER12,U,1)=$G(PXAA("EVENT D/T"))}                      29{ S $P(AFTER0,U,8)=$G(PXAA("DIAGNOSIS"))}
+               ^                                                                 ^
+ 32{ S $P(AFTER12,U,4)=$G(PXAA("ENC PROVIDER"))}                   30{ S $P(AFTER0,U,9)=$G(PXAA("DIAGNOSIS 2"))}
+               ^                                                                 ^
+ 33{ S $P(AFTER811,U,1)=$G(PXAA("COMMENT"))}                       31{ S $P(AFTER0,U,10)=$G(PXAA("DIAGNOSIS 3"))}
+               ^                                                                 ^
+ 34{ ;}
+                                                                   32{ S $P(AFTER0,U,11)=$G(PXAA("DIAGNOSIS 4"))}
+                                                                   33{ S $P(AFTER0,U,12)=$G(PXAA("DIAGNOSIS 5"))}
+                                                                   34{ S $P(AFTER0,U,13)=$G(PXAA("DIAGNOSIS 6"))}
+                                                                   35{ S $P(AFTER0,U,14)=$G(PXAA("DIAGNOSIS 7"))}
+                                                                   36{ S $P(AFTER0,U,15)=$G(PXAA("DIAGNOSIS 8"))}
+                                                                   37{ S $P(AFTER12,U,1)=$G(PXAA("EVENT D/T"))}
+                                                                   38{ S $P(AFTER12,U,4)=$G(PXAA("ENC PROVIDER"))}
+                                                                   39{ S $P(AFTER811,U,1)=$G(PXAA("COMMENT"))}
+                                                                   40{ ;}
+ 40{ S $P(AFTER12,U,2)=$G(PXAA("ORD PROVIDER"))}
+ 45{ S $P(AFTER13,U,4)=$G(PXAA("DIAGNOSIS"))}
+ 54{ ; Add multiple data to PXK AFTER - PX*1*210}
+ 55{ N FLD,SEQ,SUB}
+ 56{ ;}
+ 57{ F FLD="VIS","REMARKS" D}
+ 58{ . ;}
+ 59{ . S SUB=$S(FLD="VIS":2,1:11)}
+ 60{ . ;}
+ 61{ . ; Delete multiple}
+ 62{ . I $G(PXAA(FLD))="@" D  Q}
+ 63{ . . S ^TMP("PXK",$J,"IMM",PXAK,SUB,0,"AFTER")="@"}
+ 64{ . ;}
+ 65{ . S SEQ=0}
+ 66{ . F  S SEQ=$O(PXAA(FLD,SEQ)) Q:'SEQ  D}
+ 67{ . . S ^TMP("PXK",$J,"IMM",PXAK,SUB,SEQ,"AFTER")=$G(PXAA(FLD}
+   {,SEQ,0))}
+ 68{ ;}
+ 69{ ; Add DIAGNOSIS 2 thru 8 to OTHER DIAGNOSIS multiple}
+ 70{ N DIAGNUM,DIAGSTR}
+ 71{ ;}
+ 72{ S SEQ=0}
+ 73{ ;}
+ 74{ F DIAGNUM=2:1:8 D}
+ 75{ . S DIAGSTR="DIAGNOSIS "_DIAGNUM}
+ 76{ . I $G(PXAA(DIAGSTR))'="" D}
+ 77{ . . S SEQ=SEQ+1}
+ 78{ . . S ^TMP("PXK",$J,"IMM",PXAK,3,SEQ,"AFTER")=PXAA(DIAGSTR)}
+ 79{ ;}
+104{ ; Add multiple data to PXK BEFORE}
+105{ I $G(IENB) D}
+106{ . N IENSUB,SUB}
+107{ . F SUB=2,3,11 D}
+108{ . . S IENSUB=0}
+109{ . . F  S IENSUB=$O(^AUPNVIMM(IENB,SUB,IENSUB)) Q:'IENSUB  D}
+110{ . . . S ^TMP("PXK",$J,"IMM",PXAK,SUB,IENSUB,"BEFORE")=$G(^A}
+   {UPNVIMM(IENB,SUB,IENSUB,0))}
+111{ ;}
+
+                                                          Routine: PXAIIMMV
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**199,209,210**;Aug 12, 19}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**199,209**;Aug 12, 1996;B}
+                                               ^                                                                 ^
+   {96;Build 4}                                                      {uild 4}
+ 39{ N PXFLD,PXFLDNAME,PXFLDNUM,PXVAL,PXFILE,PXOK,PXNEWVAL,PXSEQ}  39{ N PXFLD,PXFLDNAME,PXFLDNUM,PXVAL,PXFILE,PXOK,PXNEWVAL}
+   {,PXVIS}
+ 41{ F PXFLD="SERIES^.04","LOT NUM^1207","INFO SOURCE^1301","ADM}  41{ F PXFLD="SERIES^.04","LOT NUM^1207","INFO SOURCE^1301","ADM}
+   {IN ROUTE^1302","ANATOMIC LOC^1303","ORD PROVIDER^1202" D}        {IN ROUTE^1302","ANATOMIC LOC^1303" D}
+                                      ^                                                                 ^
+ 58{ ; Check VIS Multiple}
+ 59{ S PXFLDNAME="VIS"}
+ 60{ S PXFLDNUM=.01}                                               58{ Q}
+     ^                                                                 ^
+ 62{ I $G(PXAA(PXFLDNAME))="@" Q}                                  60{VALFLD(PXFILE,PXFLDNUM,PXVAL) ;}
+    ^                                                                 ^
+ 64{ S PXSEQ=0}
+ 65{ F  S PXSEQ=$O(PXAA(PXFLDNAME,PXSEQ)) Q:'PXSEQ  D}
+ 66{ . ;}
+ 67{ . S PXVAL=$P($G(PXAA(PXFLDNAME,PXSEQ,0)),U,1)}
+ 68{ . I PXVAL="" K PXAA(PXFLDNAME,PXSEQ) Q}
+ 69{ . ;}
+ 70{ . S PXFILE=9000010.112}
+ 71{ . S PXOK=$$VALFLD(PXFILE,PXFLDNUM,PXVAL)}
+ 72{ . I 'PXOK D}
+ 73{ . . D ERRMSG(8390001.002,0,PXVAL,PXFLDNAME)}
+ 74{ . . K PXAA(PXFLDNAME,PXSEQ) ; Don't file this field, as it'}  62{ ; Validate field and return:}
+     ^                                                                 ^
+   {s invalid}
+ 76{ Q}
+ 77{ ;}
+ 78{VALFLD(PXFILE,PXFLDNUM,PXVAL) ;}
+ 79{ ;}
+ 80{ ; Validate field and return:}
+ 81{ ;}
+
+                                                           Routine: PXAISK
+  1{PXAISK ;ISL/PKR - Set the SKIN TEST nodes. ;02/25/2015}         1{PXAISK ;ISL/PKR - Set the SKIN TEST nodes. ;12/18/97}
+                                                ^                                                                 ^
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**45,124,210**;Aug 12, 199}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**45,124**;Aug 12, 1996}
+                                              ^                                                                 ^
+   {6;Build 4}
+ 21{ N AFTER0,AFTER12,AFTER13,AFTER811,AFTER812}                   21{ N AFTER0,AFTER12,AFTER811,AFTER812}
+                           ^                                                                 ^
+ 29{ S $P(AFTER0,U,7)=$G(PXAA("READER")) ; line added 2/24/2015 }
+   {adm}
+ 39{ S $P(AFTER12,U,2)=$G(PXAA("ORD PROVIDER")) ; line added 2/2}
+   {4/2015 adm}
+ 41{ S $P(AFTER12,U,11)=$G(PXAA("D/T PLACEMENT RECORDED")) ; lin}
+   {e added 2/24/2015 adm}
+ 42{ S $P(AFTER12,U,12)=$G(PXAA("ANATOMIC LOC")) ; line added 2/}
+   {24/2015 adm}
+ 43{ S $P(AFTER12,U,13)=$G(PXAA("D/T READING RECORDED")) ; line }
+   {added 2/24/2015 adm}
+ 44{ S $P(AFTER13,U,1)=$G(PXAA("READING COMMENT")) ; line added }
+   {2/24/2015 adm}
+ 53{ S ^TMP("PXK",$J,"SK",PXAK,13,"AFTER")=AFTER13 ; line added }
+   {2/24/2015 adm}
+ 58{ N BEFOR0,BEFOR12,BEFOR13,BEFOR811,BEFOR812 ; line modified }  51{ N BEFOR0,BEFOR12,BEFOR811,BEFOR812}
+                           ^                                                                 ^
+   {2/24/2015 adm}
+ 69{ . S BEFOR13=$G(^AUPNVSK(IENB,13)) ; line added 2/24/2015 ad}
+   {m}
+ 72{ E  S (BEFOR0,BEFOR11,BEFOR12,BEFOR13,BEFOR811,BEFOR812)="" }  64{ E  S (BEFOR0,BEFOR11,BEFOR12,BEFOR811,BEFOR812)=""}
+                                       ^                                                                 ^
+   {; line modified 2/24/2015 adm}
+ 76{ S ^TMP("PXK",$J,"SK",PXAK,13,"BEFORE")=BEFOR13 ; line added}
+   { 2/24/2015 adm}
+
+                                                           Routine: PXAPI
+  1{PXAPI ;ISL/dee - PCE's APIs ;06/30/15  10:24}                   1{PXAPI ;ISL/dee - PCE's APIs ;4/16/97}
+                                 ^                                                                 ^
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**15,14,27,28,124,164,210*}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**15,14,27,28,124,164**;Au}
+                                                           ^                                                                 ^
+   {*;Aug 12, 1996;Build 4}                                          {g 12, 1996}
+192{VIS(PXRESULT,PXVIS,PXDATE) ;Return Vaccine Information State}
+   {ment entry}
+193{ ;See VIS^PXAPIIM for parameters and return values.}
+194{ ;}
+195{ I '$G(PXVIS) Q}
+196{ S PXDATE=$G(PXDATE,$$NOW^XLFDT())}
+197{ D VIS^PXAPIIM(.PXRESULT,PXVIS,PXDATE)}
+198{ Q}
+
+
+*ADD* Routine: PXAPIIM
+
+                                                           Routine: PXCESK
+  1{PXCESK ;ISL/dee - Used to edit and display V SKIN TEST ;07/0}   1{PXCESK ;ISL/dee - Used to edit and display V SKIN TEST ;3/11}
+                                                            ^                                                                 ^
+   {1/2015}                                                          {/04 1:49pm}
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**27,124,162,210**;Aug 12,}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**27,124,162**;Aug 12, 199}
+                                                  ^                                                                 ^
+   { 1996;Build 4}                                                   {6}
+ 18{FORMAT ;;Skin Test~9000010.12~0,12,13,811,812~1~^AUPNVSK}      18{FORMAT ;;Skin Test~9000010.12~0,12,811,812~1~^AUPNVSK}
+                                       ^                                                                 ^
+ 20{ ;;12~1~1201~Placement Date and Time:  ~Date/Time of Placeme}
+   {nt:  ~~~~~D}
+ 21{ ;;12~2~1202~Ordering Provider:  ~Ordering Provider:  ~~EPRO}
+   {V12^PXCEPRV~~~D}
+ 22{ ;;12~4~1204~Administered By: ~Administered By:  ~~EPROV12^P}
+   {XCEPRV~~~D}
+ 23{ ;;12~12~1212~Anatomic Location: ~Anatomic Location of Place}
+   {ment:  ~~~~~D}
+ 24{ ;;811~1~81101~Placement Comments:  ~Placement Comments:  ~~}
+   {~~~D}
+ 25{ ;;0~6~.06~Reading Date and Time:  ~Reading Date/Time:  ~~~~}  20{ ;;0~5~.05~Reading in mm:  ~Reading in mm:  ~~EREADING^PXCES}
+         ^                                                                 ^
+   {~D}                                                              {K~~~D}
+ 26{ ;;12~14~1214~Hours Read Post-Placement:  ~Hours Read Post-P}
+   {lacement:  ~~~~~D}
+ 27{ ;;0~7~.07~Reader:  ~Reader:  ~~EPROV12^PXCEPRV~~~D}
+ 28{ ;;0~5~.05~Reading in millimeters (mm):  ~Reading in millime}
+   {ters (mm):  ~~EREADING^PXCESK~~~D}
+                                                                   22{ ;;12~1~1201~Administered Date and (optional) Time~Date/Time}
+                                                                     { of Administered:  ~~E1201^PXCEPOV1(0,30,30)~~~D}
+                                                                   23{ ;;0~6~.06~Reading Date and (optional) Time~Reading Date:  ~}
+                                                                     {~E1201^PXCEPOV1(0,30,60)~~~D}
+                                                                   24{ ;;12~4~1204~Reader:  ~Reader:  ~~EPROV12^PXCEPRV~~~D}
+ 30{ ;;13~1~1301~Reading Comments:  ~Reading Comments:  ~~~~~D}    25{ ;;811~1~81101~Comments:  ~Comments:  ~~~~~D}
+       ^                                                                 ^
+101{ S ^TMP("PXK",$J,PXCECATS,1,12,"AFTER")=PXCEAFTR(12)}
+102{ S ^TMP("PXK",$J,PXCECATS,1,13,"AFTER")=PXCEAFTR(13)}
+
+                                                          Routine: PXCEVFI1
+  1{PXCEVFI1 ;ISL/dee,esw - Routine to edit a visit or v-file en}   1{PXCEVFI1 ;ISL/dee,esw - Routine to edit a visit or v-file en}
+   {try ;02/09/2015}                                                 {try ;8/3/04 10:32am}
+         ^                                                                 ^
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**23,73,112,136,143,124,18}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**23,73,112,136,143,124,18}
+   {4,185,210**;Aug 12, 1996;Build 4}                                {4,185**;Aug 12, 1996;Build 12}
+         ^                                                                 ^
+ 63{ . I $P(PXCETEXT,"~",3)=1214,PXCECAT="SK" Q  ; PX*1*210}
+ 64{ . I $P(PXCETEXT,"~",3)=1406,PXCECAT="IMM" Q  ; PX*1*210}
+ 65{ . I $P(PXCETEXT,"~",3)=1401 D  Q:PXCEEND  ; PX*1*210}
+ 66{ .. I PXCECAT'="IMM" S PXCEEND=1 Q  ; PX*1*210}
+ 67{ .. I +$G(PXD),'$P($G(^AUTTIMM(+PXD,.5)),"^") S PXCEEND=1 Q }
+   { ; PX*1*210}
+
+                                                          Routine: PXCEVIMM
+  1{PXCEVIMM ;ISL/dee,SLC/ajb - Used to edit and display V IMMUN}   1{PXCEVIMM ;ISL/dee,SLC/ajb - Used to edit and display V IMMUN}
+   {IZATION ;07/01/2015}                                             {IZATION ;08/12/2014}
+              ^                                                                 ^
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**27,124,199,201,210**;Aug}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**27,124,199,201**;Aug 12,}
+                                                      ^                                                                 ^
+   { 12, 1996;Build 4}                                               { 1996;Build 41}
+  3{ ;;}                                                            3{ ;; ;}
+       ^                                                                 ^
+ 16{FORMAT ;;Immunization~9000010.11~0,3,11,12,13,14,15,811,812~}  16{FORMAT ;;Immunization~9000010.11~0,3,11,12,13,811,812~0~^AUP}
+                                                  ^                                                                 ^
+   {0~^AUPNVIMM}                                                     {NVIMM}
+ 18{ ;;12~7~1207~Lot Number:  ~Lot Number:  ~$$DISPLN^PXCEVIMM~~}
+   {~~D}
+ 19{ ;;12~2~1202~Ordering Provider:  ~Ordering Provider:  ~~EPRO}
+   {V12^PXCEPRV~~~D}
+ 24{ ;;12~1~1201~Administered Date and Time:  ~Administered Date}  22{ ;;12~1~1201~Administered Date and (optional) Time~Administe}
+                                       ^                                                                 ^
+   { and Time:  ~~~~~D}                                              {red Date and Time:  ~~E1201^PXCEPOV1(0,30,30)~~~D}
+ 25{ ;;13~12~1312~Dosage:  ~Dosage:  ~~~~~D}
+ 26{ ;;13~2~1302~Route of Administration:  ~Route of Administrat}
+   {ion:  ~~~~~D}
+ 27{ ;;13~3~1303~Site of Administration (Body):  ~Site of Admini}
+   {stration (Body):  ~~~~~D}
+ 31{ ;;14~1~1401~Results:  ~Results:  ~~~~~D}
+ 32{ ;;14~2~1402~Reading:  ~Reading:  ~~~~~D}
+ 33{ ;;14~3~1403~Date and Time Read:  ~Date/Time Read:  ~~~~~D}
+ 34{ ;;14~4~1404~Reader:  ~Reader:  ~~EPROV12^PXCEPRV~~~D}
+ 35{ ;;14~5~1405~Date and Time Reading Recorded:  ~Reading Recor}
+   {ded:  ~~~~~D}
+ 36{ ;;14~6~1406~Hours Read Post-Innoculation:  ~Hours Read Post}
+   {-Innoculation:  ~~~~~D}
+ 37{ ;;15~1~1501~Reading Comments:  ~Reading Comments:  ~~~~~D}
+186{DISPLN(PXCEINT) ; display lot number with manufacturer}
+187{ N PXCEDILF,PXCEEXT,PXV2,PXVMAN}
+188{ S PXCEEXT=$$EXTERNAL^DILFD(9000010.11,1207,"",PXCEINT,"PXCE}
+   {DILF")}
+189{ S PXV2=$P(^AUTTIML(PXCEINT,0),"^",2),PXVMAN=$$EXTERNAL^DILF}
+   {D(9999999.41,.02,"",PXV2,"PXCEDILF")}
+190{ Q $S('$D(DIERR):PXCEEXT_"     "_PXVMAN,1:PXCEINT)}
+191{ ;}
+
+                                                           Routine: PXKENC
+  1{PXKENC ;ISL/dee,ESW - Builds the array of all encounter data}   1{PXKENC ;ISL/dee,ESW - Builds the array of all encounter data}
+   { for the event point ;07/07/15  10:43}                           { for the event point ; 12/5/02 11:53am  ; 1/5/07 4:54pm}
+                          ^                                                                 ^
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**15,22,73,108,143,183,210}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**15,22,73,108,143,183**;A}
+                                                            ^                                                                 ^
+   {**;Aug 12, 1996;Build 4}                                         {ug 12, 1996;Build 3}
+ 71{ .... ;for immunizatin multiples}                              71{ .... ;}
+ 72{ .... I FILE="IMM",PXKNODE?1(1"2",1"3",1"11") D  Q}
+ 73{ ..... N SUBIEN}
+ 74{ ..... S SUBIEN=0}
+ 75{ ..... F  S SUBIEN=$O(@VFILE@(IEN,PXKNODE,SUBIEN)) Q:'SUBIEN}
+   {  D}
+ 76{ ...... S @PXKROOT@(FILESTR,IEN,PXKNODE,SUBIEN,0)=$G(@VFILE@}
+   {(IEN,PXKNODE,SUBIEN,0))}
+ 77{ .... ;}
+120{ .... ;}
+121{ .... I FILE="IMM",PXKNODE?1(1"2",1"3",1"11") D  Q}
+122{ ..... N SUBIEN,VAL}
+123{ ..... S SUBIEN=0}
+124{ ..... F  S SUBIEN=$O(@VFILE@(IEN,PXKNODE,SUBIEN)) Q:'SUBIEN}
+   {  D}
+125{ ...... S VAL=$G(@VFILE@(IEN,PXKNODE,SUBIEN,0))}
+126{ ...... S @PXKROOT@(FILE,IEN,PXKNODE,"BEFORE",SUBIEN)=VAL}
+127{ ...... S @PXKROOT@(FILE,IEN,PXKNODE,"AFTER",SUBIEN)=VAL}
+128{ .... ;}
+136{ .... ;}
+
+                                                           Routine: PXKFSK
+  1{PXKFSK ;ISL/JVS - Fields for V SKIN TEST file ;02/04/2015}      1{PXKFSK ;ISL/JVS - Fields for V SKIN TEST file ;5/21/96  13:1}
+                                                   ^                                                                 ^
+                                                                     {8}
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,124,210**;Aug 12, 199}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,124**;Aug 12, 1996}
+                                              ^                                                                 ^
+   {6;Build 4}
+ 53{ ;;.07////^S X=$G(}                                            53{ ;;}
+ 69{ ;;}
+ 70{ ;;}
+ 71{ ;;}
+ 72{ ;;}
+ 73{ ;;1211////^S X=$G(}
+ 74{ ;;1212////^S X=$G(}
+ 75{ ;;1213////^S X=$G(}
+ 76{ ;;1214////^S X=$G(}
+ 77{ ;;}
+ 78{13 ;;}
+ 79{ ;;1301///^S X=$G(}
+ 80{ ;;}
+
+
+*ADD* Routine: PXKIMM
+
+                                                          Routine: PXKMAIN
+  1{PXKMAIN ;ISL/JVS,ISA/Zoltan - Main Routine for Data Capture }   1{PXKMAIN ;ISL/JVS,ISA/Zoltan - Main Routine for Data Capture }
+   {;04/15/15  10:10}                                                {;9/11/98}
+     ^                                                                 ^
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,59,73,88,69,117,130,1}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,59,73,88,69,117,130,1}
+   {24,174,164,210**;Aug 12, 1996;Build 4}                           {24,174,164**;Aug 12, 1996}
+              ^                                                                 ^
+ 91{ ...I PXKCAT="IMM",PXKSUB?1(1"2",1"3",1"11") D MULT}
+119{ ;}
+120{MULT ; Add multiples to PXKAFT, PXKBEF, PXKAV, PXKBV arrays}
+121{ ;}
+122{ N PXKSUBIEN,PXKI}
+123{ ;}
+124{ S PXKSUBIEN=0}
+125{ F  S PXKSUBIEN=$O(@PXKREF@(PXKCAT,PXKSEQ,PXKSUB,PXKSUBIEN))}
+   { Q:'PXKSUBIEN  D}
+126{ . ;}
+127{ . I $D(@PXKREF@(PXKCAT,PXKSEQ,PXKSUB,PXKSUBIEN,"AFTER")) D}
+128{ . . S PXKAFT(PXKSUB,PXKSUBIEN)=$G(@PXKREF@(PXKCAT,PXKSEQ,PX}
+   {KSUB,PXKSUBIEN,"AFTER"))}
+129{ . . F PXKI=1:1:$L(PXKAFT(PXKSUB,PXKSUBIEN),"^") D}
+130{ . . . I $P(PXKAFT(PXKSUB,PXKSUBIEN),"^",PXKI)'="" S PXKAV(P}
+   {XKSUB,PXKSUBIEN,PXKI)=$P(PXKAFT(PXKSUB,PXKSUBIEN),"^",PXKI)}
+131{ . ;}
+132{ . I $D(@PXKREF@(PXKCAT,PXKSEQ,PXKSUB,PXKSUBIEN,"BEFORE")) D}
+133{ . . S PXKBEF(PXKSUB,PXKSUBIEN)=$G(@PXKREF@(PXKCAT,PXKSEQ,PX}
+   {KSUB,PXKSUBIEN,"BEFORE"))}
+134{ . . F PXKI=1:1:$L(PXKBEF(PXKSUB,PXKSUBIEN),"^") D}
+135{ . . . I $P(PXKBEF(PXKSUB,PXKSUBIEN),"^",PXKI)'="" S PXKBV(P}
+   {XKSUB,PXKSUBIEN,PXKI)=$P(PXKBEF(PXKSUB,PXKSUBIEN),"^",PXKI)}
+136{ ;}
+137{ I $G(@PXKREF@(PXKCAT,PXKSEQ,PXKSUB,0,"AFTER"))="@" D}
+138{ . S PXKAFT(PXKSUB,0)="@"}
+139{ . S PXKAV(PXKSUB,0)="@"}
+140{ ;}
+141{ Q}
+142{ ;}
+
+                                                          Routine: PXKMAIN1
+  1{PXKMAIN1 ;ISL/JVS,ISA/Zoltan - Main Routine for Data Capture}   1{PXKMAIN1 ;ISL/JVS,ISA/Zoltan - Main Routine for Data Capture}
+   { ;04/15/15  10:10}                                               { ;5/6/1999}
+      ^                                                                 ^
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,73,124,178,210**;Aug }   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,73,124,178**;Aug 12, }
+                                                     ^                                                                 ^
+   {12, 1996;Build 4}                                                {1996}
+ 53{ . I PXKCAT="IMM",PXKJ?1(1"2",1"3",1"11") D CLEAN^PXKIMM(PXK}
+   {J) Q}
+ 99{ ;}
+102{ ;}
+114{ . ;}
+115{ . I PXKCAT="IMM",PXKNOD?1(1"2",1"3",1"11") D DIE^PXKIMM Q}
+116{ . ;}
+178{ . I PXKCAT="IMM",PXKN?1(1"2",1"3",1"11") D ER^PXKIMM Q}
+
+                                                          Routine: PXKMASC
+  1{PXKMASC ;ISL/JVS - Build and Pass to auto-check-out ;04/15/1}   1{PXKMASC ;ISL/JVS - Build and Pass to auto-check-out ;7/25/96}
+                                                         ^                                                                 ^
+   {5  10:14}                                                        {  08:53}
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,41,73,164,210**;Aug 1}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,41,73,164**;Aug 12, 1}
+                                                    ^                                                                 ^
+   {2, 1996;Build 4}                                                 {996}
+ 10{ N PXKGG,PXKSUB,PXKMOD,PXKSEQ,PXKOE,PXKVAL}                    10{ N PXKGG,PXKSUB,PXKMOD,PXKSEQ,PXKOE ;PX*1.0*164}
+                                       ^                                                                 ^
+ 15{ . I PXKSUB'=1!(PXKCAT="IMM") D PXGO Q}                        15{ . I PXKSUB'=1 D PXGO Q}
+                  ^                                                                 ^
+ 24{ I PXKSUB'=1!(PXKCAT="IMM") D}                                 24{ I PXKSUB'=1 D}
+                ^                                                                 ^
+ 36{ I PXKCAT="IMM",PXKSUB?1(1"2",1"3",1"11") D  Q}
+ 37{ . N PXKMIEN}
+ 38{ . S PXKMIEN=0}
+ 39{ . F  S PXKMIEN=$O(@PXKGN@(PXKMIEN)) Q:'PXKMIEN  D}
+ 40{ .. S ^TMP("PXKCO",$J,PXKVST,PXKCAT,PXKPIEN,PXKSUB,"AFTER",P}
+   {XKMIEN)=$G(@PXKGN@(PXKMIEN,0))}
+ 48{ ;}
+ 49{ I PXKCAT="IMM",PXKSUB?1(1"2",1"3",1"11") D  Q}
+ 50{ . N PXKMIEN}
+ 51{ . ;}
+ 52{ . ; Set BEFORE Immunization Multiples}
+ 53{ . S PXKMIEN=0}
+ 54{ . F  S PXKMIEN=$O(PXKBEF(PXKSUB,PXKMIEN)) Q:'PXKMIEN  D}
+ 55{ . . S ^TMP("PXKCO",$J,PXKVST,PXKCAT,PXKPIEN,PXKSUB,"BEFORE"}
+   {,PXKMIEN)=PXKBEF(PXKSUB,PXKMIEN)}
+ 56{ . ; Set AFTER Immunization Multiples}
+ 57{ . S PXKMIEN=0}
+ 58{ . F  S PXKMIEN=$O(@PXKGN@(PXKMIEN)) Q:'PXKMIEN  D}
+ 59{ .. S ^TMP("PXKCO",$J,PXKVST,PXKCAT,PXKPIEN,PXKSUB,"AFTER",P}
+   {XKMIEN)=$G(@PXKGN@(PXKMIEN,0))}
+ 60{ ;}
+
+                                                           Routine: PXPXRM
+  1{PXPXRM ;SLC/PKR - APIs for Clinical Reminder indexes. ;07/13}   1{PXPXRM ;SLC/PKR - APIs for Clinical Reminder indexes. ;08/31}
+                                                            ^                                                                 ^
+   {/15  11:24}                                                      {/2004}
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**119,199,210**;Aug 12, 19}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**119,199**;Aug 12, 1996;B}
+                                               ^                                                                 ^
+   {96;Build 4}                                                      {uild 51}
+ 11{ N CVX,VDATE,VISIT}                                            11{ N VDATE,VISIT}
+       ^                                                                 ^
+ 15{ ;}
+ 16{ I FILENUM=9000010.11 D  ; if V IMMUNIZATION: kill CVX index}
+   {; and use Event DT, if available}
+ 17{ . I $G(X(4)) S VDATE=X(4)}
+ 18{ . S CVX=$P($G(^AUTTIMM(X(1),0)),U,3)}
+ 19{ . I CVX'="" D}
+ 20{ . . K ^PXRMINDX(FILENUM,"CVX","IP",CVX,X(2),VDATE,DA)}
+ 21{ . . K ^PXRMINDX(FILENUM,"CVX","PI",X(2),CVX,VDATE,DA)}
+ 22{ ;}
+ 61{ ; for V IMMUNIZATION X(4)=EVENT DATE AND TIME}
+ 62{ N CVX,VDATE,VISIT}                                            53{ N VDATE,VISIT}
+       ^                                                                 ^
+ 66{ ;}
+ 67{ I FILENUM=9000010.11 D  ; if V IMMUNIZATION: set CVX index;}
+   { and use Event DT, if available}
+ 68{ . I $G(X(4)) S VDATE=X(4)}
+ 69{ . S CVX=$P($G(^AUTTIMM(X(1),0)),U,3)}
+ 70{ . I CVX'="" D}
+ 71{ . . S ^PXRMINDX(FILENUM,"CVX","IP",CVX,X(2),VDATE,DA)=""}
+ 72{ . . S ^PXRMINDX(FILENUM,"CVX","PI",X(2),CVX,VDATE,DA)=""}
+ 73{ ;}
+106{UPDCVX(IMM,CVXOLD,CVXNEW) ;}
+107{ ; Update CVX Index on V Immunization file}
+108{ ; Called from ACR cross-reference on Immunization file}
+109{ N DA,PXDESC,PXRTN,PXTASK,PXVAR,PXVOTH,X,X1,X2}
+110{ I CVXOLD=CVXNEW Q}
+111{ S PXRTN="UPDCVXT^PXPXRM"}
+112{ S PXDESC="Clinical Reminders CVX index update for V IMMUNIZ}
+   {ATION"}
+113{ S PXVAR="IMM;CVXOLD;CVXNEW"}
+114{ S PXVOTH("ZTDTH")=$$NOW^XLFDT}
+115{ S PXTASK=$$NODEV^XUTMDEVQ(PXRTN,PXDESC,PXVAR,.PXVOTH)}
+116{ I PXTASK=-1 D UPDCVXT^PXPXRM}
+117{ Q}
+118{ ;}
+119{ ;==========================================================}
+   {=====}
+120{UPDCVXT ;Tasked from UPDCVX.}
+121{ ;Variables IMM, CVXOLD, and CVXNEW passed in via task}
+122{ S ZTREQ="@"}
+123{ N DATE,DFN,EDATE,VIMM,VISIT}
+124{ S VIMM=0}
+125{ F  S VIMM=$O(^AUPNVIMM("B",IMM,VIMM)) Q:'VIMM  D}
+126{ . S DFN=$P($G(^AUPNVIMM(VIMM,0)),U,2)}
+127{ . I 'DFN Q}
+128{ . S VISIT=$P($G(^AUPNVIMM(VIMM,0)),U,3)}
+129{ . S VISIT=$G(^AUPNVSIT(+VISIT,0))}
+130{ . I VISIT="" Q}
+131{ . S DATE=$P(VISIT,U,1)}
+132{ . S EDATE=$P($G(^AUPNVIMM(VIMM,12)),U,1)}
+133{ . I EDATE S DATE=EDATE}
+134{ . I 'DATE Q}
+135{ . I CVXOLD'="" D}
+136{ . . K ^PXRMINDX(9000010.11,"CVX","IP",CVXOLD,DFN,DATE,VIMM)}
+137{ . . K ^PXRMINDX(9000010.11,"CVX","PI",DFN,CVXOLD,DATE,VIMM)}
+138{ . I CVXNEW'="" D}
+139{ . . S ^PXRMINDX(9000010.11,"CVX","IP",CVXNEW,DFN,DATE,VIMM)}
+   {=""}
+140{ . . S ^PXRMINDX(9000010.11,"CVX","PI",DFN,CVXNEW,DATE,VIMM)}
+   {=""}
+141{ Q}
+142{ ;}
+143{ ;==========================================================}
+   {=====}
+166{ N PXCS,PXCSIEN,PXCDIEN,PXCODE,PXFILE,PXIEN,PXTEMP,PXVIMM,PX}
+   {VISIT}
+167{ ;}
+168{ S PXFILE=9000010.11}
+169{ ;}
+                                                                  111{ N TEMP}
+170{ S PXTEMP=^AUPNVIMM(DA,0)}                                    112{ S TEMP=^AUPNVIMM(DA,0)}
+       ^                                                                 ^
+171{ S PXVIMM=$P(PXTEMP,U)}
+172{ S PXVISIT=$P(PXTEMP,U,3)}                                    113{ S DATA("VISIT")=$P(TEMP,U,3)}
+       ^                                                                 ^
+173{ S DATA("VISIT")=PXVISIT}
+174{ S (DATA("SERIES"),DATA("VALUE"))=$P(PXTEMP,U,4)}             114{ S (DATA("SERIES"),DATA("VALUE"))=$P(TEMP,U,4)}
+                                         ^                                                                 ^
+175{ S DATA("REACTION")=$P(PXTEMP,U,6)}                           115{ S DATA("REACTION")=$P(TEMP,U,6)}
+                           ^                                                                 ^
+176{ S DATA("CONTRAINDICATED")=$P(PXTEMP,U,7)}                    116{ S DATA("CONTRAINDICATED")=$P(TEMP,U,7)}
+                                  ^                                                                 ^
+178{ ;}
+179{ S PXTEMP=$G(^AUPNVSIT(+PXVISIT,0))}
+                                                                  118{ Q}
+                                                                  119{ ;}
+                                                                  120{ ;==========================================================}
+                                                                     {=====}
+                                                                  121{VPEDU(DA,DATA) ;Return data, for a specified V Patient ED en}
+                                                                     {try.}
+                                                                  122{ N TEMP}
+                                                                  123{ S TEMP=^AUPNVPED(DA,0)}
+180{ S DATA("VISIT DATE TIME")=$P(PXTEMP,U)}                      124{ S DATA("VISIT")=$P(TEMP,U,3)}
+                  ^                                                                 ^
+181{ S DATA("LOCATION")=$$GETFLDS(44,$P(PXTEMP,U,22),".01")}
+182{ ;}
+                                                                  125{ S (DATA("LEVEL OF UNDERSTANDING"),DATA("VALUE"))=$P(TEMP,U,}
+                                                                     {6)}
+                                                                  126{ S DATA("COMMENTS")=$G(^AUPNVPED(DA,811))}
+                                                                  127{ Q}
+                                                                  128{ ;}
+                                                                  129{ ;==========================================================}
+                                                                     {=====}
+                                                                  130{VPOV(DA,DATA) ;Return data for a specified V POV entry.}
+                                                                  131{ N TEMP}
+                                                                  132{ S TEMP=^AUPNVPOV(DA,0)}
+                                                                  133{ S DATA("VISIT")=$P(TEMP,U,3)}
+                                                                  134{ S DATA("PROVIDER NARRATIVE")=$P(TEMP,U,4)}
+183{ S PXTEMP=$P(PXTEMP,U,6)}                                     135{ S DATA("MODIFIER")=$P(TEMP,U,6)}
+       ^                                                                 ^
+184{ S DATA("FACILITY")=PXTEMP_$S(PXTEMP:(U_$$NS^XUAF4(PXTEMP)),}
+   {1:"")}
+185{ ;}
+186{ S PXTEMP=$G(^AUPNVIMM(DA,12))}
+187{ S DATA("EVENT DATE TIME")=$P(PXTEMP,U)}
+188{ S DATA("ORDERING PROVIDER")=$$GETFLDS(200,$P(PXTEMP,U,2),".}
+   {01")}
+189{ S DATA("ENCOUNTER PROVIDER")=$$GETFLDS(200,$P(PXTEMP,U,4),"}
+   {.01")}
+                                                                  136{ S DATA("PRIMARY/SECONDARY")=$P(TEMP,U,12)}
+190{ S DATA("DATE RECORDED")=$P(PXTEMP,U,5)}                      137{ S DATA("DATE OF INJURY")=$P(TEMP,U,13)}
+                  ^                                                                 ^
+                                                                  138{ S DATA("CLINICAL TERM")=$P(TEMP,U,15)}
+                                                                  139{ S DATA("PROBLEM LIST ENTRY")=$P(TEMP,U,16)}
+                                                                  140{ S DATA("COMMENTS")=$G(^AUPNVPOV(DA,811))}
+                                                                  141{ Q}
+                                                                  142{ ;}
+                                                                  143{ ;==========================================================}
+                                                                     {=====}
+                                                                  144{VSKIN(DA,DATA) ;Return data for a specified V Skin Test entr}
+                                                                     {y.}
+                                                                  145{ N TEMP}
+                                                                  146{ S TEMP=^AUPNVSK(DA,0)}
+                                                                  147{ S DATA("VISIT")=$P(TEMP,U,3)}
+                                                                  148{ S (DATA("RESULTS"),DATA("VALUE"))=$P(TEMP,U,4)}
+                                                                  149{ S DATA("READING")=$P(TEMP,U,5)}
+191{ S DATA("DOCUMENTER")=$$GETFLDS(200,$P(PXTEMP,U,6),".01")}    150{ S DATA("DATE READ")=$P(TEMP,U,6)}
+              ^                                                                 ^
+192{ S DATA("LOT NUMBER")=$$GETFLDS(9999999.41,$P(PXTEMP,U,7),".}
+   {01")}
+193{ ;}
+194{ S PXTEMP=$G(^AUTTIML(+$P(PXTEMP,U,7),0))}
+195{ S DATA("MANUFACTURER")=$$GETFLDS(9999999.04,$P(PXTEMP,U,2),}
+   {".01")}
+196{ S DATA("EXPIRATION DATE")=$P(PXTEMP,U,9)}
+197{ ;}
+198{ S PXTEMP=$G(^AUPNVIMM(DA,13))}
+199{ S DATA("INFO SOURCE")=$$GETFLDS(920.1,$P(PXTEMP,U),".02;.01}
+   {")}
+200{ S DATA("ADMIN ROUTE")=$$GETFLDS(920.2,$P(PXTEMP,U,2),".02;.}
+   {01")}
+                                                                  151{ S DATA("COMMENTS")=$G(^AUPNVSK(DA,811))}
+                                                                  152{ Q}
+                                                                  153{ ;}
+                                                                  154{ ;==========================================================}
+                                                                     {=====}
+                                                                  155{VXAM(DA,DATA) ;Return data, for a specified V Exam entry.}
+                                                                  156{ N TEMP}
+                                                                  157{ S TEMP=^AUPNVXAM(DA,0)}
+201{ S DATA("ADMIN SITE")=$$GETFLDS(920.3,$P(PXTEMP,U,3),".02;.0} 158{ S DATA("VISIT")=$P(TEMP,U,3)}
+             ^                                                                 ^
+   {1")}
+202{ S DATA("DOSAGE")=$P(PXTEMP,U,12)}
+203{ ;S DATA("DOSE")=}
+204{ ;S DATA("DOSE UNITS")=}
+205{ ;}
+206{ S DATA("IMMUNIZATION")=$$GETFLDS(9999999.14,PXVIMM,".01")}
+207{ S DATA("CVX")=$$GET1^DIQ(9999999.14,PXVIMM_",",.03)}
+208{ S PXIEN=0}
+209{ F  S PXIEN=$O(^AUTTIMM(PXVIMM,7,PXIEN)) Q:'PXIEN  D}
+210{ . S PXTEMP=$P($G(^AUTTIMM(PXVIMM,7,PXIEN,0)),U,1)}
+211{ . I PXTEMP="" Q}
+212{ . S DATA("VACCINE GROUP",PXIEN,0)=PXTEMP}
+213{ ;}
+214{ ;S DATA("CODES",Coding System Name)=Code 1 ^ Code 2 ^ ... C}
+   {ode x}
+215{ S PXCSIEN=0}
+216{ F  S PXCSIEN=$O(^AUTTIMM(PXVIMM,3,PXCSIEN)) Q:'PXCSIEN  D}
+217{ . S PXCS=$P($G(^AUTTIMM(PXVIMM,3,PXCSIEN,0)),U,1)}
+218{ . I PXCS="" Q}
+219{ . S PXCDIEN=0}
+220{ . F  S PXCDIEN=$O(^AUTTIMM(PXVIMM,3,PXCSIEN,1,PXCDIEN)) Q:'}
+   {PXCDIEN  D}
+221{ . . S PXCODE=$P($G(^AUTTIMM(PXVIMM,3,PXCSIEN,1,PXCDIEN,0)),}
+   {U,1)}
+222{ . . I PXCODE="" Q}
+                                                                  159{ S (DATA("RESULT"),DATA("VALUE"))=$P(TEMP,U,4)}
+223{ . . I '$D(DATA("CODES",PXCS)) S DATA("CODES",PXCS)=PXCODE Q} 160{ S DATA("COMMENTS")=$G(^AUPNVXAM(DA,811))}
+     ^                                                                 ^
+224{ . . S DATA("CODES",PXCS)=DATA("CODES",PXCS)_U_PXCODE}        161{ Q}
+     ^                                                                 ^
+226{ ;DATA("VIS OFFERED",n,0)=IEN ^ Date Offered ^ Name ^ Editio}
+   {n Date ^ Language}
+227{ S PXIEN=0}
+228{ F  S PXIEN=$O(^AUPNVIMM(DA,2,PXIEN)) Q:'PXIEN  D}
+229{ . S PXTEMP=$G(^AUPNVIMM(DA,2,PXIEN,0))}
+230{ . I 'PXTEMP Q}
+231{ . S DATA("VIS OFFERED",PXIEN,0)=$P(PXTEMP,U,1,2)_U_$P($$GET}
+   {FLDS(920,+PXTEMP,".01;.02~I"),U,2,3)_U_$$GET1^DIQ(920,+PXTEM}
+   {P_",",".04:1")}
+232{ ;}
+233{ ;DATA("REMARKS",n,0)=Free text}
+234{ M DATA("REMARKS")=^AUPNVIMM(DA,11)}
+235{ K DATA("REMARKS",0)}
+236{ ;}
+237{ Q}
+238{ ;}
+239{ ;==========================================================}
+   {=====}
+240{GETFLDS(PXFILE,PXIEN,PXFIELDS) ;Helper function to retrieve }
+   {data}
+241{ ;}
+242{ N PXRESULT,PXIENS,PXSPEC,PXDIQFLDS,PXARR,PXI,PXFLD,PXVALTYP}
+243{ ;}
+244{ S PXRESULT=PXIEN}
+245{ ;}
+246{ I '$G(PXIEN) Q PXRESULT}
+247{ S PXIENS=PXIEN_","}
+248{ S PXSPEC("~I")=""}
+249{ S PXSPEC("~E")=""}
+250{ S PXDIQFLDS=$$REPLACE^XLFSTR(PXFIELDS,.PXSPEC)}
+251{ D GETS^DIQ(PXFILE,PXIENS,PXDIQFLDS,"EI","PXARR")}
+252{ ;}
+253{ F PXI=1:1 S PXFLD=$P(PXFIELDS,";",PXI) Q:PXFLD=""  D}
+254{ . S PXVALTYP=$P(PXFLD,"~",2)}
+255{ . I PXVALTYP'="I" S PXVALTYP="E"}
+256{ . S PXFLD=$P(PXFLD,"~",1)}
+257{ . S PXRESULT=PXRESULT_U_$G(PXARR(PXFILE,PXIENS,PXFLD,PXVALT}
+   {YP))}
+258{ ;}
+259{ Q PXRESULT}
+260{ ;}
+261{ ;==========================================================}
+   {=====}
+262{VPEDU(DA,DATA) ;Return data, for a specified V Patient ED en}
+   {try.}
+263{ N TEMP}
+264{ S TEMP=^AUPNVPED(DA,0)}
+265{ S DATA("VISIT")=$P(TEMP,U,3)}
+266{ S (DATA("LEVEL OF UNDERSTANDING"),DATA("VALUE"))=$P(TEMP,U,}
+   {6)}
+267{ S DATA("COMMENTS")=$G(^AUPNVPED(DA,811))}
+268{ Q}
+269{ ;}
+270{ ;==========================================================}
+   {=====}
+271{VPOV(DA,DATA) ;Return data for a specified V POV entry.}
+272{ N TEMP}
+273{ S TEMP=^AUPNVPOV(DA,0)}
+274{ S DATA("VISIT")=$P(TEMP,U,3)}
+275{ S DATA("PROVIDER NARRATIVE")=$P(TEMP,U,4)}
+276{ S DATA("MODIFIER")=$P(TEMP,U,6)}
+277{ S DATA("PRIMARY/SECONDARY")=$P(TEMP,U,12)}
+278{ S DATA("DATE OF INJURY")=$P(TEMP,U,13)}
+279{ S DATA("CLINICAL TERM")=$P(TEMP,U,15)}
+280{ S DATA("PROBLEM LIST ENTRY")=$P(TEMP,U,16)}
+281{ S DATA("COMMENTS")=$G(^AUPNVPOV(DA,811))}
+282{ Q}
+283{ ;}
+284{ ;==========================================================}
+   {=====}
+285{VSKIN(DA,DATA) ;Return data for a specified V Skin Test entr}
+   {y.}
+286{ N TEMP}
+287{ S TEMP=^AUPNVSK(DA,0)}
+288{ S DATA("VISIT")=$P(TEMP,U,3)}
+289{ S (DATA("RESULTS"),DATA("VALUE"))=$P(TEMP,U,4)}
+290{ S DATA("READING")=$P(TEMP,U,5)}
+291{ S DATA("DATE READ")=$P(TEMP,U,6)}
+292{ S DATA("COMMENTS")=$G(^AUPNVSK(DA,811))}
+293{ Q}
+294{ ;}
+295{ ;==========================================================}
+   {=====}
+296{VXAM(DA,DATA) ;Return data, for a specified V Exam entry.}
+297{ N TEMP}
+298{ S TEMP=^AUPNVXAM(DA,0)}
+299{ S DATA("VISIT")=$P(TEMP,U,3)}
+300{ S (DATA("RESULT"),DATA("VALUE"))=$P(TEMP,U,4)}
+301{ S DATA("COMMENTS")=$G(^AUPNVXAM(DA,811))}
+302{ Q}
+303{ ;}
+
+                                                          Routine: PXPXRMI1
+  1{PXPXRMI1 ; SLC/PKR,SCK - Build indexes for the V files. ;07/}   1{PXPXRMI1 ; SLC/PKR,SCK - Build indexes for the V files. ;06/}
+                                                              ^                                                                 ^
+   {02/15  09:32}                                                    {17/2003}
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**119,194,210**;Aug 12, 19}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**119,194**;Aug 12, 1996;B}
+                                               ^                                                                 ^
+   {96;Build 4}                                                      {uild 2}
+149{ N CVX,DAS,DATE,DFN,DIFF,DONE,END,ENTRIES,ETEXT,EVENTDT,GLOB} 149{ N DAS,DATE,DFN,DIFF,DONE,END,ENTRIES,ETEXT,GLOBAL,IMM,IND,N}
+       ^                                                                 ^
+   {AL,IMM}                                                          {E,NERROR}
+150{ N IND,NE,NERROR,START,TEMP,TENP,TEXT,VISIT}                  150{ N START,TEMP,TENP,TEXT,VISIT}
+       ^                                                                 ^
+197{ . S EVENTDT=$P($G(^AUPNVIMM(DAS,12)),U,1)}
+198{ . I EVENTDT S DATE=EVENTDT}
+202{ . S CVX=$P($G(^AUTTIMM(IMM,0)),U,3)}
+203{ . I CVX'="" D}
+204{ .. S ^PXRMINDX(9000010.11,"CVX","IP",CVX,DFN,DATE,DAS)=""}
+205{ .. S ^PXRMINDX(9000010.11,"CVX","PI",DFN,CVX,DATE,DAS)=""}
+
+                                                          Routine: PXRHS03
+  2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**13,210**;Aug 12, 1996;Bu}   2{ ;;1.0;PCE PATIENT CARE ENCOUNTER;**13**;Aug 12, 1996}
+                                          ^                                                                 ^
+   {ild 4}
+  3{IMMUN(DFN,PXFG) ; Control branching}                            3{IMMUN(DFN) ; Control branching}
+             ^                                                                 ^
+  5{ ;       : PXFG     - Primary sort order}
+  6{ ;                    "A": Alphabetical  (IM, DIM, SIM)}
+  7{ ;                    "C": Chronological  (SIMC)}
+  8{ ;                    "R": Reverse Chronological (SIMR)}
+ 11{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,0) = IMMUNIZATION [E;.0}   7{ ;  ^TMP("PXI",$J,IMM,InvDt,IFN,0) = IMMUNIZATION [E;.01]}
+                      ^                                                                 ^
+   {1]}
+ 17{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,1) = ^ HOSPITAL LOCATIO}  13{ ;  ^TMP("PXI",$J,IMM,InvDt,IFN,1) = ^ HOSPITAL LOCATION [E;}
+                      ^                                                                 ^
+   {N [E;9000010;.22]}                                               {9000010;.22]}
+ 20{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,2) = ROUTE OF ADMIN [E;}  16{ ;  ^TMP("PXI",$J,IMM,InvDt,IFN,"R",CNT) = REMARKS [E;1101]}
+                      ^                                                                 ^
+   {1302]}
+ 21{ ;     ^ SITE OF ADMIN [E;1303] ^ DOSAGE [E;1312]}
+ 22{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,3) = LOT [E;.05] ^ MANU}  17{ ;  ^TMP("PXI",$J,IMM,InvDt,IFN,"S") = DATA SOURCE [E;80102]}
+                      ^                                                                 ^
+   {F [E;9999999.41;.02]}
+ 23{ ;     ^ EXP DATE [I;9999999.41;.09]}
+ 24{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,"FN") = CDC FULL VACCIN}
+   {E NAME [E;9999999.14;2]}
+ 25{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,"R",CNT) = REMARKS [E;1}
+   {101]}
+ 26{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,"S") = DATA SOURCE [E;8}
+   {0102]}
+ 27{ ;  ^TMP("PXI",$J,PXSORT,PXSORT2,IFN,"VIS") = VIS OFFERED TO}
+   { PATIENT [E;2]}
+ 28{ ;     ^ EDITION DATE [I;920;.02]}
+ 32{ ;     PXSORT   - Immunization name (IM, DIM) OR}              21{ ;     IMM   - Immunization name}
+           ^                                                                 ^
+ 33{ ;                Fileman date of DATE OF event or visit (SI}
+   {MC) OR}
+ 34{ ;                Inverse Fileman date of DATE OF event or v}  22{ ;     InvDt - Inverse FileMan date of DATE OF event or visi}
+           ^                                                                 ^
+   {isit (SIM, SIMR)}                                                {t}
+ 35{ ;     PXSORT2  - Immunization name (SIM, SIMC, SIMR)}
+ 40{ N PXVLST,PXVIEN,PXSORT,PXSORT2,PXVCNT,GMTSMX}
+ 41{ S GMTSMX=999 I $D(GMTSNDM),(GMTSNDM>0) S GMTSMX=GMTSNDM}
+ 43{ ; if selected records are requested, get IENs and store in }
+   {a list}
+ 44{ I $D(GMTSEG(GMTSEGN,9999999.14)) S PXVIEN=0 F  S PXVIEN=$O(}
+   {GMTSEG(GMTSEGN,9999999.14,PXVIEN)) Q:PXVIEN=""  D}
+ 45{ . S PXVLST(GMTSEG(GMTSEGN,9999999.14,PXVIEN))=""}
+ 47{ I '$D(PXFG) S PXFG="A"}
+ 50{ . I $D(GMTSEG(GMTSEGN,9999999.14)) Q:'$D(PXVLST(PXIMM))}
+ 55{ . . . S PXVCNT(PXIMM)=$S('$D(PXVCNT(PXIMM)):1,1:PXVCNT(PXIM}
+   {M)+1)}
+ 56{ . . . ;check time limits and occurence limits}
+ 57{ . . . Q:PXIVD>(9999999-(GMTSBEG\1))!(PXVCNT(PXIMM)>GMTSMX)}
+ 60{ . . . N PXVROUTE,PXVBODY,PXVDOSE,PXVARRAY,PXVC,PXVDATA}
+ 62{ . . . S DR=".01;.03;.04;.06;.07;1201;1202;1204;1207;80102;8}  38{ . . . S DR=".01;.03;.04;.06;.07;1201;1202;1204;80102;81101"}
+                                                    ^                                                                 ^
+   {1101;1302;1303;1312"}
+ 64{ . . . I '$D(REC) S PXVCNT(PXIMM)=PXVCNT(PXIMM)-1 Q}           40{ . . . Q:'$D(REC)}
+           ^                                                                 ^
+ 65{ . . . S PXVDATA=$S('+REC(9000010.11,DA,1207,"I"):"",1:$$GET}
+   {MDATA(+REC(9000010.11,DA,1207,"I")))  ;manuf,lot #,exp dt}
+ 67{ . . . K PXVARRAY D GETVIS(DA,.PXVARRAY)}
+ 69{ . . . S IMM=REC(9000010.11,DA,.01,"E")}                       43{ . . . S IMM=$E(REC(9000010.11,DA,.01,"E"),1,10)}
+                 ^                                                                 ^
+                                                                   44{ . . . I SNIMM']"" S SNIMM=IMM}
+ 72{ . . . S IDT=$S($G(PXFG)="C":IMDT,1:9999999-(IMDT\1)) ;set d}  47{ . . . S IDT=9999999-IMDT}
+                 ^                                                                 ^
+   {ate as chron or reverse chron}
+ 73{ . . . S PXSORT=$S($G(PXFG)="A":IMM,1:IDT\1)  ; primary sort}
+   { subscript}
+ 74{ . . . S PXSORT2=$S($G(PXFG)="A":IDT\1,1:IMM)  ; secondary s}
+   {ort subscript}
+ 81{ . . . I +REC(9000010.11,DA,1302,"I") S PXVROUTE=REC(9000010}
+   {.11,DA,1302,"E")  ;admin route}
+ 82{ . . . S PXVBODY=REC(9000010.11,DA,1303,"E")  ;admin site}
+ 83{ . . . S PXVDOSE=REC(9000010.11,DA,1312,"E")  ;dose}
+ 88{ . . . S ^TMP("PXI",$J,PXSORT,PXSORT2,DA,0)=IMM_U_SNIMM_U_IM}  58{ . . . S ^TMP("PXI",$J,SNIMM,IDT,DA,0)=IMM_U_SNIMM_U_IMDT_U_}
+                           ^                                                                 ^
+   {DT_U_SERIESC_U_SERIES_U_REACT_U_CONT_U_OPROV_U_EPROV}            {SERIESC_U_SERIES_U_REACT_U_CONT_U_OPROV_U_EPROV}
+ 89{ . . . S ^TMP("PXI",$J,PXSORT,PXSORT2,DA,1)=HLOC_U_HLOCABB_U}  59{ . . . S ^TMP("PXI",$J,SNIMM,IDT,DA,1)=HLOC_U_HLOCABB_U_$P(V}
+                           ^                                                                 ^
+   {_$P(VDATA,U,2)_U_$P(VDATA,U,4)}                                  {DATA,U,2)_U_$P(VDATA,U,4)}
+ 90{ . . . S ^TMP("PXI",$J,PXSORT,PXSORT2,DA,2)=$G(PXVROUTE)_U_P}  60{ . . . S ^TMP("PXI",$J,SNIMM,IDT,DA,"S")=SOURCE}
+                           ^                                                                 ^
+   {XVBODY_U_PXVDOSE  ;new}
+ 91{ . . . S ^TMP("PXI",$J,PXSORT,PXSORT2,DA,3)=PXVDATA  ;new}     61{ . . . S ^TMP("PXI",$J,SNIMM,IDT,DA,"COM")=COMMENT}
+                           ^                                                                 ^
+ 92{ . . . S ^TMP("PXI",$J,PXSORT,PXSORT2,DA,"S")=SOURCE}
+ 93{ . . . S ^TMP("PXI",$J,PXSORT,PXSORT2,DA,"COM")=COMMENT}
+ 94{ . . . M ^TMP("PXI",$J,PXSORT,PXSORT2,DA,"VIS")=PXVARRAY(920}
+   {)  ;new VIS array}
+ 95{ . . . S PXVC=0 F  S PXVC=$O(^AUTTIMM(PXIMM,2,PXVC)) Q:PXVC'}
+   {>0  D}
+ 96{ . . . . S ^TMP("PXI",$J,PXSORT,PXSORT2,DA,"FN",PXVC)=$G(^AU}
+   {TTIMM(PXIMM,2,PXVC,0))  ;new full name}
+ 97{ . . . D GETREM(PXSORT,PXSORT2,DA)  ;in original not used}     62{ . . . D GETREM(SNIMM,IDT,DA)}
+                    ^                                                                 ^
+ 99{GETREM(PXSORT,PXSORT2,RNUM) ;Get the remark data}              64{GETREM(SNIMM,IDT,RNUM) ;Get the remark data}
+           ^                                                                 ^
+103{ . S ^TMP("PXI",$J,PXSORT,PXSORT2,RNUM,"R",CNT)=$G(^AUPNVIMM}  68{ . S ^TMP("PXI",$J,SNIMM,IDT,RNUM,"R",CNT)=$G(^AUPNVIMM(RNUM}
+                       ^                                                                 ^
+   {(RNUM,11,CNT,0))}                                                {,11,CNT,0))}
+113{ ;}
+114{GETMDATA(DA)  ;Get Manufacturer, lot number and expiration d}
+   {ate}
+115{ ;   Input   DA       ien of IMMUNIZATION LOT}
+116{ ;   Output  MREC     LOT NUMBER^MANUFACTURER^EXPIRATION DAT}
+   {E}
+117{ N DIC,DR,MREC,DIQ}
+118{ S DIQ="MREC",DIQ(0)="IE"}
+119{ S DIC=9999999.41,DR=".01;.02;.09"}
+120{ D EN^DIQ1}
+121{ Q MREC(9999999.41,DA,.01,"E")_U_MREC(9999999.41,DA,.02,"E")}
+   {_U_MREC(9999999.41,DA,.09,"I")}
+122{ ;}
+123{GETVIS(PXVI,PXVARRAY) ;Get multiple VIS with edition date}
+124{ ;  Input   PXVI      ien of IMMUNIZATION record}
+125{ ;  Output  PXVARRAY  array of VIS names ^ edition dates}
+126{ N DIC,DR,PXVIEN,DA,DIQ,SREC}
+127{ S PXVIEN="",DIQ="SREC",DIQ(0)="IE"}
+128{ F  S PXVIEN=$O(^AUPNVIMM(PXVI,2,"B",PXVIEN)) Q:PXVIEN=""  D}
+129{ . S DIC=920,DR=".01;.02",DA=+PXVIEN}
+130{ . D EN^DIQ1}
+131{ . S PXVARRAY(920,PXVIEN)=SREC(920,PXVIEN,.01,"E")_U_SREC(92}
+   {0,PXVIEN,.02,"I")}
+132{ Q}
+133{ ;}
+
+
+*ADD* Routine: PXVEDIT
+
+
+*ADD* Routine: PXVINV
+
+
+*ADD* Routine: PXVNITLY
+
+
+*ADD* Routine: PXVP210
+
+
+*ADD* Routine: PXVUTL
+
+
+*ADD* Routine: PXVXR
+
+
+
+
+
+                          -------------------------------------------------------------------------------
+                                            DATA DICTIONARY #9000010.11 (V IMMUNIZATION)
+                                                     FIELD: IMMUNIZATION (#.01)
+
+
+   *ADD* CROSS-REFERENCE Multiple: 9000010.11^AC^MUMPS
+                                                 FIELD: EVENT DATE AND TIME (#1201)
+
+
+   *ADD* CROSS-REFERENCE Multiple: 9000010.11^AHR1^MUMPS
+                                                     FIELD: LOT NUMBER (#1207)
+  SPECIFIER: *P9999999.41'                                          SPECIFIER: RP9999999.41'
+  INPUT TRANSFORM: S DIC("S")="I '$P(^(0),U,3),$P(^(0),U,9)'<DT,$   INPUT TRANSFORM: Q
+  $ACT^PXVXR" D ^DIC K DIC S DIC=$G(DIE),X=+Y K:Y<0 X               
+
+
+                                                   CROSS-REFERENCE: 9000010.11^LN
+    NO-DELETION MESSAGE: Used for look-up and to determine if a L     NO-DELETION MESSAGE: Used for look-up and imperatively to det
+    ot Number entry is being used.                                    ermine if a Lot Number entry is being used.
+                                                            DESCRIPTION...
+
+   *ADD* CROSS-REFERENCE Multiple: 9000010.11^AF^MUMPS
+  'HELP'-PROMPT: Enter the lot number for this immunization.        'HELP'-PROMPT: This field is not designed to be edited manually
+                                                                    .
+
+  POINTER SCREEN: Screen requires selection of active lot for sel
+
+  ected immunization.
+
+  CODE TO SET POINTER SCREEN: S DIC("S")="I '$P(^(0),U,3),$P(^(0)
+
+  ,U,9)'<DT,$$ACT^PXVXR"
+                                                            DESCRIPTION...
+                                               FIELD: ROUTE OF ADMINISTRATION (#1302)
+  SPECIFIER: *P920.2'                                               SPECIFIER: P920.2'
+  INPUT TRANSFORM: S DIC("S")="I '$$SCREEN^XTID(920.2,,Y_"","")"    INPUT TRANSFORM: Q
+  D ^DIC K DIC S DIC=$G(DIE),X=+Y K:Y<0 X                           
+
+  POINTER SCREEN: Only active IMM ADMINISTRATION ROUTEentries may be selected.
+
+  CODE TO SET POINTER SCREEN: S DIC("S")="I '$$SCREEN^XTID(920.2,,Y_"","")"
+                                            FIELD: SITE OF ADMINISTRATION (BODY) (#1303)
+  SPECIFIER: *P920.3'                                               SPECIFIER: P920.3'
+  INPUT TRANSFORM: S DIC("S")="I '$$SCREEN^XTID(920.3,,Y_"","")"    INPUT TRANSFORM: Q
+  D ^DIC K DIC S DIC=$G(DIE),X=+Y K:Y<0 X                           
+
+  POINTER SCREEN: Only active IMM ADMINISTRATION SITE (BODY) entr
+
+  ies may be selected.
+
+  CODE TO SET POINTER SCREEN: S DIC("S")="I '$$SCREEN^XTID(920.3,,Y_"","")"
+                                                  FIELD: PRIMARY DIAGNOSIS (#1304)
+  INPUT TRANSFORM: S DIC("S")="D ^AUPNSICD" D ^DIC K DIC S DIC=DI   INPUT TRANSFORM: S DIC("S")="D ^AUPNSICD" D ^DIC K DIC S DIC=DI
+  E,X=+Y K:Y<0 X I $D(X),$D(D0),$$DUPDX^PXVUTIL(D0,X) K X           E,X=+Y K:Y<0 X I $D(X),$$DUPDX^PXVUTIL(D0,X) K X
+
+ *ADD* FIELD #1401: RESULTS
+
+ *ADD* FIELD #1402: READING
+
+ *ADD* FIELD #1403: DATE/TIME READ
+
+ *ADD* FIELD #1404: READER
+
+ *ADD* FIELD #1405: READING RECORDED
+
+ *ADD* FIELD #1406: HOURS READ POST-INOCULATION
+
+ *ADD* FIELD #1501: READING COMMENT
+
+
+
+                          -------------------------------------------------------------------------------
+                                DATA DICTIONARY #9000010.112 (VIS OFFERED/GIVEN TO PATIENT SUBFIELD)
+                                             FIELD: VIS OFFERED/GIVEN TO PATIENT (#.01)
+  INPUT TRANSFORM: S DIC("S")="I $D(^AUTTIMM($P(^AUPNVIMM(DA,0),"   INPUT TRANSFORM: S DIC("S")="I $D(^AUTTIMM($P(^AUPNVIMM(DA,0),"
+  "^""),4,""B"",Y))" D ^DIC K DIC S DIC=DIE,X=+Y K:Y<0 X            "^""),4,Y,0))" D ^DIC K DIC S DIC=$G(DIE),X=+Y K:Y<0 X
+
+  CODE TO SET POINTER SCREEN: S DIC("S")="I $D(^AUTTIMM($P(^AUPNV   CODE TO SET POINTER SCREEN: S DIC("S")="I $D(^AUTTIMM($P(^AUPNV
+  IMM(DA,0),""^""),4,""B"",Y))"                                     IMM(DA,0),""^""),4,Y,0))"
+                                                FIELD: DATE VIS OFFERED/GIVEN (#.02)
+
+  CROSS-REFERENCE Multiple
+
+
+
+
+                          -------------------------------------------------------------------------------
+                                             DATA DICTIONARY #9000010.12 (V SKIN TEST)
+                                                      FIELD: SKIN TEST (#.01)
+
+
+   *ADD* CROSS-REFERENCE Multiple: 9000010.12^AC^MUMPS
+                                                       FIELD: RESULTS (#.04)
+
+  TITLE: Test Interpretation
+                                                            DESCRIPTION...
+                                                       FIELD: READING (#.05)
+
+  TITLE: Reading in Millimeters (mm)
+
+  'HELP'-PROMPT: Enter a whole number between 0 and 40.             'HELP'-PROMPT: TYPE A WHOLE NUMBER BETWEEN 0 AND 40.
+                                                            DESCRIPTION...
+                                                      FIELD: DATE READ (#.06)
+  INPUT TRANSFORM: S %DT="EST" D ^%DT S X=Y K:Y<1 X                 INPUT TRANSFORM: S %DT="ESTX" D ^%DT S X=Y K:X>DT!(X<AUPNDOB) X
+                                                                     I $D(X),AUPNDOD,X>AUPNDOD K X
+
+  TITLE: Reading Date/Time
+
+  CROSS-REFERENCE Multiples
+  'HELP'-PROMPT: Enter the date and time the skin test was read.    'HELP'-PROMPT: TYPE A DATE BETWEEN DOB AND TODAY
+                                                            DESCRIPTION...
+                                                 FIELD: EVENT DATE AND TIME (#1201)
+  INPUT TRANSFORM: S %DT="EST" D ^%DT S X=Y K:Y<1 X                 INPUT TRANSFORM: S %DT="ESTX" D ^%DT S X=Y K:Y<1 X
+
+  TITLE: Placement Date and Time
+
+  CROSS-REFERENCE Multiples
+  'HELP'-PROMPT: Enter the date and time the skin test was placed   'HELP'-PROMPT: Enter the date and time the skin test was done.
+  .                                                                 
+                                                            DESCRIPTION...
+                                                            DESCRIPTION...
+                                                 FIELD: ENCOUNTER PROVIDER (#1204)
+
+  TITLE: Provider Placing Skin Test
+  'HELP'-PROMPT: Enter the provider who placed the skin test.       'HELP'-PROMPT: Enter the provider who gave the skin test.
+                                                            DESCRIPTION...
+                                                      FIELD: VERIFIED (#81201)
+
+  'HELP'-PROMPT: This is automatically entered by the software and is uneditable.
+
+  DESCRIPTION...
+
+  TECHNICAL DESCRIPTION...
+                                                      FIELD: PACKAGE (#81202)
+
+  'HELP'-PROMPT: This is automatically entered by the software an
+
+  d uneditable by users.
+
+  DESCRIPTION...
+                                                    FIELD: DATA SOURCE (#81203)
+
+  'HELP'-PROMPT: Select the data source for this skin test entry through PCE.
+
+  DESCRIPTION...
+
+ *ADD* FIELD: READER
+
+ *ADD* FIELD: DIAGNOSIS 7
+
+ *ADD* FIELD: CODING SYSTEM
+
+ *ADD* FIELD: SKIN TEST PLACEMENT RECORDED
+
+ *ADD* FIELD: ANATOMIC LOCATION OF PLACEMENT
+
+ *ADD* FIELD: SKIN TEST READING RECORDED
+
+ *ADD* FIELD: HOURS READ POST-PLACEMENT
+
+ *ADD* FIELD: READING COMMENTS
+
+ *ADD* FIELD: PLACEMENT COMMENTS
+
+
+                          -------------------------------------------------------------------------------
+                                                  DATA DICTIONARY #9000010.123 ()
+                                                                   {Missing}
+
+
+                          -------------------------------------------------------------------------------
+                                                  DATA DICTIONARY #9000010.1231 ()
+                                                                   {Missing}
+
+
+                          -------------------------------------------------------------------------------
+                                           DATA DICTIONARY #9999999.41 (IMMUNIZATION LOT)
+                                                            IDENTIFIERS
+  2{VACCINE}
+  3{EXPIRATION DATE}
+
+                                                      FIELD: LOT NUMBER (#.01)
+  SPECIFIER: FX                                                     SPECIFIER: RF
+  INPUT TRANSFORM: K:$L(X)>25!($L(X)<3)!'(X'?1P.E) X I $D(X),$G(D   INPUT TRANSFORM: K:$L(X)>25!($L(X)<3)!'(X'?1P.E) X
+  A) D INUSE^PXVXR Q                                                
+
+   *ADD* CROSS-REFERENCE Multiple: 9999999.41^AU^MUMPS
+                                                     FIELD: MANUFACTURER (#.02)
+  SPECIFIER: R*P9999999.04'X                                        SPECIFIER: R*P9999999.04'
+  INPUT TRANSFORM: S DIC("S")="I '$P(^AUTTIMAN(Y,0),U,3)" D ^DIC    INPUT TRANSFORM: S DIC("S")="I '$P(^AUTTIMAN(Y,0),U,3)" D ^DIC 
+  K DIC S DIC=DIE,X=+Y K:Y<0 X I $D(X),$G(DA) D COMB1^PXVXR Q       K DIC S DIC=DIE,X=+Y K:Y<0 X
+
+  CROSS-REFERENCE Multiple
+                                                       FIELD: VACCINE (#.04)
+  SPECIFIER: R*P9999999.14'X                                        SPECIFIER: *P9999999.14'
+  INPUT TRANSFORM: S DIC("S")="I '$P(^(0),U,7)" D ^DIC K DIC S DI   INPUT TRANSFORM: S DIC("S")="I '$P(^(0),U,7)" D ^DIC K DIC S DI
+  C=DIE,X=+Y K:Y<0 X I $D(X),$G(DA) D COMB2^PXVXR Q                 C=DIE,X=+Y K:Y<0 X
+
+   *ADD* CROSS-REFERENCE Multiple: 9999999.41^AU2^MUMPS
+                                                      FIELD: VACCINE #2 (#.05)
+
+  TITLE: Vaccine #2
+                                                      FIELD: VACCINE #4 (#.07)
+
+  TITLE: Vaccine #4
+                                                      FIELD: VACCINE #5 (#.08)
+
+  TITLE: Vaccine #5
+                                                   FIELD: EXPIRATION DATE (#.09)
+  SPECIFIER: RDX                                                    SPECIFIER: D
+  INPUT TRANSFORM: S %DT="EX" D ^%DT S X=Y K:Y<1 X I $D(X) D EXP^   INPUT TRANSFORM: S %DT="EX" D ^%DT S X=Y K:Y<1 X
+  PXVXR Q                                                           
+                                                     FIELD: DOSES UNUSED (#.12)
+
+  TITLE: Doses Unused
+                                                    FIELD: VACCINE SOURCE (#.13)
+
+  TITLE: Vaccine Source
+                                                 FIELD: HEALTH CARE FACILITY (#.14)
+
+  TITLE: Health Care Facility
+                                                   FIELD: LOW SUPPLY ALERT (#.15)
+  INPUT TRANSFORM: K:+X'=X!(X>99998)!(X<0)!(X?.E1"."1N.N)!(X>$P(^   INPUT TRANSFORM: K:$S(+X'=X:1,X>99998:1,X<0:1,X?.E1"."1N.N:1,1:
+  AUTTIML(DA,0),U,11)) X                                            X>$P(^(0),U,11)) X
+                                                FIELD: LOT NUMBER FOR EXPORT (#.16)
+
+  TITLE: Lot Number For Export
+                                                    FIELD: NDC CODE (VA) (#.18)
+                                                            DESCRIPTION...
+
+
+
+                          -------------------------------------------------------------------------------
+                                                ENTRIES IN FILE #19.1 (SECURITY KEY)
+
+ *ADD* SECURITY KEY: PXV IMM INVENTORY MGR
+
+
+                          -------------------------------------------------------------------------------
+                                                    ENTRIES IN FILE #19 (OPTION)
+
+ *ADD* OPTION: PXTT EDIT IMMUNIZATION LOT
+
+ *ADD* OPTION: PXVTASK-NIGHT
+
+
+
+

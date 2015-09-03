@@ -1,42 +1,6 @@
-PXVXR ;BIR/ADM - CROSS REFERENCE AND OTHER LOGIC ;16 JUN 2015
+PXVXR ;BIR/ADM - CROSS REFERENCE AND OTHER LOGIC ;08/24/2015
  ;;1.0;PCE PATIENT CARE ENCOUNTER;**210**;Aug 12, 1996
  ;
- Q
-AU ; set logic for AU x-ref on LOT NUMBER field (#.01)
- N PXV,PXVIM,PXVLN,PXVMAN
- S PXVLN=X
- S PXV=$G(^AUTTIML(DA,0)),PXVMAN=$P(PXV,"^",2),PXVIM=$P(PXV,"^",4) I PXVMAN=""!(PXVIM="") Q
- S ^AUTTIML("AU",PXVIM,PXVMAN,PXVLN,DA)=""
- Q
-KAU ; kill logic for AU x-ref on LOT NUMBER field (#.01)
- N PXV,PXVIM,PXVLN,PXVMAN
- S PXVLN=X
- S PXV=$G(^AUTTIML(DA,0)),PXVMAN=$P(PXV,"^",2),PXVIM=$P(PXV,"^",4) I PXVMAN=""!(PXVIM="") Q
- K ^AUTTIML("AU",PXVIM,PXVMAN,PXVLN,DA)
- Q
-AU1 ; set logic for AU1 x-ref on MANUFACTURER field (#.02)
- N PXV,PXVIM,PXVLN,PXVMAN
- S PXVMAN=X
- S PXV=$G(^AUTTIML(DA,0)),PXVLN=$P(PXV,"^"),PXVIM=$P(PXV,"^",4) I PXVLN=""!(PXVIM="") Q
- S ^AUTTIML("AU",PXVIM,PXVMAN,PXVLN,DA)=""
- Q
-KAU1 ; kill logic for AU1 x-ref on MANUFACTURER field (#.02)
- N PXV,PXVIM,PXVLN,PXVMAN
- S PXVMAN=X
- S PXV=$G(^AUTTIML(DA,0)),PXVLN=$P(PXV,"^"),PXVIM=$P(PXV,"^",4) I PXVLN=""!(PXVIM="") Q
- K ^AUTTIML("AU",PXVIM,PXVMAN,PXVLN,DA)
- Q
-AU2 ; set logic for AU2 x-ref on VACCINE field (#.04)
- N PXV,PXVIM,PXVLN,PXVMAN
- S PXVIM=X
- S PXV=$G(^AUTTIML(DA,0)),PXVLN=$P(PXV,"^"),PXVMAN=$P(PXV,"^",2) I PXVLN=""!(PXVMAN="") Q
- S ^AUTTIML("AU",PXVIM,PXVMAN,PXVLN,DA)=""
- Q
-KAU2 ; kill logic for AU2 x-ref on VACCINE field (#.04)
- N PXV,PXVIM,PXVLN,PXVMAN
- S PXVIM=X
- S PXV=$G(^AUTTIML(DA,0)),PXVLN=$P(PXV,"^"),PXVMAN=$P(PXV,"^",2) I PXVLN=""!(PXVMAN="") Q
- K ^AUTTIML("AU",PXVIM,PXVMAN,PXVLN,DA)
  Q
 EXP ; check for expiration date in the past
  N PXVX,PXVDT,Y
@@ -85,11 +49,19 @@ LOT() ;
 STOCK ; set logic for AC x-ref in V IMMUNIZATION file
  ; check for availability of selected immunization in immunization inventory
  N PXVIEN,PXVIMM,PXVLN,PXVSTOCK
+ I $$HIST Q
  S PXVIEN=X,PXVLN=0,PXVSTOCK=0
  F  S PXVLN=$O(^AUTTIML("C",PXVIEN,PXVLN)) Q:'PXVLN  I $P(^AUTTIML(PXVLN,0),"^",12)>0 S PXVSTOCK=1 Q
  I 'PXVSTOCK S PXVIMM=$P(^AUTTIMM(PXVIEN,0),"^") D
  .D EN^DDIOL(">> No stock available for "_PXVIMM_"! <<",,"!!,?2")
  .D ALERT
+ Q
+HIST() ; check if historical encounter
+ N PXVHIST,PXVSIT S PXVHIST=0 D  Q PXVHIST
+ .I $G(DA),$P($G(^AUPNVIMM(DA,13)),"^")>1 S PXVHIST=1 Q
+ .I $G(PXCEFIEN),$P($G(^AUPNVIMM(PXCEFIEN,13)),"^")>1 S PXVHIST=1 Q
+ .I $G(PXCEVIEN),$P($G(^AUPNVSIT(PXCEVIEN,0)),"^",7)="E" S PXVHIST=1 Q
+ .I '$G(PXCEVIEN),$G(PXCEFIEN) S PXVSIT=$P($G(^AUPNVIMM(PXCEFIEN,0)),"^",3) I $G(PXVSIT),$P($G(^AUPNVSIT(PXVSIT,0)),"^",7)="E" S PXVHIST=1
  Q
 ALERT ; send alert if no stock available
  N XQA,XQAMSG,PXVVAR
@@ -99,12 +71,14 @@ ALERT ; send alert if no stock available
  Q
 DECR ; set logic for AF x-ref in V IMMUNIZATION file
  ; decrement doses unused in IMMUNIZATION LOT file
+ I $$HIST Q
  N PXV
  S PXV=$P($G(^AUTTIML(X,0)),"^",12) I 'PXV Q
  S PXV=PXV-1,$P(^AUTTIML(X,0),"^",12)=PXV
  Q
 INCR ; kill logic for AF x-ref in V IMMUNIZATION file
  ; increment doses unused in IMMUNIZATION LOT file
+ I $$HIST Q
  N PXV
  S PXV=$P($G(^AUTTIML(X,0)),"^",12) I PXV="" Q
  S PXV=PXV+1,$P(^AUTTIML(X,0),"^",12)=PXV

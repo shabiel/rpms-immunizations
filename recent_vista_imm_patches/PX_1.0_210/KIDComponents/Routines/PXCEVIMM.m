@@ -1,4 +1,4 @@
-PXCEVIMM ;ISL/dee,SLC/ajb - Used to edit and display V IMMUNIZATION ;07/01/2015
+PXCEVIMM ;ISL/dee,SLC/ajb - Used to edit and display V IMMUNIZATION ;08/11/15  12:48
  ;;1.0;PCE PATIENT CARE ENCOUNTER;**27,124,199,201,210**;Aug 12, 1996
  ;;
  Q
@@ -22,12 +22,13 @@ FORMAT ;;Immunization~9000010.11~0,3,11,12,13,14,15,811,812~0~^AUPNVIMM
  ;;0~6~.06~Reaction:  ~Reaction:  ~~~~~D
  ;;0~7~.07~Repeat Contraindicated:  ~Repeat Contraindicated:  ~~ECONTRAI^PXCEVIMM~~~D
  ;;12~1~1201~Administered Date and Time:  ~Administered Date and Time:  ~~~~~D
- ;;13~12~1312~Dosage:  ~Dosage:  ~~~~~D
+ ;;13~12~1312~Dose:  ~Dose:  ~~~~~D
+ ;;13~13~1313~Dose Units:  ~Dose Units:  ~~~~~D
  ;;13~2~1302~Route of Administration:  ~Route of Administration:  ~~~~~D
  ;;13~3~1303~Site of Administration (Body):  ~Site of Administration (Body):  ~~~~~D
  ;;811~1~81101~Comments:  ~Comments:  ~~~~~D
- ;;13~4~1304~Primary Diagnosis:  ~Primary Diagnosis:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;3~2~.01~Other Diagnosis:  ~Other Diagnosis:  ~$$DISPLY01^PXCEPOV~EPOV2^PXCEVIMM~~~
+ ;;13~4~1304~Primary Diagnosis:  ~Primary Diagnosis:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;3~2~.01~Other Diagnosis:  ~Other Diagnosis:  ~$$DISPLY01^PXCEPOV~EPOV2^PXCEVIMM~~S~
  ;;14~1~1401~Results:  ~Results:  ~~~~~D
  ;;14~2~1402~Reading:  ~Reading:  ~~~~~D
  ;;14~3~1403~Date and Time Read:  ~Date/Time Read:  ~~~~~D
@@ -107,14 +108,14 @@ EPOV ;Edit the Associated DX
  I $D(DTOUT)!$D(DUOUT) S PXCEEND=1,PXCEQUIT=1 Q
  I +Y'>0 S PXCEEND=1 Q  ;S:$P(PXCETEXT,"~",3)=".08" PXCEQUIT=1 Q
  ;See if this diagnosis is in the PXCEAFTR(0)
- I $P(PXCETEXT,"~",2)'=8,(+Y=$P($G(PXCEAFTR(0)),"^",8)) S PXCEEND=1
- I $P(PXCETEXT,"~",2)'=9,(+Y=$P($G(PXCEAFTR(0)),"^",9)) S PXCEEND=1
- I $P(PXCETEXT,"~",2)'=10,(+Y=$P($G(PXCEAFTR(0)),"^",10)) S PXCEEND=1
- I $P(PXCETEXT,"~",2)'=11,(+Y=$P($G(PXCEAFTR(0)),"^",11)) S PXCEEND=1
- I $P(PXCETEXT,"~",2)'=12,(+Y=$P($G(PXCEAFTR(0)),"^",12)) S PXCEEND=1
- I $P(PXCETEXT,"~",2)'=13,(+Y=$P($G(PXCEAFTR(0)),"^",13)) S PXCEEND=1
- I $P(PXCETEXT,"~",2)'=14,(+Y=$P($G(PXCEAFTR(0)),"^",14)) S PXCEEND=1
- I $P(PXCETEXT,"~",2)'=15,(+Y=$P($G(PXCEAFTR(0)),"^",15)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=1,(+Y=$P($G(PXCEAFTR(80)),"^",1)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=2,(+Y=$P($G(PXCEAFTR(80)),"^",2)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=3,(+Y=$P($G(PXCEAFTR(80)),"^",3)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=4,(+Y=$P($G(PXCEAFTR(80)),"^",4)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=5,(+Y=$P($G(PXCEAFTR(80)),"^",5)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=6,(+Y=$P($G(PXCEAFTR(80)),"^",6)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=7,(+Y=$P($G(PXCEAFTR(80)),"^",7)) S PXCEEND=1
+ I $P(PXCETEXT,"~",2)'=8,(+Y=$P($G(PXCEAFTR8(80)),"^",8)) S PXCEEND=1
  ;
  ; check for duplicate diagnosis in OTHER DIAGNOSIS
  N DX D:+$G(PXCEFIEN)

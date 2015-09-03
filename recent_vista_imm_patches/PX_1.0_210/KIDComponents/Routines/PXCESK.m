@@ -1,4 +1,4 @@
-PXCESK ;ISL/dee - Used to edit and display V SKIN TEST ;07/01/2015
+PXCESK ;ISL/dee - Used to edit and display V SKIN TEST ;07/29/2015
  ;;1.0;PCE PATIENT CARE ENCOUNTER;**27,124,162,210**;Aug 12, 1996
  ;; ;
  Q
@@ -15,7 +15,7 @@ PXCESK ;ISL/dee - Used to edit and display V SKIN TEST ;07/01/2015
  ;
  ;***Reading (.05) must be the line before Results (.04)***
  ;
-FORMAT ;;Skin Test~9000010.12~0,12,13,811,812~1~^AUPNVSK
+FORMAT ;;Skin Test~9000010.12~0,12,13,80,811,812~1~^AUPNVSK
  ;;0~1~.01~Skin Test:  ~Skin Test:  ~~~~~B
  ;;12~1~1201~Placement Date and Time:  ~Date/Time of Placement:  ~~~~~D
  ;;12~2~1202~Ordering Provider:  ~Ordering Provider:  ~~EPROV12^PXCEPRV~~~D
@@ -28,14 +28,14 @@ FORMAT ;;Skin Test~9000010.12~0,12,13,811,812~1~^AUPNVSK
  ;;0~5~.05~Reading in millimeters (mm):  ~Reading in millimeters (mm):  ~~EREADING^PXCESK~~~D
  ;;0~4~.04~Results~Results:  ~~ERESULTS^PXCESK~~~D
  ;;13~1~1301~Reading Comments:  ~Reading Comments:  ~~~~~D
- ;;0~8~.08~Diagnosis:  ~Diagnosis:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;0~9~.09~Diagnosis 2:  ~Diagnosis 2:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;0~10~.1~Diagnosis 3:  ~Diagnosis 3:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;0~11~.11~Diagnosis 4:  ~Diagnosis 4:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;0~12~.12~Diagnosis 5:  ~Diagnosis 5:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;0~13~.13~Diagnosis 6:  ~Diagnosis 6:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;0~14~.14~Diagnosis 7:  ~Diagnosis 7:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
- ;;0~15~.15~Diagnosis 8:  ~Diagnosis 8:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~~
+ ;;80~1~801~Diagnosis:  ~Diagnosis:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;80~2~802~Diagnosis 2:  ~Diagnosis 2:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;80~3~803~Diagnosis 3:  ~Diagnosis 3:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;80~4~804~Diagnosis 4:  ~Diagnosis 4:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;80~5~805~Diagnosis 5:  ~Diagnosis 5:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;80~6~806~Diagnosis 6:  ~Diagnosis 6:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;80~7~807~Diagnosis 7:  ~Diagnosis 7:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
+ ;;80~8~808~Diagnosis 8:  ~Diagnosis 8:  ~$$DISPLY01^PXCEPOV~EPOV^PXCEVIMM~~S~
  ;;
  ;
  ;The interface for AICS to get list on form for help.
@@ -100,4 +100,6 @@ SAVE ;Special code for saving a Skin Test.
  S ^TMP("PXK",$J,PXCECATS,1,0,"AFTER")=PXCEAFTR(0)
  S ^TMP("PXK",$J,PXCECATS,1,12,"AFTER")=PXCEAFTR(12)
  S ^TMP("PXK",$J,PXCECATS,1,13,"AFTER")=PXCEAFTR(13)
+ S ^TMP("PXK",$J,PXCECATS,1,80,"AFTER")=PXCEAFTR(80)
+ S ^TMP("PXK",$J,PXCECATS,1,811,"AFTER")=PXCEAFTR(811)
  Q

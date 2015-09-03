@@ -1,14 +1,14 @@
-PXVUTL ;BIR/ADM - SKIN TEST UTILITY ROUTINE ;02/18/2015
+PXVUTL ;BIR/ADM - SKIN TEST UTILITY ROUTINE ;08/20/2015
  ;;1.0;PCE PATIENT CARE ENCOUNTER;**210**;Aug 12, 1996
  ;
-HR ; called by AHR1 x-ref on EVENT DATE AND TIME field
+HR ; called by AH new style x-ref in V SKIN TEST file
  ; set number of hours between placement and reading of test
  N PXVX,X1,X2,X3
  S X1=$P($G(^AUPNVSK(DA,0)),"^",6) ; DATE READ
  S X2=$P($G(^AUPNVSK(DA,12)),"^") ; EVENT DATE AND TIME
  S X3=2 ; return difference in seconds
  S PXVX=""
- I $G(X1),$G(X2),$G(X2)'>$G(X1) S PXVX=$$FMDIFF^XLFDT(X1,X2,X3)\3600
+ I $G(X1),$L(X1)>7,$G(X2),$L(X2)>7,$G(X2)'>$G(X1) S PXVX=$$FMDIFF^XLFDT(X1,X2,X3)\3600
  S $P(^AUPNVSK(DA,12),"^",14)=PXVX
  Q
 CODSYS ; set logic for AC x-ref on SKIN TEST field to populate CODE SYSTEM multiple
@@ -33,3 +33,11 @@ KCODX(PXVTN) ;
  S PXVJ=0 F  S PXVJ=$O(^AUPNVSK(PXVTN,3,PXVJ)) Q:'PXVJ  D  S PXVCODE=1
  .S PXVY(9000010.123,PXVJ_","_PXVTN_",",.01)="@" D FILE^DIE("","PXVY")
  Q PXVCODE
+TIME() ; determine if future time
+ N PXV,PXVX,PXVY S PXVX=X,PXV=0
+ D NOW I PXVX>PXVY S PXV=1
+ Q PXV
+NOW ; get now for comparison
+ N %,%H,%I,X
+ D NOW^%DTC S PXVY=$E(%,1,12)
+ Q

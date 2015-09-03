@@ -1,5 +1,6 @@
-PXKFSK ;ISL/JVS - Fields for V SKIN TEST file ;07/29/2015
- ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,124,210**;Aug 12, 1996
+PXKFIMM ;ISL/JVS,SLC/ajb - Fields for V IMMUNIZATIONS file ;08/10/15  14:56
+ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,124,201,209,210**;Aug 12, 1996
+ ;
  ;  Adding or Editing of data in a particular field can be controlled
  ;by adding a ~ as a delimiter and the letters A and/or E to the
  ;end of the line of text which represents what could be added
@@ -13,7 +14,7 @@ PXKFSK ;ISL/JVS - Fields for V SKIN TEST file ;07/29/2015
  ; 4. If only the ~E is added the the data can only be edited in
  ;    this file for this field. (not a likely possibility)
  ;
- ; The word option in front of the line of text below tells the
+ ; The word "OPTION" in front of the line of text below tells the
  ;software to determine,based on the data, the appropriateness
  ;of using either a "///" or "////" stuff in a DIE call.
  ;
@@ -30,7 +31,7 @@ PXKFSK ;ISL/JVS - Fields for V SKIN TEST file ;07/29/2015
  ;
  ; The following is the file's global name.  Each global must have a
  ;unique name and can not have any subscripts as part of the global root.
-GLOBAL ;;^AUPNVSK
+GLOBAL ;;^AUPNVIMM
  ;
 EN1 ;
  S PXKER=""
@@ -42,49 +43,56 @@ EN2 ;
  .I PXKFD="" S PXKPCE=PXKPCE+1 D EN2
  Q
 ADD ;Add an entry to the file
- Q
-0 ;;1,2,3 * 0+1,0+3 * 0
- ;;.01///^S X=$G(
+ ;Q
+0 ;;1,2,3 * 0+1,0+3 * 1
+ ;;.01////^S X=$G(
  ;;.02////^S X=$G(
  ;;.03////^S X=$G(
- ;;.04///^S X=$G(
- ;;.05////^S X=$G(
- ;;.06////^S X=$G(
- ;;.07////^S X=$G(
+ ;;.04////^S X=$G(
+ ;;
+ ;;.06///^S X=$G(
+ ;;.07///^S X=$G(
+ ;;.08////^S X=$G(
+ ;;.09////^S X=$G(
+ ;;.1////^S X=$G(
+ ;;.11////^S X=$G(
+ ;;.12////^S X=$G(
+ ;;.13////^S X=$G(
+ ;;.14////^S X=$G(
+ ;;.15////^S X=$G(
+11 ;;
+ ;;1101///^S X=$G(
 12 ;;
  ;;1201///^S X=$G(
  ;;1202////^S X=$G(
  ;;
  ;;1204////^S X=$G(
+ ;;1205////^S X=$G(
  ;;
- ;;
- ;;
- ;;
- ;;
- ;;
- ;;1211////^S X=$G(
- ;;1212////^S X=$G(
- ;;
- ;;1214////^S X=$G(
- ;;
- ;;
- ;;
- ;;
- ;;
- ;;1220////^S X=$G(
- ;;
+ ;;1207////^S X=$G(
 13 ;;
- ;;1301///^S X=$G(
+ ;;1301////^S X=$G(
+ ;;1302////^S X=$G(
+ ;;1303////^S X=$G(
+ ;;1304////^S X=$G(
  ;;
-80 ;;
- ;;801////^S X=$G(
- ;;802////^S X=$G(
- ;;803////^S X=$G(
- ;;804////^S X=$G(
- ;;805////^S X=$G(
- ;;806////^S X=$G(
- ;;807////^S X=$G(
- ;;808////^S X=$G(
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;1312////^S X=$G(
+ ;;1313////^S X=$G(
+14 ;;
+ ;;1401////^S X=$G(
+ ;;1402///^S X=$G(
+ ;;1403///^S X=$G(
+ ;;1404////^S X=$G(
+ ;;1405///^S X=$G(
+ ;;1406///^S X=$G(
+15 ;;
+ ;;1501///^S X=$G(
 801 ;;
  ;;80101///^S X=1;
  ;;80102///^S X=$G(PXKAUDIT);
