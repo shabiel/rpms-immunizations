@@ -85,6 +85,7 @@ for *210 in the fields for those added by this patch.).
 
 ```
 == RPMS ==                                                                |  == VISTA ==
+
 .01,0)="IMMUNIZATION^RP9999999.14'^AUTTIMM(^0;1^Q"                        |  .01,0)="IMMUNIZATION^R*P9999999.14'a^AUTTIMM(^0;1^S DIC(""S"")=""I $P(^(0
 .02,0)="PATIENT NAME^RP9000001'I^AUPNPAT(^0;2^Q"                          |  .02,0)="PATIENT NAME^RP9000001'Ia^AUPNPAT(^0;2^Q"
 .03,0)="VISIT^R*P9000010'I^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$P |  .03,0)="VISIT^R*P9000010'Ia^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$
@@ -104,7 +105,7 @@ for *210 in the fields for those added by this patch.).
                                                                           >  2,0)="VIS OFFERED/GIVEN TO PATIENT^9000010.112PA^^2;0"
                                                                           >  3,0)="OTHER DIAGNOSIS^9000010.113P^^3;0"
 1101,0)="REMARKS^9000010.1111^^11;0"                                         1101,0)="REMARKS^9000010.1111^^11;0"
-1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"  |  1201,0)="EVENT DATE AND TIME^Da^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
+1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"  |  1201,0)="EVENT DATE AND TIME^DXa^^12;1^S %DT=""ET"" D ^%DT S X=Y K:Y<1!$$
 1202,0)="ORDERING PROVIDER^*P200'X^VA(200,^12;2^S DIC(""S"")=""I $D(^VA(2 |  1202,0)="ORDERING PROVIDER^P200'a^VA(200,^12;2^Q"
 1203,0)="CLINIC^P40.7'^DIC(40.7,^12;3^Q"                                  |  1203,0)="CLINIC^P40.7'a^DIC(40.7,^12;3^Q"
 1204,0)="ENCOUNTER PROVIDER^P200'^VA(200,^12;4^Q"                         |  1204,0)="ENCOUNTER PROVIDER^P200'a^VA(200,^12;4^Q"
@@ -125,14 +126,16 @@ for *210 in the fields for those added by this patch.).
                                                                           >  1302,0)="ROUTE OF ADMINISTRATION^*P920.2'a^PXV(920.2,^13;2^S DIC(""S"")="
                                                                           >  1303,0)="SITE OF ADMINISTRATION (BODY)^*P920.3'a^PXV(920.3,^13;3^S DIC(""
                                                                           >  1304,0)="PRIMARY DIAGNOSIS^*P80'Xa^ICD9(^13;4^S DIC(""S"")=""D ^AUPNSICD"
-                                                               *210       >  1312,0)="DOSAGE^Fa^^13;12^K:$L(X)>30!($L(X)<3) X"
-                                                               *210       >  1401,0)="RESULTS^Sa^T:TAKE;N:NO TAKE;I:INDETERMINATE;^14;1^Q"
-                                                               *210       >  1402,0)="READING^NJ2,0a^^14;2^K:+X'=X!(X>40)!(X<0)!(X?.E1"".""1N.N) X"
-                                                               *210       >  1403,0)="DATE/TIME READ^Da^^14;3^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
-                                                               *210       >  1404,0)="READER^P200'a^VA(200,^14;4^Q"
-                                                               *210       >  1405,0)="READING RECORDED^Da^^14;5^S %DT=""ETXR"" D ^%DT S X=Y K:Y<1 X"
-                                                               *210       >  1406,0)="HOURS READ POST-INOCULATION^NJ3,0a^^14;6^K:+X'=X!(X>100)!(X<0)!(
-                                                               *210       >  1501,0)="READING COMMENT^Fa^^15;1^K:$L(X)>245!($L(X)<1) X"
+                                                         *210             >  1312,0)="DOSE^NJ6,2aO^^13;12^K:+X'=X!(X>999)!(X<0)!(X?.E1"".""3N.N) X"
+                                                         *210             >  1312.5,0)="DOSAGE^CJ10^^ ; ^S X=$$DOSAGE^PXVUTIL(D0)"
+                                                         *210             >  1313,0)="DOSE UNITS^P757.5'aO^LEX(757.5,^13;13^Q"
+                                                         *210             >  1401,0)="RESULTS^Sa^T:TAKE;N:NO TAKE;I:INDETERMINATE;^14;1^Q"
+                                                         *210             >  1402,0)="READING^NJ2,0a^^14;2^K:+X'=X!(X>40)!(X<0)!(X?.E1"".""1N.N) X"
+                                                         *210             >  1403,0)="DATE/TIME READ^DXa^^14;3^S %DT=""ET"" D ^%DT S X=Y K:Y<1!$$TIME^
+                                                         *210             >  1404,0)="READER^P200'a^VA(200,^14;4^Q"
+                                                         *210             >  1405,0)="READING RECORDED^Da^^14;5^S %DT=""ETXR"" D ^%DT S X=Y K:Y<1 X"
+                                                         *210             >  1406,0)="HOURS READ POST-INOCULATION^NJ3,0a^^14;6^K:+X'=X!(X>100)!(X<0)!(
+                                                         *210             >  1501,0)="READING COMMENT^Fa^^15;1^K:$L(X)>245!($L(X)<1) X"
 2601,0)="SNOMED CT^9000010.1126A^^26;0"                                      2601,0)="SNOMED CT^9000010.1126A^^26;0"
 2701,0)="LOINC CODES^9000010.1127A^^27;0"                                    2701,0)="LOINC CODES^9000010.1127A^^27;0"
 80101,0)="EDITED FLAG^S^1:EDITED;^801;1^Q"                                |  80101,0)="EDITED FLAG^Sa^1:EDITED;^801;1^Q"
@@ -267,8 +270,6 @@ same as the RPMS equivalents.
 
 ## 9000010.12 (V SKIN TEST)
 
-This file has major collisions.
-
 ```
 == RPMS ==                                                                |  == VISTA ==
 .01,0)="SKIN TEST^R*P9999999.28'^AUTTSK(^0;1^S DIC(""S"")=""I $P(^(0),U,3 |  .01,0)="SKIN TEST^R*P9999999.28'a^AUTTSK(^0;1^S DIC(""S"")=""I $P(^(0),U,
@@ -276,43 +277,48 @@ This file has major collisions.
 .03,0)="VISIT^R*P9000010'I^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$P |  .03,0)="VISIT^R*P9000010'Ia^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$
 .04,0)="RESULTS^SX^P:POSITIVE;N:NEGATIVE;D:DOUBTFUL;O:NO TAKE;^0;4^I X="" |  .04,0)="RESULTS^SXa^P:POSITIVE;N:NEGATIVE;D:DOUBTFUL;O:NO TAKE;^0;4^I X="
 .05,0)="READING^NJ2,0X^^0;5^K:+X'=X!(X>40)!(X<0)!(X?.E1"".""1N.N) X I $D( |  .05,0)="READING^NJ2,0Xa^^0;5^K:+X'=X!(X>40)!(X<0)!(X?.E1"".""1N.N) X"
-.06,0)="DATE READ^DX^^0;6^S %DT=""EX"" D ^%DT S X=Y K:X>DT!(X<AUPNDOB) X  |  .06,0)="DATE READ^DXa^^0;6^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
+.06,0)="DATE READ^DX^^0;6^S %DT=""EX"" D ^%DT S X=Y K:X>DT!(X<AUPNDOB) X  |  .06,0)="DATE READ^DXa^^0;6^S %DT=""ET"" D ^%DT S X=Y K:Y<1!$$TIME^PXVUTL 
                                                                           |  .07,0)="READER^P200'a^VA(200,^0;7^Q"
-.08,0)="TEST READER^P200'^VA(200,^0;8^Q"                                  |  .08,0)="DIAGNOSIS^*P80'a^ICD9(^0;8^S DIC(""S"")=""D ^AUPNSICD"" D ^DIC K 
-.09,0)="INJECTION SITE^S^L:LEFT FOREARM;R:RIGHT FOREARM;^0;9^Q"           |  .09,0)="DIAGNOSIS 2^*P80'a^ICD9(^0;9^S DIC(""S"")=""D ^AUPNSICD"" D ^DIC 
-                                                                          |  .1,0)="DIAGNOSIS 3^*P80'a^ICD9(^0;10^S DIC(""S"")=""D ^AUPNSICD"" D ^DIC
-.11,0)="VOLUME^NJ4,2^^0;11^K:+X'=X!(X>5)!(X<0)!(X?.E1"".""3N.N) X"        |  .11,0)="DIAGNOSIS 4^*P80'a^ICD9(^0;11^S DIC(""S"")=""D ^AUPNSICD"" D ^DIC
-                                                                          |  .12,0)="DIAGNOSIS 5^*P80'a^ICD9(^0;12^S DIC(""S"")=""D ^AUPNSICD"" D ^DIC
-                                                                          |  .13,0)="DIAGNOSIS 6^P80'a^ICD9(^0;13^Q"
-.14,0)="LOT NUMBER^P9999999.41'^AUTTIML(^0;14^Q"                          |  .14,0)="DIAGNOSIS 7^*P80'a^ICD9(^0;14^S DIC(""S"")=""D ^AUPNSICD"" D ^DIC
-                                                                          |  .15,0)="DIAGNOSIS 8^*P80'a^ICD9(^0;15^S DIC(""S"")=""D ^AUPNSICD"" D ^DIC
-                                                                          |  3,0)="CODING SYSTEM^9000010.123^^3;0"
-1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"  |  1201,0)="EVENT DATE AND TIME^Da^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
-1202,0)="ORDERING PROVIDER^*P200'X^VA(200,^12;2^S DIC(""S"")=""I $D(^VA(2 |  1202,0)="ORDERING PROVIDER^P200'a^VA(200,^12;2^Q"
-1203,0)="CLINIC^P40.7'^DIC(40.7,^12;3^Q"
-1204,0)="ENCOUNTER PROVIDER^P200'^VA(200,^12;4^Q"                         |  1204,0)="ENCOUNTER PROVIDER^P200'a^VA(200,^12;4^Q"                        
-1205,0)="HOSPITAL LOCATION^P44'^SC(^12;5^Q"
-1206,0)="SERVICE CREDIT STOP^P40.7'^DIC(40.7,^12;6^Q"
-1207,0)="SECONDARY VISIT^P9000010'^AUPNVSIT(^12;7^Q"
+.08,0)="TEST READER^P200'^VA(200,^0;8^Q"                                  |
+.09,0)="INJECTION SITE^S^L:LEFT FOREARM;R:RIGHT FOREARM;^0;9^Q"           |
+.11,0)="VOLUME^NJ4,2^^0;11^K:+X'=X!(X>5)!(X<0)!(X?.E1"".""3N.N) X"        |
+.14,0)="LOT NUMBER^P9999999.41'^AUTTIML(^0;14^Q"                          |
+																	      |  3,0)="CODING SYSTEM^9000010.123^^3;0"
+																	      |  801,0)="PRIMARY DIAGNOSIS^*P80'a^ICD9(^80;1^S DIC(""S"")=""D ^AUPNSICD" "
+																	      |  802,0)="DIAGNOSIS 2^*P80'a^ICD9(^80;2^S DIC(""S"")=""D ^AUPNSICD"" D ^D IC
+																	      |  803,0)="DIAGNOSIS 3^*P80'a^ICD9(^80;3^S DIC(""S"")=""D ^AUPNSICD"" D ^D IC
+																	      |  804,0)="DIAGNOSIS 4^*P80'a^ICD9(^80;4^S DIC(""S"")=""D ^AUPNSICD"" D ^D IC
+																	      |  805,0)="DIAGNOSIS 5^*P80'a^ICD9(^80;5^S DIC(""S"")=""D ^AUPNSICD"" D ^D IC
+																	      |  806,0)="DIAGNOSIS 6^*P80'a^ICD9(^80;6^S DIC(""S"")=""D ^AUPNSICD"" D ^D IC
+																	      |  807,0)="DIAGNOSIS 7^*P80'a^ICD9(^80;7^S DIC(""S"")=""D ^AUPNSICD"" D ^D IC
+																	      |  808,0)="DIAGNOSIS 8^*P80'a^ICD9(^80;8^S DIC(""S"")=""D ^AUPNSICD"" D ^D IC
+1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"  |  1201,0)="EVENT DATE AND TIME^DXa^^12;1^S %DT=""ET"" D ^%DT S X=Y K:Y<1!$$ 
+1202,0)="ORDERING PROVIDER^*P200'X^VA(200,^12;2^S DIC(""S"")=""I $D(^VA(2 |  1202,0)="ORDERING PROVIDER^P200'a^VA(200,^12;2^Q"                         
+1203,0)="CLINIC^P40.7'^DIC(40.7,^12;3^Q"                                  |
+1204,0)="ENCOUNTER PROVIDER^P200'^VA(200,^12;4^Q"                            1204,0)="ENCOUNTER PROVIDER^P200'a^VA(200,^12;4^Q"                         
+1205,0)="HOSPITAL LOCATION^P44'^SC(^12;5^Q"                               |
+1206,0)="SERVICE CREDIT STOP^P40.7'^DIC(40.7,^12;6^Q"                     |
+1207,0)="SECONDARY VISIT^P9000010'^AUPNVSIT(^12;7^Q"                      |
 1208,0)="PARENT^P9000010.12'^AUPNVSK(^12;8^Q"
 1209,0)="EXTERNAL KEY^F^^12;9^K:$L(X)>20!($L(X)<1) X"
 1210,0)="OUTSIDE PROVIDER NAME^F^^12;10^K:$L(X)>30!($L(X)<1) X"
-                                                                          |  1211,0)="SKIN TEST PLACEMENT RECORDED^Da^^12;11^S %DT=""ETXR"" D ^%DT S X  
-                                                                          |  1212,0)="ANATOMIC LOCATION OF PLACEMENT^*P920.3'a^PXV(920.3,^12;12^S DIC(  
-1213,0)="ANCILLARY POV^P80'^ICD9(^12;13^Q"                                |  1213,0)="SKIN TEST READING RECORDED^Da^^12;13^S %DT=""ETXR"" D ^%DT S X=Y  
-                                                                          |  1214,0)="HOURS READ POST-PLACEMENT^NJ3,0Ia^^12;14^K:+X'=X!(X>100)!(X<0)!(  
+                                                                          |  1211,0)="SKIN TEST PLACEMENT RECORDED^Da^^12;11^S %DT=""ETXR"" D ^%DT S X
+                                                                             1212,0)="ANATOMIC LOCATION OF PLACEMENT^*P920.3'a^PXV(920.3,^12;12^S DIC(
+1213,0)="ANCILLARY POV^P80'^ICD9(^12;13^Q"
+                                                                             1214,0)="HOURS READ POST-PLACEMENT^NJ3,0Ia^^12;14^K:+X'=X!(X>100)!(X<0)!(  
 1215,0)="ORDERING LOCATION^P44'^SC(^12;15^Q"
 1216,0)="DATE/TIME ENTERED^D^^12;16^S %DT=""ESTXR"" D ^%DT S X=Y K:Y<1 X"
-1217,0)="ENTERED BY^P200'^VA(200,^12;17^Q"
-1218,0)="DATE/TIME LAST MODIFIED^D^^12;18^S %DT=""ESTXR"" D ^%DT S X=Y K: <
-1219,0)="LAST MODIFIED BY^P200'^VA(200,^12;19^Q"                          <
-                                                                          |  1301,0)="READING COMMENTS^Fa^^13;1^K:$L(X)>245!($L(X)<1) X" 
-80101,0)="EDITED FLAG^S^1:EDITED;^801;1^Q"                                |  80101,0)="EDITED FLAG^Sa^1:EDITED;^801;1^Q"                     
-80102,0)="AUDIT TRAIL^F^^801;2^K:$L(X)>85!($L(X)<2) X"                    |  80102,0)="AUDIT TRAIL^Fa^^801;2^K:$L(X)>85!($L(X)<2) X"         
-81101,0)="COMMENTS^F^^811;1^K:$L(X)>245!($L(X)<1) X"                      |  81101,0)="PLACEMENT COMMENTS^Fa^^811;1^K:$L(X)>245!($L(X)<1) X" 
-81201,0)="VERIFIED^SI^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^812; |  81201,0)="VERIFIED^SIa^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^812 
-81202,0)="PACKAGE^P9.4'I^DIC(9.4,^812;2^Q"                                |  81202,0)="PACKAGE^P9.4'Ia^DIC(9.4,^812;2^Q"        
-81203,0)="DATA SOURCE^P839.7'I^PX(839.7,^812;3^Q"                         |  81203,0)="DATA SOURCE^P839.7'Ia^PX(839.7,^812;3^Q" 
+1217,0)="ENTERED BY^P200'^VA(200,^12;17^Q"                                   
+1218,0)="DATE/TIME LAST MODIFIED^D^^12;18^S %DT=""ESTXR"" D ^%DT S X=Y K: |
+1219,0)="LAST MODIFIED BY^P200'^VA(200,^12;19^Q"                          |
+                                                                             1220,0)="SKIN TEST READING RECORDED^Da^^12;20^S %DT=""ETXR"" D ^%DT S X=Y
+                                                                             1301,0)="READING COMMENTS^Fa^^13;1^K:$L(X)>245!($L(X)<1) X"  
+80101,0)="EDITED FLAG^S^1:EDITED;^801;1^Q"                                |  80101,0)="EDITED FLAG^Sa^1:EDITED;^801;1^Q"                              
+80102,0)="AUDIT TRAIL^F^^801;2^K:$L(X)>85!($L(X)<2) X"                    |  80102,0)="AUDIT TRAIL^Fa^^801;2^K:$L(X)>85!($L(X)<2) X"                  
+81101,0)="COMMENTS^F^^811;1^K:$L(X)>245!($L(X)<1) X"                      <  81101,0)="PLACEMENT COMMENTS^Fa^^811;1^K:$L(X)>245!($L(X)<1) X"         2
+81201,0)="VERIFIED^SI^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^812; <  81201,0)="VERIFIED^SIa^1:ELECTRONICALLY SIGNED;2:VERIFIED BY PACKAGE;^81 
+81202,0)="PACKAGE^P9.4'I^DIC(9.4,^812;2^Q"                                   81202,0)="PACKAGE^P9.4'Ia^DIC(9.4,^812;2^Q"                              
+81203,0)="DATA SOURCE^P839.7'I^PX(839.7,^812;3^Q"                            81203,0)="DATA SOURCE^P839.7'Ia^PX(839.7,^812;3^Q"                       
 ```
 
 # Overall pattern of differences

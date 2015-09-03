@@ -1,4 +1,3 @@
-== RPMS ==                                                                |  == VISTA ==
 .01,0)="IMMUNIZATION^RP9999999.14'^AUTTIMM(^0;1^Q"                        |  .01,0)="IMMUNIZATION^R*P9999999.14'a^AUTTIMM(^0;1^S DIC(""S"")=""I $P(^(0
 .02,0)="PATIENT NAME^RP9000001'I^AUPNPAT(^0;2^Q"                          |  .02,0)="PATIENT NAME^RP9000001'Ia^AUPNPAT(^0;2^Q"
 .03,0)="VISIT^R*P9000010'I^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$P |  .03,0)="VISIT^R*P9000010'Ia^AUPNVSIT(^0;3^S DIC(""S"")=""I $P(^(0),U,5)=$
@@ -18,7 +17,7 @@
                                                                           >  2,0)="VIS OFFERED/GIVEN TO PATIENT^9000010.112PA^^2;0"
                                                                           >  3,0)="OTHER DIAGNOSIS^9000010.113P^^3;0"
 1101,0)="REMARKS^9000010.1111^^11;0"                                         1101,0)="REMARKS^9000010.1111^^11;0"
-1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"  |  1201,0)="EVENT DATE AND TIME^Da^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
+1201,0)="EVENT DATE AND TIME^D^^12;1^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"  |  1201,0)="EVENT DATE AND TIME^DXa^^12;1^S %DT=""ET"" D ^%DT S X=Y K:Y<1!$$
 1202,0)="ORDERING PROVIDER^*P200'X^VA(200,^12;2^S DIC(""S"")=""I $D(^VA(2 |  1202,0)="ORDERING PROVIDER^P200'a^VA(200,^12;2^Q"
 1203,0)="CLINIC^P40.7'^DIC(40.7,^12;3^Q"                                  |  1203,0)="CLINIC^P40.7'a^DIC(40.7,^12;3^Q"
 1204,0)="ENCOUNTER PROVIDER^P200'^VA(200,^12;4^Q"                         |  1204,0)="ENCOUNTER PROVIDER^P200'a^VA(200,^12;4^Q"
@@ -39,10 +38,12 @@
                                                                           >  1302,0)="ROUTE OF ADMINISTRATION^*P920.2'a^PXV(920.2,^13;2^S DIC(""S"")="
                                                                           >  1303,0)="SITE OF ADMINISTRATION (BODY)^*P920.3'a^PXV(920.3,^13;3^S DIC(""
                                                                           >  1304,0)="PRIMARY DIAGNOSIS^*P80'Xa^ICD9(^13;4^S DIC(""S"")=""D ^AUPNSICD"
-                                                                          >  1312,0)="DOSAGE^Fa^^13;12^K:$L(X)>30!($L(X)<3) X"
+                                                                          >  1312,0)="DOSE^NJ6,2aO^^13;12^K:+X'=X!(X>999)!(X<0)!(X?.E1"".""3N.N) X"
+                                                                          >  1312.5,0)="DOSAGE^CJ10^^ ; ^S X=$$DOSAGE^PXVUTIL(D0)"
+                                                                          >  1313,0)="DOSE UNITS^P757.5'aO^LEX(757.5,^13;13^Q"
                                                                           >  1401,0)="RESULTS^Sa^T:TAKE;N:NO TAKE;I:INDETERMINATE;^14;1^Q"
                                                                           >  1402,0)="READING^NJ2,0a^^14;2^K:+X'=X!(X>40)!(X<0)!(X?.E1"".""1N.N) X"
-                                                                          >  1403,0)="DATE/TIME READ^Da^^14;3^S %DT=""EST"" D ^%DT S X=Y K:Y<1 X"
+                                                                          >  1403,0)="DATE/TIME READ^DXa^^14;3^S %DT=""ET"" D ^%DT S X=Y K:Y<1!$$TIME^
                                                                           >  1404,0)="READER^P200'a^VA(200,^14;4^Q"
                                                                           >  1405,0)="READING RECORDED^Da^^14;5^S %DT=""ETXR"" D ^%DT S X=Y K:Y<1 X"
                                                                           >  1406,0)="HOURS READ POST-INOCULATION^NJ3,0a^^14;6^K:+X'=X!(X>100)!(X<0)!(
