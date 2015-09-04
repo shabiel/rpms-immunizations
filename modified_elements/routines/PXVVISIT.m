@@ -163,7 +163,7 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;
  N BIVTYPE,BIDFN,BIPTR,BIDOSE,BILOT,BIDATE,BILOC,BIOLOC,BICAT
  N BIOIEN,BIRES,BIREA,BIDTR,BIREC,BIVISD,BIPROV,BIOVRD,BIINJS,BIVOL
- N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT
+ N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT,BIADMIN
  ;
  ;---> See BIDATA definition at linelabel PARSE (above).
  D PARSE^BIVISIT(BIDATA,1)
@@ -196,7 +196,6 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ; | #.15 IMPORT FROM... |  Not used                                   |
  ; | #.16 NDC            |  Not used                                   |
  ; | #1 ADMIN NOTES      |  Not used                                   |
- ; | #1201 EVENT DT/TM   |  Not used (says exact time of V Imm)        |
  ; | #.17 DATE VIS PRES  |  #2 (see above)                             |
  ; + ------------------- | ------------------------------------------- |
  ;
@@ -205,9 +204,11 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  . S PXVIMM("IMMUNIZATION",1,"LOT NUM")=$G(BILOT)        ; Lot Number
  . S PXVIMM("IMMUNIZATION",1,"REACTION")=$G(BIREC)       ; Reaction XXX INVESTIGATE XXX
  . S PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=BIPROV      ; Shot provider
- . S PXVIMM("IMMUNIZATION",1,"DOSAGE")=BIVOL             ; Dosage (e.g. 0.5 mL) XXX Check Data
+ . S PXVIMM("IMMUNIZATION",1,"DOSE")=BIVOL               ; Dosage (e.g. 0.5 mL)
+ . S PXVIMM("IMMUNIZATION",1,"DOSE UNITS")=$$FIND1^DIC(757.5,,"QX","mL","C")          ; Dose Units (New in *210)
  . S PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")=$P(BIINJS,"-")       ; Injection Site Route
  . S PXVIMM("IMMUNIZATION",1,"ANATOMIC LOC")=$P(BIINJS,"-",2) ; Injection Site Site
+ . S PXVIMM("IMMUNIZATION",1,"EVENT D/T")=BIADMIN        ; Administration Date (not time yet)
  ;
  ; NB: RPMS has these extra fields, which are not in VISTA:
  ; .08: Skin Test Reader
