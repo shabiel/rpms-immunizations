@@ -175,7 +175,10 @@ ADDEDIT(BIERR,BIDATA,BINOM) ;PEP - Add/Edit an V IMMUNIZATION or V SKIN TEST.
  I BIERR S BIERR=BI31_$P(BIERR,U,2) Q
  ;
  ;---> If this is an Edit of an old Visit, then DELETE the old V File entry.
- I $G(BIOIEN) D DELETE(.BIERR,BIOIEN,BIVTYPE) Q
+ ; NB: VISTA modifies the old V File entry in place; doesn't create a new one
+ ;     like RPMS does. So, don't delete.
+ I $G(BIOIEN) D  QUIT
+ . I $$RPMS^BIUTL9() D DELETE(.BIERR,BIOIEN,BIVTYPE)
  ;
  ;---> Since this was a New Visit (not an Edit), decrement the Lot Total.
  I $G(BILOT) D LOTDECR(BILOT)
@@ -218,6 +221,7 @@ LOTEXP(BILIEN,BIYY) ;PEP - Return Lot Expiration Date in format: MM/DD/YYYY.
  ;     2 - BIYY   (opt) If BIYY=1, return 2-digit year: MM/DD/YY.
  ;                      If BIYY=2, return Fileman format of date.
  ;
+ N BIERR
  I '$G(BILIEN) D ERRCD^BIUTL2(511,.BIERR) Q BIERR
  I '$D(^AUTTIML(BILIEN,0)) D ERRCD^BIUTL2(512,.BIERR) Q BIERR
  N BIDATE S BIDATE=$P(^AUTTIML(BILIEN,0),U,9)
