@@ -85,7 +85,7 @@ Number  Properties
                Order  Properties
                -----  ----------
                1      FIELD TYPE:            FORM ONLY
-                      CAPTION:               Date
+                      CAPTION:               Visit Date
                       READ TYPE:             DATE
                       QUALIFIERS:            ::PTEX
                       HELP:
@@ -103,6 +103,26 @@ Number  Properties
                       DATA VALIDATION:       I $P(Y,".")>DT S DDSERROR="" D HLP
                                              ^DDSUTL(" * Date may not be in the
                                               future.")
+
+               1.5    FIELD TYPE:            FORM ONLY
+                      CAPTION:               Admin Date
+                      READ TYPE:             DATE
+                      HELP:
+                        Enter the date on which this immunization was actually
+                        administered to the patient.  NOTE: This may be
+                        different from the "visit date" associated this
+                        immunization, as in the case of an inpatient stay.  
+                      CAPTION COORDINATE:    3,6
+                      DATA COORDINATE:       3,18
+                      DATA LENGTH:           22
+                      PRE ACTION:            D HLP^DDSUTL("Enter the date on wh
+                                             ich this shot was actually adminis
+                                             tered to the patient.")
+                      POST ACTION:           S BI("EE")=X
+                      DATA VALIDATION:       I $P(Y,".")>DT S DDSERROR="" D HLP
+                                             ^DDSUTL(" * Date may not be in the
+                                              future.")
+
 
                2      FIELD TYPE:            FORM ONLY
                       CAPTION:               Vaccine
