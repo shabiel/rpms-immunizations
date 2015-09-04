@@ -117,7 +117,7 @@ GET(BIDATA,BIDA,BIVTYPE,BIDE) ;PEP - Return data for one Immunization or Skin Te
  ;---> 51 17 = Release/Revision Date of VIS (DD-Mmm-YYYY).
  ;---> 61 18 = Immunization Provider IEN.
  ;---> 65 19 = Dose Override.
- ;---> 67 20 = Injection Site.
+ ;---> 67 20 = Injection Site. (Route (#920.2) - Site (#920.3)
  ;---> 68 21 = Volume.
  ;---> 76 22 = Visit IEN.
  ;---> 77 23 = Eligibility Code IEN.
