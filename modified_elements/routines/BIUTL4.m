@@ -95,7 +95,8 @@ VACCHG(BIVAC) ;EP
  D PUT^DDSVALF(10) S BI("Q")=""   ;VIS
  D PUT^DDSVALF(14) S BI("S")=""   ;Dose Override
  D PUT^DDSVALF(5) S BI("W")=""    ;Volume
- D PUT^DDSVALF(3.8) S BI("H")=""  ;NDC
+ I $$RPMS^BIUTL9() D
+ . D PUT^DDSVALF(3.8) S BI("H")=""  ;NDC
  ;**********
  ;
  ;---> If Category is Historical Event, do not stuff Lot# and VIS defaults.
