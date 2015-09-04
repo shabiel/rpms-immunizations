@@ -55,3 +55,7 @@ Next work on Patient Enter/Edit Imm.
    920.5        IMM REFUSALS              (4 entries)
 
 NB: Del NDC code
+  
+
+In VISTA, prevent the editing of the actual immunization. Only allow deletion. But all other fields are okay to edit.
+In VISTA, Admin Date should be Admin Date/Time.
