@@ -76,6 +76,10 @@ LOADVIS(BIVTYPE) ;EP
  ..I $G(BI("EE"))>1 D PUT^DDSVALF(1.5,,,BI("EE"),"E")
  ..I $G(BI("QQ"))>1 D PUT^DDSVALF(10.2,,,BI("QQ"),"E")
  ..;**********
+ ..;
+ ..;VISTA Fields
+ ..I $G(BI("T1")) D PUT^DDSVALF(3.9,,,BI("T1"),"I") ; Route (#920.2)
+ ..I $G(BI("T2")) D PUT^DDSVALF(4,,,BI("T2"),"I")   ; Site (#920.3)
  .;
  .;---> SKIN TESTS *
  .D:BIVTYPE="S"
