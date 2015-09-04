@@ -197,6 +197,8 @@ EDITIMM ;EP
  .S BI("R")=$P(Y,V,18)      ;Immunization Provider.
  .S BI("S")=$P(Y,V,19)      ;Dose Override.
  .S BI("T")=$P(Y,V,20)      ;Injection Site.
+ .; For VISTA, we have Route (#920.2) - Site (#920.3)
+ .I BI("T")["-" S BI("T1")=$P(BI("T"),"-"),BI("T2")=$P(BI("T"),"-",2)
  .S BI("W")=$P(Y,V,21)      ;Volume.
  .S BI("Y")=$P(Y,V,24)      ;Imported From Outside Source (=1).
  .S BI("H")=$P(Y,V,25)      ;NDC Code pointer IEN.
@@ -208,7 +210,8 @@ EDITIMM ;EP
  .;**********
  .;X ^O
  .;
- .S DR="[BI FORM-IMM VISIT ADD/EDIT]"
+ .I $$RPMS^BIUTL9() S DR="[BI FORM-IMM VISIT ADD/EDIT]"
+ .E  S DR="[BI FORM-IMM VISIT ADD/EDIT V]"
  ;
  ;---> Build array for Skin Test Visit.
  D:BIVTYPE="S"
