@@ -132,10 +132,18 @@ HISTORY1(BIVIEN,BIDE,BIFMT,BIVTYPE,BIDATA,BIERR,BISTOR) ;EP
  ;     6 - BIERR   (ret) Text of Error Code if any, otherwise null.
  ;     7 - BISTOR  (opt) Store: zero or null=store in ^BITMP; 1=don't.
  ;
+ ; VEN/SMH DATA ELEMENT NAME:  
+ ; - Added BI13 to get Route (#920.2) and Site (#920.3) which are
+ ;           stored on the ^(13) node.
+ ;  
+ ; In BI TABLE DATA ELEMENT, now we have this: INJECTION SITE
+ ; DATA ELEMENT CODE: S Y=$P(BI0,U,9) S:Y="" Y=$P(BI13,U,2)_"-"_$P(BI13,U,3)
+ ; SYNONYM: IS                           TYPE OF VISIT: ALL
+ ;
  ;********** PATCH 5, v8.5, JUL 01,2013, IHS/CMI/MWR
  ;---> Added BI01 for Admin Note at 1-node.
  ;N BI0,BI012,BIDATE,BIVG,BISUB,BITMP,BIVPTR,N,Q,V
- N BI0,BI01,BI012,BIDATE,BIVG,BISUB,BITMP,BIVPTR,N,Q,V
+ N BI0,BI01,BI012,BI13,BIDATE,BIVG,BISUB,BITMP,BIVPTR,N,Q,V
  ;
  ;---> Set local variables necessary for collection of Data Elements.
  ;---> Set subscripts and delimiters necessary for selected format.
@@ -153,15 +161,15 @@ HISTORY1(BIVIEN,BIDE,BIFMT,BIVTYPE,BIDATA,BIERR,BISTOR) ;EP
  ;---> BI0=Zero node of V FILE Visit; BI012=12 node of V FILE Visit.
  ;S:BIVTYPE="I" BI0=$G(^AUPNVIMM(BIVIEN,0)),BI012=$G(^(12))
  ;S:BIVTYPE="S" BI0=$G(^AUPNVSK(BIVIEN,0)),BI012=$G(^(12))
- S:BIVTYPE="I" BI0=$G(^AUPNVIMM(BIVIEN,0)),BI01=$G(^(1)),BI012=$G(^(12))
- S:BIVTYPE="S" BI0=$G(^AUPNVSK(BIVIEN,0)),BI01=$G(^(1)),BI012=$G(^(12))
+ S:BIVTYPE="I" BI0=$G(^AUPNVIMM(BIVIEN,0)),BI01=$G(^(1)),BI012=$G(^(12)),BI13=$G(^(13))
+ S:BIVTYPE="S" BI0=$G(^AUPNVSK(BIVIEN,0)),BI01=$G(^(1)),BI012=$G(^(12)),BI13=$G(^(13))
  I BI0="" D ERRCD^BIUTL2(412,.BIERR) Q
  ;
  ;---> Quit if Format is Immserve and Vaccine is "OTHER" (HL7=0).
  Q:BIFMT=3&($P(BI0,U)=137)
  ;
  ;---> BIDFN=DFN of the patient.
- S BIDFN=$P(BI0,U,2)
+ N BIDFN S BIDFN=$P(BI0,U,2)
  Q:BIDFN'>0
  ;
  ;---> BIVG=Vaccine Group (for grouping).
