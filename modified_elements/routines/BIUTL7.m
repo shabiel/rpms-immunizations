@@ -55,8 +55,16 @@ LOADVIS(BIVTYPE) ;EP
  ..;---> Load the Injection Site.
  ..I $G(BI("T"))]"" D PUT^DDSVALF(4,,,BI("T"),"I")
  ..;
+ ..;VISTA Fields
+ ..I $G(BI("T1")) D PUT^DDSVALF(3.9,,,BI("T1"),"I") ; Route (#920.2)
+ ..I $G(BI("T2")) D PUT^DDSVALF(4,,,BI("T2"),"I")   ; Site (#920.3)
+ ..;
  ..;---> Release/Rev Date of VIS (DD-Mmm-YYYY).
- ..I $G(BI("Q"))>1 D PUT^DDSVALF(10,,,BI("Q"),"E")
+ ..;I $G(BI("Q"))>1 D PUT^DDSVALF(10,,,BI("Q"),"E")
+ ..; In VISTA, BI("Q") is a pointer to the VIS in file #920.
+ ..; Therefore, we must put it in internal form.
+ ..I BI("Q"),BI("Q")["-" D PUT^DDSVALF(10,,,BI("Q"),"E")
+ ..I BI("Q"),BI("Q")=+BI("Q") D PUT^DDSVALF(10,,,BI("Q"),"I")
  ..;
  ..;---> Load the Volume, add leading zero to Volume if necessary.
  ..I $G(BI("W")) D PUT^DDSVALF(5,,,$$LEADZ^BIUTL5(BI("W")),"E")
@@ -77,9 +85,6 @@ LOADVIS(BIVTYPE) ;EP
  ..I $G(BI("QQ"))>1 D PUT^DDSVALF(10.2,,,BI("QQ"),"E")
  ..;**********
  ..;
- ..;VISTA Fields
- ..I $G(BI("T1")) D PUT^DDSVALF(3.9,,,BI("T1"),"I") ; Route (#920.2)
- ..I $G(BI("T2")) D PUT^DDSVALF(4,,,BI("T2"),"I")   ; Site (#920.3)
  .;
  .;---> SKIN TESTS *
  .D:BIVTYPE="S"
