@@ -29,6 +29,7 @@ ADDIMM ;EP
  ;            4) BIRPC3 calls ADDV^BIVISIT, which adds the
  ;               Visit to the V Files.
  ;
+ ;ZEXCEPT:BIDFN,BIDUZ2,BIDEFDT
  ;---> Variables:
  ;     1 - BIDFN   (req) Patient DFN.
  ;     2 - BIDUZ2  (req) DUZ(2) of User (for Site Parameters).
@@ -68,7 +69,7 @@ ADDIMM ;EP
  ;--->       a NEW V Immunizaton.
  ;---> BISAVE=Flag to call BIUTL7 to save data (below).  vvv83
  ;---> BITOLONG=Flag used in Screenman to display pop-up: Other Loc too long.
- N BISAVE,BITOLONG
+ N BISAVE,BITOLONG,BIPOP
  N DR 
  I $$RPMS^BIUTL9() S DR="[BI FORM-IMM VISIT ADD/EDIT]"
  E  S DR="[BI FORM-IMM VISIT ADD/EDIT V]"
@@ -86,6 +87,7 @@ ADDSK ;EP
  ;---> Add a Skin Test via List Manager.
  ;---> Steps are the same as ADDIMM above.
  ;
+ ;ZEXCEPT:BIDFN,BIDUZ2,BIDEFDT
  ;---> Check that DFN for this patient is present.
  I '$G(BIDFN) D ERRCD^BIUTL2(405,,1) D RESET Q
  N BI S BI("A")=BIDFN
@@ -103,7 +105,7 @@ ADDSK ;EP
  ;--->       a NEW V Skin Test.
  ;---> BISAVE=Flag to call BIUTL7 to save data (below).  vvv83
  ;---> BITOLONG=Flag used in Screenman to display pop-up: Other Loc too long.
- N BISAVE,BITOLONG
+ N BISAVE,BITOLONG,BIPOP
  N DR S DR="[BI FORM-SKIN VISIT ADD/EDIT]"
  D DDS^BIFMAN(9000001,DR,BIDFN,"S",.BISAVE,.BIPOP)
  ;
@@ -139,9 +141,11 @@ EDITIMM ;EP
  ;
  ;
  ;---> Call the List Manager Generic Selector of items displayed.
+ ;ZEXCEPT:XQORNOD
  N VALMY
  D EN^VALM2(XQORNOD(0),"OS")
  ;
+ ;ZEXCEPT: BIDFN,BIHX
  ;---> Check that Imm History string for this patient is present.
  ;---> If Imm History not supplied, set Error Code and quit.
  I '$G(BIDFN) D ERRCD^BIUTL2(405,,1) D RESET Q
@@ -198,7 +202,7 @@ EDITIMM ;EP
  .S BI("S")=$P(Y,V,19)      ;Dose Override.
  .S BI("T")=$P(Y,V,20)      ;Injection Site.
  .; For VISTA, we have Route (#920.2) - Site (#920.3)
- .I BI("T")["-" S BI("T1")=$P(BI("T"),"-"),BI("T2")=$P(BI("T"),"-",2)
+ .I BI("T")["-" S BI("T1")=$P(BI("T"),"-"),BI("T2")=$P(BI("T"),"-",2) K BI("T")
  .S BI("W")=$P(Y,V,21)      ;Volume.
  .S BI("Y")=$P(Y,V,24)      ;Imported From Outside Source (=1).
  .S BI("H")=$P(Y,V,25)      ;NDC Code pointer IEN.
@@ -235,14 +239,15 @@ EDITIMM ;EP
  ;
  ;
  ;---> Get Site IEN for parameters.
- S:'$G(BIDUZ2) BIDUZ2=$G(DUZ(2))
+ ;ZEXCEPT:BIDUZ2
+ I '$G(BIDUZ2) N BIDUZ2 S BIDUZ2=$G(DUZ(2))
  I '$G(BIDUZ2) D ERRCD^BIUTL2(105,,1) Q
  S BI("Z")=BIDUZ2
  ;
  ;---> Call Screenman to build BI local array of data edited by user.
  ;---> BISAVE=Flag to call BIUTL7 to save data (below).  vvv83
  ;---> BITOLONG=Flag used in Screenman to display pop-up: Other Loc too long.
- N BISAVE,BITOLONG
+ N BISAVE,BITOLONG,BIPOP
  D DDS^BIFMAN(9000001,DR,BIDFN,"S",.BISAVE,.BIPOP)
  ;
  ;---> If user saved data, call ^BIUTL7 to save it.
@@ -268,15 +273,18 @@ DELETIMM ;EP
  ;               delete the V File entry.
  ;
  ;---> Call the List Manager Generic Selector of items displayed.
+ ;ZEXCEPT:XQORNOD
  N VALMY
  D EN^VALM2(XQORNOD(0),"OS")
  ;
  ;---> Check that Imm History string for this patient is present.
  ;---> If Imm History not provided, set Error Code and quit.
+ ;ZEXCEPT: BIDFN,BIHX
  I '$G(BIDFN) D ERRCD^BIUTL2(405,,1) D RESET Q
  I $G(BIHX(BIDFN))']"" D ERRCD^BIUTL2(303,,1) D RESET Q
  ;
  ;---> Check that a Listman Item was passed.
+ N X ; throwaway variable
  I '$D(VALMY) D ERRCD^BIUTL2(406,,1) D RESET Q
  N Y S Y=$O(VALMY(0))
  I '$G(Y) D ERRCD^BIUTL2(406,,1) D RESET Q
@@ -342,6 +350,7 @@ DELETIMM ;EP
  ;
  ;----------
 RESET ;EP
+ ; ZEXCEPT: VALMBCK,VALMQUIT
  ;---> Update partition for return to Listman.
  I $D(VALMQUIT) S VALMBCK="Q" Q
  D TERM^VALM0 S VALMBCK="R"
