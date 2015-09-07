@@ -32,7 +32,7 @@ ADDEDIT(BIERR,BIDATA,BINOM) ;PEP - Add/Edit an V IMMUNIZATION or V SKIN TEST.
  ;     4 - (opt) Dose# number for this Immunization (NO LONGER USED).
  ;     5 - (opt) Lot number IEN for this Immunization.
  ;     6 - (req) Date.Time of Visit.
- ;     7 - (req) Location of encounter IEN.
+ ;     7 - (req) Location of encounter IEN. (VISTA: Hospital Location)
  ;     8 - (opt) Other Location of encounter.
  ;     9 - (req) Category: A (Ambul), I (Inpat), E (Event/Hist)
  ;    10 - (opt) Visit IEN.
@@ -42,10 +42,10 @@ ADDEDIT(BIERR,BIDATA,BINOM) ;PEP - Add/Edit an V IMMUNIZATION or V SKIN TEST.
  ;    14 - (req) Skin Test Date Read.
  ;    15 - (opt) Vaccine Reaction.
  ;    16 - (opt) VFC Eligibility.  vvv83
- ;    17 - (opt) Release/Revision Date of VIS.
+ ;    17 - (opt) Release/Revision Date of VIS. (VISTA: Pointer to VIS file, #920)
  ;    18 - (opt) IEN of Provider of Immunization/Skin Test.
  ;    19 - (opt) Dose Override.
- ;    20 - (opt) Injection Site.
+ ;    20 - (opt) Injection Site. (VISTA: Route / Site)
  ;    21 - (opt) Volume.
  ;    22 - (opt) IEN of Reader (Provider) of Skin Test.
  ;    23 - (req) DUZ(2) for Site Parameters.
@@ -112,6 +112,7 @@ ADDEDIT(BIERR,BIDATA,BINOM) ;PEP - Add/Edit an V IMMUNIZATION or V SKIN TEST.
  ;---> Reformat dates to Fileman Internal format.
  D
  .N I F I=6,14,17 D
+ ..I I=17,'$$RPMS^BIUTL9() QUIT  ; VISTA - 17 is a pointer to 920; not a date.
  ..N X S X=$P(BIDATA,"|",I)
  ..D DT^DILF("PT",X,.X)
  ..S $P(BIDATA,"|",I)=X
