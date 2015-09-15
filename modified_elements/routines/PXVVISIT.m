@@ -25,10 +25,6 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  ;---> Make sure that the Imm package is allowed to create visits
  I $$PKGON^VSIT("BIV")=-1 N % S %=$$PKG^VSIT("BIV",1)
  ;
- ;---> Make sure we have a hospital location to use for Standalone Immunizations
- ;TODO: MAKE SURE THAT WHEN WE USE CPRS, WE HAVE AN ACTUAL HOSPITAL LOCATION
- ;
- ;
  ;---> Patient.
  ; ZEXCEPT: DFN
  S DFN=BIDFN
@@ -58,12 +54,11 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  ; ZEXCEPT: PXVNOM Used internally for testing forcing interactiveness
  I $G(PXVNOM),VSIT(0)'["I" S VSIT(0)=VSIT(0)_"I"
  ;
- ;---> Institution (BILOC is really IHS Location, which is DINUMMED to file 4).
- S VSIT("INS")=$G(BILOC)
+ ;---> Institution
+ S VSIT("INS")=DUZ(2)
  ;
  ;---> Hospital Location
- ;XXX TODO XXX: This is hardcoded.
- I BICAT'="E" S VSIT("LOC")=2
+ I BICAT'="E" S VSIT("LOC")=BILOC
  ;
  ;---> Other Location (Text if Location="OTHER").
  S VSIT("OUT")=$G(BIOLOC)
@@ -80,12 +75,6 @@ CREATE(BIVSIT,BIERR,BINOM) ; [Private]. Mirror copy of CREATE^BIVISIT1. Called f
  ;
  I BICAT="A",$$INPTCHK^BIUTL2(BISITE),$$INPT^BIUTL11(BIDFN,BIDATE) S BICAT="I"
  S VSIT("SVC")=BICAT
- ;
- ;*** DON'T THINK THIS APPLIES TO VISTA
- ;---> Call to add (create) Visit.
- ;---> NOTE: $G(BICAT)="E" (Historical) will override Active/Inactive
- ;---> selection screen on .01 Field of Immunization File #9999999.14.
- ;*** DON'T THINK THIS APPLIES TO VISTA
  ;
  D ^VSIT
  ;
@@ -108,62 +97,31 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;                      See BIDATA definition at linelabel PARSE.
  ;     3 - BIERR  (ret) Text of Error Code if any, otherwise null.
  ;
- ; *** VEN/SMH - THIS IS A FIRST DRAFT OF HOW THIS THING SHOULD WORK ***
- ; Some major differences between this and RPMS code in BIVISIT
- ; 1. There is not auto-contraindications filing. This happens when we document
- ;    the reaction to an immunization or to a PPD. I can't find where in the
- ;    software you enter a reaction at the same time as a an immunization; so
- ;    I am taking that out for auto-contraindications for Immunizations.
- ;    Adding a CI for a positive PPD is done in such an extremely sloppy way
- ;    in RPMS that I won't port this over. PPD is represented as an Immunization
- ;    not a skin test!
- ; 2. There is no representation currently of VFC eligibility for VISTA. This is
- ;    important and I would like to port that over. Thankfully, the field has
- ;    been brought over from RPMS in PX*1.0*201.
- ; 3. VISTA wants to store Lot, Manufacturer and Expiration Date; RPMS wants
- ;    to store Lot and NDC. Both are illogical since you really only need Lot.
- ;    Lot has information on the rest of the data.
- ; 4. The PXAPI code in VISTA wants you to file the data all at once via itself.
- ;    You are not given a handle back to the IEN of the V IMM or V SK to add
- ;    extra fields to the entry, which is what is done in BIVISIT.
- ; 5. RPMS does not require that you have a hospital location for an encounter.
- ;    VISTA seems to require it. I need to do some more research.
- ; 6. There are many todos for missing fields that I need to gradually bring
- ;    over:
- ;
  ; TODOs:
  ; - Three skin test fields are missing from VISTA. These need to be brought
  ;   over: 
  ;   -> .08: Skin Test Reader
  ;   -> .09: Skin Test Site
  ;   -> .11: Volume
- ; - The VIS fields for VISTA don't have a way to file them right now. I may
- ;   have to change the PXA* routines to do that. And there are two different
- ;   VIS fields: Which VIS is it (Imm and Date) and when it was given to the
- ;   patient
- ; - Dose Overide field? I don't know whether I need that. I think it has to do
- ;   with overriding the forecaster, but I haven't seen where that is used.
- ; - Injection Site and Volume are stored in different places in VISTA. The
- ;   Form needs to be changed to point them. The VISTA stuff is brand new files.
  ; - RPMS has a field to say "this CPT created me". It something to look into,
  ;   but I don't think I will actually get to supporting it.
  ; - RPMS has a field in V IMM to say whether an Immunization was imported. I
  ;   think a useful thing to have.
  ; - Some random extra fields for RPMS:
  ;   -> Admin Note
- ;   -> Admin Date (seperate from Visit Date. Reason: In RPMS, they have V
- ;       INPATIENT, and an Inpatinent Visit can span many days; so a workaround
- ;       to say when something really took place is a seperate field for Admin
- ;       Date)
  ;
- ; - Edits for Immunizations doesn't work b/c of missing VFC field
  ; - Edits for Skin tests happened to delete my previous entry. Need to track down.
+ ;
+ ; NB:
+ ;    Adding a CI for a positive PPD is done in such an extremely sloppy way
+ ;    in RPMS that I won't port this over. PPD is represented as an Immunization
+ ;    not a skin test!
  ;
  I BIDATA="" D ERRCD^BIUTL2(437,.BIERR) S BIERR="1^"_BIERR Q
  ;
  N BIVTYPE,BIDFN,BIPTR,BIDOSE,BILOT,BIDATE,BILOC,BIOLOC,BICAT
  N BIOIEN,BIRES,BIREA,BIDTR,BIREC,BIVISD,BIPROV,BIOVRD,BIINJS,BIVOL
- N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT,BIADMIN
+ N BIREDR,BISITE,BICCPT,BIMPRT,BIANOT,BIADMIN,BIVPRES,BIVFC
  ;
  ;---> See BIDATA definition at linelabel PARSE (above).
  D PARSE^BIVISIT(BIDATA,1)
@@ -186,7 +144,7 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ; +-------------------------------------------------------------------+
  ; | RPMS                |  VISTA                                      |
  ; | ------------------- | ------------------------------------------- |
- ; | #.08 DOSE OVERRIDE  |  Not used                                   |
+ ; | #.08 DOSE OVERRIDE  |  Available for RPMS; but not used           |
  ; | #.09 INJECTION SITE |  #1302 ROUTE OF ADMINISTRATION  &           |
  ; |                     |  #1303 SITE OF ADMINISTRATION               |
  ; | #.11 VOLUME         |  #1312 DOSAGE                               |
@@ -201,14 +159,15 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  ;
  I BIVTYPE="I" D
  . S PXVIMM("IMMUNIZATION",1,"IMMUN")=BIPTR              ; Immunization/vaccine name.
- . S PXVIMM("IMMUNIZATION",1,"LOT NUM")=$G(BILOT)        ; Lot Number
- . S PXVIMM("IMMUNIZATION",1,"REACTION")=$G(BIREC)       ; Reaction XXX INVESTIGATE XXX
+ . S PXVIMM("IMMUNIZATION",1,"LOT NUM")=BILOT            ; Lot Number
+ . S PXVIMM("IMMUNIZATION",1,"REACTION")=BIREC           ; Reaction
  . S PXVIMM("IMMUNIZATION",1,"ENC PROVIDER")=BIPROV      ; Shot provider
  . S PXVIMM("IMMUNIZATION",1,"DOSE")=BIVOL               ; Dosage (e.g. 0.5 mL)
  . S PXVIMM("IMMUNIZATION",1,"DOSE UNITS")=$$FIND1^DIC(757.5,,"QX","mL","C")          ; Dose Units (New in *210)
  . S PXVIMM("IMMUNIZATION",1,"ADMIN ROUTE")=$P(BIINJS,"-")       ; Injection Site Route
  . S PXVIMM("IMMUNIZATION",1,"ANATOMIC LOC")=$P(BIINJS,"-",2) ; Injection Site Site
  . S PXVIMM("IMMUNIZATION",1,"EVENT D/T")=BIADMIN        ; Administration Date (not time yet)
+ . S PXVIMM("IMMUNIZATION",1,"VIS",1,0)=$S(BIVISD="":"@",1:BIVISD_U_BIVPRES) ; Vaccine Info Statement (#920) ^ Presentation Date
  ;
  ; NB: RPMS has these extra fields, which are not in VISTA:
  ; .08: Skin Test Reader
@@ -228,19 +187,77 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  .I BIVTYPE="I" D ERRCD^BIUTL2(402,.BIERR) S BIERR="1^"_BIERR Q
  .I BIVTYPE="S" D ERRCD^BIUTL2(413,.BIERR) S BIERR="1^"_BIERR Q
  ;
- ;---> Save IEN of V IMMUNIZATION just created.
- ;XXX find how to get that for VISTA
+ ;---> Save IEN of V IMMUNIZATION/V SKIN TEST just created.
+ N BIADFN S BIADFN=$$GTV(BIVTYPE,BIDFN,BIPTR,BIVSIT)
  ;
+ I 'BIADFN S $EC=",U-ASSERT,"
  ;
  ;---> ADD OTHER V IMMUNIZATION FIELDS:
  ;---> Quit if this is not an Immunization.
  Q:BIVTYPE'="I"
  ;
- ; XXX VIS DATA MUST BE ENTERED INTO VISTA VIA FILEMAN! .12 and .17
+ ; VFC Eligibility
+ N BIFLD S BIFLD(.14)=BIVFC
+ N BIERR
+ D FDIE^BIFMAN(9000010.11,BIADFN,.BIFLD,.BIERR)
+ I BIERR=1 D ERRCD^BIUTL2(421,.BIERR) S BIERR="1^"_BIERR QUIT
+ ;
+ ;---> If there was an anaphylactic reaction to this vaccine,
+ ;---> add it as a contraindication for this patient.
+ D:BIREC=9
+ .Q:'$G(BIDFN)  Q:'$G(BIPTR)  Q:'$G(BIDATE)
+ .N BIREAS S BIREAS=$$FIND1^DIC(920.4,,"QX","VXC20","C") ; SEVERE REACTION PREVIOUS DOSE
+ .Q:'BIREAS
+ .;
+ .N BIADD,N,V S N=0,BIADD=1,V="|"
+ .;---> Loop through patient's existing contraindications.
+ .F  S N=$O(^BIPC("B",BIDFN,N)) Q:'N  Q:'BIADD  D
+ ..N X S X=$G(^BIPC(N,0))
+ ..Q:'X
+ ..;---> Quit (BIADD=0) if this contra/reason/date already exists.
+ ..I $P(X,U,2)=BIPTR&($P(X,U,3)=BIREAS)&($P(X,U,4)=BIDATE) S BIADD=0
+ .Q:'BIADD
+ .;
+ .D ADDCONT^BIRPC4(.BIERR,BIDFN_V_BIPTR_V_BIREAS_V_BIDATE)
+ .I $G(BIERR)]"" S BIERR="1^"_BIERR
+ ;
+ Q:$G(BIERR)
+ ;
+ ;---> Handle Dose Override
+ D ASSERT(BIOIEN=BIADFN,"old and new IENS should be the same in VISTA")
+ I BIOIEN D  ; If we are editing a visit (this is the old IEN; but same as new in VISTA)
+ . S:BIOVRD="" BIOVRD="@"  ; If empty, delete
+ . N BIFLD S BIFLD(.08)=BIOVRD
+ . N BIERR
+ . D FDIE^BIFMAN(9000010.11,BIOIEN,.BIFLD,.BIERR)
+ . I BIERR=1 D ERRCD^BIUTL2(421,.BIERR) S BIERR="1^"_BIERR
+ ;
+ Q:$G(BIERR)
  ;
  ;---> Now trigger New Immunization Trigger Event.
  D TRIGADD^BIVISIT2
  QUIT
+ ;
+ ;
+ ; The following two entry points are used by BI TABLE DATA ELEMENTS for VISTA.
+ ; Entries # 51 and 90. See BIRPC1 for documentation.
+VISENTRY(VIEN) ; [Public $$] First VIS Entry given IEN
+ N IEN S IEN=$O(^AUPNVIMM(VIEN,2,0))
+ I 'IEN Q ""
+ N VIS S VIS=$P(^AUPNVIMM(VIEN,2,IEN,0),U)
+ Q VIS
+ ;
+VISPDATE(VIEN) ; [Public $$] Presentation date of VIS given to patient
+ N IEN S IEN=$O(^AUPNVIMM(VIEN,2,0))
+ I 'IEN Q ""
+ N VISDATE S VISDATE=$P(^AUPNVIMM(VIEN,2,IEN,0),U,2)
+ Q VISDATE
+ ;
+GTV(BIVTYPE,DFN,BIPTR,BIVSIT) ; [Public $$] Get V IMM/V SK IEN that was just created
+ N INVDATE S INVDATE=9999999-$P(+^AUPNVSIT(BIVSIT,0),".")
+ QUIT:BIVTYPE="I" $O(^AUPNVIMM("AA",DFN,BIPTR,INVDATE,""))
+ QUIT:BIVTYPE="S" $O(^AUPNVSK("AA",DFN,BIPTR,INVDATE,""))
+ S $EC=",U-INVALID-CODE-PATH,"
  ;
  ;----------
 TEST D EN^%ut($T(+0),1,1) QUIT
