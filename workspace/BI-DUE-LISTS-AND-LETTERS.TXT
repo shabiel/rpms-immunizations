@@ -1,0 +1,91 @@
+Template: BI DUE LISTS & LETTERS
+--------------------------------------------------------------------------------
+  Demographics                                      List Region                 
+ Template Name: BI DUE LISTS & LETTERS                Top Margin:   5           
+   Entity Name: Parameter                          Bottom    "  :  20           
+  Screen Title: LISTS & LETTERS                     Right    "  :  80           
+                                                                                
+                                                                                
+  Protocol Information                              Other Fields                
+   Type of List: PROTOCOL                              OK to Transport?: OK     
+  Protocol Menu: BI MENU DUE LISTS & LETTERS         Use Cursor Control: YES    
+ Print Protocol:                            Allowable Number of Actions: 1      
+    Hidden Menu: BI MENU DUE LISTS HIDDEN              Date Range Limit:        
+                                                     Automatic Defaults: YES    
+
+                            MUMPS Code Related                                                            
+ Header: D HDR^BIDU                                                             
+  Entry: D INIT^BIDU                                                            
+   Exit: D EXIT^BIDU                                                            
+ Expand:                                                                        
+   Help: D HELP^BIDU1                                                           
+  Array:  ^TMP("BIDU",$J)                                                       
+                    
+Select PROTOCOL NAME: BI MENU DUE LISTS & LETTERS       Due Lists & Letters     
+itemName: BI DUE LIST OF PATIENTS                 itemAction: D VIEWDUE^BIDUVLS
+itemName: BI DUE LETTERS PRINT                    itemAction: D PRINTDUE^BIDUPLT
+itemName: BI DUE LIST HELP                        itemAction: D HELP1^BIDU1
+
+Select PROTOCOL NAME:    BI MENU DUE LISTS HIDDEN     Due Lists & Letters Hidden     
+itemName: BI OUTPUT AGE RANGE                     itemAction: D AGE^BIOUTPT(.BIAG,$G(BIRTN))
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI OUTPUT FORECAST DATE                 itemAction: D FDATE^BIOUTPT(.BIFDT,$G(BIRTN))
+itemName: BI OUTPUT LOT NUMBER                    itemAction: D LOTNUM^BIOUTPT3(.BILOT,$G(BIRTN))
+itemName: BI OUTPUT ADDITIONAL INFO               itemAction: D ADDINFO^BIOUTPT1(.BINFO)
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT PATIENT GROUP                 itemAction: D PGROUP1^BIOUTPT4(.BIPG,$G(BIRTN))
+itemName: BI OUTPUT IMMUNIZATION DUE              itemAction: D IMMDUE^BIOUTPT3(.BIMMD,$G(BIRTN))
+itemName: BI OUTPUT ORDER                         itemAction: D ORDER^BIOUTPT1(.BIORD)
+itemName: BI OUTPUT IMMUNIZATION RECEIVED         itemAction: D IMMRCV^BIOUTPT3(.BIMMR,.BIRDT,.BIMMRF,$G(BIRTN))
+itemName: BI OUTPUT INCLUDE DECEASED              itemAction: D INCLDEC^BIOUTPT1(.BIDED,$G(BIRTN))
+itemName: BI UP ONE LINE                          itemAction: D UP^VALM40
+itemName: BI DOWN A LINE                          itemAction: D DOWN^VALM40
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT DESIGNATED PROVIDER           itemAction: D DPRV^BIOUTPT(.BIDPRV,$G(BIRTN))
+
+ List Manager Workbench        Sep 15, 2015 10:32:46          Page:    1 of    2 
+Template: BI DUE LIST VIEW
+--------------------------------------------------------------------------------
+  Demographics                                      List Region                 
+ Template Name: BI DUE LIST VIEW                      Top Margin:   9           
+   Entity Name:                                    Bottom    "  :  20           
+  Screen Title: DUE LIST                            Right    "  :  80           
+                                                                                
+                                                                                
+  Protocol Information                              Other Fields                
+   Type of List: PROTOCOL                              OK to Transport?: OK     
+  Protocol Menu: BI MENU DUE LIST VIEW               Use Cursor Control: YES    
+ Print Protocol: BI DUE LIST VIEW PRINT     Allowable Number of Actions: 1      
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:        
+                                                     Automatic Defaults: YES    
+                                                                                
+                                                                                
+                                                                                
+  MUMPS Code Related                                                            
+ Header: D HDR^BIDUVLS1                                                         
+  Entry: D INIT^BIDUVLS1                                                        
+   Exit: D EXIT^BIDUVLS1                                                        
+ Expand:                                                                        
+   Help: D HELP^BIDUVLS1                                                        
+  Array:  ^TMP("BIDULV",$J)                                                     
+                                                                                
+  Caption Line Information                                                      
+ Name      Column    Width     Display Text                  Video  Scroll Lock 
+ NAME        3         4       Name                                 NO          
+ HRCN       23         8       HRCN#                                NO          
+ DOB        33         3       DOB                                  NO          
+ AGE        45         3       Age Today                            NO          
+ PARENT     59        18       Parent/Guardian                      NO          
+ 
+ RPMS 2015-02>D ^KBANPROT
+
+Select PROTOCOL NAME: BI MENU DUE LIST VIEW       Due List View (with Print)    
+ 
+itemName: BI DUE LIST VIEW PRINT                  itemAction: D PRINTVW^BIDUVLS1
+itemName: BI PATIENT EDIT FROM REPORT             itemAction: D EDITPAT^BIDUVLS
+
+RPMS 2015-02>D ^KBANPROT
+
+Select PROTOCOL NAME: BI DUE LIST VIEW PRINT       Print List (no queuing)  
+ 
