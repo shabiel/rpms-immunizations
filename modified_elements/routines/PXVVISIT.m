@@ -224,7 +224,6 @@ VFILE(BIVSIT,BIDATA,BIERR) ; [Private] File V data for VISTA. Called from VFILE^
  Q:$G(BIERR)
  ;
  ;---> Handle Dose Override
- D ASSERT(BIOIEN=BIADFN,"old and new IENS should be the same in VISTA")
  I BIOIEN D  ; If we are editing a visit (this is the old IEN; but same as new in VISTA)
  . S:BIOVRD="" BIOVRD="@"  ; If empty, delete
  . N BIFLD S BIFLD(.08)=BIOVRD
