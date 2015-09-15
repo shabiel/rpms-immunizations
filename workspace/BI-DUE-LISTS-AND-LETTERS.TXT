@@ -88,4 +88,28 @@ itemName: BI PATIENT EDIT FROM REPORT             itemAction: D EDITPAT^BIDUVLS
 RPMS 2015-02>D ^KBANPROT
 
 Select PROTOCOL NAME: BI DUE LIST VIEW PRINT       Print List (no queuing)  
- 
+
+
+
+List Manager Workbench        Sep 15, 2015 11:10:35          Page:    1 of    3 
+Template: BI GENERIC SELECTION
+--------------------------------------------------------------------------------
+  Demographics                                      List Region                 
+ Template Name: BI GENERIC SELECTION                  Top Margin:   6           
+   Entity Name: Item                               Bottom    "  :  19           
+  Screen Title: SELECT ITEMS                        Right    "  :  80           
+                                                                                
+                                                                                
+  Protocol Information                              Other Fields                
+   Type of List: PROTOCOL                              OK to Transport?: OK     
+  Protocol Menu: BI MENU GEN SELECT                  Use Cursor Control: YES    
+ Print Protocol:                            Allowable Number of Actions: 1      
+    Hidden Menu: VALM HIDDEN ACTIONS                   Date Range Limit:        
+                                                     Automatic Defaults: YES    
+
+
+Select PROTOCOL NAME:    BI MENU GEN SELECT     Generic Selection     
+itemName: BI GEN SELECT ADD                       itemAction: D ADDITEM^BISELEC2
+itemName: BI GEN SELECT DELETE                    itemAction: D DELITEM^BISELEC2
+itemName: BI GEN SELECT CLEAR ALL                 itemAction: D CLEARALL^BISELEC2
+itemName: BI GEN SELECT ENTIRE                    itemAction: D ENTIRE^BISELEC2

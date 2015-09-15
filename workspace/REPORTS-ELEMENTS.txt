@@ -1,0 +1,235 @@
+KEY:
+VALM FORM NAME
+	MAIN PROTOCOL
+	HIDDEN PROTOCOL
+
+PROTOCOL CONTENTS
+
+--
+
+BI REPORT ADOLESCENT RATES
+	BI MENU REPORT ADOLESCENT
+    BI MENU REPORT ADOLESCENT HIDDEN
+BI REPORT ADOLESCENT RATES1
+    BI MENU REPORT GEN PATIENTS
+
+Select PROTOCOL NAME:    BI MENU REPORT ADOLESCENT     Adolescent Report     
+itemName: BI BLANK                                itemAction: 
+itemName: BI REPORT ADOLESCENT HELP               itemAction: D HELP1^BIREPD
+itemName: BI REPORT ADOLESCENT PRINT              itemAction: D START^BIREPD1("PRINT")
+itemName: BI REPORT ADOLESCENT VIEW               itemAction: D START^BIREPD1("VIEW")
+itemName: BI BLANK                                itemAction: 
+
+Select PROTOCOL NAME: BI MENU REPORT ADOLESCENT HIDDEN       Adolescent Report Hidden     
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT QUARTER DATE                  itemAction: D QDATE^BIOUTPT(.BIQDT,$G(BIRTN))
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT USER POPULATION               itemAction: D USERPOP^BIOUTPT1(.BIUP,$G(BIRTN))
+
+Select PROTOCOL NAME: BI MENU REPORT GEN PATIENTS VIEW       View Report Patients     
+itemName: BI REPORT GEN PATIENTS NOT CURRENT      itemAction: D MAIN^BIREPVP(1,$G(BIRTN),$G(BITITL),$G(BIRPDT))
+itemName: BI REPORT GEN PATIENTS CURRENT          itemAction: D MAIN^BIREPVP(2,$G(BIRTN),$G(BITITL),$G(BIRPDT))
+itemName: BI REPORT GEN PATIENTS ALL              itemAction: D MAIN^BIREPVP(0,$G(BIRTN),$G(BITITL),$G(BIRPDT))
+
+---
+
+BI REPORT ADULT IMM
+	BI MENU REPORT ADULT
+    BI MENU REPORT ADULT HIDDEN
+BI REPORT ADULT IMM1
+	BI MENU REPORT GEN PATIENTS
+
+BI MENU REPORT ADULT     Adult Report     
+itemName: BI REPORT ADULT VIEW                    itemAction: D START^BIREPL1("VIEW")
+itemName: BI REPORT ADULT PRINT                   itemAction: D START^BIREPL1("PRINT")
+itemName: BI REPORT ADULT HELP                    itemAction: D HELP1^BIREPL
+itemName: BI BLANK                                itemAction: 
+itemName: BI BLANK                                itemAction: 
+
+BI MENU REPORT ADULT HIDDEN     Adult Report Hidden     
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT INCLUDE CPT                   itemAction: D INCLCPT^BIOUTPT(.BICPTI,$G(BIRTN))
+itemName: BI OUTPUT QUARTER DATE                  itemAction: D QDATE^BIOUTPT(.BIQDT,$G(BIRTN))
+itemName: BI OUTPUT USER POPULATION               itemAction: D USERPOP^BIOUTPT1(.BIUP,$G(BIRTN))
+
+--
+
+BI REPORT ELIGIBILITY
+        BI MENU REPORT ELIG
+        BI MENU REPORT ELIG HIDDEN        
+BI REPORT ELIGIBILITY1
+		BI MENU BLANK
+
+Select PROTOCOL NAME:    BI MENU REPORT ELIG     Vaccine Eligibility Report     
+itemName: BI BLANK                                itemAction: 
+itemName: BI REPORT ELIG PRINT                    itemAction: D START^BIREPE1("PRINT")
+itemName: BI REPORT ELIG VIEW                     itemAction: D START^BIREPE1("VIEW")
+itemName: BI REPORT ELIG HELP                     itemAction: D HELP1^BIREPE
+itemName: BI BLANK                                itemAction: 
+
+Select PROTOCOL NAME: BI MENU REPORT ELIG HIDDEN       Eligibility Report HIdden     
+itemName: BI OUTPUT DATE RANGE                    itemAction: D DTRANGE^BIOUTPT(.BIBEGDT,.BIENDDT,.BIPOP,BIRTN,$G(BIBEGDF),$G(BIENDDF))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI OUTPUT VISIT TYPE                    itemAction: D VTYPE^BIOUTPT(.BIVT,$G(BIRTN))
+itemName: BI OUTPUT VISIT HISTORICAL INCL         itemAction: D HISTORC^BIOUTPT3(.BIHIST,$G(BIRTN))
+itemName: BI OUTPUT INCLUDE ADULTS                itemAction: D U19^BIOUTPT3(.BIU19,$G(BIRTN))
+itemName: BI OUTPUT DELIMITER                     itemAction: D DELIM^BIOUTPT3(.BIDELIM,$G(BIRTN))
+
+--
+BI REPORT FLU IMM
+	BI MENU REPORT FLU
+	BI MENU REPORT FLU HIDDEN
+BI REPORT FLU IMM1
+	BI MENU REPORT GEN PATIENTS
+
+CHOOSE 1-2: 1  BI MENU REPORT FLU     Influenza REport     
+itemName: BI BLANK                                itemAction: 
+itemName: BI REPORT FLU VIEW                      itemAction: D START^BIREPF1("VIEW")
+itemName: BI REPORT FLU PRINT                     itemAction: D START^BIREPF1("PRINT")
+itemName: BI BLANK                                itemAction: 
+itemName: BI REPORT FLU HELP                      itemAction: D HELP1^BIREPF
+
+Select PROTOCOL NAME: BI MENU REPORT FLU HIDDEN         
+itemName: BI OUTPUT REPORT YEAR                   itemAction: D RYEAR^BIOUTPT5(.BIYEAR,$G(BIRTN))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI OUTPUT REPORT TYPE FLU/H1N1          itemAction: D FLH1N1^BIOUTPT1(.BIFH,$G(BIRTN))
+itemName: BI OUTPUT USER POPULATION               itemAction: D USERPOP^BIOUTPT1(.BIUP,$G(BIRTN))
+
+--
+
+BI REPORT H1N1
+	BI MENU REPORT H1N1
+	BI MENU REPORT H1N1 HIDDEN
+	
+BI REPORT H1N11
+
+CHOOSE 1-2: 1  BI MENU REPORT H1N1     H1N1 Accountability Report     
+itemName: BI REPORT H1N1 HELP                     itemAction: D HELP1^BIREPH
+itemName: BI REPORT H1N1 PRINT                    itemAction: D START^BIREPH1("PRINT")
+itemName: BI REPORT H1N1 VIEW                     itemAction: D START^BIREPH1("VIEW")
+itemName: BI BLANK                                itemAction: 
+itemName: BI BLANK                                itemAction: 
+
+Select PROTOCOL NAME: BI MENU REPORT H1N1 HIDDEN       H1N1 Report HIdden     
+itemName: BI OUTPUT VISIT HISTORICAL INCL         itemAction: D HISTORC^BIOUTPT3(.BIHIST,$G(BIRTN))
+itemName: BI OUTPUT DATE RANGE                    itemAction: D DTRANGE^BIOUTPT(.BIBEGDT,.BIENDDT,.BIPOP,BIRTN,$G(BIBEGDF),$G(BIENDDF))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT VISIT TYPE                    itemAction: D VTYPE^BIOUTPT(.BIVT,$G(BIRTN))
+
+--
+
+BI REPORT PCV
+	BI MENU REPORT PCV
+	BI MENU REPORT PCV HIDDEN
+BI REPORT PCV1
+	BI MENU REPORT EXP PATIENTS
+
+CHOOSE 1-2: 1  BI MENU REPORT PCV     PCV Report     
+itemName: BI REPORT PCV HELP                      itemAction: D HELP1^BIREPP
+itemName: BI REPORT PCV PRINT                     itemAction: D START^BIREPP1("PRINT")
+itemName: BI REPORT PCV VIEW                      itemAction: D START^BIREPP1("VIEW")
+
+Select PROTOCOL NAME: BI MENU REPORT PCV HIDDEN       PCV Report Hidden     
+itemName: BI OUTPUT DATE RANGE                    itemAction: D DTRANGE^BIOUTPT(.BIBEGDT,.BIENDDT,.BIPOP,BIRTN,$G(BIBEGDF),$G(BIENDDF))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT USER POPULATION               itemAction: D USERPOP^BIOUTPT1(.BIUP,$G(BIRTN))
+
+Select PROTOCOL NAME: BI MENU REPORT EXP PATIENTS       Export Patients     
+itemName: BI REPORT EXPORT PATIENTS               itemAction: D EXPORT^BIREPP2
+itemName: BI REPORT VIEW ALL PATIENTS             itemAction: D MAIN^BIREPVP(0,$G(BIRTN),$G(BITITL),$G(BIRPDT),"All (Denominator)")
+
+--
+
+BI REPORT QUARTERLY IMM
+	BI MENU REPORT QTR
+	BI MENU REPORT QTR HIDDEN
+BI REPORT QUARTERLY IMM1
+	BI MENU REPORT GEN PATIENTS
+	
+CHOOSE 1-2: 1  BI MENU REPORT QTR     Quarterly Report     
+itemName: BI REPORT QTR VIEW                      itemAction: D START^BIREPQ1("VIEW")
+itemName: BI REPORT QTR PRINT                     itemAction: D START^BIREPQ1("PRINT")
+itemName: BI REPORT QTR HELP                      itemAction: D HELP1^BIREPQ
+itemName: BI BLANK                                itemAction: 
+itemName: BI BLANK                                itemAction: 
+
+Select PROTOCOL NAME: BI MENU REPORT QTR HIDDEN       Quarterly Report Hidden     
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT QUARTER DATE                  itemAction: D QDATE^BIOUTPT(.BIQDT,$G(BIRTN))
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT INCLUDE HPV                   itemAction: D INCLHPV^BIOUTPT(.BIHPV,$G(BIRTN))
+itemName: BI OUTPUT USER POPULATION               itemAction: D USERPOP^BIOUTPT1(.BIUP,$G(BIRTN))
+
+--
+
+BI REPORT TWO-YR-OLD RATES
+	BI MENU REPORT TWO-YR
+	BI MENU REPORT TWO-YR HIDDE
+
+BI REPORT TWO-YR-OLD RATES1
+	BI MENU REPORT GEN PATIENTS
+	
+CHOOSE 1-2: 1  BI MENU REPORT TWO-YR     Two-Yr-Old Report     
+itemName: BI BLANK                                itemAction: 
+itemName: BI REPORT TWO-YR PRINT                  itemAction: D START^BIREPT1("PRINT")
+itemName: BI REPORT TWO-YR VIEW                   itemAction: D START^BIREPT1("VIEW")
+itemName: BI BLANK                                itemAction: 
+itemName: BI REPORT TWO-YR HELP                   itemAction: D HELP1^BIREPT
+
+Select PROTOCOL NAME: BI MENU REPORT TWO-YR HIDDEN       Two-Yr-Old Report HIdden     
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT QUARTER DATE                  itemAction: D QDATE^BIOUTPT(.BIQDT,$G(BIRTN))
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT TWO-YR-OLD REPORT AGE RANGE   itemAction: D TAR^BIOUTPT(.BITAR,$G(BIRTN))
+itemName: BI OUTPUT USER POPULATION               itemAction: D USERPOP^BIOUTPT1(.BIUP,$G(BIRTN))
+
+--
+
+BI REPORT ACCOUNTABILITY
+	BI MENU REPORT ACCOUNT
+	BI MENU REPORT ACCT HIDDEN
+	
+BI REPORT ACCOUNTABILITY1
+	BI MENU BLANK
+
+Select PROTOCOL NAME: BI MENU REPORT ACCOUNT       Vaccine Accountability Report     
+itemName: BI REPORT ACCOUNT PRINT                 itemAction: D START^BIREPA1("PRINT")
+itemName: BI REPORT ACCOUNT VIEW                  itemAction: D START^BIREPA1("VIEW")
+itemName: BI BLANK                                itemAction: 
+itemName: BI BLANK                                itemAction: 
+itemName: BI REPORT ACCOUNT HELP                  itemAction: D HELP1^BIREPA
+
+Select PROTOCOL NAME: BI MENU REPORT ACCT HIDDEN       Accountability Report Hidden     
+itemName: BI OUTPUT VISIT HISTORICAL INCL         itemAction: D HISTORC^BIOUTPT3(.BIHIST,$G(BIRTN))
+itemName: BI OUTPUT DATE RANGE                    itemAction: D DTRANGE^BIOUTPT(.BIBEGDT,.BIENDDT,.BIPOP,BIRTN,$G(BIBEGDF),$G(BIENDDF))
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT CASE MANAGER                  itemAction: D CMGR^BIOUTPT(.BICM,$G(BIRTN))
+itemName: BI OUTPUT BENEFICIARY TYPE              itemAction: D BEN^BIOUTPT(.BIBEN,$G(BIRTN))
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI OUTPUT VISIT TYPE                    itemAction: D VTYPE^BIOUTPT(.BIVT,$G(BIRTN))
+itemName: BI OUTPUT DISPLAY BY LOT NUMBER         itemAction: D DISBLOT^BIOUTPT3(.BIDLOT,$G(BIRTN))
+

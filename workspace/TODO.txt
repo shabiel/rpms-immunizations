@@ -43,19 +43,12 @@ On Patient main form: Immunizations due list doesn't print what's due:
 ---
 
 TODO:
-Next work on Patient Enter/Edit Imm.
---> Add VISTA fields to it.
---> See PXVVISIT for all the details.
+Skin tests filing
 
-   920          VACCINE INFORMATION STATEMENT  (38 entries)
-   920.1        IMMUNIZATION INFO SOURCE  (9 entries)
-   920.2        IMM ADMINISTRATION ROUTE  (9 entries)
-   920.3        IMM ADMINISTRATION SITE (BODY)  (12 entries)
-   920.4        IMM CONTRAINDICATIONS     (16 entries)
-   920.5        IMM REFUSALS              (4 entries)
+In VISTA, prevent the editing of the actual immunization. Only allow deletion.
+But all other fields are okay to edit.
 
-NB: Del NDC code
-  
-
-In VISTA, prevent the editing of the actual immunization. Only allow deletion. But all other fields are okay to edit.
 In VISTA, Admin Date should be Admin Date/Time.
+
+Combinations of Visits don't cause correct events. Add today's active + a hisroical
+event causes the visit to become the one entered first.

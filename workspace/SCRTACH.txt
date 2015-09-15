@@ -44,3 +44,21 @@ DATA ELEMENT NAME: VACCINE LOT NUMBER, TEXT
 L($P(BI0,U,5),0)),U)                    SYNONYM: LOT
   TYPE OF VISIT: IMMUNIZATION
   
+   New-Style Indexes:
+
+  AC (#994)    RECORD    MUMPS    IR    ACTION
+      Short Descr:  Unique lot number, manufacturer and vaccine combination
+                    monitoring
+      Description:  This cross reference is used in identifying a new lot
+                    number as unique, that is, the immunization name, lot
+                    number and manufacturer combination is unique.  
+        Set Logic:  S ^AUTTIML("AC",X(3),X(2),X(1),DA)="" Q
+         Set Cond:  S X=(X(1)'="")
+       Kill Logic:  K ^AUTTIML("AC",X(3),X(2),X(1),DA) Q
+        Kill Cond:  S X=(X(1)'="")
+       Whole Kill:  Q
+             X(1):  LOT NUMBER  (9999999.41,.01)  (Len 25)  (forwards)
+             X(2):  MANUFACTURER  (9999999.41,.02)  (forwards)
+             X(3):  VACCINE  (9999999.41,.04)  (forwards)
+ 
+  
