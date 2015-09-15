@@ -1,0 +1,373 @@
+FORM LISTING - BI FORM-SKIN VISIT ADD/EDIT (#132)
+FILE: PATIENT/IHS (#9000001)                      SEP 14, 2015  17:11    PAGE 1
+-------------------------------------------------------------------------------
+
+         PRIMARY FILE: 9000001                   READ ACCESS: @
+         DATE CREATED: JAN 01, 1998@15:22       WRITE ACCESS: @
+       DATE LAST USED: SEP 14, 2015@13:06            CREATOR: 
+
+Page    Page
+Number  Properties
+------  ----------
+1       Page 1
+
+        PAGE COORDINATE:        1,1
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-SKIN VISIT HEADER (#496)
+
+               TYPE OF BLOCK:          DISPLAY
+               BLOCK COORDINATE:       1,1
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               .4     FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="Imm v"_$$VER^BILOGO()
+                      CAPTION COORDINATE:    2,2
+
+               .5     FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="Imm v"_$$VER^BILOGO()
+                      CAPTION COORDINATE:    2,2
+
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               * * *  ADD/EDIT SKIN TEST VISIT  *
+                                              * *
+                      CAPTION COORDINATE:    2,22
+
+               2      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y=IOINORM_" Patient: "_IORVON_$$
+                                             NAME^BIUTL1(BIDFN)_IOINORM
+                      CAPTION COORDINATE:    4,1
+
+               3      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="DOB: "_IORVON_$$DOBF^BIUTL1(B
+                                             IDFN)_IOINORM
+                      CAPTION COORDINATE:    4,44
+
+               4      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y="  Chart#: "_IORVON_$$HRCN^BIU
+                                             TL1(BIDFN)_" at "_$E($$INSTTX^BIUT
+                                             L6($G(DUZ(2))),1,17)_IOINORM
+                      CAPTION COORDINATE:    5,1
+
+               5      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               !M
+                      EXECUTABLE CAPTION:    S Y=$$ACTIVE^BIUTL1(BIDFN)_"     "
+                                             _$$SEXW^BIUTL1(BIDFN)
+                      CAPTION COORDINATE:    5,49
+
+               6      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               __________________________________
+                                             __________________________________
+                                             ____________
+                      CAPTION COORDINATE:    6,1
+
+        2      BI BLK-SKIN VISIT ADD/EDIT (#497)
+
+               TYPE OF BLOCK:          EDIT
+               BLOCK COORDINATE:       7,1
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+               PRE ACTION:             D LOADVIS^BIUTL7("S")
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Date
+                      READ TYPE:             DATE
+                      QUALIFIERS:            ::PTEX
+                      HELP:
+                        Enter the date of this Skin Test Visit.  You may also
+                        add the Time of Visit following an "@", for example,
+                        1/1/99@0900.  
+                      CAPTION COORDINATE:    2,8
+                      DATA COORDINATE:       2,14
+                      DATA LENGTH:           22
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Enter the date of th
+                                             is Skin Test Visit.")
+                      POST ACTION:           S BI("E")=X D OLDDATE^BIUTL4(X)
+                      POST ACTION ON CHANGE: S BIDEFDT=X
+                      DATA VALIDATION:       I $P(Y,".")>DT S DDSERROR="" D HLP
+                                             ^DDSUTL(" * Date may not be in the
+                                              future.")
+
+               2      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Skin Test
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9999999.28:QEM
+                      HELP:
+                        Select the Skin Test for this Visit.  
+                      CAPTION COORDINATE:    4,3
+                      DATA COORDINATE:       4,14
+                      DATA LENGTH:           10
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Select the Skin Test
+                                              for this Visit.")
+                      POST ACTION:           S BI("B")=X
+                      POST ACTION ON CHANGE: D SKINCHG^BIUTL4(X)
+
+               2.4    FIELD TYPE:            FORM ONLY
+                      CAPTION:               Site
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            L:LEFT FOREARM;R:RIGHT FOREARM
+                      CAPTION COORDINATE:    4,29
+                      DATA COORDINATE:       4,35
+                      DATA LENGTH:           13
+                      PRE ACTION:            D HLP^DDSUTL("Enter ""L"" for Left
+                                              Forearm or ""R"" for Right Forear
+                                             m.")
+                      POST ACTION:           S BI("T")=X
+
+               2.8    FIELD TYPE:            FORM ONLY
+                      CAPTION:               Volume
+                      READ TYPE:             NUMERIC
+                      PARAMETERS:            N
+                      QUALIFIERS:            0:5:2
+                      CAPTION COORDINATE:    4,52
+                      DATA COORDINATE:       4,60
+                      DATA LENGTH:           4
+                      PRE ACTION:            D HLP^DDSUTL("Enter the Volume in 
+                                             mls of test fluid injected")
+                      POST ACTION:           S BI("W")=X
+
+               2.9    FIELD TYPE:            FORM ONLY
+                      CAPTION:               Lot#
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            9999999.41:QEM
+                      HELP:
+                        Select the Lot Number for the PPD used on this Skin
+                        Test Visit.  
+                      SCREEN:                D LOTSCRS^BIUTL8
+                      CAPTION COORDINATE:    5,29
+                      DATA COORDINATE:       5,35
+                      DATA LENGTH:           25
+                      PRE ACTION:            D HLP^DDSUTL("Select the Lot Numbe
+                                             r for the PPD used in this Skin Te
+                                             st.")
+                      POST ACTION:           S BI("LL")=X
+
+               3      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Result
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            P:POSITIVE;N:NEGATIVE;D:DOUBTFUL;O
+                                             :NO TAKE
+                      HELP:
+                        Select the result for this Skin Test.  
+                      CAPTION COORDINATE:    6,3
+                      DATA COORDINATE:       6,11
+                      DATA LENGTH:           8
+                      PRE ACTION:            D HLP^DDSUTL("Select the result fo
+                                             r this Skin Test: P for Positive, 
+                                             N for Negative, D for Doubtful, or
+                                              O for No Take.  *** NOTE! If you 
+                                             enter a Result you MUST enter a Re
+                                             ading! ***")
+                      POST ACTION:           S BI("L")=X
+                      DATA VALIDATION:       I ($$GET^DDSVALF(4,"","","I")>14)&
+                                             (X="N") D BADREAD^BIUTL4
+
+               4      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Reading
+                      READ TYPE:             NUMERIC
+                      QUALIFIERS:            0:40:0
+                      HELP:
+                        Enter a whole number between 0 and 40, indicating the
+                        size of the reading in millimeters.  If the Result is
+                        NEGATIVE, the reading must be less than 15 mm.  
+                      CAPTION COORDINATE:    6,26
+                      DATA COORDINATE:       6,35
+                      DATA LENGTH:           2
+                      PRE ACTION:            D HLP^DDSUTL("Enter a whole number
+                                              between 0 and 40, indicating the 
+                                             size of the reading in millimeters
+                                             .  If the Result is NEGATIVE, the 
+                                             reading must be less than 15mm.")
+                      POST ACTION:           S BI("M")=X D READCHK^BIUTL7
+                      DATA VALIDATION:       I ($$GET^DDSVALF(3,"","","I")="N")
+                                             &(X>14) D BADREAD^BIUTL4
+
+               4.5    FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               mm
+                      CAPTION COORDINATE:    6,38
+
+               5      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Date of Reading
+                      READ TYPE:             DATE
+                      HELP:
+                        Enter the date on which the result reading was taken 
+                      CAPTION COORDINATE:    6,43
+                      DATA COORDINATE:       6,60
+                      DATA LENGTH:           11
+                      PRE ACTION:            D HLP^DDSUTL("Enter the date on wh
+                                             ich the result reading was taken."
+                                             )
+                      POST ACTION:           S BI("N")=X
+                      DATA VALIDATION:       I Y D BADRDAT^BIUTL4
+
+               6      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Location Type
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            I:IHS;O:Other
+                      HELP:
+                        Enter "I" if this visit occurred at an IHS Location. 
+                        Enter "O" if it occurred at some Other location not
+                        listed in the Location File.  
+                      CAPTION COORDINATE:    8,3
+                      DATA COORDINATE:       8,18
+                      DATA LENGTH:           5
+                      DEFAULT:               IHS
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Enter ""I"" if this 
+                                             visit occurred at an IHS Location.
+                                               Enter ""O"" if it occurred at so
+                                             me Other location not listed in th
+                                             e Location File.")
+                      POST ACTION:           D READCH6^BIUTL7
+
+               7      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Location
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            4:QEM
+                      HELP:
+                        Select a Location.  If the Location you wish to select
+                        is not in the Location File, go to the Location Type
+                        field on this screen and select "OTHER", then return
+                        to this field and enter the location you wish.  
+                      SCREEN:                S DIR("S")="I $D(^AUTTLOC(Y,0)) I 
+                                             '$P(^(0),U,21)"
+                      CAPTION COORDINATE:    8,26
+                      DATA COORDINATE:       8,36
+                      DATA LENGTH:           40
+                      PRE ACTION:            D HLP^DDSUTL("Select a Location.  
+                                             If the Location you wish to select
+                                              is not in the Location File, go t
+                                             o the Location Type field on this 
+                                             screen and select ""OTHER"", then 
+                                             return to this field and enter the
+                                              location you wish.")
+                      POST ACTION:           S BI("F")=X
+
+               8      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Location
+                      READ TYPE:             FREE TEXT
+                      QUALIFIERS:            2:100
+                      HELP:
+                        Enter the name of the non-IHS location for this visit
+                        (between 2 and 30 characters).  
+                      INPUT TRANSFORM:       I $L(X)>50 S Y=$E(X,1,50) S BITOLO
+                                             NG=1
+                      CAPTION COORDINATE:    8,26
+                      DATA COORDINATE:       8,36
+                      DATA LENGTH:           40
+                      DISABLE EDITING:       YES
+                      BRANCHING LOGIC:       I $G(BITOLONG) S DDSSTACK="BI PAGE
+                                             -LOCATION NAME TOO LONG"
+                      PRE ACTION:            D HLP^DDSUTL("Enter the name of th
+                                             e non-IHS location for this visit 
+                                             (between 2 and 30 characters).")
+                      POST ACTION:           S BI("G")=X
+
+               9      FIELD TYPE:            FORM ONLY
+                      CAPTION:               Skin Test Provider
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            200:QEM
+                      HELP:
+                        Select the Provider who actually administered the Skin
+                        Test.  This person must be listed as a Provider in the
+                        RPMS Person File (must have the Provider Key).  This
+                        may or may not be the person who read the test result.  
+                      SCREEN:                S DIR("S")="I $D(^XUSEC(""PROVIDER
+                                             "",+Y))"
+                      CAPTION COORDINATE:    10,3
+                      DATA COORDINATE:       10,23
+                      DATA LENGTH:           28
+                      PRE ACTION:            D HLP^DDSUTL("Select the Provider 
+                                             who actually administered the Skin
+                                              Test.  (This may or may not be th
+                                             e person who read the test result.
+                                             )")
+                      POST ACTION:           S BI("R")=X
+
+               10     FIELD TYPE:            FORM ONLY
+                      CAPTION:               Skin Test Reader
+                      READ TYPE:             POINTER
+                      QUALIFIERS:            200:QEM
+                      CAPTION COORDINATE:    11,5
+                      DATA COORDINATE:       11,23
+                      DATA LENGTH:           28
+                      PRE ACTION:            D HLP^DDSUTL("Select the provider 
+                                             who actually read the test result.
+                                             ")
+                      POST ACTION:           S BI("X")=X
+
+               11     FIELD TYPE:            FORM ONLY
+                      CAPTION:               Category
+                      READ TYPE:             SET OF CODES
+                      PARAMETERS:            M
+                      QUALIFIERS:            A:Ambulatory;E:Historical Event;I:
+                                             Inpatient
+                      HELP:
+                        Select the PCC Category for this visit.  
+                      CAPTION COORDINATE:    2,46
+                      DATA COORDINATE:       2,56
+                      DATA LENGTH:           16
+                      DEFAULT:               A
+                      REQUIRED:              YES
+                      PRE ACTION:            D HLP^DDSUTL("Select the PCC Categ
+                                             ory for this visit (Ambulatory, Hi
+                                             storical, or Inpatient).")
+                      POST ACTION:           S BI("I")=X D NOPROV^BIUTL7(X)
+
+               13.5   FIELD TYPE:            FORM ONLY
+                      CAPTION:               ml
+                      READ TYPE:             FREE TEXT
+                      CAPTION COORDINATE:    4,64
+                      DATA COORDINATE:       4,68
+                      DATA LENGTH:           1
+                      SUPPRESS COLON:        YES
+                      DISABLE EDITING:       YES
+
+2       BI PAGE-LOCATION NAME TOO LONG
+
+        PAGE COORDINATE:        12,6
+        IS THIS A POP UP PAGE?: YES
+        LOWER RIGHT COORDINATE: 16,73
+
+        Block  Block
+        Order  Properties (Form File)
+        -----  ----------------------
+        1      BI BLK-OUTSIDE LOC TOO LONG (#491)
+
+               TYPE OF BLOCK:          EDIT
+               BLOCK COORDINATE:       2,4
+
+               Block Properties (Block File)
+               -----------------------------
+               DATA DICTIONARY NUMBER: 9000001
+
+               Field  Field
+               Order  Properties
+               -----  ----------
+               1      FIELD TYPE:            CAPTION ONLY
+                      CAPTION:               Your Other Loccation Name will be 
+                                             shortened to 50 characters.
+                      CAPTION COORDINATE:    2,2
