@@ -1,0 +1,36 @@
+BI EXPORT BY INDIVIDUALS
+	BI MENU EXPORT INDIVIDUAL
+	BI MENU EXPORT INDIVIDUAL HIDDEN
+	
+BI EXPORT BY GROUP
+	BI MENU EXPORT GROUP
+	BI MENU EXPORT GROUP HIDDEN
+	
+CHOOSE 1-2: 1  BI MENU EXPORT INDIVIDUALS     Export by Individuals     
+itemName: BI BLANK                                itemAction: 
+itemName: BI EXPORT EXPORT DATA                   itemAction: D START^BIEXP3($G(BIRTN))
+	
+Select PROTOCOL NAME: BI MENU EXPORT INDIVIDUALS HIDDEN       Export by Individuals Hidden     
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI EXPORT SURVEY DATE                   itemAction: D SVDATE^BIOUTPT2(.BISVDT,$G(BIPG),$G(BIRTN))
+itemName: BI EXPORT PATIENTS INDIVIDUAL           itemAction: D PATIENT^BIOUTPT2(.BIPAT,BIRTN)
+itemName: BI OUTPUT DATA ELEMENTS                 itemAction: D DATAEL^BIOUTPT2(.BIDE,$G(BIRTN))
+itemName: BI EXPORT FORMAT                        itemAction: D FORMAT^BIOUTPT2(.BIFMT,$G(BIRTN))
+itemName: BI EXPORT OUTPUT DEVICE                 itemAction: D OUTPUT^BIOUTPT2(.BIOUT,.BIFLNM,.BIPATH,$G(BIRTN))
+itemName: BI OUTPUT IMMUNIZATION RECEIVED         itemAction: D IMMRCV^BIOUTPT3(.BIMMR,.BIRDT,.BIMMRF,$G(BIRTN))
+	
+CHOOSE 1-2: 1  BI MENU EXPORT GROUP     Export by Group     
+itemName: BI BLANK                                itemAction: 
+itemName: BI EXPORT EXPORT DATA                   itemAction: D START^BIEXP3($G(BIRTN))
+
+Select PROTOCOL NAME: BI MENU EXPORT GROUP HIDDEN       Export by Group Hidden     
+itemName: BI QUIT                                 itemAction: Q
+itemName: BI EXPORT SURVEY DATE                   itemAction: D SVDATE^BIOUTPT2(.BISVDT,$G(BIPG),$G(BIRTN))
+itemName: BI OUTPUT DATA ELEMENTS                 itemAction: D DATAEL^BIOUTPT2(.BIDE,$G(BIRTN))
+itemName: BI EXPORT FORMAT                        itemAction: D FORMAT^BIOUTPT2(.BIFMT,$G(BIRTN))
+itemName: BI EXPORT OUTPUT DEVICE                 itemAction: D OUTPUT^BIOUTPT2(.BIOUT,.BIFLNM,.BIPATH,$G(BIRTN))
+itemName: BI OUTPUT AGE RANGE                     itemAction: D AGE^BIOUTPT(.BIAG,$G(BIRTN))
+itemName: BI EXPORT PATIENT GROUP                 itemAction: D PGROUP2^BIOUTPT3(.BIPGRP,$G(BIRTN)) S BIPG=BIPGRP
+itemName: BI OUTPUT COMMUNITY                     itemAction: D CC^BIOUTPT(.BICC,$G(BIRTN))
+itemName: BI OUTPUT FACILITY                      itemAction: D HCF^BIOUTPT(.BIHCF,$G(BIRTN))
+itemName: BI OUTPUT IMMUNIZATION RECEIVED         itemAction: D IMMRCV^BIOUTPT3(.BIMMR,.BIRDT,.BIMMRF,$G(BIRTN))
