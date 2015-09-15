@@ -106,7 +106,9 @@ ADDSK ;EP
  ;---> BISAVE=Flag to call BIUTL7 to save data (below).  vvv83
  ;---> BITOLONG=Flag used in Screenman to display pop-up: Other Loc too long.
  N BISAVE,BITOLONG,BIPOP
- N DR S DR="[BI FORM-SKIN VISIT ADD/EDIT]"
+ N DR 
+ I $$RPMS^BIUTL9() S DR="[BI FORM-SKIN VISIT ADD/EDIT]"
+ E  S DR="[BIV FORM-SKIN VISIT ADD/EDIT]"
  D DDS^BIFMAN(9000001,DR,BIDFN,"S",.BISAVE,.BIPOP)
  ;
  ;---> If user saved data, call ^BIUTL7 to save it.
@@ -235,7 +237,8 @@ EDITIMM ;EP
  .S BI("W")=$P(Y,V,16)      ;Volume.
  .S BI("X")=$P(Y,V,17)      ;Skin Test Reader.
  .;
- .S DR="[BI FORM-SKIN VISIT ADD/EDIT]"
+ .I $$RPMS^BIUTL9() S DR="[BI FORM-SKIN VISIT ADD/EDIT]"
+ .E  S DR="[BIV FORM-SKIN VISIT ADD/EDIT]"
  ;
  ;
  ;---> Get Site IEN for parameters.
