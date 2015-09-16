@@ -25,10 +25,11 @@ HFS(BIFLNM,BIPATH,BIOPEN,BIPOP) ;EP
  S BIPATH=$P(^BISITE(DUZ(2),0),U,14)  N X S X="I"_"O(1)" K @X
  I BIPATH']"" D ERRCD^BIUTL2(104,,1) S BIPOP=1 Q
  ;
- ;---> Attempt to open Host File Server.
- ;---> Need handle so that it works on GT.M.
+ ; Doesn't work on GT.M; Need handle so that it works on GT.M.
  ;S BIPOP=$$OPEN^%ZISH(BIPATH,BIFLNM,"W")
- S BIPOP=$$OPEN^%ZISH("FILE",BIPATH,BIFLNM,"W")
+ N POP
+ D OPEN^%ZISH("FILE",BIPATH,BIFLNM,"W")
+ S BIPOP=$G(POP)
  ;
  ;---> If not valid PATH, will bomb with a <MODER>.
  ;---> Purpose here is to test Host File access before beginning search.
