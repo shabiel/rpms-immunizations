@@ -21,6 +21,7 @@ PATIENT(BIPG,BIAG,BISVDT,BIHCF,BICC,BIMMR,BIRDT) ;EP
  ;     6 - BIMMR  (opt) Immunizations Received, IEN's (array)
  ;     7 - BIRDT  (opt) Date Range for Imms received (YYYMMDD:YYYMMDD)
  ;
+ ; ZEXCEPT: BIPOP
  S BIPOP=0 K ^BITMP($J)
  ;
  ;---> If there's an Age Range *or* if the Group is not limited to
@@ -28,11 +29,12 @@ PATIENT(BIPG,BIAG,BISVDT,BIHCF,BICC,BIMMR,BIRDT) ;EP
  I BIAG]""!(BIPG=3) D  Q
  .;
  .;---> Set begin and end dates for search through PATIENT File.
+ .N BIBEGDT,BIENDDT
  .D AGEDATE^BIAGE(BIAG,BISVDT,.BIBEGDT,.BIENDDT)
  .;---> Start 1 day prior to Begin Date and $O into the desired DOB's.
- .S N=BIBEGDT-1
+ .N N S N=BIBEGDT-1
  .F  S N=$O(^DPT("ADOB",N)) Q:(N>BIENDDT!('N))  D
- ..S BIDFN=0
+ ..N BIDFN S BIDFN=0
  ..F  S BIDFN=$O(^DPT("ADOB",N,BIDFN)) Q:'BIDFN  D
  ...D STORE(BIDFN,BISVDT,BIPG,.BIHCF,.BICC,1,.BIMMR,$G(BIRDT))
  ;
@@ -129,17 +131,19 @@ VIMM(BIDFN,BIHCF) ;EP
  ;     1 - BIDFN  (req) IEN of Patient in ^DPT.
  ;     2 - BIHCF  (req) Current Community array.
  ;
+ ;---> Get correct index for VISTA vs RPMS
+ N IX S IX=$S($$RPMS^BIUTL9():"AC",1:"C")
  ;---> Return 1 if patient has no V IMMUNIZATIONS at all.
- Q:'$D(^AUPNVIMM("AC",BIDFN)) 1
+ Q:'$D(^AUPNVIMM(IX,BIDFN)) 1
  ;---> Return 0 if patient has a V IMMUNIZATION and "ALL" are selected.
  Q:$D(BIHCF("ALL")) 0
  ;---> Return 1 if patient does not have an Immunization Visit at the
  ;---> selected Facilities.
  N BIFLAG,N,X
  S N=0,BIFLAG=1
- F  S N=$O(^AUPNVIMM("AC",BIDFN,N)) Q:'N  Q:'BIFLAG  D
+ F  S N=$O(^AUPNVIMM(IX,BIDFN,N)) Q:'N  Q:'BIFLAG  D
  .Q:'$D(^AUPNVIMM(N,0))
- .S Y=$P(^AUPNVIMM(N,0),U,3) Q:'Y
+ .N Y S Y=$P(^AUPNVIMM(N,0),U,3) Q:'Y
  .Q:'$D(^AUPNVSIT(Y,0))
  .S X=$P(^AUPNVSIT(Y,0),U,6)
  .S:$D(BIHCF(X)) BIFLAG=0
@@ -152,15 +156,17 @@ VISIT(BIDFN,BIHCF) ;EP
  ;**** NOT USED FOR NOW.  Might be used if some report/list wants
  ;     all patients who have had any type of Visit at a Facility.
  ;
+ ;---> Get correct index for VISTA vs RPMS
+ N IX S IX=$S($$RPMS^BIUTL9():"AC",1:"C")
  ;---> Return 1 if patient has no VISITS at all.
- Q:'$D(^AUPNVSIT("AC",BIDFN)) 1
+ Q:'$D(^AUPNVSIT(IX,BIDFN)) 1
  ;---> Return 0 if patient has a VISIT and "ALL" are selected.
  Q:$D(BIHCF("ALL")) 0
  ;---> Return 1 if patient does not have a VISIT at the selected
  ;---> Facilities.
  N BIFLAG,N,X
  S N=0,BIFLAG=1
- F  S N=$O(^AUPNVSIT("AC",BIDFN,N)) Q:'N  Q:'BIFLAG  D
+ F  S N=$O(^AUPNVSIT(IX,BIDFN,N)) Q:'N  Q:'BIFLAG  D
  .Q:'$D(^AUPNVSIT(N,0))
  .S X=$P(^AUPNVSIT(N,0),U,6)
  .S:$D(BIHCF(X)) BIFLAG=0
