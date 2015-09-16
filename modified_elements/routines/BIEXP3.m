@@ -93,7 +93,9 @@ START(BIRTN) ;EP
  ;---> If ImmServe export, get vaccines that should not be forecast.
  I BIFMT=3 D NOFORC^BIPATUP(.BINF)
  ;
- D HISTORY^BIEXPRT3(BIFMT,.BIDE,.BIMMRF,,,,.BINF)
+ ; VEN/SMH - I think there is a mistake here. BIMMRF isn't defined anywhere I see.
+ ; I think the variable is intended to be BIMMR
+ D HISTORY^BIEXPRT3(BIFMT,.BIDE,.BIMMR,,,,.BINF)
  ;**********
  ;
  ;---> Export data.
