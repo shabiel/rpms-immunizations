@@ -173,10 +173,10 @@ HISTORY1(BILINE,BIDFN,BIFORM,BINVAL,BIGBL,BIPDSS,BIHDRS,BINOSK,BILOC,BIMMRF,BIMM
  .;Q:((BINVAL=1)&(($P(Y,V,13)&($P(Y,V,13)'=9))!BIPD))
  .;
  .;---> Do not display if this vaccine is not in the display filter array.
- .I $D(BIMMRF) Q:('$D(BIMMRF(+$P(Y,V,14))))
+ .I $D(BIMMRF),'$D(BIMMRF("ALL")) Q:('$D(BIMMRF(+$P(Y,V,14))))
  .;
  .;---> Do not display if this lot number is not in the display filter array.
- .I $D(BIMMLF) Q:('$D(BIMMLF(+$P(Y,V,7))))
+ .I $D(BIMMLF),'$D(BIMMLF("ALL")) Q:('$D(BIMMLF(+$P(Y,V,7))))
  .;
  .;---> Set Vaccine Name.
  .N X S X=$P(Y,V,2)
