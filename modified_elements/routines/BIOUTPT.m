@@ -201,6 +201,10 @@ CC(BICC,BIRTN,BIPOP) ;EP
  ;
  S BIPOP=0
  D TITLE^BIUTL5("SELECTION OF COMMUNITIES")
+ ;
+ ; --> For VISTA
+ I '$$RPMS^BIUTL9() D CCV(.BICC,BIRTN,.BIPOP) QUIT
+ ;
  D TEXT8
  ;
  N DIR S DIR("A")="     Select G, L, or P: ",DIR("B")="Load"
@@ -234,6 +238,66 @@ TEXT8 ;EP
  Q
  ;
  ;
+CCV(BICC,BIRTN,BIPOP) ;EP
+ ;---> Select Current Community(s) for VISTA users
+ ;---> Called by Protocol BI OUTPUT COMMUNITY.
+ ;---> Parameters:
+ ;     1 - BICC  (ret) Local array of Current Community IENs.
+ ;     2 - BIRTN (req) Calling routine for reset.
+ ;     3 - BIPOP (opt) BIQUIT=1 if user quit, ^-arrowed.
+ D TEXT8V
+ ;
+ N DIR S DIR("A")="     Select A, D, or E: ",DIR("B")="D"
+ S DIR(0)="SAM^A:ALL;D:DEFAULT;E:ENTER"
+ ;
+ D ^DIR K DIR
+ I Y=-1!($D(DIRUT)) D @("RESET^"_BIRTN) S BIPOP=1 Q
+ ;
+ D
+ . I Y="A" K BICC S BICC("ALL")="" QUIT
+ . K BICC("ALL")
+ . I Y="D" K BICC D GETCOMMS^BISITE4(.BICC,$G(DUZ(2))) QUIT  ; Default communities for site
+ . I Y="E" D CCVSEL(.BICC)
+ ;
+ D @("RESET^"_BIRTN)
+ QUIT
+ ;
+CCVSEL(BICC) ; [Private] Userland select communities for VISTA.
+ D FULL^VALM1
+ ;
+ W "Enter Communities:",!!
+ ;
+ N DONE S DONE=0
+ ;
+ F  D  Q:$G(DONE)
+ . W "Currently selected: "
+ . I '$D(BICC) W "<NONE>",!
+ . E  D
+ .. N C S C="" F  S C=$O(BICC(C)) Q:C=""  W C," "
+ .. W !
+ .. W "To remove, put a - at the front of the code.",!
+ . ;
+ . N DIR,DIRUT,DIROUT,DTOUT,X,Y,DA
+ . S DIR(0)="9002084.02920001,.01" D ^DIR
+ . I $G(DIRUT) S DONE=1 QUIT
+ . I $E(Y)="-" K BICC($E(Y,2,999))
+ . E  S BICC(Y)=""
+ . W !
+ QUIT
+ ;
+TEXT8V ; EP
+ ;;You have the opportunity here to limit your selection of patients to specific
+ ;;communities, selected by ZIP or Postal code
+ ;;
+ ;;* Enter "A[LL]" to select all patients regardess of where they live
+ ;;* Enter "D[EFAULT]" to load the default list of codes from the Site Parameters for
+ ;;  the division you are currently logged into
+ ;;* Enter "E[NTER]" to enter a specific set of codes
+ ;;
+ ;
+ D PRINTX("TEXT8V")
+ ;
+ QUIT
  ;----------
 HCF(BIHCF,BIRTN) ;EP
  ;---> Select Health Care Facility(s).
@@ -286,6 +350,9 @@ DPRV(BIDPRV,BIRTN) ;EP
  ;     1 - BIDPRV (ret) Designated Provider IENs.
  ;     2 - BIRTN  (req) Calling routine for reset.
  ;
+ ; Only for RPMS
+ I '$$RPMS^BIUTL9() D @("RESET^"_BIRTN) QUIT
+ ;
  I $G(BIRTN)="" D ERRCD^BIUTL2(621,,1) Q
  ;
  ;---> Select cases for one or more DESIGNATED PROVIDERS (OR ALL).
@@ -302,6 +369,8 @@ BEN(BIBEN,BIRTN) ;EP
  ;---> Parameters:
  ;     1 - BIBEN  (ret) Local array of Beneficiary Types.
  ;     2 - BIRTN  (req) Calling routine for reset.
+ ;
+ I '$$RPMS^BIUTL9() D @("RESET^"_BIRTN) QUIT  ; Only for RPMS
  ;
  I $G(BIRTN)="" D ERRCD^BIUTL2(621,,1) Q
  ;
