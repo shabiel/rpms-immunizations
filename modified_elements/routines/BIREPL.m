@@ -48,8 +48,12 @@ INIT ;EP
  D DISP^BIREP(.BILINE,"BIREPL",.BIHCF,A,3,2,,,,B) K A,B
  ;
  ;---> Beneficiary Type.
- S:$O(BIBEN(0))="" BIBEN(1)=""   ;vvv83
- D DISP^BIREP(.BILINE,"BIREPL",.BIBEN,"Beneficiary Type",4,4)
+ ; VEN/SMH - Don't limit by beneficiary type in VISTA
+ S:$O(BIBEN(0))="" BIBEN($S($$RPMS^BIUTL9():1,1:"ALL"))=""   ;vvv83
+ I $$RPMS^BIUTL9() D
+ . D DISP^BIREP(.BILINE,"BIREPL",.BIBEN,"Beneficiary Type",4,4)
+ E  D
+ . D WRITE(.BILINE,"     4 - Beneficiary Type (unedit)..: ALL",1)
  ;
  ;---> Include CPT Coded Visits.
  S:'$D(BICPTI) BICPTI=0
