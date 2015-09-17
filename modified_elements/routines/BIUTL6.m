@@ -312,6 +312,7 @@ CCTX(X) ;EP
  ;     1 - X  (req) IEN in COMMUNITY File #9999999.05.
  ;
  Q:'$G(X) ""
+ I '$$RPMS^BIUTL9() Q X
  Q:'$D(^AUTTCOM(X,0)) "BAD POINTER"
  Q $P(^AUTTCOM(X,0),U)
  ;
