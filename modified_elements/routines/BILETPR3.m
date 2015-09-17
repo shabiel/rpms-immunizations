@@ -117,7 +117,8 @@ HISTORY2(BILINE,BIHX,BIDFN,BIFORM,BINVAL,BIPDSS) ;EP
  ;---> If no skin tests on record, display that explicitly.
  ;I $G(BIDFN) Q:'$D(^AUPNVSK("AC",BIDFN))
  Q:'$G(BIDFN)
- I '$D(^AUPNVSK("AC",BIDFN)) D  Q
+ N IX S IX=$S($$RPMS^BIUTL9():"AC",1:"C")
+ I '$D(^AUPNVSK(IX,BIDFN)) D  Q
  .D WRITE(.BILINE)
  .S X="       Skin Tests/PPD: None on record"
  .D WRITE(.BILINE,X)
