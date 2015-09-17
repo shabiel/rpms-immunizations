@@ -100,15 +100,17 @@ GETGPRA(BIGPRA,BIDUZ2,BIERR) ;PEP - Return GPRA Communities Array (RPMS).
  Q
  ;
 GETCOMMS(COMMS,DUZ2,BIERR) ; PEP - Return Stats Communities (VISTA only)
- ;---> Retrieve GPRA Communities Array of IEN's for this DUZ(2).
+ ;---> Retrieve Postal Communities Array of IEN's for this DUZ(2).
  ;---> Parameters:
- ;     1 - COMMS (ret) Array of GPRA IEN's in the COMMUNITY file - ^AUTTCOM(.
+ ;     1 - COMMS (ret) Array of postal codes
  ;     2 - DUZ2  (req) Site IEN or DUZ(2).
  ;     3 - BIERR  (ret) Error text, if any.
  I '$G(DUZ2) S DUZ2=$G(DUZ(2))
  I '$G(DUZ2) D ERRCD^BIUTL2(109,.BIERR) Q
  N N S N=0
- F  S N=$O(^BISITE(DUZ2,920001,N)) Q:'N  S COMMS(N)=""
+ F  S N=$O(^BISITE(DUZ2,920001,N)) Q:'N  D
+ . N CODE S CODE=$P(^BISITE(DUZ2,920001,N,0),U)
+ . S COMMS(CODE)=""
  Q
  ;
  ;----------
