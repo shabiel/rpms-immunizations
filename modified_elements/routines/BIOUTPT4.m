@@ -146,7 +146,7 @@ PGRP11 ;---> Go here if 8 selected with other attributes.
  ;--->back to default (Active).
  I $P(BIPG,U)=8&($G(BITMPL)<1) S $P(BIPG,U)=3 G PGRP11
  ;
- D:($P(BIPG,U)'=8)
+ D:($P(BIPG,U)'=8)&($$RPMS^BIUTL9())
  .D TITLE^BIUTL5("INDIANS/AK NATIVES ONLY or ALL PATIENTS")
  .D TEXT7
  .S B=$S($D(BIBEN("ALL")):"Yes",1:"No") K BIBEN
