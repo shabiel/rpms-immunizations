@@ -28,10 +28,11 @@ EN ;EP
  ;
  ;----------
 HDR ;EP
+ ; ZEXCEPT: VALMHDR
  N BILINE,X,Y S BILINE=0 K VALMHDR
  D WH^BIW(.BILINE)
- S X=IOUON_"IMMUNIZATION LISTS & LETTERS" D CENTERT^BIUTL5(.X,42)
- D WH^BIW(.BILINE,X_IOINORM)
+ S X="IMMUNIZATION LISTS & LETTERS" D CENTERT^BIUTL5(.X,42)
+ D WH^BIW(.BILINE,X)
  ;D EN^VALM("BI DUE LISTS & LETTERS")
  Q
  ;
@@ -90,8 +91,10 @@ INIT ;EP
  D PGRP(BIPG,.BIPG1)
  ;
  ;---> If Beneficiary is undefined, default to Am Indian/AK Native.
- S:'$D(BIBEN) BIBEN(1)=""
- S BIHEAD="   3 - Patient Group ("_$S($D(BIBEN("ALL")):"all)",1:"01).")_"......: "
+ ; VEN/SMH: In RPMS, default beneficiary is Am Indian/AK Native || VISTA is ALL
+ S:'$D(BIBEN) BIBEN($S($$RPMS^BIUTL9():1,1:"ALL"))=""
+ I $$RPMS^BIUTL9() S BIHEAD="   3 - Patient Group ("_$S($D(BIBEN("ALL")):"all)",1:"01).")_"......: "
+ E                 S BIHEAD="   3 - Patient Group............: "
  D
  .I $L(BIHEAD_BIPG1)<46 S X=BIHEAD_BIPG1 D WRITE(.BILINE,X) Q
  .N I,N,V,Z S N=1,V=",",X=""
@@ -111,7 +114,9 @@ INIT ;EP
  D DISP^BIREP(.BILINE,"BIDU",.BICM,"Case Manager",5,3,0,2,32)
  ;
  ;---> Designated Provider.
- D DISP^BIREP(.BILINE,"BIDU",.BIDPRV,"Designated Provider",6,3,0,2,32)
+ I $$RPMS^BIUTL9() D
+ . D DISP^BIREP(.BILINE,"BIDU",.BIDPRV,"Designated Provider",6,3,0,2,32)
+ E  S BIDPRV("ALL")=""
  ;
  ;---> Immunization Received.
  N A,B,C S A="Immunizations Received",B="Immunizations"
