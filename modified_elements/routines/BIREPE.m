@@ -32,9 +32,9 @@ INIT ;EP
  S VALMSG="Select a left column number to change an item."
  N BILINE,X S BILINE=0
  D WRITE(.BILINE)
- S X=IOUON_"VACCINE ELIGIBILITY REPORT"
+ S X="VACCINE ELIGIBILITY REPORT"
  D CENTERT^BIUTL5(.X,42)
- D WRITE(.BILINE,X_IOINORM)
+ D WRITE(.BILINE,X)
  K X
  ;
  ;---> Date Range.
@@ -54,7 +54,12 @@ INIT ;EP
  D DISP^BIREP(.BILINE,"BIREPE",.BICM,"Case Manager",4,3)
  ;
  ;---> Beneficiary Type.
- D DISP^BIREP(.BILINE,"BIREPE",.BIBEN,"Beneficiary Type",5,4,0)
+ ; VEN/SMH - Don't limit by beneficiary type in VISTA
+ S:$O(BIBEN(0))="" BIBEN($S($$RPMS^BIUTL9():1,1:"ALL"))=""   ;vvv83
+ I $$RPMS^BIUTL9() D
+ . D DISP^BIREP(.BILINE,"BIREPL",.BIBEN,"Beneficiary Type",4,4)
+ E  D
+ . D WRITE(.BILINE,"     4 - Beneficiary Type (unedit)..: ALL",1)
  ;
  ;---> Visit Type.
  D VTYPE^BIREP(.BILINE,"BIREPE",.BIVT,6)
