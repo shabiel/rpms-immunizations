@@ -105,12 +105,8 @@ HDR ;EP
  ..D SUBH^BIOUTPT5("BICC","Community",,"^AUTTCOM(",.BILINE,.BIERR,,11)
  ..I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
  .E  D  ; VISTA
- ..I $D(BICC("ALL"))!('$D(BICC)) QUIT
- ..N % S %=""
- ..N I S I="" F  S I=$O(BICC(I)) Q:I=""  S %=%_I_"; "  Q:$L(%)>70  ; collect postal codes
- ..S $E(%,$L(%)-1,$L(%))="" ; remove last ; space
- ..S %=" Communities: "_%
- ..D WH^BIW(.BILINE,%)
+ ..N % S %=$$VISTACC^BIUTL6(.BICC)
+ ..D:%]"" WH^BIW(.BILINE,%)
  .;
  .;---> If specific Case Managers, print Case Manager subheader.
  .D SUBH^BIOUTPT5("BICM","Case Manager",,"^VA(200,",.BILINE,.BIERR,,11)
