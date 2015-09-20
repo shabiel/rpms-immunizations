@@ -16,6 +16,9 @@ USERPOP(BIDFN,BIEDATE) ;EP - Return 1 if Patient is in User Population as of BIE
  ;     2 - BIEDATE (req) Date as of which Patient is an in User Population.
  ;                       User Population = 1 or more qualifying visits in last 3 years.
  ;
+ ; VISTA does't have RPMS API... and nobody on hardhats apparently knows of a replacement
+ I '$$RPMS^BIUTL9() Q $$USERPOPV(BIDFN,BIEDATE)
+ ;
  I '$D(^AUPNPAT(BIDFN,0)) Q 0      ;invalid patient
  I '$D(^AUPNVSIT("AC",BIDFN)) Q 0  ;patient has no visits
  ;
@@ -38,7 +41,28 @@ USERPOP(BIDFN,BIEDATE) ;EP - Return 1 if Patient is in User Population as of BIE
  .S UP=1                            ;has at least one visit so in user pop
  Q UP
  ;
+ ;----------
+USERPOPV(BIDFN,BIEDATE) ; Internal - Return 1 if Patient is in User Population as of BIEDATE in VISTA
+ ; Called from USERPOP above. v.i. for parameters
  ;
+ I '$D(^AUPNPAT(BIDFN,0)) Q 0      ;invalid patient
+ I '$D(^AUPNVSIT("C",BIDFN)) Q 0  ;patient has no visits
+ ;
+ NEW BIBDATE,UP
+ S UP=0
+ S BIBDATE=$$FMADD^XLFDT(BIEDATE,-1096)  ;get beginning date for search, 3 yrs ago (1096 days)
+ N INVDATE S INVDATE=9999999-BIBDATE
+ D FULL^VALM1 ZWRITE ^AUPNVSIT("AA",BIDFN,*) N DIR S DIR(0)="E" D ^DIR
+ N WALKDT F WALKDT=INVDATE:0 S WALKDT=$O(^AUPNVSIT("AA",BIDFN,WALKDT),-1) Q:'WALKDT  D  Q:UP
+ .N V S V=$O(^AUPNVSIT("AA",BIDFN,WALKDT,0))
+ .Q:'$D(^AUPNVSIT(V,0))             ;Well formed node
+ .Q:'$P(^AUPNVSIT(V,0),U,9)         ;Must have dependent entries
+ .Q:$P(^AUPNVSIT(V,0),U,11)         ;Must not be deleted
+ .Q:'$D(^AUPNVPRV("AD",V))          ;MUST BE A COMPLETE VISIT (has provider)
+ .Q:"SAIO"'[$P(^AUPNVSIT(V,0),U,7)  ;must be ambulatory, hosp, day surgery or obervation
+ .Q:$P(^AUPNVSIT(V,0),U,6)=""       ;must have an encounter location
+ .S UP=1                            ;has at least one visit so in user pop
+ Q UP
  ;----------
 ACTCLIN(BIDFN,BIEDATE) ;EP - Return 1 if Patient is Active Clinical User as of BIEDATE.
  ;---> Code from Lori Butcher, CMI, Feb 2010.
@@ -47,6 +71,10 @@ ACTCLIN(BIDFN,BIEDATE) ;EP - Return 1 if Patient is Active Clinical User as of B
  ;     1 - BIDFN   (req) Patient DFN.
  ;     2 - BIEDATE (req) Date as of which Patient is an Active Clinical User.
  ;                       Active Clinical = 2 or more qualifying visits in last 3 years.
+ ;
+ ;
+ ; VEN/SMH - For VISTA
+ I '$$RPMS^BIUTL9() Q $$ACTCLINV(BIDFN,BIEDATE)
  ;
  I '$D(^AUPNPAT(BIDFN,0)) Q 0      ;invalid patient
  I '$D(^AUPNVSIT("AC",BIDFN)) Q 0  ;patient has no visits
@@ -82,6 +110,27 @@ ACTCLIN(BIDFN,BIEDATE) ;EP - Return 1 if Patient is Active Clinical User as of B
  Q AC
  ;
  ;
+ACTCLINV(BIDFN,BIEDATE) ;EP - Return 1 if Patient is Active Clinical User as of BIEDATE in VISTA
+ ; Called from ACTCLIN above. v.i. for parameters
+ I '$D(^AUPNPAT(BIDFN,0)) Q 0      ;invalid patient
+ I '$D(^AUPNVSIT("C",BIDFN)) Q 0  ;patient has no visits
+ ;
+ NEW BIBDATE,AC,COUNT
+ S AC=0,COUNT=0
+ S BIBDATE=$$FMADD^XLFDT(BIEDATE,-1096)  ;get beginning date for search, 3 yrs ago (1096 days)
+ N INVDATE S INVDATE=9999999-BIBDATE
+ D FULL^VALM1 ZWRITE ^AUPNVSIT("AA",BIDFN,*) N DIR S DIR(0)="E" D ^DIR
+ N WALKDT F WALKDT=INVDATE:0 S WALKDT=$O(^AUPNVSIT("AA",BIDFN,WALKDT),-1) Q:'WALKDT  D  Q:AC
+ .N V S V=$O(^AUPNVSIT("AA",BIDFN,WALKDT,0))
+ .Q:'$D(^AUPNVSIT(V,0))             ;Well formed node
+ .Q:'$P(^AUPNVSIT(V,0),U,9)         ;Must have dependent entries
+ .Q:$P(^AUPNVSIT(V,0),U,11)         ;Must not be deleted
+ .Q:'$D(^AUPNVPRV("AD",V))          ;MUST BE A COMPLETE VISIT (has provider)
+ .Q:"SAIO"'[$P(^AUPNVSIT(V,0),U,7)  ;must be ambulatory, hosp, day surgery or obervation
+ .Q:$P(^AUPNVSIT(V,0),U,6)=""       ;must have an encounter location
+ .S COUNT=COUNT+1                   ; Count this one
+ .I COUNT=2 S AC=1                  ; Have 2? Then we are Active Clinical.
+ QUIT AC
  ;----------
 GPRAIEN() ;EP
  ;---> Return GPRA Control File IEN
@@ -317,6 +366,15 @@ CCTX(X) ;EP
  Q $P(^AUTTCOM(X,0),U)
  ;
  ;
+VISTACC(BICC) ; $$ EP Get the VISTA Communities for printing
+ ; .BICC (opt) Communities as BICC("ALL") or BICC("98122"),BICC("98144") etc
+ ;
+ I $D(BICC("ALL"))!('$D(BICC)) QUIT ""
+ N % S %=""
+ N I S I="" F  S I=$O(BICC(I)) Q:I=""  S %=%_I_"; "  Q:$L(%)>70  ; collect postal codes
+ S $E(%,$L(%)-1,$L(%))="" ; remove last ; space
+ S %=" Communities: "_%
+ Q %
  ;----------
 BENTX(X) ;EP
  ;---> Return text of Beneficiary Type.
