@@ -19,8 +19,10 @@ GETIMMS(BIBEGDT,BIENDDT,BICC,BIHCF,BICM,BIBEN,BIHIST,BIVT,BIU19) ;EP
  ;     8 - BIVT    (req) Visit Type array.
  ;     9 - BIU19   (req) Include Adults parameter (1=yes,0=no).
  ;
- ;---> Set begin and end dates for search through V Immunization File.
+ ; VISTA does not have an "ADT" index.
+ I '$$RPMS^BIUTL9() D GETIMMSV(BIBEGDT,BIENDDT,.BICC,.BIHCF,.BICM,.BIBEN,BIHIST,.BIVT,BIU19) QUIT
  ;
+ ;---> Set begin and end dates for search through V Immunization File.
  Q:'$G(BIBEGDT)  Q:'$G(BIENDDT)
  S ^TMP("BIDUL",$J,"TOTAL")=0
  N N S N=BIBEGDT-.9999
@@ -32,6 +34,18 @@ GETIMMS(BIBEGDT,BIENDDT,BICC,BIHCF,BICM,BIBEN,BIHIST,BIVT,BIU19) ;EP
  ...D CHKSET(N,M,P,.BICC,.BIHCF,.BICM,.BIBEN,BIHIST,.BIVT,BIU19)
  Q
  ;
+GETIMMSV(BIBEGDT,BIENDDT,BICC,BIHCF,BICM,BIBEN,BIHIST,BIVT,BIU19) ; [Internal]
+ ;---> Get Immunizations from V Files for VISTA
+ ;---> Parameters: as above
+ ;---> Set begin and end dates for search through V Immunization File.
+ Q:'$G(BIBEGDT)  Q:'$G(BIENDDT)
+ S ^TMP("BIDUL",$J,"TOTAL")=0
+ N WALKDT S WALKDT=BIBEGDT-.9999
+ F  S WALKDT=$O(^AUPNVSIT("B",WALKDT)) Q:(WALKDT>(BIENDDT+.9999)!('WALKDT))  D  ; For each date
+ .N VIEN F VIEN=0:0 S VIEN=$O(^AUPNVSIT("B",WALKDT,VIEN)) Q:'VIEN  D            ; for each visit on that date
+ .. N VIMM F VIMM=0:0 S VIMM=$O(^AUPNVIMM("AD",VIEN,VIMM)) Q:'VIMM  D           ; for each immunization on that visit 
+ ... D CHKSET(WALKDT,VIEN,VIMM,.BICC,.BIHCF,.BICM,.BIBEN,BIHIST,.BIVT,BIU19)    ; CALL
+ QUIT
  ;
  ;----------
 CHKSET(BIDATE,BIVIEN,BIIIEN,BICC,BIHCF,BICM,BIBEN,BIHIST,BIVT,BIU19) ;EP
@@ -68,7 +82,12 @@ CHKSET(BIDATE,BIVIEN,BIIIEN,BICC,BIHCF,BICM,BIBEN,BIHIST,BIVT,BIU19) ;EP
  S BILOT=$P(BIVIMM,U,5)
  S BIELIG=$P(BIVIMM,U,14)
  ;
+ ;!@#$!@#$@!#$$#%%^#$ VISTA has the lot elsewhere...
+ I BILOT="",'$$RPMS^BIUTL9() D
+ . S BILOT=$P($G(^AUPNVIMM(BIIIEN,12)),U,7)
+ ;
  I BILOT S BILOT=$P($G(^AUTTIML(BILOT,0)),U)
+ ;
  S:BILOT="" BILOT="Not Entered"
  ;
  ;---> Quit if this Vaccine should not be included in this report.
