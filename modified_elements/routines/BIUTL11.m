@@ -352,7 +352,8 @@ LASTIMM(BIDFN,BICVXS,BIQDT,BIALL) ;PEP - Return latest date patient received CVX
  .;---> Quit if CVX Code does not exist in Vaccine Table (or=OTHER).
  .Q:('BIIEN!(BIIEN=137))
  .N N S N=0
- .F  S N=$O(^AUPNVIMM("AC",BIDFN,N)) Q:'N  D
+ .N IX S IX=$S($$RPMS^BIUTL9():"AC",1:"C") ; Patient Index in Visit file different in VISTA
+ .F  S N=$O(^AUPNVIMM(IX,BIDFN,N)) Q:'N  D
  ..N X,Y S X=$G(^AUPNVIMM(N,0))
  ..;---> Quit if this visit doesn't match the desired CVX Code.
  ..Q:(+X'=BIIEN)
@@ -439,7 +440,8 @@ GOTDOSE(BIDFN,BIVIEN,BIRDT) ;EP
  S BIEDT=+$P($G(BIRDT),":",2) I BIEDT=0 S BIEDT=9999999
  ;
  N N,Z S N=0,Z=0
- F  S N=$O(^AUPNVIMM("AC",BIDFN,N)) Q:'N  Q:Z  D
+ N IX S IX=$S($$RPMS^BIUTL9():"AC",1:"C") ; Patient Index in Visit file different in VISTA
+ F  S N=$O(^AUPNVIMM(IX,BIDFN,N)) Q:'N  Q:Z  D
  .N X,Y S X=$G(^AUPNVIMM(N,0))
  .;---> Quit if this visit doesn't match the desired vaccine.
  .Q:(+X'=BIVIEN)
