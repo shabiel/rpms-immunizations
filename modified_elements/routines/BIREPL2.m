@@ -57,16 +57,21 @@ HEAD(BIQDT,BICC,BIHCF,BIBEN,BICPTI,BIUP) ;EP
  D
  .;---> If specific Communities were selected (not ALL), then print
  .;---> the Communities in a subheader at the top of the report.
- .D SUBH^BIOUTPT5("BICC","Community",,"^AUTTCOM(",.BILINE,.BIERR,,13)
- .I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
+ .I $$RPMS^BIUTL9() D  Q:$G(BIERR)
+ ..D SUBH^BIOUTPT5("BICC","Community",,"^AUTTCOM(",.BILINE,.BIERR,,11)
+ ..I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
+ .E  D  ; VISTA
+ ..N % S %=$$VISTACC^BIUTL6(.BICC)
+ ..D:%]"" WH^BIW(.BILINE,%)
  .;
  .;---> If specific Health Care Facilities, print subheader.
  .D SUBH^BIOUTPT5("BIHCF","Facility",,"^DIC(4,",.BILINE,.BIERR,,13)
  .I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
  .;
  .;---> If specific Beneficiary Types, print Beneficiary Type subheader.
- .D SUBH^BIOUTPT5("BIBEN","Beneficiary Type",,"^AUTTBEN(",.BILINE,.BIERR,,13)
- .I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
+ .I $$RPMS^BIUTL9() D  ; rpms only
+ ..D SUBH^BIOUTPT5("BIBEN","Beneficiary Type",,"^AUTTBEN(",.BILINE,.BIERR,,13)
+ ..I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
  .;
  .S X=$$SP^BIUTL5(59)_"Number   Percent"
  .D WH^BIW(.BILINE,X)
