@@ -62,8 +62,12 @@ HEAD(BIBEGDT,BIENDDT,BICC,BIHCF,BICM,BIBEN,BIHIST,BIVT,BIU19) ;EP
  D
  .;---> If specific Communities were selected (not ALL), then print
  .;---> the Communities in a subheader at the top of the report.
- .D SUBH^BIOUTPT5("BICC","Community",,"^AUTTCOM(",.BILINE,.BIERR,,12)
- .I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
+ .I $$RPMS^BIUTL9() D  Q:$G(BIERR)
+ ..D SUBH^BIOUTPT5("BICC","Community",,"^AUTTCOM(",.BILINE,.BIERR,,11)
+ ..I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
+ .E  D  ; VISTA
+ ..N % S %=$$VISTACC^BIUTL6(.BICC)
+ ..D:%]"" WH^BIW(.BILINE,%)
  .;
  .;---> If specific Health Care Facilities, print subheader.
  .D SUBH^BIOUTPT5("BIHCF","Facility",,"^DIC(4,",.BILINE,.BIERR,,12)
@@ -74,8 +78,9 @@ HEAD(BIBEGDT,BIENDDT,BICC,BIHCF,BICM,BIBEN,BIHIST,BIVT,BIU19) ;EP
  .I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
  .;
  .;---> If specific Beneficiary Types, print Beneficiary Type subheader.
- .D SUBH^BIOUTPT5("BIBEN","Beneficiary Type",,"^AUTTBEN(",.BILINE,.BIERR,,12)
- .I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
+ .I $$RPMS^BIUTL9() D  ; rpms only
+ ..D SUBH^BIOUTPT5("BIBEN","Beneficiary Type",,"^AUTTBEN(",.BILINE,.BIERR,,13)
+ ..I $G(BIERR) D ERRCD^BIUTL2(BIERR,.X) D WH^BIW(.BILINE,X) Q
  .;
  .;---> If specific Visit Types, print Visit  Type subheader.
  .D SUBH^BIOUTPT5("BIVT","Visit Type",,"9000010-.03",.BILINE,.BIERR,,12)
