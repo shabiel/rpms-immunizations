@@ -282,14 +282,14 @@ USERPP1 ;
  D HELP1
  D ^DIR K DIR
  ;
- D:((Y="a")&('BIGPRA))
+ D:((Y="a")&('BIGPRA)&$$RPMS^BIUTL9())
  .W !!?5,"You cannont select for Active Users because the GPRA Software is"
  .W !?5,"not loaded or set up correctly."
  .W !?5,"Contact your site manager or RPMS support for further information."
  .D DIRZ^BIUTL3(.BIPOP)
  ;
  I BIPOP D @("RESET^"_BIRTN) Q
- G:((Y="a")&('BIGPRA)) USERPP1
+ G:((Y="a")&('BIGPRA)&$$RPMS^BIUTL9()) USERPP1
  ;
  S BIUP=Y
  D @("RESET^"_BIRTN)
