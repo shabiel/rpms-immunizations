@@ -253,7 +253,9 @@ CURCOM(BIDFN,TEXT) ;EP
  ;
  Q:'$G(BIDFN) "No Patient"
  ;
- I '$$RPMS^BIUTL9() QUIT $$GET1^DIQ(2,BIDFN,"ZIP CODE")  ; for VISTA
+ I '$$RPMS^BIUTL9() N RET D  QUIT RET  ; for VISTA
+ . S RET=$$GET1^DIQ(2,BIDFN,"ZIP CODE")
+ . I RET="" S RET="None"
  ; 
  Q:'$D(^AUPNPAT(BIDFN,11)) "Unknown1"
  ;
