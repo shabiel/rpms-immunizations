@@ -52,7 +52,6 @@ USERPOPV(BIDFN,BIEDATE) ; Internal - Return 1 if Patient is in User Population a
  S UP=0
  S BIBDATE=$$FMADD^XLFDT(BIEDATE,-1096)  ;get beginning date for search, 3 yrs ago (1096 days)
  N INVDATE S INVDATE=9999999-BIBDATE
- D FULL^VALM1 ZWRITE ^AUPNVSIT("AA",BIDFN,*) N DIR S DIR(0)="E" D ^DIR
  N WALKDT F WALKDT=INVDATE:0 S WALKDT=$O(^AUPNVSIT("AA",BIDFN,WALKDT),-1) Q:'WALKDT  D  Q:UP
  .N V S V=$O(^AUPNVSIT("AA",BIDFN,WALKDT,0))
  .Q:'$D(^AUPNVSIT(V,0))             ;Well formed node
@@ -119,7 +118,6 @@ ACTCLINV(BIDFN,BIEDATE) ;EP - Return 1 if Patient is Active Clinical User as of 
  S AC=0,COUNT=0
  S BIBDATE=$$FMADD^XLFDT(BIEDATE,-1096)  ;get beginning date for search, 3 yrs ago (1096 days)
  N INVDATE S INVDATE=9999999-BIBDATE
- D FULL^VALM1 ZWRITE ^AUPNVSIT("AA",BIDFN,*) N DIR S DIR(0)="E" D ^DIR
  N WALKDT F WALKDT=INVDATE:0 S WALKDT=$O(^AUPNVSIT("AA",BIDFN,WALKDT),-1) Q:'WALKDT  D  Q:AC
  .N V S V=$O(^AUPNVSIT("AA",BIDFN,WALKDT,0))
  .Q:'$D(^AUPNVSIT(V,0))             ;Well formed node
