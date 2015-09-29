@@ -52,3 +52,9 @@ In VISTA, Admin Date should be Admin Date/Time.
 
 Combinations of Visits don't cause correct events. Add today's active + a hisroical
 event causes the visit to become the one entered first.
+
+LOT Number addition causes crashes in new style index.
+Lots get subtracted twice. And it goes beyond 0 to negative.
+
+VIS entry needs to be filtered by immunizations. I didn't know that I could do
+that.
