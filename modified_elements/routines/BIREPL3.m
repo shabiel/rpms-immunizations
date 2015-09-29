@@ -51,7 +51,7 @@ GETSTATS(BIQDT,BICC,BIHCF,BIBEN,BICPTI,BIUP,BITOTS) ;EP
  ;---> Loop through Patient global looking for visits and immunizations.
  ;---> DOB must be at least 19 years before Quarter Ending Date.
  S BIADOB=0,BIADOBE=BIQDT-190000
- F  S BIADOB=$O(^DPT("ADOB",BIADOB)) Q:(BIADOB>BIADOBE)  D
+ F  S BIADOB=$O(^DPT("ADOB",BIADOB)) Q:(BIADOB>BIADOBE)  Q:BIADOB=""  D
  .N BIDFN S BIDFN=0
  .F  S BIDFN=$O(^DPT("ADOB",BIADOB,BIDFN)) Q:'BIDFN  D
  ..;
