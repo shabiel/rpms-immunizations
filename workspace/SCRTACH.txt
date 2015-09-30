@@ -61,4 +61,40 @@ L($P(BI0,U,5),0)),U)                    SYNONYM: LOT
              X(2):  MANUFACTURER  (9999999.41,.02)  (forwards)
              X(3):  VACCINE  (9999999.41,.04)  (forwards)
  
-  
+ 
+        PAT    Patient Menu ... [BI MENU-PATIENT]
+           SGL    Single Patient Record [BI PATIENT VIEW/EDIT]
+           LET    Print Individual Patient Letter [BI PATIENT LETTER INDIVIDUAL]
+           LLS    Patient Lists and Letters [BI PATIENT LISTS & LETTERS]
+
+
+        REP    Reports Menu ... [BI MENU-REPORTS]
+           ADO    Adolescent Report [BI REPORT ADOLESCENT IMMS]
+           ADL    Adult Report [BI REPORT ADULT IMMS]
+           ELI    Eligibility Report [BI REPORT ELIGIBILITY]
+           FLU    Influenza Report [BI REPORT FLU]
+           H1     H1N1 Accountability Report [BI REPORT H1N1 ACCOUNTABILITY]
+           PCV    PCV Report [BI REPORT PCV]
+           QTR    3-27 Month Report [BI REPORT QUARTERLY IMM]
+           TWO    Two-Yr-Old Rates Report [BI REPORT TWO-YR RATES]
+           VAC    Vaccine Accountability Report [BI REPORT VAC ACCOUNTABILITY]
+           
+
+        MGR    Manager Menu ... [BI MENU-MANAGER]
+           ERR    Edit Patient Errors [BI PATIENT ERRORS]
+           CMG    Add/Edit Case Manager [BI CASE MANAGER ADD/EDIT]
+           CMT    Transfer a Case Manager's Patients [BI CASE MANAGER TRANSFER]
+           SCN    Scan For Patients [BI PATIENTS SCAN]
+                  ------------------------------ [BI LINE FOR MENUS]
+           ESP    Site Parameters Edit [BI SITE PARAMETERS EDIT]
+           LET    Form Letters Add/Edit [BI LETTER EDIT]
+           LOT    Lot Number Add/Edit [BI LOT NUMBER ADD/EDIT]
+           VAC    Vaccine Table Edit [BI VACCINE TABLE EDIT]
+           ELI    Eligibility Table Edit [BI ELIGIBILITY TABLE EDIT]
+           RES    Restandardize Vaccine Table [BI VACCINE TABLE RESTAND]
+           EXP    Export Immunizations [BI EXPORT IMMUNIZATIONS]
+           KEY    Allocate/Deallocate Imm Menu Keys [BI KEYS ALLOCATE]
+           NDC    NDC Code Add/Edit [BI NDC ADD/EDIT]
+           XVT    Export Vaccine Table to Excel File [BI EXPORT VACCINE TABLE]
+
+   

@@ -16,9 +16,6 @@ rather not spend any more time doing them.
 ---
 Rest of MGR Menu:
 
-Next: Eligibility Table edit --> skip for now.
-Export Imm --> Later. Can't do or test now.
-
    ERR    Edit Patient Errors  <-- Don't know how this works.
    CMG    Add/Edit Case Manager <-- Done
    CMT    Transfer a Case Manager's Patients <-- Maybe it works? Don't know.
