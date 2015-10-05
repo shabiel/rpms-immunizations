@@ -1,15 +1,15 @@
-KIDS Distribution saved on Sep 15, 2015@11:13:21
-LAKJSF
+KIDS Distribution saved on Oct 05, 2015@11:24:03
+version with routines
 **KIDS**:BIV 2.9^
 
 **INSTALL NAME**
 BIV 2.9
 "BLD",4571,0)
-BIV 2.9^IMMUNIZATIONS VISTA PORT^0^3150915^y
+BIV 2.9^IMMUNIZATIONS VISTA PORT^0^3151005^y
 "BLD",4571,4,0)
 ^9.64PA^^
 "BLD",4571,6.3)
-1
+2
 "BLD",4571,"KRN",0)
 ^9.67PA^9002226^21
 "BLD",4571,"KRN",.4,0)
@@ -32,6 +32,20 @@ BIV 2.9^IMMUNIZATIONS VISTA PORT^0^3150915^y
 9.2
 "BLD",4571,"KRN",9.8,0)
 9.8
+"BLD",4571,"KRN",9.8,"NM",0)
+^9.68A^3^3
+"BLD",4571,"KRN",9.8,"NM",1,0)
+BISELEC1^^0^B74913736
+"BLD",4571,"KRN",9.8,"NM",2,0)
+BISELEC2^^0^B18939256
+"BLD",4571,"KRN",9.8,"NM",3,0)
+BISELECT^^0^B36757927
+"BLD",4571,"KRN",9.8,"NM","B","BISELEC1",1)
+
+"BLD",4571,"KRN",9.8,"NM","B","BISELEC2",2)
+
+"BLD",4571,"KRN",9.8,"NM","B","BISELECT",3)
+
 "BLD",4571,"KRN",19,0)
 19
 "BLD",4571,"KRN",19.1,0)
@@ -255,7 +269,7 @@ IMMUNIZATIONS VISTA PORT^BIV^VISTA Port of RPMS Immunizations
 "PKG",426,22,0)
 ^9.49I^1^1
 "PKG",426,22,1,0)
-2.9^3150915
+2.9^3151005
 "PKG",426,"VERSION")
 2.9
 "QUES","XPF1",0)
@@ -328,6 +342,1498 @@ Want to MOVE routines to other CPUs
 NO
 "QUES","XPZ2","M")
 D XPZ2^XPDIQ
+"RTN")
+3
+"RTN","BISELEC1")
+0^1^B74913736
+"RTN","BISELEC1",1,0)
+BISELEC1 ;IHS/CMI/MWR - GENERIC SELETION UTILITY; MAY 10, 2010
+"RTN","BISELEC1",2,0)
+ ;;8.5;IMMUNIZATION;;SEP 01,2011;Build 2
+"RTN","BISELEC1",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISELEC1",4,0)
+ ;;  LISTMANAGER DRIVER ROUTINE FOR GENERIC SELECTION UTILITY.
+"RTN","BISELEC1",5,0)
+ ;
+"RTN","BISELEC1",6,0)
+ ;
+"RTN","BISELEC1",7,0)
+ ;----------
+"RTN","BISELEC1",8,0)
+START(BIARR1,BIGBL,BIITEMS,BITITEMS,BIPIECE,BISCRN,BIID,BICOL,BIFLD,BIPOP) ;EP
+"RTN","BISELEC1",9,0)
+ ;---> Call Listmanager to select a list of Items.
+"RTN","BISELEC1",10,0)
+ ;---> Parameters:
+"RTN","BISELEC1",11,0)
+ ;     1 - BIARR1  (req) Selection Array (local).
+"RTN","BISELEC1",12,0)
+ ;     2 - BIGBL   (req) Lookup global.
+"RTN","BISELEC1",13,0)
+ ;     3 - BIITEMS (req) Catagoric name of Items being selected.
+"RTN","BISELEC1",14,0)
+ ;     4 - BITITEMS (req) Title name of selected Items.
+"RTN","BISELEC1",15,0)
+ ;     5 - BIPIECE (req) Piece of zero node to display as ItemName.
+"RTN","BISELEC1",16,0)
+ ;     6 - BISCRN  (opt) Screen used in selection lookup.
+"RTN","BISELEC1",17,0)
+ ;     7 - BIID    (opt) Identifier and code.
+"RTN","BISELEC1",18,0)
+ ;     8 - BICOL   (opt) Column header text.
+"RTN","BISELEC1",19,0)
+ ;     9 - BIFLD   (opt) Field# in BIFILE with Set of Codes to select.
+"RTN","BISELEC1",20,0)
+ ;    10 - BIPOP   (ret) BIPOP, =1 if quit or error.
+"RTN","BISELEC1",21,0)
+ ;
+"RTN","BISELEC1",22,0)
+ ;
+"RTN","BISELEC1",23,0)
+ ;---> New VALMQUIT so that quit from "ENTIRE1^BISELEC2" will work but
+"RTN","BISELEC1",24,0)
+ ;---> will not cause the calling/parent instance of Listman to quit also.
+"RTN","BISELEC1",25,0)
+ D SETVARS^BIUTL5 N VALMQUIT
+"RTN","BISELEC1",26,0)
+ S BIPOP=0
+"RTN","BISELEC1",27,0)
+ D EN^VALM("BI GENERIC SELECTION")
+"RTN","BISELEC1",28,0)
+ D FULL^VALM1
+"RTN","BISELEC1",29,0)
+ D EXIT
+"RTN","BISELEC1",30,0)
+ Q
+"RTN","BISELEC1",31,0)
+ ;
+"RTN","BISELEC1",32,0)
+ ;
+"RTN","BISELEC1",33,0)
+ ;----------
+"RTN","BISELEC1",34,0)
+HDR ;EP
+"RTN","BISELEC1",35,0)
+ ;---> Header code.
+"RTN","BISELEC1",36,0)
+ N X,Y
+"RTN","BISELEC1",37,0)
+ S VALMHDR(1)=""
+"RTN","BISELEC1",38,0)
+ S X="   Select one or more "_BITITEMS_":"
+"RTN","BISELEC1",39,0)
+ S VALMHDR(2)=X
+"RTN","BISELEC1",40,0)
+ Q
+"RTN","BISELEC1",41,0)
+ ;
+"RTN","BISELEC1",42,0)
+ ;
+"RTN","BISELEC1",43,0)
+ ;----------
+"RTN","BISELEC1",44,0)
+INIT ;EP
+"RTN","BISELEC1",45,0)
+ ;---> Initialize variables and list array.
+"RTN","BISELEC1",46,0)
+ K ^TMP("BILMGS",$J),^TMP("BILMGS1",$J),^TMP("BILMGS2",$J)
+"RTN","BISELEC1",47,0)
+ ;
+"RTN","BISELEC1",48,0)
+ ;---> Check for necessary variables present.
+"RTN","BISELEC1",49,0)
+ I $$CHECK^BISELECT() S BIPOP=1,VALMQUIT="" Q
+"RTN","BISELEC1",50,0)
+ ;
+"RTN","BISELEC1",51,0)
+ ;---> *** SET OF CODES
+"RTN","BISELEC1",52,0)
+ ;---> If this is a Set of Codes, go to INIT1, then QUIT.
+"RTN","BISELEC1",53,0)
+ I +$G(BIFLD) D INIT1 Q
+"RTN","BISELEC1",54,0)
+ ;
+"RTN","BISELEC1",55,0)
+ ;---> Continue with selection from a file.
+"RTN","BISELEC1",56,0)
+ I '$O(@(BIARR1_"(0)")) S VALMCNT=0 Q
+"RTN","BISELEC1",57,0)
+ ;
+"RTN","BISELEC1",58,0)
+ ;---> Set Lower Frame Bar and Screen Title.
+"RTN","BISELEC1",59,0)
+ S VALMSG="Type ?? for more actions."
+"RTN","BISELEC1",60,0)
+ ;S VALM("TITLE")="Select "_BIITEMS
+"RTN","BISELEC1",61,0)
+ ;
+"RTN","BISELEC1",62,0)
+ ;---> Set Column Header line.
+"RTN","BISELEC1",63,0)
+ D:$G(BICOL)]""
+"RTN","BISELEC1",64,0)
+ .S VALMCAP=$$PAD^BIUTL5(BICOL,80)
+"RTN","BISELEC1",65,0)
+ ;
+"RTN","BISELEC1",66,0)
+ ;---> Convert IEN-sorted array to ItemName-sorted array.
+"RTN","BISELEC1",67,0)
+ ;---> This will present Items in a numbered list, 1,2,3...,
+"RTN","BISELEC1",68,0)
+ ;---> with the Item names in alphabetical order, so the user
+"RTN","BISELEC1",69,0)
+ ;---> can search the list of Items in order.
+"RTN","BISELEC1",70,0)
+ ;
+"RTN","BISELEC1",71,0)
+ ;---> First, build array sorted by ItemName.
+"RTN","BISELEC1",72,0)
+ N BIIEN S BIIEN=0
+"RTN","BISELEC1",73,0)
+ F  S BIIEN=$O(@(BIARR1_"(BIIEN)")) Q:'BIIEN  D
+"RTN","BISELEC1",74,0)
+ .;
+"RTN","BISELEC1",75,0)
+ .;---> If IEN passed does not really exist in the File,
+"RTN","BISELEC1",76,0)
+ .;---> remove it from the Selection Array.
+"RTN","BISELEC1",77,0)
+ .I '$D(@(BIGBL_"BIIEN,0)")) K @(BIARR1_"(BIIEN)") Q
+"RTN","BISELEC1",78,0)
+ .;
+"RTN","BISELEC1",79,0)
+ .;---> If (previously stored) IEN does not pass the screen,
+"RTN","BISELEC1",80,0)
+ .;---> then remove it from the Selection Array.
+"RTN","BISELEC1",81,0)
+ .I BISCRN]"" N Y S Y=BIIEN X BISCRN I '$T K @(BIARR1_"(BIIEN)") Q
+"RTN","BISELEC1",82,0)
+ .;
+"RTN","BISELEC1",83,0)
+ .N BI0,BINAME,BIIDTX
+"RTN","BISELEC1",84,0)
+ .S BI0=@(BIGBL_"BIIEN,0)")
+"RTN","BISELEC1",85,0)
+ .S BINAME=$P(BI0,U,BIPIECE)
+"RTN","BISELEC1",86,0)
+ .Q:BINAME=""
+"RTN","BISELEC1",87,0)
+ .;
+"RTN","BISELEC1",88,0)
+ .;---> Set Identifer if passed.
+"RTN","BISELEC1",89,0)
+ .D:BIID]""
+"RTN","BISELEC1",90,0)
+ ..;---> BIID Identifier: Three pieces delimited by ";".
+"RTN","BISELEC1",91,0)
+ ..;                      1st piece = the "^" piece of 0 node to get X.
+"RTN","BISELEC1",92,0)
+ ..;                      2nd piece = Code to set X=text of identifier.
+"RTN","BISELEC1",93,0)
+ ..;                      3rd piece = Tab for identfier in Listman.
+"RTN","BISELEC1",94,0)
+ ..;
+"RTN","BISELEC1",95,0)
+ ..;---> Get piece (BIPC) of zero node that holds Identifier data.
+"RTN","BISELEC1",96,0)
+ ..N BIPC,X S BIPC=$P(BIID,";")
+"RTN","BISELEC1",97,0)
+ ..Q:'BIPC
+"RTN","BISELEC1",98,0)
+ ..;---> Get Identifier data.
+"RTN","BISELEC1",99,0)
+ ..S X=$P(BI0,U,BIPC)
+"RTN","BISELEC1",100,0)
+ ..Q:X=""
+"RTN","BISELEC1",101,0)
+ ..;---> Xecute code to process X (return ID text in X).
+"RTN","BISELEC1",102,0)
+ ..;---> If there is no code, then value of X is displayed unchanged.
+"RTN","BISELEC1",103,0)
+ ..X $P(BIID,";",2)
+"RTN","BISELEC1",104,0)
+ ..S BIIDTX=X
+"RTN","BISELEC1",105,0)
+ ..Q:BIIDTX=""
+"RTN","BISELEC1",106,0)
+ ..;---> Tab out to specified column.
+"RTN","BISELEC1",107,0)
+ ..N BITAB S BITAB=$P(BIID,";",3)
+"RTN","BISELEC1",108,0)
+ ..N BIADD S BIADD=BITAB-($L(BINAME)+5)
+"RTN","BISELEC1",109,0)
+ ..;---> Minimum of 2 spaces between Name and Identifier.
+"RTN","BISELEC1",110,0)
+ ..S:BIADD<1 BIADD=2
+"RTN","BISELEC1",111,0)
+ ..S BIIDTX=$$SP^BIUTL5(BIADD)_BIIDTX
+"RTN","BISELEC1",112,0)
+ .;
+"RTN","BISELEC1",113,0)
+ .;---> Each node=IEN of Item_^_ItemName.
+"RTN","BISELEC1",114,0)
+ .;---> The array will be sorted alphabetically by ItemName.
+"RTN","BISELEC1",115,0)
+ .;---> Append IEN to ItemName to include legitimate duplicate names.
+"RTN","BISELEC1",116,0)
+ .S ^TMP("BILMGS1",$J,BINAME_BIIEN)=BIIEN_U_BINAME_$G(BIIDTX)
+"RTN","BISELEC1",117,0)
+ ;
+"RTN","BISELEC1",118,0)
+ ;
+"RTN","BISELEC1",119,0)
+ ;---> Now, convert ItemName-sorted array to Item-numbered array.
+"RTN","BISELEC1",120,0)
+ N I,N S N=0
+"RTN","BISELEC1",121,0)
+ F I=1:1 S N=$O(^TMP("BILMGS1",$J,N)) Q:N=""  D
+"RTN","BISELEC1",122,0)
+ .S ^TMP("BILMGS2",$J,I)=^TMP("BILMGS1",$J,N)
+"RTN","BISELEC1",123,0)
+ ;
+"RTN","BISELEC1",124,0)
+ ;---> Insert blank line at the top of the List Region.
+"RTN","BISELEC1",125,0)
+ S ^TMP("BILMGS",$J,1,0)=""
+"RTN","BISELEC1",126,0)
+ S ^TMP("BILMGS",$J,"IDX",1,1)=""
+"RTN","BISELEC1",127,0)
+ ;
+"RTN","BISELEC1",128,0)
+ ;---> Set each Item (or previously) selected into the array.
+"RTN","BISELEC1",129,0)
+ N N S N=0
+"RTN","BISELEC1",130,0)
+ F  S N=$O(^TMP("BILMGS2",$J,N)) Q:'N  D
+"RTN","BISELEC1",131,0)
+ .;---> Build display line for this Item.
+"RTN","BISELEC1",132,0)
+ .N X
+"RTN","BISELEC1",133,0)
+ .S X="  "_$J(N,3)_"  "_$P(^TMP("BILMGS2",$J,N),U,2)
+"RTN","BISELEC1",134,0)
+ .;
+"RTN","BISELEC1",135,0)
+ .;---> Set formatted Item line and index in ^TMP.
+"RTN","BISELEC1",136,0)
+ .S ^TMP("BILMGS",$J,N+1,0)=X
+"RTN","BISELEC1",137,0)
+ .S ^TMP("BILMGS",$J,"IDX",N+1,N)=""
+"RTN","BISELEC1",138,0)
+ ;
+"RTN","BISELEC1",139,0)
+ ;---> Finish up Listmanager List Count.
+"RTN","BISELEC1",140,0)
+ S VALMCNT=I
+"RTN","BISELEC1",141,0)
+ I VALMCNT>13 D
+"RTN","BISELEC1",142,0)
+ .S VALMSG="Scroll down to view more.  Type ?? for more actions."
+"RTN","BISELEC1",143,0)
+ Q
+"RTN","BISELEC1",144,0)
+ ;
+"RTN","BISELEC1",145,0)
+ ;
+"RTN","BISELEC1",146,0)
+ ;----------
+"RTN","BISELEC1",147,0)
+INIT1 ;EP
+"RTN","BISELEC1",148,0)
+ ;
+"RTN","BISELEC1",149,0)
+ I $O(@(BIARR1_"(0)"))="" S VALMCNT=0 Q
+"RTN","BISELEC1",150,0)
+ ;
+"RTN","BISELEC1",151,0)
+ ;---> Set Lower Frame Bar and Screen Title.
+"RTN","BISELEC1",152,0)
+ S VALMSG="Type ?? for more actions."
+"RTN","BISELEC1",153,0)
+ ;S VALM("TITLE")="Select "_BIITEMS
+"RTN","BISELEC1",154,0)
+ ;
+"RTN","BISELEC1",155,0)
+ ;---> Set Column Header line.
+"RTN","BISELEC1",156,0)
+ D:$G(BICOL)]""
+"RTN","BISELEC1",157,0)
+ .S VALMCAP=$$PAD^BIUTL5(BICOL,80)
+"RTN","BISELEC1",158,0)
+ ;
+"RTN","BISELEC1",159,0)
+ ;---> Convert CODE-sorted array to CodeName-sorted array.
+"RTN","BISELEC1",160,0)
+ ;---> This will present Items in a numbered list, 1,2,3...,
+"RTN","BISELEC1",161,0)
+ ;---> with the Item names in alphabetical order, so the user
+"RTN","BISELEC1",162,0)
+ ;---> can search the list of Items in order.
+"RTN","BISELEC1",163,0)
+ ;
+"RTN","BISELEC1",164,0)
+ Q:'$D(^DD(BIFILE,BIFLD,0))
+"RTN","BISELEC1",165,0)
+ N BISET S BISET=$P(^DD(BIFILE,BIFLD,0),U,3)
+"RTN","BISELEC1",166,0)
+ ;
+"RTN","BISELEC1",167,0)
+ ;---> First, build array sorted by Code.
+"RTN","BISELEC1",168,0)
+ N BICODE S BICODE=0
+"RTN","BISELEC1",169,0)
+ F  S BICODE=$O(@(BIARR1_"(BICODE)")) Q:BICODE=""  D
+"RTN","BISELEC1",170,0)
+ .;
+"RTN","BISELEC1",171,0)
+ .;---> If the Code does not really exist in the Set of Codes,
+"RTN","BISELEC1",172,0)
+ .;---> remove it from the Selection Array.
+"RTN","BISELEC1",173,0)
+ .I BISET'[BICODE_":" K @(BIARR1_"(BICODE)") Q
+"RTN","BISELEC1",174,0)
+ .;
+"RTN","BISELEC1",175,0)
+ .N BICODNM
+"RTN","BISELEC1",176,0)
+ .S BICODNM=$P($P(BISET,BICODE_":",2),";")
+"RTN","BISELEC1",177,0)
+ .;
+"RTN","BISELEC1",178,0)
+ .;---> The array will be sorted alphabetically by CodeName.
+"RTN","BISELEC1",179,0)
+ .;---> Append Code to CodeName to include legitimate duplicate names.
+"RTN","BISELEC1",180,0)
+ .S ^TMP("BILMGS1",$J,BICODNM_BICODE)=BICODE_U_BICODNM
+"RTN","BISELEC1",181,0)
+ ;
+"RTN","BISELEC1",182,0)
+ ;---> Now, convert ItemName-sorted array to Item-numbered array.
+"RTN","BISELEC1",183,0)
+ N I,N S N=0
+"RTN","BISELEC1",184,0)
+ F I=1:1 S N=$O(^TMP("BILMGS1",$J,N)) Q:N=""  D
+"RTN","BISELEC1",185,0)
+ .S ^TMP("BILMGS2",$J,I)=^TMP("BILMGS1",$J,N)
+"RTN","BISELEC1",186,0)
+ ;
+"RTN","BISELEC1",187,0)
+ ;---> Insert blank line at the top of the List Region.
+"RTN","BISELEC1",188,0)
+ S ^TMP("BILMGS",$J,1,0)=""
+"RTN","BISELEC1",189,0)
+ S ^TMP("BILMGS",$J,"IDX",1,1)=""
+"RTN","BISELEC1",190,0)
+ ;
+"RTN","BISELEC1",191,0)
+ ;---> Set each Item (or previously) selected into the array.
+"RTN","BISELEC1",192,0)
+ N N S N=0
+"RTN","BISELEC1",193,0)
+ F  S N=$O(^TMP("BILMGS2",$J,N)) Q:'N  D
+"RTN","BISELEC1",194,0)
+ .;---> Build display line for this Item.
+"RTN","BISELEC1",195,0)
+ .N X,Y
+"RTN","BISELEC1",196,0)
+ .S Y=^TMP("BILMGS2",$J,N)
+"RTN","BISELEC1",197,0)
+ .S X="  "_$J(N,3)_"  "_$$PAD^BIUTL5($P(Y,U,2),32)_$P(Y,U)
+"RTN","BISELEC1",198,0)
+ .;
+"RTN","BISELEC1",199,0)
+ .;---> Set formatted Item line and index in ^TMP.  Also, save
+"RTN","BISELEC1",200,0)
+ .;---> "Left Column Number" and its corresponding Code, for deletions.
+"RTN","BISELEC1",201,0)
+ .S ^TMP("BILMGS",$J,N+1,0)=X
+"RTN","BISELEC1",202,0)
+ .S ^TMP("BILMGS",$J,"IDX",N+1,N)=""
+"RTN","BISELEC1",203,0)
+ ;
+"RTN","BISELEC1",204,0)
+ ;---> Finish up Listmanager List Count.
+"RTN","BISELEC1",205,0)
+ S VALMCNT=I
+"RTN","BISELEC1",206,0)
+ I VALMCNT>13 D
+"RTN","BISELEC1",207,0)
+ .S VALMSG="Scroll down to view more.  Type ?? for more actions."
+"RTN","BISELEC1",208,0)
+ Q
+"RTN","BISELEC1",209,0)
+ ;
+"RTN","BISELEC1",210,0)
+ ;
+"RTN","BISELEC1",211,0)
+ ;----------
+"RTN","BISELEC1",212,0)
+RESET ;EP
+"RTN","BISELEC1",213,0)
+ ;---> Update partition for return to Listmanager.
+"RTN","BISELEC1",214,0)
+ I $D(VALMQUIT) S VALMBCK="Q" Q
+"RTN","BISELEC1",215,0)
+ D TERM^VALM0 S VALMBCK="R"
+"RTN","BISELEC1",216,0)
+ D INIT,HDR
+"RTN","BISELEC1",217,0)
+ Q
+"RTN","BISELEC1",218,0)
+ ;
+"RTN","BISELEC1",219,0)
+ ;
+"RTN","BISELEC1",220,0)
+ ;----------
+"RTN","BISELEC1",221,0)
+HELP ;EP
+"RTN","BISELEC1",222,0)
+ ;----> Help text display when "?" is entered.
+"RTN","BISELEC1",223,0)
+ N BIXX S BIXX=$S($G(BIITEMS)="":"Items",1:BIITEMS)
+"RTN","BISELEC1",224,0)
+ D EN^XBNEW("HELP1^BISELEC1","VALM*;IO*;BIXX")
+"RTN","BISELEC1",225,0)
+ D RESET
+"RTN","BISELEC1",226,0)
+ Q
+"RTN","BISELEC1",227,0)
+ ;
+"RTN","BISELEC1",228,0)
+ ;
+"RTN","BISELEC1",229,0)
+ ;----------
+"RTN","BISELEC1",230,0)
+HELP1 ;EP
+"RTN","BISELEC1",231,0)
+ ;---> Display Help Text in Listmanager.
+"RTN","BISELEC1",232,0)
+ ;
+"RTN","BISELEC1",233,0)
+ ;---> Set Help Text into local array.
+"RTN","BISELEC1",234,0)
+ N BITEXT D TEXT1(.BITEXT)
+"RTN","BISELEC1",235,0)
+ ;---> Insert the passed Item Name into the Help Text array.
+"RTN","BISELEC1",236,0)
+ N N S N=0
+"RTN","BISELEC1",237,0)
+ F  S N=$O(BITEXT(N)) Q:'N  D
+"RTN","BISELEC1",238,0)
+ .Q:BITEXT(N)'[" BIXX"
+"RTN","BISELEC1",239,0)
+ .N X S X=$P(BITEXT(N),"BIXX")_BIXX_$P(BITEXT(N),"BIXX",2),BITEXT(N)=X
+"RTN","BISELEC1",240,0)
+ ;
+"RTN","BISELEC1",241,0)
+ D START^BIHELP("LIST SELECTION UTILITY - HELP",.BITEXT)
+"RTN","BISELEC1",242,0)
+ Q
+"RTN","BISELEC1",243,0)
+ ;
+"RTN","BISELEC1",244,0)
+ ;
+"RTN","BISELEC1",245,0)
+ ;----------
+"RTN","BISELEC1",246,0)
+TEXT1(BITEXT) ;EP
+"RTN","BISELEC1",247,0)
+ ;;This allows you to select and build a list of BIXX
+"RTN","BISELEC1",248,0)
+ ;;for your report.  The following four actions are available:
+"RTN","BISELEC1",249,0)
+ ;;
+"RTN","BISELEC1",250,0)
+ ;;ADD...: Use this to select BIXX from the file of
+"RTN","BISELEC1",251,0)
+ ;;        BIXX and add them to your list.
+"RTN","BISELEC1",252,0)
+ ;;
+"RTN","BISELEC1",253,0)
+ ;;DELETE: Use this to remove items from your list.
+"RTN","BISELEC1",254,0)
+ ;;
+"RTN","BISELEC1",255,0)
+ ;;ENTIRE: Use this to add ALL items from the file to your list.
+"RTN","BISELEC1",256,0)
+ ;;        This may be useful if you want to select MOST of the items
+"RTN","BISELEC1",257,0)
+ ;;        in the file by adding all and then deleting the few items
+"RTN","BISELEC1",258,0)
+ ;;        you do not want.  This will only work for up to 300 items.
+"RTN","BISELEC1",259,0)
+ ;;        If the file contains more than 300 items, it will simply add
+"RTN","BISELEC1",260,0)
+ ;;        ALL items and quit.
+"RTN","BISELEC1",261,0)
+ ;;
+"RTN","BISELEC1",262,0)
+ ;;CLEAR.: Use this to remove all items from your list (and start over).
+"RTN","BISELEC1",263,0)
+ ;;
+"RTN","BISELEC1",264,0)
+ ;;Your personal list of BIXX will be saved each time
+"RTN","BISELEC1",265,0)
+ ;;you build it.  Whenever you return to this list, the previous
+"RTN","BISELEC1",266,0)
+ ;;list of BIXX you built will be presented as a
+"RTN","BISELEC1",267,0)
+ ;;default list.
+"RTN","BISELEC1",268,0)
+ ;;
+"RTN","BISELEC1",269,0)
+ D LOADTX("TEXT1",,.BITEXT)
+"RTN","BISELEC1",270,0)
+ Q
+"RTN","BISELEC1",271,0)
+ ;
+"RTN","BISELEC1",272,0)
+ ;
+"RTN","BISELEC1",273,0)
+ ;----------
+"RTN","BISELEC1",274,0)
+EXIT ;EP
+"RTN","BISELEC1",275,0)
+ K ^TMP("BILMGS",$J),^TMP("BILMGS1",$J),^TMP("BILMGS2",$J),^TMP("BILMGS3",$J)
+"RTN","BISELEC1",276,0)
+ D CLEAR^VALM1
+"RTN","BISELEC1",277,0)
+ Q
+"RTN","BISELEC1",278,0)
+ ;
+"RTN","BISELEC1",279,0)
+ ;
+"RTN","BISELEC1",280,0)
+ ;----------
+"RTN","BISELEC1",281,0)
+LOADTX(BILINL,BITAB,BITEXT) ;EP
+"RTN","BISELEC1",282,0)
+ Q:$G(BILINL)=""
+"RTN","BISELEC1",283,0)
+ N I,T,X S T="" S:'$D(BITAB) BITAB=5 F I=1:1:BITAB S T=T_" "
+"RTN","BISELEC1",284,0)
+ F I=1:1 S X=$T(@BILINL+I) Q:X'[";;"  S BITEXT(I)=T_$P(X,";;",2)
+"RTN","BISELEC1",285,0)
+ Q
+"RTN","BISELEC2")
+0^2^B18939256
+"RTN","BISELEC2",1,0)
+BISELEC2 ;IHS/CMI/MWR - GENERIC SELECTION UTILITY; MAY 10, 2010
+"RTN","BISELEC2",2,0)
+ ;;8.5;IMMUNIZATION;;SEP 01,2011;Build 2
+"RTN","BISELEC2",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISELEC2",4,0)
+ ;;  ADD AND DELETE ITEMS IN THE SELECTION ARRAY.
+"RTN","BISELEC2",5,0)
+ ;
+"RTN","BISELEC2",6,0)
+ ;
+"RTN","BISELEC2",7,0)
+ ;----------
+"RTN","BISELEC2",8,0)
+ADDITEM ;EP
+"RTN","BISELEC2",9,0)
+ ;---> Add an Item to the Selection Array via List Manager.
+"RTN","BISELEC2",10,0)
+ ;---> Steps:
+"RTN","BISELEC2",11,0)
+ ;            1) This entry point is called by the Protocol:
+"RTN","BISELEC2",12,0)
+ ;               BI GEN SELECT ADD, an action on the List Manager
+"RTN","BISELEC2",13,0)
+ ;               menu protocol: BI MENU GEN SELECT.
+"RTN","BISELEC2",14,0)
+ ;
+"RTN","BISELEC2",15,0)
+ ;            2) This code calls ^DIC for the user to lookup and
+"RTN","BISELEC2",16,0)
+ ;               and select Items in the file/global @BIGBL.
+"RTN","BISELEC2",17,0)
+ ;
+"RTN","BISELEC2",18,0)
+ ;            3) The IEN of the selected Item is then stored as
+"RTN","BISELEC2",19,0)
+ ;               as a subscript in the Selection Array, @BIARR1.
+"RTN","BISELEC2",20,0)
+ ;
+"RTN","BISELEC2",21,0)
+ Q:$$CHECK^BISELECT()
+"RTN","BISELEC2",22,0)
+ ;
+"RTN","BISELEC2",23,0)
+ ;---> Call to select Item from File.
+"RTN","BISELEC2",24,0)
+ N BIART S BIART=$S("AEIOU"[$E(BIITEM):"an ",1:"a ")
+"RTN","BISELEC2",25,0)
+ D FULL^VALM1,TITLE^BIUTL5("Select "_BIART_BIITEM)
+"RTN","BISELEC2",26,0)
+ ;
+"RTN","BISELEC2",27,0)
+ ;---> Checks.
+"RTN","BISELEC2",28,0)
+ I '$G(BIFILE) D ERRCD^BIUTL2(607,,1) Q
+"RTN","BISELEC2",29,0)
+ I '$D(^DD(BIFILE)) D ERRCD^BIUTL2(608,,1) Q
+"RTN","BISELEC2",30,0)
+ I '$D(@(BIGBL_"0)")) D ERRCD^BIUTL2(601,,1) Q
+"RTN","BISELEC2",31,0)
+ ;
+"RTN","BISELEC2",32,0)
+ N Y
+"RTN","BISELEC2",33,0)
+ D
+"RTN","BISELEC2",34,0)
+ .;---> If this is a Set of Codes, make selection and quit.
+"RTN","BISELEC2",35,0)
+ .I $G(BIFLD) D  Q
+"RTN","BISELEC2",36,0)
+ ..N BISET S BISET=$P(^DD(BIFILE,BIFLD,0),U,3)
+"RTN","BISELEC2",37,0)
+ ..D DIR^BIFMAN("SOM"_U_BISET,.Y)  ;,"   Select "_BIITEM_": ")
+"RTN","BISELEC2",38,0)
+ ..;---> Set selected Item IEN into Selection Array.
+"RTN","BISELEC2",39,0)
+ ..S:((Y'="")&(Y'="^")) @(BIARR1_"(Y)")=""
+"RTN","BISELEC2",40,0)
+ .;
+"RTN","BISELEC2",41,0)
+ .;---> Select from a File.
+"RTN","BISELEC2",42,0)
+ .D DIC^BIFMAN(BIGBL,"QEMA",.Y,"   Select "_BIITEM_": ",,BISCRN)
+"RTN","BISELEC2",43,0)
+ .;---> Set selected Item IEN into Selection Array.
+"RTN","BISELEC2",44,0)
+ .S:+Y>0 @(BIARR1_"(+Y)")=""
+"RTN","BISELEC2",45,0)
+ ;
+"RTN","BISELEC2",46,0)
+ D RESET^BISELEC1
+"RTN","BISELEC2",47,0)
+ Q
+"RTN","BISELEC2",48,0)
+ ;
+"RTN","BISELEC2",49,0)
+ ;
+"RTN","BISELEC2",50,0)
+ ;----------
+"RTN","BISELEC2",51,0)
+ENTIRE ;EP
+"RTN","BISELEC2",52,0)
+ ;---> Add Entire File of Items or Set of Codes to the Selection Array.
+"RTN","BISELEC2",53,0)
+ ;---> Steps:
+"RTN","BISELEC2",54,0)
+ ;            1) This entry point is called by the Protocol:
+"RTN","BISELEC2",55,0)
+ ;               BI GEN SELECT ENTIRE, an action on the List Manager
+"RTN","BISELEC2",56,0)
+ ;               menu protocol: BI MENU GEN SELECT.
+"RTN","BISELEC2",57,0)
+ ;
+"RTN","BISELEC2",58,0)
+ ;            2) If BIFIELD (a Field#) exists, load the entire Set of Codes.
+"RTN","BISELEC2",59,0)
+ ;               If the selection is from a File, this code evaluates the size
+"RTN","BISELEC2",60,0)
+ ;               of the entire global and determines if it is >300 entries.
+"RTN","BISELEC2",61,0)
+ ;               If so, then it returns @BIARR1("ALL") and quits Listmanager.
+"RTN","BISELEC2",62,0)
+ ;
+"RTN","BISELEC2",63,0)
+ ;            3) If the entire global is <300 entries, this code
+"RTN","BISELEC2",64,0)
+ ;               loops through the file global, evaluating entries
+"RTN","BISELEC2",65,0)
+ ;               against the screen, if there is a screen.
+"RTN","BISELEC2",66,0)
+ ;
+"RTN","BISELEC2",67,0)
+ ;            4) The IEN of each Item is then stored as
+"RTN","BISELEC2",68,0)
+ ;               as a subscript in the Selection Array, @BIARR1.
+"RTN","BISELEC2",69,0)
+ ;
+"RTN","BISELEC2",70,0)
+ Q:$$CHECK^BISELECT()
+"RTN","BISELEC2",71,0)
+ K @(BIARR1)
+"RTN","BISELEC2",72,0)
+ S @(BIARR1_"(""ALL"")")=""
+"RTN","BISELEC2",73,0)
+ ;
+"RTN","BISELEC2",74,0)
+ D
+"RTN","BISELEC2",75,0)
+ .;---> If this is a Set of Codes, set all Codes in Selection Array and quit.
+"RTN","BISELEC2",76,0)
+ .I $G(BIFLD) D  Q
+"RTN","BISELEC2",77,0)
+ ..N BISET S BISET=$P(^DD(BIFILE,BIFLD,0),U,3)
+"RTN","BISELEC2",78,0)
+ ..N I,X
+"RTN","BISELEC2",79,0)
+ ..F I=1:1 S X=$P(BISET,";",I) Q:X=""  D
+"RTN","BISELEC2",80,0)
+ ...N Y S Y=$P(X,":") S:Y]"" @(BIARR1_"(Y)")=""
+"RTN","BISELEC2",81,0)
+ .;
+"RTN","BISELEC2",82,0)
+ .;---> This is a selection from a File.
+"RTN","BISELEC2",83,0)
+ .;---> If entire file is too large for local partition,
+"RTN","BISELEC2",84,0)
+ .;---> do ENTIRE1 and quit.
+"RTN","BISELEC2",85,0)
+ .I $P(@(BIGBL_"0)"),U,4)>300 D ENTIRE1 Q
+"RTN","BISELEC2",86,0)
+ .;
+"RTN","BISELEC2",87,0)
+ .;---> Entire file is small enough to store and display locally.
+"RTN","BISELEC2",88,0)
+ .;---> Load each entry into Selection Array for review.
+"RTN","BISELEC2",89,0)
+ .;---> Screen, if there is one, applies.
+"RTN","BISELEC2",90,0)
+ .;
+"RTN","BISELEC2",91,0)
+ .;
+"RTN","BISELEC2",92,0)
+ .N BIIEN,I S BIIEN=0
+"RTN","BISELEC2",93,0)
+ .F I=1:1 S BIIEN=$O(@(BIGBL_"BIIEN)")) Q:'BIIEN  Q:I>300  D
+"RTN","BISELEC2",94,0)
+ ..;---> Check screen.
+"RTN","BISELEC2",95,0)
+ ..I BISCRN]"" N Y S Y=BIIEN X BISCRN Q:'$T
+"RTN","BISELEC2",96,0)
+ ..;
+"RTN","BISELEC2",97,0)
+ ..;---> Set Item IEN into Selection Array.
+"RTN","BISELEC2",98,0)
+ ..S @(BIARR1_"(BIIEN)")=""
+"RTN","BISELEC2",99,0)
+ .;
+"RTN","BISELEC2",100,0)
+ .;---> Global had more than 300 entries.
+"RTN","BISELEC2",101,0)
+ .I I>300 D ENTIRE1 Q
+"RTN","BISELEC2",102,0)
+ ;
+"RTN","BISELEC2",103,0)
+ D RESET^BISELEC1
+"RTN","BISELEC2",104,0)
+ Q
+"RTN","BISELEC2",105,0)
+ ;
+"RTN","BISELEC2",106,0)
+ ;
+"RTN","BISELEC2",107,0)
+ ;----------
+"RTN","BISELEC2",108,0)
+ENTIRE1 ;EP
+"RTN","BISELEC2",109,0)
+ ;---> Entire file of Items is too large to load and display
+"RTN","BISELEC2",110,0)
+ ;---> in local partition.
+"RTN","BISELEC2",111,0)
+ ;---> Set BIARR1("ALL"), inform user, tell Listman to quit.
+"RTN","BISELEC2",112,0)
+ ;---> NOTE: A Screen will not apply here.  See documentation
+"RTN","BISELEC2",113,0)
+ ;--->       top of ^BISELECT.
+"RTN","BISELEC2",114,0)
+ ;
+"RTN","BISELEC2",115,0)
+ ;
+"RTN","BISELEC2",116,0)
+ D FULL^VALM1,TITLE^BIUTL5("Select Entire File of "_BIITEMS)
+"RTN","BISELEC2",117,0)
+ W !!!?8,"NOTE: This file is too large to load for screen selection."
+"RTN","BISELEC2",118,0)
+ W !?14,"Instead, the entire file (ALL Items) have been selected"
+"RTN","BISELEC2",119,0)
+ W !?14,"automatically.",!!
+"RTN","BISELEC2",120,0)
+ D DIRZ^BIUTL3()
+"RTN","BISELEC2",121,0)
+ K @(BIARR1)
+"RTN","BISELEC2",122,0)
+ S @(BIARR1_"(""ALL"")")=""
+"RTN","BISELEC2",123,0)
+ S VALMBCK="Q"
+"RTN","BISELEC2",124,0)
+ S VALMQUIT=""
+"RTN","BISELEC2",125,0)
+ Q
+"RTN","BISELEC2",126,0)
+ ;
+"RTN","BISELEC2",127,0)
+ ;
+"RTN","BISELEC2",128,0)
+ ;----------
+"RTN","BISELEC2",129,0)
+DELITEM ;EP
+"RTN","BISELEC2",130,0)
+ ;---> Delete an Item from the Selection Array via List Manager.
+"RTN","BISELEC2",131,0)
+ ;---> Steps:
+"RTN","BISELEC2",132,0)
+ ;            1) This entry point is called by the Protocol:
+"RTN","BISELEC2",133,0)
+ ;               BI GEN SELECT DELETE, an action on the List Manager
+"RTN","BISELEC2",134,0)
+ ;               menu protocol: BI MENU GEN SELECT.
+"RTN","BISELEC2",135,0)
+ ;
+"RTN","BISELEC2",136,0)
+ ;            2) This code gets an Item from Listmanager and
+"RTN","BISELEC2",137,0)
+ ;               deletes the Item from the Selection Array and the
+"RTN","BISELEC2",138,0)
+ ;               ^TMP global.
+"RTN","BISELEC2",139,0)
+ ;
+"RTN","BISELEC2",140,0)
+ Q:$$CHECK^BISELECT()
+"RTN","BISELEC2",141,0)
+ ;
+"RTN","BISELEC2",142,0)
+ ;---> Call the Listmanager Generic Selector of Items displayed.
+"RTN","BISELEC2",143,0)
+ N VALMY
+"RTN","BISELEC2",144,0)
+ D EN^VALM2(XQORNOD(0),"OS")
+"RTN","BISELEC2",145,0)
+ ;
+"RTN","BISELEC2",146,0)
+ ;---> Check that a Listman Item was passed.
+"RTN","BISELEC2",147,0)
+ I '$D(VALMY) D ERRCD^BIUTL2(406,,1) D RESET^BISELEC1 Q
+"RTN","BISELEC2",148,0)
+ N Y S Y=$O(VALMY(0))
+"RTN","BISELEC2",149,0)
+ I '$G(Y) D ERRCD^BIUTL2(406,,1) D RESET^BISELEC1 Q
+"RTN","BISELEC2",150,0)
+ ;
+"RTN","BISELEC2",151,0)
+ ;---> Now set Y=IEN of the Item to delete in the BIARR1 local array.
+"RTN","BISELEC2",152,0)
+ S Y=$P($G(^TMP("BILMGS2",$J,Y)),U)
+"RTN","BISELEC2",153,0)
+ I Y="" D ERRCD^BIUTL2(604,,1) D RESET^BISELEC1 Q
+"RTN","BISELEC2",154,0)
+ ;
+"RTN","BISELEC2",155,0)
+ ;---> If ALL/ENTIRE was previously selected, it is no longer valid,
+"RTN","BISELEC2",156,0)
+ ;---> so kill it.
+"RTN","BISELEC2",157,0)
+ K @(BIARR1_"(""ALL"")")
+"RTN","BISELEC2",158,0)
+ ;---> Delete the Item from the Selection Array.
+"RTN","BISELEC2",159,0)
+ K @(BIARR1_"(Y)")
+"RTN","BISELEC2",160,0)
+ S BIPOP=""
+"RTN","BISELEC2",161,0)
+ ;
+"RTN","BISELEC2",162,0)
+ D RESET^BISELEC1
+"RTN","BISELEC2",163,0)
+ Q
+"RTN","BISELEC2",164,0)
+ ;
+"RTN","BISELEC2",165,0)
+ ;
+"RTN","BISELEC2",166,0)
+ ;----------
+"RTN","BISELEC2",167,0)
+CLEARALL ;EP
+"RTN","BISELEC2",168,0)
+ ;---> Clear/Delete ALL Items from the Selection Array.
+"RTN","BISELEC2",169,0)
+ ;---> Steps:
+"RTN","BISELEC2",170,0)
+ ;            1) This entry point is called by the Protocol:
+"RTN","BISELEC2",171,0)
+ ;               BI GEN SELECT CLEAR ALL, an action on the List Manager
+"RTN","BISELEC2",172,0)
+ ;               menu protocol: BI MENU GEN SELECT.
+"RTN","BISELEC2",173,0)
+ ;
+"RTN","BISELEC2",174,0)
+ ;            2) This code deletes ALL Items from Listmanager and
+"RTN","BISELEC2",175,0)
+ ;               from the Selection Array and ^TMP global.
+"RTN","BISELEC2",176,0)
+ ;
+"RTN","BISELEC2",177,0)
+ Q:$$CHECK^BISELECT()
+"RTN","BISELEC2",178,0)
+ ;
+"RTN","BISELEC2",179,0)
+ ;---> Delete the Item from the Selection Array.
+"RTN","BISELEC2",180,0)
+ K @(BIARR1)
+"RTN","BISELEC2",181,0)
+ K ^TMP("BILMGS",$J),^TMP("BILMGS1",$J),^TMP("BILMGS2",$J)
+"RTN","BISELEC2",182,0)
+ ;
+"RTN","BISELEC2",183,0)
+ D RESET^BISELEC1
+"RTN","BISELEC2",184,0)
+ Q
+"RTN","BISELECT")
+0^3^B36757927
+"RTN","BISELECT",1,0)
+BISELECT ;IHS/CMI/MWR - GENERIC SELECTION UTILITY ; MAY 10, 2010
+"RTN","BISELECT",2,0)
+ ;;8.5;IMMUNIZATION;;SEP 01,2011;Build 2
+"RTN","BISELECT",3,0)
+ ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
+"RTN","BISELECT",4,0)
+ ;;  UTILITY TO PROMPT FOR MULTIPLE SELECTIONS FROM A FILE AND STORE
+"RTN","BISELECT",5,0)
+ ;;  THEM IN A LOCAL ARRAY FOR CALLING PROGRAM.
+"RTN","BISELECT",6,0)
+ ;
+"RTN","BISELECT",7,0)
+ ;
+"RTN","BISELECT",8,0)
+ ;---> Executable example selecting Entries from a File.
+"RTN","BISELECT",9,0)
+ D SEL(9999999.14,"BIZZ")
+"RTN","BISELECT",10,0)
+ Q
+"RTN","BISELECT",11,0)
+ ;
+"RTN","BISELECT",12,0)
+ ;---> Executable example selecting Codes from a Set of Codes in a Field.
+"RTN","BISELECT",13,0)
+ ;---> Key element is 11th Parameter, the Field# (must be a Set of Codes).
+"RTN","BISELECT",14,0)
+ N BINAM S BINAM="Visit Type"
+"RTN","BISELECT",15,0)
+ N BICOL S BICOL="    #  Visit Type                     Code"
+"RTN","BISELECT",16,0)
+ D SEL^BISELECT(9000010,"BIVT",BINAM,,,,,BICOL,.BIPOP,,".03")
+"RTN","BISELECT",17,0)
+ Q
+"RTN","BISELECT",18,0)
+ ;
+"RTN","BISELECT",19,0)
+ ;
+"RTN","BISELECT",20,0)
+ ;----------
+"RTN","BISELECT",21,0)
+SEL(BIFILE,BIARR1,BIITEM,BISCRN,BIDFLT,BIPC,BIID,BICOL,BIPOP,BINONE,BIFLD,BIDFA,BITITEM) ;EP
+"RTN","BISELECT",22,0)
+ ;---> Generic utility to prompt user for selections from a file.
+"RTN","BISELECT",23,0)
+ ;---> Returns local array with subscripts of IENs selected.
+"RTN","BISELECT",24,0)
+ ;---> Parameters:
+"RTN","BISELECT",25,0)
+ ;     1 - BIFILE  (req) File Number from which selection will be made.
+"RTN","BISELECT",26,0)
+ ;
+"RTN","BISELECT",27,0)
+ ;     2 - BIARR1  (req) Selection Array.
+"RTN","BISELECT",28,0)
+ ;                       Local array in which selections will be stored.
+"RTN","BISELECT",29,0)
+ ;                       May not be a global.
+"RTN","BISELECT",30,0)
+ ;                       The Selection Array MUST BE UNSUBSCRIPTED--
+"RTN","BISELECT",31,0)
+ ;                       may not contain "(", commas, or subscripts.
+"RTN","BISELECT",32,0)
+ ;                       If ALL entries in the file are selected and
+"RTN","BISELECT",33,0)
+ ;                       the array would be more than 300 entries, then
+"RTN","BISELECT",34,0)
+ ;                       BIARR1_"(""ALL"")" is returned.
+"RTN","BISELECT",35,0)
+ ;                       NOTE: This CANNOT be "BIARR1" or it will
+"RTN","BISELECT",36,0)
+ ;                             kill the variable, BIARR1, that stores
+"RTN","BISELECT",37,0)
+ ;                             the local array name!
+"RTN","BISELECT",38,0)
+ ;
+"RTN","BISELECT",39,0)
+ ;     3 - BIITEM  (opt) Catagoric name of Items being selected.
+"RTN","BISELECT",40,0)
+ ;     4 - BISCRN  (opt) Screen used in selection lookup.
+"RTN","BISELECT",41,0)
+ ;                       NO NAKED REFERENCES.  Use full global refs.
+"RTN","BISELECT",42,0)
+ ;     5 - BIDFLT  (opt) Default first selection (if no previous).
+"RTN","BISELECT",43,0)
+ ;     6 - BIPC    (opt) Piece of zero node to display as ItemName.
+"RTN","BISELECT",44,0)
+ ;                       (Default is 1.)
+"RTN","BISELECT",45,0)
+ ;
+"RTN","BISELECT",46,0)
+ ;     7 - BIID    (opt) Identifier: Three pieces delimited by ";".
+"RTN","BISELECT",47,0)
+ ;                       1st piece = the "^" piece of 0 node to get X.
+"RTN","BISELECT",48,0)
+ ;                       2nd piece = Code to set X=text of identifier.
+"RTN","BISELECT",49,0)
+ ;                                   If null, raw data in the piece of
+"RTN","BISELECT",50,0)
+ ;                                   0 node (as specified above) will
+"RTN","BISELECT",51,0)
+ ;                                   be displayed.
+"RTN","BISELECT",52,0)
+ ;                       3rd piece = Tab for identfier.
+"RTN","BISELECT",53,0)
+ ;
+"RTN","BISELECT",54,0)
+ ;                       Examples:
+"RTN","BISELECT",55,0)
+ ;                         Display 3rd pc of 0 node:  S BIID="3"
+"RTN","BISELECT",56,0)
+ ;
+"RTN","BISELECT",57,0)
+ ;                         Display 3rd pc of 0 node,
+"RTN","BISELECT",58,0)
+ ;                                 tabbed out to 40:  S BIID="3;;40"
+"RTN","BISELECT",59,0)
+ ;
+"RTN","BISELECT",60,0)
+ ;                         Set X=3rd pc of 0 node, use it as an IEN in
+"RTN","BISELECT",61,0)
+ ;                         the STATE file, set X=text of State, tab out
+"RTN","BISELECT",62,0)
+ ;                         to column 25 in Listman display:
+"RTN","BISELECT",63,0)
+ ;
+"RTN","BISELECT",64,0)
+ ;                 S BIID="3;I $G(X) S:$D(^DIC(5,X,0)) X=$P(^(0),U);25"
+"RTN","BISELECT",65,0)
+ ;
+"RTN","BISELECT",66,0)
+ ;
+"RTN","BISELECT",67,0)
+ ;     8 - BICOL   (opt) Line of text that will be column headers.
+"RTN","BISELECT",68,0)
+ ;
+"RTN","BISELECT",69,0)
+ ;     9 - BIPOP   (ret) BIPOP=1 if quit or error.
+"RTN","BISELECT",70,0)
+ ;
+"RTN","BISELECT",71,0)
+ ;    10 - BINONE  (opt) If BINONE=1 and NO selections were made,
+"RTN","BISELECT",72,0)
+ ;                          do not return any BIARR1.
+"RTN","BISELECT",73,0)
+ ;                       If '$G(BINONE) and NO selections were made,
+"RTN","BISELECT",74,0)
+ ;                          return BIARR1_("ALL").
+"RTN","BISELECT",75,0)
+ ;                       If user selects "Entire File", then "ALL" will
+"RTN","BISELECT",76,0)
+ ;                          be returned regardless of BINONE.
+"RTN","BISELECT",77,0)
+ ;
+"RTN","BISELECT",78,0)
+ ;    11 - BIFLD   (opt) BIFLD=Field# If BIFLD has a value, it indicates
+"RTN","BISELECT",79,0)
+ ;                       that this is NOT a selection from a file; rather
+"RTN","BISELECT",80,0)
+ ;                       it is a selection of Codes from a field in BIFILE.
+"RTN","BISELECT",81,0)
+ ;
+"RTN","BISELECT",82,0)
+ ;    12 - BIDFA   (opt) BIDFA=Default Array of choices.
+"RTN","BISELECT",83,0)
+ ;    13 - BITITEM (opt) Catagoric name of Title Items being selected.
+"RTN","BISELECT",84,0)
+ ;                       This might be a specific name for the items chosen,
+"RTN","BISELECT",85,0)
+ ;                       as opposed to the generic name (e.g,. "ER Doctors"
+"RTN","BISELECT",86,0)
+ ;                       as opposed to "Doctors").
+"RTN","BISELECT",87,0)
+ ;
+"RTN","BISELECT",88,0)
+ ;
+"RTN","BISELECT",89,0)
+ ;---> Examples of calls:
+"RTN","BISELECT",90,0)
+ ;
+"RTN","BISELECT",91,0)
+ ;  Simple call: Select one or more Vaccines and store
+"RTN","BISELECT",92,0)
+ ;               in the local array BIZZ:
+"RTN","BISELECT",93,0)
+ ;
+"RTN","BISELECT",94,0)
+ ;   D SEL^BISELECT(9999999.14,"BIZZ")
+"RTN","BISELECT",95,0)
+ ;
+"RTN","BISELECT",96,0)
+ ;
+"RTN","BISELECT",97,0)
+ ;  Complex call: Select one or more Active Vaccines and store
+"RTN","BISELECT",98,0)
+ ;                in the local array BIZZ.  Also, display Current
+"RTN","BISELECT",99,0)
+ ;                Lot Number, tabbed to column 20 in Listman display.
+"RTN","BISELECT",100,0)
+ ;
+"RTN","BISELECT",101,0)
+ ;   S SCRN="I '$P(^AUTTIMM(Y,0),U,7)"
+"RTN","BISELECT",102,0)
+ ;   S IDEN="4;I $G(X) S:$D(^AUTTIML(X,0)) X=$P(^(0),U);20"
+"RTN","BISELECT",103,0)
+ ;   D SEL^BISELECT(9999999.14,"BIZZ","Vaccine",SCRN,,2,IDEN,,.BIPOP)
+"RTN","BISELECT",104,0)
+ ;
+"RTN","BISELECT",105,0)
+ ;
+"RTN","BISELECT",106,0)
+ ;---> Example use of Selection Array in calling routine:
+"RTN","BISELECT",107,0)
+ ;       I '$D(BIARR("ALL")) Q:'$D(BIARR($P(Y,U,4)))
+"RTN","BISELECT",108,0)
+ ;       "If not selecting all, then quit if the fourth piece of
+"RTN","BISELECT",109,0)
+ ;        this entry (Y) is not one of the items selected."
+"RTN","BISELECT",110,0)
+ ;
+"RTN","BISELECT",111,0)
+ ;
+"RTN","BISELECT",112,0)
+ N BIDUZF,BIGBL,BIITEMS,BITITEMS,DIC,DIK,DIR,I,X,Y,Z
+"RTN","BISELECT",113,0)
+ S BIPOP=0
+"RTN","BISELECT",114,0)
+ ;
+"RTN","BISELECT",115,0)
+ ;---> Check/set required variables.
+"RTN","BISELECT",116,0)
+ I $$CHECK() S BIPOP=1 Q
+"RTN","BISELECT",117,0)
+ ;
+"RTN","BISELECT",118,0)
+ ;---> BIDUZF=User-File# identifier to store and retrieve
+"RTN","BISELECT",119,0)
+ ;---> previous lists of selections from this file.
+"RTN","BISELECT",120,0)
+ S BIDUZF=DUZ_"-"_BIFILE
+"RTN","BISELECT",121,0)
+ ;---> If this is a Set of Codes, concat Field#.
+"RTN","BISELECT",122,0)
+ S:$G(BIFLD) BIDUZF=BIDUZF_"-"_BIFLD
+"RTN","BISELECT",123,0)
+ ;
+"RTN","BISELECT",124,0)
+ ;---> Clear "ALL" node.
+"RTN","BISELECT",125,0)
+ K @(BIARR1_"(""ALL"")")
+"RTN","BISELECT",126,0)
+ ;
+"RTN","BISELECT",127,0)
+ ;---> If a Default Local Array of selections was passed, set them now.
+"RTN","BISELECT",128,0)
+ ;---> NOTE: This passed default array will OVERRIDE a previously selected
+"RTN","BISELECT",129,0)
+ ;---> and stored array in ^BISELECT.
+"RTN","BISELECT",130,0)
+ D:$O(BIDFA(0))
+"RTN","BISELECT",131,0)
+ .N N S N=0
+"RTN","BISELECT",132,0)
+ .F  S N=$O(BIDFA(N)) Q:'N  S @(BIARR1_"(N)")=""
+"RTN","BISELECT",133,0)
+ ;
+"RTN","BISELECT",134,0)
+ ;---> If previously stored selections exist for this user,
+"RTN","BISELECT",135,0)
+ ;---> pre-load these into the Selection Array that Listmanager
+"RTN","BISELECT",136,0)
+ ;---> will be processing.
+"RTN","BISELECT",137,0)
+ I $D(^BISELECT("B",BIDUZF)) D
+"RTN","BISELECT",138,0)
+ .;---> Quit if a local array of selections already exists.
+"RTN","BISELECT",139,0)
+ .Q:$O(@(BIARR1_"(0)"))
+"RTN","BISELECT",140,0)
+ .N BIDA S BIDA=$O(^BISELECT("B",BIDUZF,0))
+"RTN","BISELECT",141,0)
+ .Q:'BIDA  Q:$G(^BISELECT(BIDA,0))=""
+"RTN","BISELECT",142,0)
+ .Q:'$O(^BISELECT(BIDA,1,0))
+"RTN","BISELECT",143,0)
+ .N Y S Y=0
+"RTN","BISELECT",144,0)
+ .F  S Y=$O(^BISELECT(BIDA,1,Y)) Q:Y=""  D
+"RTN","BISELECT",145,0)
+ ..;---> If this is a Set of Codes, set the Value of the stored node
+"RTN","BISELECT",146,0)
+ ..;---> (rather than the subscript) into the Selection Array.
+"RTN","BISELECT",147,0)
+ ..I $G(BIFLD) D  Q
+"RTN","BISELECT",148,0)
+ ...N Z S Z=^BISELECT(BIDA,1,Y,0),@(BIARR1_"(Z)")=""
+"RTN","BISELECT",149,0)
+ ..S @(BIARR1_"(Y)")=""
+"RTN","BISELECT",150,0)
+ ;
+"RTN","BISELECT",151,0)
+ ;
+"RTN","BISELECT",152,0)
+ ;---> If there are no previous selections and a default
+"RTN","BISELECT",153,0)
+ ;---> was passed, load the default into the Selection Array.
+"RTN","BISELECT",154,0)
+ I '$O(@(BIARR1_"(0)")) I BIDFLT S @(BIARR1_"(+BIDFLT)")=""
+"RTN","BISELECT",155,0)
+ ;
+"RTN","BISELECT",156,0)
+ ;
+"RTN","BISELECT",157,0)
+ ;---> * Listmanager call to add/delete Items in the Selection Array.
+"RTN","BISELECT",158,0)
+ D START^BISELEC1(.BIARR1,BIGBL,BIITEMS,BITITEMS,BIPC,BISCRN,BIID,BICOL,BIFLD,.BIPOP)
+"RTN","BISELECT",159,0)
+ ;
+"RTN","BISELECT",160,0)
+ ;---> If All were selected, remove any specific IENs from array.
+"RTN","BISELECT",161,0)
+ ;---> Also leave intact user's previous selection (don't store "Entire").
+"RTN","BISELECT",162,0)
+ I $D(@(BIARR1_"(""ALL"")")) K @(BIARR1) S @(BIARR1_"(""ALL"")")="" Q
+"RTN","BISELECT",163,0)
+ ;
+"RTN","BISELECT",164,0)
+ ;---> If none were selected BINONE'=1, Set (return) BIARR1_"ALL"
+"RTN","BISELECT",165,0)
+ I '$D(@(BIARR1)),'$G(BINONE) S @(BIARR1_"(""ALL"")")=""
+"RTN","BISELECT",166,0)
+ Q:BIPOP
+"RTN","BISELECT",167,0)
+ ;
+"RTN","BISELECT",168,0)
+ ;
+"RTN","BISELECT",169,0)
+ ;---> Now store list of Items selected in this file for next time.
+"RTN","BISELECT",170,0)
+ ;
+"RTN","BISELECT",171,0)
+ ;---> If the user selected nothing or Entire, leave previous selection intact.
+"RTN","BISELECT",172,0)
+ Q:$O(@(BIARR1_"(0)"))=""
+"RTN","BISELECT",173,0)
+ ;
+"RTN","BISELECT",174,0)
+ ;---> Clear any previous selection this user had for this file.
+"RTN","BISELECT",175,0)
+ I $D(^BISELECT("B",BIDUZF)) D
+"RTN","BISELECT",176,0)
+ .N DA,DIK S DA=$O(^BISELECT("B",BIDUZF,0)),DIK="^BISELECT("
+"RTN","BISELECT",177,0)
+ .D ^DIK
+"RTN","BISELECT",178,0)
+ .S $P(^BISELECT(0),U,3)=1
+"RTN","BISELECT",179,0)
+ ;
+"RTN","BISELECT",180,0)
+ ;---> Now store the selections for this user.
+"RTN","BISELECT",181,0)
+ N Y
+"RTN","BISELECT",182,0)
+ D FILE^BIFMAN(9002084.61,BIDUZF,"ML",,,.Y)
+"RTN","BISELECT",183,0)
+ Q:Y<1
+"RTN","BISELECT",184,0)
+ D
+"RTN","BISELECT",185,0)
+ .;---> If this is a Set of Codes, assign IEN's.
+"RTN","BISELECT",186,0)
+ .I +$G(BIFLD) D  Q
+"RTN","BISELECT",187,0)
+ ..N I,N S N=0,Y=+Y
+"RTN","BISELECT",188,0)
+ ..F I=1:1 S N=$O(@(BIARR1_"(N)")) Q:N=""  D
+"RTN","BISELECT",189,0)
+ ...S ^BISELECT(Y,1,I,0)=N
+"RTN","BISELECT",190,0)
+ .;
+"RTN","BISELECT",191,0)
+ .;---> Store IEN's of a File.
+"RTN","BISELECT",192,0)
+ .N N S N=0,Y=+Y
+"RTN","BISELECT",193,0)
+ .F  S N=$O(@(BIARR1_"(N)")) Q:'N  D
+"RTN","BISELECT",194,0)
+ ..S ^BISELECT(Y,1,N,0)=N
+"RTN","BISELECT",195,0)
+ ;
+"RTN","BISELECT",196,0)
+ Q
+"RTN","BISELECT",197,0)
+ ;
+"RTN","BISELECT",198,0)
+ ;
+"RTN","BISELECT",199,0)
+ ;----------
+"RTN","BISELECT",200,0)
+CHECK() ;EP
+"RTN","BISELECT",201,0)
+ ;---> Check required variables.
+"RTN","BISELECT",202,0)
+ ;
+"RTN","BISELECT",203,0)
+ I $G(DUZ)="" D ERRCD^BIUTL2(106,,1) Q 1
+"RTN","BISELECT",204,0)
+ ;
+"RTN","BISELECT",205,0)
+ ;---> Check that the File Number was passed and is legitimate.
+"RTN","BISELECT",206,0)
+ I '$G(BIFILE) D ERRCD^BIUTL2(607,,1) Q 1
+"RTN","BISELECT",207,0)
+ I '$D(^DD(BIFILE)) D ERRCD^BIUTL2(608,,1) Q 1
+"RTN","BISELECT",208,0)
+ I '$D(^DIC(BIFILE,0,"GL")) D ERRCD^BIUTL2(608,,1) Q 1
+"RTN","BISELECT",209,0)
+ ;
+"RTN","BISELECT",210,0)
+ ;---> Check that Selection Array name for Item storage is present.
+"RTN","BISELECT",211,0)
+ I $G(BIARR1)="" D ERRCD^BIUTL2(602,,1) Q 1
+"RTN","BISELECT",212,0)
+ ;---> Check valid form of Selection Array root.
+"RTN","BISELECT",213,0)
+ I BIARR1["(" D ERRCD^BIUTL2(605,,1) Q 1
+"RTN","BISELECT",214,0)
+ I $E(BIARR1)="^" D ERRCD^BIUTL2(606,,1) Q 1
+"RTN","BISELECT",215,0)
+ ;
+"RTN","BISELECT",216,0)
+ ;---> Set lookup global.
+"RTN","BISELECT",217,0)
+ D:$G(BIGBL)=""
+"RTN","BISELECT",218,0)
+ .S BIGBL=^DIC(BIFILE,0,"GL")
+"RTN","BISELECT",219,0)
+ .;
+"RTN","BISELECT",220,0)
+ .;---> If .01 field is a pointer, reset global to get text from
+"RTN","BISELECT",221,0)
+ .;---> pointed-to global.
+"RTN","BISELECT",222,0)
+ .I $P(^DD(BIFILE,.01,0),U,2)["P" S BIGBL="^"_$P(^(0),U,3)
+"RTN","BISELECT",223,0)
+ ;
+"RTN","BISELECT",224,0)
+ ;---> Check that the global for Item selection is legitimate.
+"RTN","BISELECT",225,0)
+ I '$D(@(BIGBL_"0)")) D ERRCD^BIUTL2(601,,1) Q 1
+"RTN","BISELECT",226,0)
+ ;
+"RTN","BISELECT",227,0)
+ ;---> Check that variable for Item name is present.
+"RTN","BISELECT",228,0)
+ I $G(BIITEM)="" S BIITEM=$P($G(^DD(BIFILE,.01,0)),U)
+"RTN","BISELECT",229,0)
+ S:BIITEM="" BIITEM="Item"
+"RTN","BISELECT",230,0)
+ S:'$D(BITITEM) BITITEM=BIITEM
+"RTN","BISELECT",231,0)
+ ;
+"RTN","BISELECT",232,0)
+ ;---> Check for plural form of Item Name.
+"RTN","BISELECT",233,0)
+ I $G(BIITEMS)="" D PLURAL(BIITEM,.BIITEMS)
+"RTN","BISELECT",234,0)
+ I $G(BITITEMS)="" D PLURAL(BITITEM,.BITITEMS)
+"RTN","BISELECT",235,0)
+ ;
+"RTN","BISELECT",236,0)
+ ;---> Check for existence and value of optional input parameters.
+"RTN","BISELECT",237,0)
+ S:'$G(BIPC) BIPC=1
+"RTN","BISELECT",238,0)
+ S:$G(BISCRN)="" BISCRN=""
+"RTN","BISELECT",239,0)
+ S:'$G(BIDFLT) BIDFLT=""
+"RTN","BISELECT",240,0)
+ S:$G(BIID)="" BIID=""
+"RTN","BISELECT",241,0)
+ S:$G(BICOL)="" BICOL=""
+"RTN","BISELECT",242,0)
+ S:$G(BIFLD)="" BIFLD=""
+"RTN","BISELECT",243,0)
+ ;
+"RTN","BISELECT",244,0)
+ Q 0
+"RTN","BISELECT",245,0)
+ ;
+"RTN","BISELECT",246,0)
+ ;
+"RTN","BISELECT",247,0)
+ ;----------
+"RTN","BISELECT",248,0)
+PLURAL(BIITEM,BIITEMS) ;EP
+"RTN","BISELECT",249,0)
+ ;---> Add "s" for plural.
+"RTN","BISELECT",250,0)
+ ;---> If necessary change "y" to "i" and add "es".
+"RTN","BISELECT",251,0)
+ ;---> Parameters:
+"RTN","BISELECT",252,0)
+ ;     1 - BIITEM  (req) Item name, singular form.
+"RTN","BISELECT",253,0)
+ ;     2 - BIITEMS (ret) Item name, plural form.
+"RTN","BISELECT",254,0)
+ ;
+"RTN","BISELECT",255,0)
+ I $G(BIITEM)="" S BIITEMS="" Q
+"RTN","BISELECT",256,0)
+ ;
+"RTN","BISELECT",257,0)
+ I "Yy"[$E(BIITEM,$L(BIITEM)) D  Q
+"RTN","BISELECT",258,0)
+ .S BIITEMS=$E(BIITEM,1,($L(BIITEM)-1))_"ies"
+"RTN","BISELECT",259,0)
+ ;
+"RTN","BISELECT",260,0)
+ I "Xx"[$E(BIITEM,$L(BIITEM)) D  Q
+"RTN","BISELECT",261,0)
+ .S BIITEMS=BIITEM_"es"
+"RTN","BISELECT",262,0)
+ ;
+"RTN","BISELECT",263,0)
+ S BIITEMS=BIITEM_"s"
+"RTN","BISELECT",264,0)
+ Q
+"RTN","BISELECT",265,0)
+ ;
+"RTN","BISELECT",266,0)
+ ;
+"RTN","BISELECT",267,0)
+ ;----------
+"RTN","BISELECT",268,0)
+SELCODE(BIFILE,BIARR1,BIITEM,BISCRN,BIDFLT,BIPC,BIID,BICOL,BIPOP,BINONE) ;EP
+"RTN","BISELECT",269,0)
+ ;---> Generic utility to prompt user for selections from a file.
+"RTN","BISELECT",270,0)
+ ;---> Returns local array with subscripts of IENs selected.
+"RTN","BISELECT",271,0)
+ ;---> Parameters:
+"RTN","BISELECT",272,0)
+ ;     1 - BIFILE  (req) File Number from which selection will be made.
+"RTN","BISELECT",273,0)
+ Q
 "VER")
 8.0^22.0
 **END**
