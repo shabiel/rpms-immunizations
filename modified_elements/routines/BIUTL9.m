@@ -1,4 +1,4 @@
-BIUTL9 ;IHS/CMI/MWR - UTIL: OVERFLOW CODE FROM OTHER BIUTL RTNS; MAY 10, 2010
+BIUTL9 ;IHS/CMI/MWR - UTIL: OVERFLOW CODE FROM OTHER BIUTL RTNS;2015-10-16  11:56 AM
  ;;8.5;IMMUNIZATION;**9**;OCT 01,2014
  ;;* MICHAEL REMILLARD, DDS * CIMARRON MEDICAL INFORMATICS, FOR IHS *
  ;;  OVERFLOW CODE FROM OTHER BIUTL RTNS.
@@ -57,7 +57,6 @@ RPMS() ; [Public $$] Are we running on RPMS??
  ; Try to do a heuristic determination
  ; Just fiddling with this for now since I don't know the best way yet
  ; I don't want to do this with DUZ("AG") (Agency) since many people may
- ; run RPMS as agency of "Other". Let's hope at least that somebody gets the
- ; right idea and runs RPMS rather than VISTA in ambulatory settings.
+ ; run RPMS as agency of "Other".
  if $data(^AUTTSITE(0)) quit 1
  quit 0

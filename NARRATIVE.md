@@ -99,8 +99,7 @@ RPMS() ; [Public $$] Are we running on RPMS??
  ; Try to do a heuristic determination
  ; Just fiddling with this for now since I don't know the best way yet
  ; I don't want to do this with DUZ("AG") (Agency) since many people may
- ; run RPMS as agency of "Other". Let's hope at least that somebody gets the
- ; right idea and runs RPMS rather than VISTA in ambulatory settings.
+ ; run RPMS as agency of "Other".
  if $data(^AUTTSITE(0)) quit 1
  quit 0
 ```
