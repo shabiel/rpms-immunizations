@@ -110,7 +110,9 @@ This is list of tidbits that cumulatively didn't make the port smooth.
 The VISTA standard immunization file does not have the short name filled for
 all Immunizations. That meant that I had to change some of the code for VISTA
 to pull in the .01 full name. That alas made some immunizations not readable 
-and made them not fit on the screen.
+and made them not fit on the screen. I learned from Rob that the short name
+is not a standard concept by the CDC and therefore was not incorporated into
+VISTA.
 
 An improvement in VISTA is that a lot number now has the extra status of
 expired. I took advantage of that. In RPMS, there is only active vs inactive.
@@ -128,7 +130,7 @@ RPMS: 3, VISTA: 03)
 
 The lot number field in V Immunizations, I believe due to mistake, moved in
 VISTA from the existing RPMS field of .05 on the V IMMUNIZATIONS file to 1207. 
-The old field still remains.
+The old field still remains but is unused in VISTA.
 
 # Visit file differences between VISTA and RPMS
 A visit in VISTA requires a hospital location (i.e. the clinic where it took
