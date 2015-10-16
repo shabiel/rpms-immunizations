@@ -28,10 +28,10 @@ Site Parameters and work my way up. Here's the actual order:
  * Key Allocation
  * Lot Number Management
  * Immunization/Skin Test Enter/Edit for Patients
- ** Patient Characteristics Form
- ** Contraindications Form
- ** Health Summary
- ** Visit creation, very elementary
+ >* Patient Characteristics Form
+ >* Contraindications Form
+ >* Health Summary
+ * Visit creation, very elementary
  * FIRST VISTA KIDS BUILD
  * Visit creation, update to use new elements in VISTA
  * Eligibilities
